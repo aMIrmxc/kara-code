@@ -115,29 +115,6 @@ export default function HomePageContent() {
     },
   ]
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      content:
-        "Kara Code delivered an exceptional website that exceeded our expectations. Their attention to detail and technical expertise is outstanding",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      company: "Digital Solutions",
-      content:
-        "Professional, reliable, and innovative. They transformed our vision into a beautiful, functional website that drives results",
-      rating: 5,
-    },
-    {
-      name: "Emily Rodriguez",
-      company: "Creative Agency",
-      content:
-        "The team at Kara Code is incredibly talented. They built us a stunning e-commerce platform that has boosted our sales significantly",
-      rating: 5,
-    },
-  ]
 
   const benefits = [
     {
@@ -196,7 +173,7 @@ export default function HomePageContent() {
   return (
     <>
       {/* Services Section */}
-      <section id="services" className="py-20 px-4 relative">
+      <section dir="rtl" id="services" className="py-20 px-4 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -245,7 +222,7 @@ export default function HomePageContent() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-black/30">
+      <section dir="rtl" className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -295,7 +272,7 @@ export default function HomePageContent() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4">
+      <section dir="rtl" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -366,7 +343,7 @@ export default function HomePageContent() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-black/30">
+      <section dir="rtl" className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -416,11 +393,11 @@ export default function HomePageContent() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 px-4">
+      <section dir="rtl" id="portfolio" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
-              Our Portfolio
+              Our Projects
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">Recent Projects</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">

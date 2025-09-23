@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+      <body 
         className={`font-mono ${GeistSans.variable} ${GeistMono.variable} ${vazir.variable}`}
       >
         <Suspense fallback={null}>{children}</Suspense>

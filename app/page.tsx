@@ -58,7 +58,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
       <Preloader isLoading={isLoading} />
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section dir="rtl" id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-green-600 to-emerald-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
@@ -86,15 +86,7 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                >
-                  <span className="text-gradient-animated font-bold font-persian">پروژه خود را سفارش دهید</span>
-                  <ArrowRight className="ml-2 w-5 h-5 text-gray-800" />
-                </Button>
-              </Link>
+              
 
               <Button
                 variant="outline"
@@ -104,6 +96,17 @@ export default function HomePage() {
               >
                 مشاهده نمونه کارهای ما
               </Button>
+
+
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  <ArrowRight className="ml-2 w-5 h-5 text-gray-800" />
+                  <span className="text-gradient-animated font-bold font-persian">پروژه خود را سفارش دهید</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -119,7 +122,7 @@ export default function HomePage() {
       {!isLoading && <HomePageContent />}
 
       {/* Floating Buttons Container */}
-      <div
+      <div dir="rtl"
         className={`fixed bottom-8 right-8 z-50 transition-all duration-500 transform flex flex-col gap-3 ${
           showFloatingButton
             ? "translate-y-0 opacity-100 scale-100"
@@ -127,7 +130,6 @@ export default function HomePage() {
         }`}
       >
        
-        {/* Existing Start Your Project button */}
         <Link href="/contact" passHref>
           <Button
             asChild
@@ -135,8 +137,8 @@ export default function HomePage() {
             className="bg-gray-100 hover:bg-gray-200 border-0 px-6 py-4 text-base font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-110"
           >
             <a>
-              <span className="text-gradient-animated  font-persian">پروژه خود را سفارش دهید</span>
               <ArrowRight className="ml-2 w-4 h-4 text-gray-800" />
+              <span className="text-gradient-animated  font-persian">پروژه خود را سفارش دهید</span>
             </a>
           </Button>
         </Link>
