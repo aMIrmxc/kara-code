@@ -71,12 +71,12 @@ export default function HomePage() {
             className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <Badge className="mb-6 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono hover:bg-white/20 transition-all duration-300">
-              <Zap className="w-4 h-4 mr-2" />
-              Premium Web Development Services
+             Premium Web Development Services
+              <Zap className="w-4 h-4 " />
             </Badge>
 
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-mono">
-              <span className="bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-pulse">
+              <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse">
                 Kara Code
               </span>
             </h1>
@@ -103,8 +103,10 @@ export default function HomePage() {
                   size="lg"
                   className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 >
-                  <ArrowRight className="ml-2 w-5 h-5 text-gray-800" />
-                  <span className="text-gradient-animated font-bold font-persian">پروژه خود را سفارش دهید</span>
+                  <>
+                    <ArrowRight className="ml-2 w-5 h-5 text-gray-800" />
+                    <span className="text-gradient-animated font-bold font-persian">پروژه خود را سفارش دهید</span>
+                  </>
                 </Button>
               </Link>
             </div>
@@ -130,19 +132,20 @@ export default function HomePage() {
         }`}
       >
        
-        <Link href="/contact" passHref>
-          <Button
-            asChild
-            size="lg"
-            className="bg-gray-100 hover:bg-gray-200 border-0 px-6 py-4 text-base font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-110"
-          >
-            <a>
-              <ArrowRight className="ml-2 w-4 h-4 text-gray-800" />
-              <span className="text-gradient-animated  font-persian">پروژه خود را سفارش دهید</span>
-            </a>
-          </Button>
-        </Link>
+          <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-gray-100 hover:bg-gray-200 border-0 px-6 py-4 text-base font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-110"
+                >
+                  <>
+                    <ArrowRight className="ml-2 w-5 h-5 text-gray-800" />
+                    <span className="text-gradient-animated font-bold font-persian">پروژه خود را سفارش دهید</span>
+                  </>
+                </Button>
+              </Link>
       </div>
     </div>
   )
 }
+
+
