@@ -30,7 +30,7 @@ export function Preloader({ isLoading }: PreloaderProps) {
           </span>
         </h1>
         <p className="text-xl text-gray-300 animate-pulse font-mono">
-          Crafting Digital Excellence...
+          Crafting Digital Excellence
         </p>
       </div>
     </div>

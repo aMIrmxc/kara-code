@@ -26,25 +26,25 @@ export default function HomePageContent() {
     {
       icon: <Code className="w-8 h-8" />,
       title: "Custom Web Development",
-      description: "Tailored web solutions built with cutting-edge technologies to meet your unique business needs.",
+      description: "Tailored web solutions built with cutting-edge technologies to meet your unique business needs",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Responsive Design",
-      description: "Mobile-first designs that look stunning and function perfectly on all devices and screen sizes.",
+      description: "Mobile-first designs that look stunning and function perfectly on all devices and screen sizes",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <ShoppingCart className="w-8 h-8" />,
       title: "E-commerce Solutions",
-      description: "Complete online stores with secure payment processing and inventory management systems.",
+      description: "Complete online stores with secure payment processing and inventory management systems",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Web Applications",
-      description: "Complex web applications with advanced functionality and seamless user experiences.",
+      description: "Complex web applications with advanced functionality and seamless user experiences",
       color: "from-orange-500 to-red-500",
     },
   ]
@@ -103,7 +103,7 @@ export default function HomePageContent() {
       title: "News Agency",
       category: "News",
       image: "/news-agency-website.png",
-      description: "A modern news agency website with news, featured stories, and multimedia content.",
+      description: "A modern news agency website with news, featured stories, and multimedia content",
       color: "from-red-500 to-orange-500",
     },
     {
@@ -120,21 +120,21 @@ export default function HomePageContent() {
       name: "Sarah Johnson",
       company: "TechStart Inc.",
       content:
-        "Kara Code delivered an exceptional website that exceeded our expectations. Their attention to detail and technical expertise is outstanding.",
+        "Kara Code delivered an exceptional website that exceeded our expectations. Their attention to detail and technical expertise is outstanding",
       rating: 5,
     },
     {
       name: "Michael Chen",
       company: "Digital Solutions",
       content:
-        "Professional, reliable, and innovative. They transformed our vision into a beautiful, functional website that drives results.",
+        "Professional, reliable, and innovative. They transformed our vision into a beautiful, functional website that drives results",
       rating: 5,
     },
     {
       name: "Emily Rodriguez",
       company: "Creative Agency",
       content:
-        "The team at Kara Code is incredibly talented. They built us a stunning e-commerce platform that has boosted our sales significantly.",
+        "The team at Kara Code is incredibly talented. They built us a stunning e-commerce platform that has boosted our sales significantly",
       rating: 5,
     },
   ]
@@ -227,13 +227,13 @@ export default function HomePageContent() {
                   <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
                     switch (service.title) {
                       case "Custom Web Development":
-                        return "راه‌حل‌های وب سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما."
+                        return "راه‌حل‌های وب سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما"
                       case "Responsive Design":
-                        return "طراحی‌های موبایل-اول که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند."
+                        return "طراحی‌های موبایل-اول که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند"
                       case "E-commerce Solutions":
-                        return "فروشگاه‌های آنلاین کامل با پردازش پرداخت امن و سیستم‌های مدیریت موجودی."
+                        return "فروشگاه‌های آنلاین کامل با پردازش پرداخت امن و سیستم‌های مدیریت موجودی"
                       case "Web Applications":
-                        return "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه."
+                        return "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه"
                       default:
                         return service.description
                     }
@@ -276,13 +276,13 @@ export default function HomePageContent() {
                   <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
                     switch (benefit.title) {
                       case "Lightning Fast Performance":
-                        return "کد بهینه‌سازی‌شده و فناوری‌های مدرن تضمین می‌کنند که وب‌سایت شما در کمتر از ۲ ثانیه بارگذاری شود."
+                        return "کد بهینه‌سازی‌شده و فناوری‌های مدرن تضمین می‌کنند که وب‌سایت شما در کمتر از ۲ ثانیه بارگذاری شود"
                       case "Bank-Level Security":
-                        return "اقدامات امنیتی پیشرفته با SSL، رمزگذاری و میزبانی امن از داده‌ها و کاربران شما محافظت می‌کند."
+                        return "اقدامات امنیتی پیشرفته با SSL، رمزگذاری و میزبانی امن از داده‌ها و کاربران شما محافظت می‌کند"
                       case "SEO Optimized":
-                        return "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه بالاتری کسب کند."
+                        return "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه بالاتری کسب کند"
                       case "User-Centric Design":
-                        return "رابط‌های کاربری بصری که با در نظر گرفتن کاربران شما برای حداکثر تعامل طراحی شده‌اند."
+                        return "رابط‌های کاربری بصری که با در نظر گرفتن کاربران شما برای حداکثر تعامل طراحی شده‌اند"
                       default:
                         return benefit.description
                     }
@@ -397,13 +397,13 @@ export default function HomePageContent() {
                   <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
                     switch (goal.title) {
                       case "Drive Business Growth":
-                        return "ایجاد راه‌حل‌های دیجیتالی که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند."
+                        return "ایجاد راه‌حل‌های دیجیتالی که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند"
                       case "Innovation First":
-                        return "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید."
+                        return "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید"
                       case "Long-term Partnerships":
-                        return "ایجاد روابط پایدار با مشتریان از طریق خدمات استثنایی و پشتیبانی مداوم."
+                        return "ایجاد روابط پایدار با مشتریان از طریق خدمات استثنایی و پشتیبانی مداوم"
                       case "Pixel-Perfect Design":
-                        return "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند."
+                        return "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند"
                       default:
                         return goal.description
                     }
@@ -424,7 +424,7 @@ export default function HomePageContent() {
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">Recent Projects</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
-              نمونه‌کارهای متنوع ما را که راه‌حل‌های وب نوآورانه در صنایع و نیازهای مختلف کسب‌وکار را به نمایش می‌گذارد، بررسی کنید.
+              نمونه‌کارهای متنوع ما را که راه‌حل‌های وب نوآورانه در صنایع و نیازهای مختلف کسب‌وکار را به نمایش می‌گذارد، بررسی کنید
             </p>
           </div>
 
@@ -450,23 +450,23 @@ export default function HomePageContent() {
                   <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
                     switch (item.title) {
                       case "E-commerce Platform":
-                        return "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت."
+                        return "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت"
                       case "Corporate Website":
-                        return "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا."
+                        return "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا"
                       case "SaaS Dashboard":
-                        return "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران."
+                        return "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران"
                       case "Restaurant Website":
-                        return "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو."
+                        return "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو"
                       case "Real Estate Platform":
-                        return "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی."
+                        return "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی"
                       case "Healthcare Portal":
-                        return "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور."
+                        return "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور"
                       case "Educational Platform":
-                        return "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت."
+                        return "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت"
                       case "News Agency":
-                        return "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای."
+                        return "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای"
                       case "Travel Booking Site":
-                        return "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها."
+                        return "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها"
                       default:
                         return item.description
                     }
@@ -485,7 +485,7 @@ export default function HomePageContent() {
             <h3 className="text-2xl font-bold text-white mb-2 font-mono">Kara Code</h3>
             <p className="text-gray-400 font-mono">Crafting Digital Excellence</p>
           </div>
-          <div className="text-gray-500 text-sm font-mono">© 2025 Kara Code. All rights reserved. | kara-code.ir</div>
+          <div className="text-gray-500 text-sm font-mono">© 2025 Kara Code. All rights reserved | kara-code.ir</div>
         </div>
       </footer>
     </>
