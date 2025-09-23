@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Preloader } from "@/components/ui/preloader"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -30,9 +31,13 @@ import {
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false)
   const [showFloatingButton, setShowFloatingButton] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    setIsVisible(true)
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+      setIsVisible(true)
+    }, 500) // Small delay to ensure smooth transition
 
     const handleScroll = () => {
       const heroSection = document.getElementById("hero")
@@ -51,6 +56,7 @@ export default function HomePage() {
 
     window.addEventListener("scroll", handleScroll)
     return () => {
+      clearTimeout(timer)
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
@@ -232,6 +238,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
+      <Preloader isLoading={isLoading} />
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
