@@ -131,7 +131,7 @@ export default function HomePage() {
             ? "translate-y-0 opacity-100 scale-100"
             : "translate-y-16 opacity-0 scale-95 pointer-events-none"
           }
-          max-md:left-1/2 max-md:-translate-x-1/2 md:right-8`}  // ← تنها تغییر
+          max-md:left-1/2 max-md:-translate-x-1/2 md:right-8`}  
       >
         <Link href="/contact">
           <Button
