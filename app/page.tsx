@@ -124,25 +124,28 @@ export default function HomePage() {
       {!isLoading && <HomePageContent />}
 
       {/* Floating Buttons Container */}
-      <div dir="rtl"
-        className={`fixed bottom-8 right-8 z-50 transition-all duration-500 transform flex flex-col gap-3 ${
-          showFloatingButton
+       <div
+        dir="rtl"
+        className={`fixed bottom-5 z-50 transition-all duration-500 transform flex flex-col gap-3
+          ${showFloatingButton
             ? "translate-y-0 opacity-100 scale-100"
             : "translate-y-16 opacity-0 scale-95 pointer-events-none"
-        }`}
+          }
+          max-md:left-1/2 max-md:-translate-x-1/2 md:right-8`}  // ← تنها تغییر
       >
-       
-          <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-gray-100 hover:bg-gray-200 border-0 px-6 py-4 text-base font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-110"
-                >
-                  <>
-                    <ArrowRight className="ml-2 w-5 h-5 text-gray-800" />
-                    <span className="text-gradient-animated font-bold font-persian">پروژه خود را سفارش دهید</span>
-                  </>
-                </Button>
-              </Link>
+        <Link href="/contact">
+          <Button
+            size="lg"
+            className="bg-gray-100 hover:bg-gray-200 border-0 px-6 py-4 text-base font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-110"
+          >
+            <>
+              <ArrowRight className="ml-2 w-5 h-5 text-gray-800" />
+              <span className="text-gradient-animated font-bold font-persian">
+                پروژه خود را سفارش دهید
+              </span>
+            </>
+          </Button>
+        </Link>
       </div>
     </div>
   )
