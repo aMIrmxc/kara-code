@@ -21,8 +21,11 @@ import {
   Lightbulb,
   Palette,
 } from "lucide-react"
+import { useScrollDirection } from "@/hooks/use-scroll-direction"
 
 export default function HomePageContent() {
+  const scrollDirection = useScrollDirection()
+
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -30,6 +33,7 @@ export default function HomePageContent() {
       y: 0,
       transition: { duration: 0.5, ease: "easeInOut" },
     },
+    exit: { opacity: 0, y: 50 },
   }
 
   const cardVariants: Variants = {
@@ -39,6 +43,7 @@ export default function HomePageContent() {
       y: 0,
       transition: { duration: 0.5, ease: "easeInOut" },
     },
+    exit: { opacity: 0, y: 20 },
   }
 
   const services = [
@@ -198,7 +203,8 @@ export default function HomePageContent() {
         className="py-20 px-4 relative"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        exit={scrollDirection === "up" ? "hidden" : "visible"}
+        viewport={{ amount: 0.2 }}
         variants={sectionVariants as any}
       >
         <div className="max-w-6xl mx-auto">
@@ -221,7 +227,8 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                exit={scrollDirection === "up" ? "hidden" : "visible"}
+                viewport={{ amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card
@@ -262,7 +269,8 @@ export default function HomePageContent() {
         className="py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        exit={scrollDirection === "up" ? "hidden" : "visible"}
+        viewport={{ amount: 0.2 }}
         variants={sectionVariants as any}
       >
         <div className="max-w-6xl mx-auto">
@@ -285,7 +293,8 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                exit={scrollDirection === "up" ? "hidden" : "visible"}
+                viewport={{ amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card
@@ -327,7 +336,8 @@ export default function HomePageContent() {
         className="py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        exit={scrollDirection === "up" ? "hidden" : "visible"}
+        viewport={{ amount: 0.2 }}
         variants={sectionVariants as any}
       >
         <div className="max-w-6xl mx-auto">
@@ -335,7 +345,8 @@ export default function HomePageContent() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              exit={scrollDirection === "up" ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
+              viewport={{ amount: 0.5 }}
               transition={{ duration: 0.5 }}
             >
               <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -371,7 +382,8 @@ export default function HomePageContent() {
               className="relative"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              exit={scrollDirection === "up" ? { opacity: 0, x: 50 } : { opacity: 1, x: 0 }}
+              viewport={{ amount: 0.5 }}
               transition={{ duration: 0.5 }}
             >
               <div className="bg-gradient-to-br from-white/5 to-white/2 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
@@ -416,7 +428,8 @@ export default function HomePageContent() {
         className="py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        exit={scrollDirection === "up" ? "hidden" : "visible"}
+        viewport={{ amount: 0.2 }}
         variants={sectionVariants as any}
       >
         <div className="max-w-6xl mx-auto">
@@ -439,7 +452,8 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                exit={scrollDirection === "up" ? "hidden" : "visible"}
+                viewport={{ amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card
@@ -482,7 +496,8 @@ export default function HomePageContent() {
         className="py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        exit={scrollDirection === "up" ? "hidden" : "visible"}
+        viewport={{ amount: 0.1 }}
         variants={sectionVariants as any}
       >
         <div className="max-w-6xl mx-auto">
@@ -503,7 +518,8 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                exit={scrollDirection === "up" ? "hidden" : "visible"}
+                viewport={{ amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card
