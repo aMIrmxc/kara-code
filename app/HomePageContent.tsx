@@ -1,6 +1,5 @@
 "use client"
 
-import { motion, Variants } from "@/components/ui/motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -21,6 +20,8 @@ import {
   Lightbulb,
   Palette,
 } from "lucide-react"
+import { AnimatedSection } from "@/components/ui/animated-section"
+import { motion, Variants } from "@/components/ui/motion"
 import { useScrollDirection } from "@/hooks/use-scroll-direction"
 
 export default function HomePageContent() {
@@ -197,15 +198,12 @@ export default function HomePageContent() {
   return (
     <>
       {/* Services Section */}
-      <motion.section
+      <AnimatedSection
         dir="rtl"
         id="services"
         className="py-20 px-4 relative"
-        initial="hidden"
-        whileInView="visible"
-        exit={scrollDirection === "up" ? "hidden" : "visible"}
-        viewport={{ amount: 0.2 }}
-        variants={sectionVariants as any}
+        variants={sectionVariants}
+        scrollDirection={scrollDirection}
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -227,13 +225,10 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                exit={scrollDirection === "up" ? "hidden" : "visible"}
-                viewport={{ amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card
-                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group overflow-hidden relative"
-                >
+                <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group overflow-hidden relative">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
                   ></div>
@@ -262,16 +257,13 @@ export default function HomePageContent() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </AnimatedSection>
 
-      <motion.section
+      <AnimatedSection
         dir="rtl"
         className="py-20 px-4 bg-black/30"
-        initial="hidden"
-        whileInView="visible"
-        exit={scrollDirection === "up" ? "hidden" : "visible"}
-        viewport={{ amount: 0.2 }}
-        variants={sectionVariants as any}
+        variants={sectionVariants}
+        scrollDirection={scrollDirection}
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -293,13 +285,10 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                exit={scrollDirection === "up" ? "hidden" : "visible"}
-                viewport={{ amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card
-                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative"
-                >
+                <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
                   ></div>
@@ -328,25 +317,21 @@ export default function HomePageContent() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </AnimatedSection>
 
       {/* About Section */}
-      <motion.section
+      <AnimatedSection
         dir="rtl"
         className="py-20 px-4"
-        initial="hidden"
-        whileInView="visible"
-        exit={scrollDirection === "up" ? "hidden" : "visible"}
-        viewport={{ amount: 0.2 }}
-        variants={sectionVariants as any}
+        variants={sectionVariants}
+        scrollDirection={scrollDirection}
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              exit={scrollDirection === "up" ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }}
-              viewport={{ amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5 }}
             >
               <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -382,8 +367,7 @@ export default function HomePageContent() {
               className="relative"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              exit={scrollDirection === "up" ? { opacity: 0, x: 50 } : { opacity: 1, x: 0 }}
-              viewport={{ amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5 }}
             >
               <div className="bg-gradient-to-br from-white/5 to-white/2 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
@@ -421,16 +405,13 @@ export default function HomePageContent() {
             </motion.div>
           </div>
         </div>
-      </motion.section>
+      </AnimatedSection>
 
-      <motion.section
+      <AnimatedSection
         dir="rtl"
         className="py-20 px-4 bg-black/30"
-        initial="hidden"
-        whileInView="visible"
-        exit={scrollDirection === "up" ? "hidden" : "visible"}
-        viewport={{ amount: 0.2 }}
-        variants={sectionVariants as any}
+        variants={sectionVariants}
+        scrollDirection={scrollDirection}
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -452,13 +433,10 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                exit={scrollDirection === "up" ? "hidden" : "visible"}
-                viewport={{ amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card
-                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative"
-                >
+                <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${goal.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
                   ></div>
@@ -487,18 +465,15 @@ export default function HomePageContent() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </AnimatedSection>
 
       {/* Portfolio Section */}
-      <motion.section
+      <AnimatedSection
         dir="rtl"
         id="portfolio"
         className="py-20 px-4"
-        initial="hidden"
-        whileInView="visible"
-        exit={scrollDirection === "up" ? "hidden" : "visible"}
-        viewport={{ amount: 0.1 }}
-        variants={sectionVariants as any}
+        variants={sectionVariants}
+        scrollDirection={scrollDirection}
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -518,13 +493,10 @@ export default function HomePageContent() {
                 variants={cardVariants as any}
                 initial="hidden"
                 whileInView="visible"
-                exit={scrollDirection === "up" ? "hidden" : "visible"}
-                viewport={{ amount: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card
-                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group"
-                >
+                <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
                   <div className="relative overflow-hidden h-48">
                     <img
                       src={item.image || "/placeholder.svg"}
@@ -568,7 +540,7 @@ export default function HomePageContent() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </AnimatedSection>
 
       {/* Footer */}
       <footer id="footer" className="py-12 px-4 bg-black/50 border-t border-white/10">
