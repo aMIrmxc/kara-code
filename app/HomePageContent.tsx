@@ -1,5 +1,6 @@
 "use client"
 
+import { motion, Variants } from "@/components/ui/motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -22,6 +23,24 @@ import {
 } from "lucide-react"
 
 export default function HomePageContent() {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  }
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  }
+
   const services = [
     {
       icon: <Code className="w-8 h-8" />,
@@ -173,7 +192,15 @@ export default function HomePageContent() {
   return (
     <>
       {/* Services Section */}
-      <section dir="rtl" id="services" className="py-20 px-4 relative">
+      <motion.section
+        dir="rtl"
+        id="services"
+        className="py-20 px-4 relative"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants as any}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -189,40 +216,55 @@ export default function HomePageContent() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group overflow-hidden relative"
+                variants={cardVariants as any}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
-                ></div>
-                <CardContent className="p-6 text-center relative z-10">
-                  <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3 font-mono">{service.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
-                    switch (service.title) {
-                      case "Custom Web Development":
-                        return "راه‌حل‌های وب سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما"
-                      case "Responsive Design":
-                        return "طراحی‌های موبایل-اول که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند"
-                      case "E-commerce Solutions":
-                        return "فروشگاه‌های آنلاین کامل با پردازش پرداخت امن و سیستم‌های مدیریت موجودی"
-                      case "Web Applications":
-                        return "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه"
-                      default:
-                        return service.description
-                    }
-                  })()}</p>
-                </CardContent>
-              </Card>
+                <Card
+                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group overflow-hidden relative"
+                >
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
+                  ></div>
+                  <CardContent className="p-6 text-center relative z-10 flex flex-col h-full">
+                    <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3 font-mono">{service.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">{(() => {
+                      switch (service.title) {
+                        case "Custom Web Development":
+                          return "راه‌حل‌های وب سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما"
+                        case "Responsive Design":
+                          return "طراحی‌های موبایل-اول که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند"
+                        case "E-commerce Solutions":
+                          return "فروشگاه‌های آنلاین کامل با پردازش پرداخت امن و سیستم‌های مدیریت موجودی"
+                        case "Web Applications":
+                          return "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه"
+                        default:
+                          return service.description
+                      }
+                    })()}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section dir="rtl" className="py-20 px-4 bg-black/30">
+      <motion.section
+        dir="rtl"
+        className="py-20 px-4 bg-black/30"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants as any}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -238,44 +280,64 @@ export default function HomePageContent() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative"
+                variants={cardVariants as any}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
-                ></div>
-                <CardContent className="p-6 text-center relative z-10">
-                  <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3 font-mono">{benefit.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
-                    switch (benefit.title) {
-                      case "Lightning Fast Performance":
-                        return "کد بهینه‌سازی‌شده و فناوری‌های مدرن تضمین می‌کنند که وب‌سایت شما در کمتر از ۲ ثانیه بارگذاری شود"
-                      case "Bank-Level Security":
-                        return "اقدامات امنیتی پیشرفته با SSL، رمزگذاری و میزبانی امن از داده‌ها و کاربران شما محافظت می‌کند"
-                      case "SEO Optimized":
-                        return "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه بالاتری کسب کند"
-                      case "User-Centric Design":
-                        return "رابط‌های کاربری بصری که با در نظر گرفتن کاربران شما برای حداکثر تعامل طراحی شده‌اند"
-                      default:
-                        return benefit.description
-                    }
-                  })()}</p>
-                </CardContent>
-              </Card>
+                <Card
+                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative"
+                >
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
+                  ></div>
+                  <CardContent className="p-6 text-center relative z-10 flex flex-col h-full">
+                    <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                      {benefit.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3 font-mono">{benefit.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">{(() => {
+                      switch (benefit.title) {
+                        case "Lightning Fast Performance":
+                          return "کد بهینه‌سازی‌شده و فناوری‌های مدرن تضمین می‌کنند که وب‌سایت شما در کمتر از ۲ ثانیه بارگذاری شود"
+                        case "Bank-Level Security":
+                          return "اقدامات امنیتی پیشرفته با SSL، رمزگذاری و میزبانی امن از داده‌ها و کاربران شما محافظت می‌کند"
+                        case "SEO Optimized":
+                          return "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه بالاتری کسب کند"
+                        case "User-Centric Design":
+                          return "رابط‌های کاربری بصری که با در نظر گرفتن کاربران شما برای حداکثر تعامل طراحی شده‌اند"
+                        default:
+                          return benefit.description
+                      }
+                    })()}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Section */}
-      <section dir="rtl" className="py-20 px-4">
+      <motion.section
+        dir="rtl"
+        className="py-20 px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants as any}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+            >
               <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
                 About Kara Code
               </Badge>
@@ -303,9 +365,15 @@ export default function HomePageContent() {
                   <div className="text-sm text-gray-400 font-mono">Support Available</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="relative">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="bg-gradient-to-br from-white/5 to-white/2 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg p-4 flex items-center gap-3 border border-blue-500/30">
@@ -338,12 +406,19 @@ export default function HomePageContent() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section dir="rtl" className="py-20 px-4 bg-black/30">
+      <motion.section
+        dir="rtl"
+        className="py-20 px-4 bg-black/30"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants as any}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -359,41 +434,57 @@ export default function HomePageContent() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {goals.map((goal, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative"
+                variants={cardVariants as any}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${goal.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
-                ></div>
-                <CardContent className="p-6 text-center relative z-10">
-                  <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {goal.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3 font-mono">{goal.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
-                    switch (goal.title) {
-                      case "Drive Business Growth":
-                        return "ایجاد راه‌حل‌های دیجیتالی که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند"
-                      case "Innovation First":
-                        return "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید"
-                      case "Long-term Partnerships":
-                        return "ایجاد روابط پایدار با مشتریان از طریق خدمات استثنایی و پشتیبانی مداوم"
-                      case "Pixel-Perfect Design":
-                        return "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند"
-                      default:
-                        return goal.description
-                    }
-                  })()}</p>
-                </CardContent>
-              </Card>
+                <Card
+                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative"
+                >
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${goal.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
+                  ></div>
+                  <CardContent className="p-6 text-center relative z-10 flex flex-col h-full">
+                    <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                      {goal.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3 font-mono">{goal.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">{(() => {
+                      switch (goal.title) {
+                        case "Drive Business Growth":
+                          return "ایجاد راه‌حل‌های دیجیتالی که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند"
+                        case "Innovation First":
+                          return "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید"
+                        case "Long-term Partnerships":
+                          return "ایجاد روابط پایدار با مشتریان از طریق خدمات استثنایی و پشتیبانی مداوم"
+                        case "Pixel-Perfect Design":
+                          return "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند"
+                        default:
+                          return goal.description
+                      }
+                    })()}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Portfolio Section */}
-      <section dir="rtl" id="portfolio" className="py-20 px-4">
+      <motion.section
+        dir="rtl"
+        id="portfolio"
+        className="py-20 px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={sectionVariants as any}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
@@ -407,53 +498,61 @@ export default function HomePageContent() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioItems.map((item, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group"
+                variants={cardVariants as any}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <CardContent className="p-6">
-                  <Badge className={`mb-3 bg-gradient-to-r ${item.color} text-white border-0 font-mono`}>
-                    {item.category}
-                  </Badge>
-                  <h3 className="text-xl font-semibold text-white mb-2 font-mono">{item.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed font-persian">{(() => {
-                    switch (item.title) {
-                      case "E-commerce Platform":
-                        return "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت"
-                      case "Corporate Website":
-                        return "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا"
-                      case "SaaS Dashboard":
-                        return "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران"
-                      case "Restaurant Website":
-                        return "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو"
-                      case "Real Estate Platform":
-                        return "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی"
-                      case "Healthcare Portal":
-                        return "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور"
-                      case "Educational Platform":
-                        return "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت"
-                      case "News Agency":
-                        return "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای"
-                      case "Travel Booking Site":
-                        return "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها"
-                      default:
-                        return item.description
-                    }
-                  })()}</p>
-                </CardContent>
-              </Card>
+                <Card
+                  className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group"
+                >
+                  <div className="relative overflow-hidden h-48">
+                    <img
+                      src={item.image || "/placeholder.svg"}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <CardContent className="p-6 flex flex-col">
+                    <Badge className={`mb-3 bg-gradient-to-r ${item.color} text-white border-0 font-mono`}>
+                      {item.category}
+                    </Badge>
+                    <h3 className="text-xl font-semibold text-white mb-2 font-mono">{item.title}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">{(() => {
+                      switch (item.title) {
+                        case "E-commerce Platform":
+                          return "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت"
+                        case "Corporate Website":
+                          return "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا"
+                        case "SaaS Dashboard":
+                          return "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران"
+                        case "Restaurant Website":
+                          return "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو"
+                        case "Real Estate Platform":
+                          return "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی"
+                        case "Healthcare Portal":
+                          return "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور"
+                        case "Educational Platform":
+                          return "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت"
+                        case "News Agency":
+                          return "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای"
+                        case "Travel Booking Site":
+                          return "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها"
+                        default:
+                          return item.description
+                      }
+                    })()}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer id="footer" className="py-12 px-4 bg-black/50 border-t border-white/10">
