@@ -546,7 +546,8 @@ export default function HomePageContent() {
       <footer id="footer" className="py-12 px-4 bg-black/50 border-t border-white/10">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-white mb-2 font-mono">Kara Code</h3>
+            <img src="/logos/ck-nobg.png" alt="Kara Code Logo" className="h-18 mx-auto -mb-2 " />
+            <h3 className="text-2xl font-bold text-white mb-4 font-mono">Kara Code</h3>
             <p className="text-gray-400 font-mono">Crafting Digital Excellence</p>
           </div>
           <div className="text-gray-500 text-sm font-mono">© 2025 Kara Code. All rights reserved | kara-code.ir</div>
