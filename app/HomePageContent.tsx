@@ -322,7 +322,7 @@ export default function HomePageContent() {
       {/* About Section */}
       <AnimatedSection
         dir="rtl"
-        className="py-20 px-4"
+        className="py-20 px-4 overflow-x-hidden"
         variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
@@ -371,7 +371,7 @@ export default function HomePageContent() {
               transition={{ duration: 0.5 }}
             >
               <div className="bg-gradient-to-br from-white/5 to-white/2 rounded-2xl p-8 backdrop-blur-sm border border-white/10">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg p-4 flex items-center gap-3 border border-blue-500/30">
                     <Users className="w-6 h-6 text-cyan-300" />
                     <div>
