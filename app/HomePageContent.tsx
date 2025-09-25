@@ -51,25 +51,29 @@ export default function HomePageContent() {
     {
       icon: <Code className="w-8 h-8" />,
       title: "Custom Web Development",
-      description: "راه‌حل‌های وب سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما",
+      description:
+        "راه‌حل‌های وب سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Responsive Design",
-      description: "طراحی‌های موبایل-اول که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند",
+      description:
+        "طراحی‌های موبایل-اول که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <ShoppingCart className="w-8 h-8" />,
       title: "E-commerce Solutions",
-      description: "فروشگاه‌های آنلاین کامل با پردازش پرداخت امن و سیستم‌های مدیریت موجودی",
+      description:
+        "فروشگاه‌های آنلاین کامل با پردازش پرداخت امن و سیستم‌های مدیریت موجودی",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Web Applications",
-      description: "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه",
+      description:
+        "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه",
       color: "from-orange-500 to-red-500",
     },
   ];
@@ -80,39 +84,35 @@ export default function HomePageContent() {
       category: "Online Store",
       image: "/modern-ecommerce-website.png",
       description:
-        "Modern e-commerce platform with advanced filtering and payment integration",
+        "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت",
       color: "from-purple-500 to-pink-500",
     },
     {
       title: "Corporate Website",
       category: "Business",
       image: "/professional-corporate-website.png",
-      description:
-        "Professional corporate website with content management system",
+      description: "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا",
       color: "from-blue-500 to-cyan-500",
     },
     {
       title: "SaaS Dashboard",
       category: "Web App",
       image: "/modern-saas-dashboard.png",
-      description:
-        "Complex SaaS dashboard with real-time analytics and user management",
+      description: "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران",
       color: "from-green-500 to-emerald-500",
     },
     {
       title: "Restaurant Website",
       category: "Food & Dining",
       image: "/modern-restaurant-website.png",
-      description:
-        "Beautiful restaurant website with online ordering and reservation system",
+      description: "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو",
       color: "from-orange-500 to-red-500",
     },
     {
       title: "Real Estate Platform",
       category: "Property",
       image: "/real-estate-website.png",
-      description:
-        "Comprehensive real estate platform with advanced property search and virtual tours",
+      description: "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی",
       color: "from-indigo-500 to-purple-500",
     },
     {
@@ -120,7 +120,7 @@ export default function HomePageContent() {
       category: "Medical",
       image: "/modern-healthcare-website.png",
       description:
-        "Patient portal with appointment booking, medical records, and telemedicine features",
+        "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور",
       color: "from-teal-500 to-green-500",
     },
     {
@@ -128,7 +128,7 @@ export default function HomePageContent() {
       category: "Education",
       image: "/modern-e-learning-platform-with-courses.jpg",
       description:
-        "Interactive e-learning platform with course management and progress tracking",
+        "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت",
       color: "from-rose-500 to-orange-500",
     },
     {
@@ -136,15 +136,14 @@ export default function HomePageContent() {
       category: "News",
       image: "/news-agency-website.png",
       description:
-        "A modern news agency website with news, featured stories, and multimedia content",
+        "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای",
       color: "from-red-500 to-orange-500",
     },
     {
       title: "Travel Booking Site",
       category: "Travel",
       image: "/modern-travel-booking-website-with-destinations.jpg",
-      description:
-        "Full-featured travel booking platform with flight, hotel, and activity reservations",
+      description: "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
       color: "from-sky-500 to-blue-500",
     },
   ];
@@ -154,28 +153,28 @@ export default function HomePageContent() {
       icon: <Rocket className="w-8 h-8" />,
       title: "Lightning Fast Performance",
       description:
-        "Optimized code and modern technologies ensure your website loads in under 2 seconds",
+        "کد بهینه‌سازی‌شده و فناوری‌های مدرن تضمین می‌کنند که وب‌سایت شما در کمتر از ۲ ثانیه بارگذاری شود",
       color: "from-red-500 to-orange-500",
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Bank-Level Security",
       description:
-        "Advanced security measures protect your data and users with SSL, encryption, and secure hosting",
+        "اقدامات امنیتی پیشرفته با SSL، رمزگذاری و میزبانی امن از داده‌ها و کاربران شما محافظت می‌کند",
       color: "from-green-500 to-teal-500",
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "SEO Optimized",
       description:
-        "Built-in SEO best practices help your website rank higher in search results",
+        "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه بالاتری کسب کند",
       color: "from-blue-500 to-purple-500",
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "User-Centric Design",
       description:
-        "Intuitive interfaces designed with your users in mind for maximum engagement",
+        "رابط‌های کاربری بصری که با در نظر گرفتن کاربران شما برای حداکثر تعامل طراحی شده‌اند",
       color: "from-pink-500 to-rose-500",
     },
   ];
@@ -185,28 +184,28 @@ export default function HomePageContent() {
       icon: <Target className="w-8 h-8" />,
       title: "Drive Business Growth",
       description:
-        "Create digital solutions that directly contribute to your business success and revenue growth",
+        "ایجاد راه‌حل‌های دیجیتالی که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند",
       color: "from-emerald-500 to-green-500",
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Innovation First",
       description:
-        "Stay ahead of the curve with cutting-edge technologies and creative problem-solving approaches",
+        "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید",
       color: "from-yellow-500 to-amber-500",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Long-term Partnerships",
       description:
-        "Build lasting relationships with clients through exceptional service and ongoing support",
+        "ایجاد روابط پایدار با مشتریان از طریق خدمات منحصربفرد و پشتیبانی مداوم",
       color: "from-indigo-500 to-blue-500",
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Pixel-Perfect Design",
       description:
-        "Deliver visually stunning websites that reflect your brand and captivate your audience",
+        "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند",
       color: "from-purple-500 to-pink-500",
     },
   ];
@@ -309,20 +308,7 @@ export default function HomePageContent() {
                       {benefit.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">
-                      {(() => {
-                        switch (benefit.title) {
-                          case "Lightning Fast Performance":
-                            return "کد بهینه‌سازی‌شده و فناوری‌های مدرن تضمین می‌کنند که وب‌سایت شما در کمتر از ۲ ثانیه بارگذاری شود";
-                          case "Bank-Level Security":
-                            return "اقدامات امنیتی پیشرفته با SSL، رمزگذاری و میزبانی امن از داده‌ها و کاربران شما محافظت می‌کند";
-                          case "SEO Optimized":
-                            return "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه بالاتری کسب کند";
-                          case "User-Centric Design":
-                            return "رابط‌های کاربری بصری که با در نظر گرفتن کاربران شما برای حداکثر تعامل طراحی شده‌اند";
-                          default:
-                            return benefit.description;
-                        }
-                      })()}
+                      {benefit.description}
                     </p>
                   </CardContent>
                 </Card>
@@ -357,10 +343,10 @@ export default function HomePageContent() {
                 className="text-lg text-gray-300 mb-6 leading-relaxed font-persian"
                 dir="rtl"
               >
-                در کارا کد، ما به قدرت توسعه وب برای تحول کسب‌وکارها
-                ایمان داریم. تیم ما متشکل از توسعه‌دهندگان و طراحان ماهر،
-                بی‌وقفه تلاش می‌کنند تا تجربیات دیجیتالی خلق کنند که نه‌تنها
-                خیره‌کننده به نظر می‌رسند، بلکه نتایج واقعی به همراه دارند
+                در کارا کد، ما به قدرت توسعه وب برای تحول کسب‌وکارها ایمان
+                داریم. تیم ما متشکل از توسعه‌دهندگان و طراحان ماهر، بی‌وقفه تلاش
+                می‌کنند تا تجربیات دیجیتالی خلق کنند که نه‌تنها خیره‌کننده به
+                نظر می‌رسند، بلکه نتایج واقعی به همراه دارند
               </p>
               <p
                 className="text-lg text-gray-300 mb-8 leading-relaxed font-persian"
@@ -501,20 +487,7 @@ export default function HomePageContent() {
                       {goal.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">
-                      {(() => {
-                        switch (goal.title) {
-                          case "Drive Business Growth":
-                            return "ایجاد راه‌حل‌های دیجیتالی که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند";
-                          case "Innovation First":
-                            return "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید";
-                          case "Long-term Partnerships":
-                            return "ایجاد روابط پایدار با مشتریان از طریق خدمات منحصربفرد و پشتیبانی مداوم";
-                          case "Pixel-Perfect Design":
-                            return "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند";
-                          default:
-                            return goal.description;
-                        }
-                      })()}
+                      {goal.description}
                     </p>
                   </CardContent>
                 </Card>
@@ -575,30 +548,7 @@ export default function HomePageContent() {
                       {item.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">
-                      {(() => {
-                        switch (item.title) {
-                          case "E-commerce Platform":
-                            return "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت";
-                          case "Corporate Website":
-                            return "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا";
-                          case "SaaS Dashboard":
-                            return "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران";
-                          case "Restaurant Website":
-                            return "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو";
-                          case "Real Estate Platform":
-                            return "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی";
-                          case "Healthcare Portal":
-                            return "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور";
-                          case "Educational Platform":
-                            return "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت";
-                          case "News Agency":
-                            return "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای";
-                          case "Travel Booking Site":
-                            return "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها";
-                          default:
-                            return item.description;
-                        }
-                      })()}
+                      {item.description}
                     </p>
                   </CardContent>
                 </Card>
