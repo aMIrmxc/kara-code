@@ -132,7 +132,7 @@ export default function HomePage() {
         >
         <Link
           href="https://clients.kara-code.ir"
-            className="text-white/60 hover:text-white transition-colors"
+            className="text-white/60 hover:text-white transition-colors text-[20px] "
           >
             کاربر فعلی هستید؟ اینجا وارد شوید.
           </Link>

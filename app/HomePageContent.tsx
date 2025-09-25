@@ -374,7 +374,7 @@ export default function HomePageContent() {
                 className="text-lg text-gray-300 mb-6 leading-relaxed font-persian"
                 dir="rtl"
               >
-                در کارا کد، ما به قدرت توسعه وب استثنایی برای تحول کسب‌وکارها
+                در کارا کد، ما به قدرت توسعه وب برای تحول کسب‌وکارها
                 ایمان داریم. تیم ما متشکل از توسعه‌دهندگان و طراحان ماهر،
                 بی‌وقفه تلاش می‌کنند تا تجربیات دیجیتالی خلق کنند که نه‌تنها
                 خیره‌کننده به نظر می‌رسند، بلکه نتایج واقعی به همراه دارند
@@ -492,7 +492,7 @@ export default function HomePageContent() {
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
               هر پروژه‌ای که ما بر عهده می‌گیریم با این اصول اصلی هدایت می‌شود
-              که نتایج استثنایی را برای مشتریان ما تضمین می‌کند
+              که نتایج ویژه را برای مشتریان ما تضمین می‌کند
             </p>
           </div>
 
@@ -525,7 +525,7 @@ export default function HomePageContent() {
                           case "Innovation First":
                             return "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید";
                           case "Long-term Partnerships":
-                            return "ایجاد روابط پایدار با مشتریان از طریق خدمات استثنایی و پشتیبانی مداوم";
+                            return "ایجاد روابط پایدار با مشتریان از طریق خدمات منحصربفرد و پشتیبانی مداوم";
                           case "Pixel-Perfect Design":
                             return "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند";
                           default:
@@ -552,10 +552,10 @@ export default function HomePageContent() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
-              Our Projects
+              Projects List
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              Recent Projects
+              ?Which is your desired website
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
               نمونه‌کارهای متنوع ما را که راه‌حل‌های وب نوآورانه در صنایع و
