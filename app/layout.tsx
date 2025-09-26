@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import { vazir } from "@/lib/fonts"
+import { vazir, noto } from "@/lib/fonts"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/toaster"
 import { Suspense } from "react"
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body 
-        className={`font-mono ${GeistSans.variable} ${GeistMono.variable} ${vazir.variable}`}
+        className={`font-mono ${GeistSans.variable} ${GeistMono.variable} ${vazir.variable} ${noto.variable}`}
       >
         <Suspense fallback={null}>{children}</Suspense>
         <Toaster />

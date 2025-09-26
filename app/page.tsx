@@ -137,6 +137,13 @@ export default function HomePage() {
             کاربر فعلی هستید؟ اینجا وارد شوید.
           </Link>
         </div>
+        
+        {/* Test element for font-noto-persian utility class */}
+        <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-sm border border-white/20 p-4 rounded-lg">
+          <p className="font-noto-persian text-white text-lg font-bold">
+            Test نوتو کوفی فارسی
+          </p>
+        </div>
       </section>
 
       {!isLoading && <HomePageContent />}

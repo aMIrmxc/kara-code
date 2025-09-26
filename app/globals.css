@@ -144,6 +144,11 @@
     font-size: 1.425rem; /* 18px */
     font-weight: 900;
   }
+  .font-noto-persian {
+    font-family: var(--font-noto);
+    font-size: 1.425rem; /* 18px */
+    font-weight: 700;
+  }
 }
 
 @keyframes gradient-animation {
@@ -157,4 +162,5 @@
     background-position: 0% 50%;
   }
 }
+
 

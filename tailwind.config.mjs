@@ -21,6 +21,8 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         vazir: ["var(--font-vazir)"],
+        noto: ["var(--font-noto)"],
+        "noto-persian": ["var(--font-noto)"]
       },
       keyframes: {
         "accordion-down": {
