@@ -291,7 +291,7 @@ export default function RestaurantWebsitePage() {
               <span className="text-sm">Restaurant Website Solutions</span>
             </div>
 
-            <h1 className="font-noto-persian text-6xl md:text-7xl font-bold text-white mb-6 ">
+            <h1 className=" text-6xl md:text-7xl font-bold text-white mb-6 ">
               <span className="text-gradient-animated bg-clip-text text-transparent ">
                 وبسایت رستوران حرفه‌ای
               </span>
