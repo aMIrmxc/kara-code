@@ -1,6 +1,6 @@
 "use client";
 
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,7 +32,6 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-
 
 // export const metadata: Metadata = {
 //   title: " طراحی سایت رستوران | kara-code.ir ",
@@ -269,7 +268,10 @@ export default function RestaurantWebsitePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-orange-950 to-red-950">
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section
+        id="hero"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
@@ -341,77 +343,83 @@ export default function RestaurantWebsitePage() {
       </section>
 
       {/*  Key Features Section */}
-      <section id="key-features" className="py-20 px-4 bg-black/30">
-       <div className="max-w-6xl mx-auto text-left">
-  <div className="mb-12">
-    <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
-      <span className="text-sm font-semibold">
-        Key Features
-      </span>
-    </div>
-    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-      قابلیت‌های کلیدی در عمل
-    </h2>
-    <p
-      className="text-lg text-gray-300 max-w-3xl font-persian"
-      dir="rtl"
-    >
-      با کلیک بر روی هر قابلیت، جزئیات و مزایای آن را مشاهده کنید
-    </p>
-  </div>
+      <section
+        id="key-features"
+        className="py-20 px-4 bg-black/30 text-center flex items-center justify-center min-h-screen"
+      >
+        <div className="max-w-6xl mx-auto text-left">
+          <div className="mb-12 text-center">
+            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
+              <span className="text-sm font-semibold">Key Features</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              قابلیت‌های کلیدی در عمل
+            </h2>
 
-  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className={`text-left cursor-pointer transition-all duration-300 p-4 rounded-lg ${
-            activeFeature === index
-              ? "bg-orange-500/20"
-              : "opacity-60 hover:opacity-100 hover:bg-white/5"
-          }`}
-          onClick={() => setActiveFeature(index)}
-        >
-          <div className="text-orange-400 flex mb-3">
-            {feature.icon}
+            <div className="flex justify-center">
+            <p
+              className="text-lg text-gray-300 max-w-3xl font-persian"
+              dir="rtl"
+            >
+                با کلیک بر روی هر قابلیت، جزئیات و مزایای آن را مشاهده کنید
+            </p>
+              </div>
+
           </div>
-          <div
-            className="text-sm font-semibold text-white font-persian"
-            dir="rtl"
-          >
-            {feature.title}
+
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 flex flex-col justify-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className={`text-left cursor-pointer transition-all duration-300 p-4 rounded-lg flex flex-col items-center justify-center ${
+                    activeFeature === index
+                      ? "bg-orange-500/20"
+                      : "opacity-60 hover:opacity-100 hover:bg-white/5"
+                  }`}
+                  onClick={() => setActiveFeature(index)}
+                >
+                  <div className="text-orange-400 flex mb-3">
+                    {feature.icon}
+                  </div>
+                  <div
+                    className="text-center text-sm font-semibold text-white font-persian"
+                    dir="rtl"
+                  >
+                    {feature.title}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-left flex flex-col justify-center h-[600px] md:h-[480px]">
+              <h3
+                className="text-center text-2xl font-bold text-white mb-3 font-persian"
+                dir="rtl"
+              >
+                {features[activeFeature].title}
+              </h3>
+              <div className="flex justify-center">
+              <p
+                className="text-center text-gray-300 mb-12 max-w-2xl leading-relaxed font-persian"
+                dir="rtl"
+              >
+                {features[activeFeature].description}
+              </p></div>
+              <div className="flex flex-wrap gap-3 justify-center ">
+                {features[activeFeature].benefits.map((benefit, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-orange-500/20 text-orange-200 px-3 py-1.5 rounded-full font-persian"
+                    dir="rtl"
+                  >
+                    {benefit}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-
-    <div className="text-left h-[600px] md:h-[480px]">
-      <h3
-        className="text-2xl font-bold text-white mb-3 font-persian"
-        dir="rtl"
-      >
-        {features[activeFeature].title}
-      </h3>
-      <p
-        className="text-gray-300 mb-12 max-w-2xl leading-relaxed font-persian"
-        dir="rtl"
-      >
-        {features[activeFeature].description}
-      </p>
-      <div className="flex flex-wrap gap-3">
-        {features[activeFeature].benefits.map((benefit, i) => (
-          <span
-            key={i}
-            className="text-xs bg-orange-500/20 text-orange-200 px-3 py-1.5 rounded-full font-persian"
-            dir="rtl"
-          >
-            {benefit}
-          </span>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
       </section>
 
       {/* Results Section */}
@@ -458,8 +466,6 @@ export default function RestaurantWebsitePage() {
           </div>
         </div>
       </section>
-
-      
 
       {/* Benefits Section */}
       <section id="benefits" className="py-20 px-4 bg-black/30">
@@ -525,7 +531,7 @@ export default function RestaurantWebsitePage() {
             </p>
           </div>
 
-          <div >
+          <div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {[
                 {
@@ -548,7 +554,6 @@ export default function RestaurantWebsitePage() {
                   title: "برتری رقابتی",
                   desc: "با حضوری مدرن و ارائه خدمات آنلاین، از رقبایی که هنوز به روش‌های سنتی کار می‌کنند، متمایز شوید و مشتریان بیشتری جذب کنید.",
                 },
-                
               ].map((benefit, index) => (
                 <div
                   key={index}
@@ -557,7 +562,7 @@ export default function RestaurantWebsitePage() {
                   <div className="bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-lg flex-shrink-0 mt-1">
                     {benefit.icon}
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1" ref={(el) => console.log('className:', el?.className)}>
                     <h4
                       className="text-lg text-white font-semibold mb-1 font-persian"
                       dir="rtl"
@@ -571,12 +576,9 @@ export default function RestaurantWebsitePage() {
                 </div>
               ))}
             </div>
-            
           </div>
         </div>
       </section>
-
-              
 
       {/* Process Section */}
       <section id="process" className="py-20 px-4 bg-black/30">
@@ -642,53 +644,50 @@ export default function RestaurantWebsitePage() {
         </div>
       </section>
 
-     
-
-     {/* CTA Section */}
-<section
-  id="cta"
-  className="h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-r from-orange-900/50 to-red-900/50"
->
-  <div className="max-w-4xl mx-auto text-center">
-    <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
-      <span className="text-sm">Get Started</span>
-    </div>
-    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-      آماده‌اید تا  رستوران خود را  به سطح آنلاین ارتقا دهید؟
-    </h2>
-    <p className="text-xl text-gray-300 mb-8 font-persian" dir="rtl">
-      با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید
-    </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button
-                size="lg"
-                className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                onClick={() =>
-                  document
-                    .getElementById("")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <span className="text-gradient-animated font-persian">
-                  شروع پروژه وبسایت آنلاین شما
-                </span>
-              </Button>
-      
-    </div>
-  </div>
-</section>
+      {/* CTA Section */}
+      <section
+        id="cta"
+        className="h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-r from-orange-900/50 to-red-900/50"
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
+            <span className="text-sm">Get Started</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            آماده‌اید تا رستوران خود را به سطح آنلاین ارتقا دهید؟
+          </h2>
+          <p className="text-xl text-gray-300 mb-8 font-persian" dir="rtl">
+            با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              onClick={() =>
+                document
+                  .getElementById("")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <span className="text-gradient-animated font-persian">
+                شروع پروژه وبسایت آنلاین شما
+              </span>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer
         id="footer"
-        className="py-12 px-4 bg-black/50 border-t border-white/10"
+        className="py-12 px-6 bg-black/50 border-t border-white/10"
       >
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl  ">
           <div className="mb-6">
             <img
               src="/logos/ck-nobg.png"
               alt="Kara Code Logo"
-              className="h-18 mx-auto -mb-2 "
+              className="h-18  -mb-2 "
             />
             <h3 className="text-2xl font-bold text-white mb-4 font-mono">
               Kara Code
