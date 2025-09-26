@@ -92,18 +92,18 @@ export default function RestaurantWebsitePage() {
       ],
     },
     {
-    icon: <Users className="w-8 h-8" />,
-    title: "قسمت درباره ما",
-    description:
-      "صفحه‌ای اختصاصی برای معرفی داستان رستوران شما، سرآشپزها، فلسفه کاری و جوایز و افتخارات. این بخش به شما کمک می‌کند اعتماد مشتریان را جلب کرده و برند خود را به‌عنوان یک رستوران حرفه‌ای و قابل‌اعتماد معرفی کنید. امکان نمایش تصاویر تیم، ویدیوهای پشت‌صحنه، و حتی نظرات مشتریان مشهور در یک قالب زیبا و کاربرپسند فراهم است.",
-    benefits: [
-      "افزایش اعتماد مشتری",
-      "معرفی تیم حرفه‌ای",
-      "نمایش افتخارات و جوایز",
-      "ارتباط عاطفی با مشتری",
-      "بهبود برندینگ رستوران",
-    ],
-  },
+      icon: <Users className="w-8 h-8" />,
+      title: "قسمت درباره ما",
+      description:
+        "صفحه‌ای اختصاصی برای معرفی داستان رستوران شما، سرآشپزها، فلسفه کاری و جوایز و افتخارات. این بخش به شما کمک می‌کند اعتماد مشتریان را جلب کرده و برند خود را به‌عنوان یک رستوران حرفه‌ای و قابل‌اعتماد معرفی کنید. امکان نمایش تصاویر تیم، ویدیوهای پشت‌صحنه، و حتی نظرات مشتریان مشهور در یک قالب زیبا و کاربرپسند فراهم است.",
+      benefits: [
+        "افزایش اعتماد مشتری",
+        "معرفی تیم حرفه‌ای",
+        "نمایش افتخارات و جوایز",
+        "ارتباط عاطفی با مشتری",
+        "بهبود برندینگ رستوران",
+      ],
+    },
   ];
 
   const packages = [
@@ -332,57 +332,14 @@ export default function RestaurantWebsitePage() {
         </div>
       </section>
 
-      {/* Showcase Section */}
-      <section className="py-20 px-4 bg-black/30">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-12">
-            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
-              <span className="text-sm font-semibold">Showcase</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              نتایج وبسایت آنلاین رستوران شما در یک نگاه
-            </h2>
-            <p
-              className="text-lg text-gray-300 max-w-3xl mx-auto font-persian"
-              dir="rtl"
-            >
-              نگاهی عمیق به تأثیر وبسایت بر رشد کسب‌وکار شما
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center transform transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 flex flex-col justify-center"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="text-orange-400 flex justify-center mb-4">
-                  {stat.icon}
-                </div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {stat.value}
-                </div>
-                <h4
-                  className="text-lg font-semibold text-gray-200 mb-2"
-                  dir="rtl"
-                >
-                  {stat.label}
-                </h4>
-                <p className="text-xs text-gray-400 font-persian" dir="rtl">
-                  {stat.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Showcase Section */}
+      {/*  Key Features Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
-              <span className="text-sm font-semibold">Interactive Showcase</span>
+              <span className="text-sm font-semibold">
+                 Key Features
+              </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               قابلیت‌های کلیدی در عمل
@@ -447,12 +404,59 @@ export default function RestaurantWebsitePage() {
         </div>
       </section>
 
-      {/* Key Features Section */}
+      {/* Results Section */}
+      <section className="py-20 px-4 bg-black/30">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="mb-12">
+            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
+              <span className="text-sm font-semibold">Results at a glance</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              نتایج وبسایت آنلاین رستوران شما در یک نگاه
+            </h2>
+            <p
+              className="text-lg text-gray-300 max-w-3xl mx-auto font-persian"
+              dir="rtl"
+            >
+              نگاهی عمیق به تأثیر وبسایت بر رشد کسب‌وکار شما
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center transform transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 flex flex-col justify-center"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="text-orange-400 flex justify-center mb-4">
+                  {stat.icon}
+                </div>
+                <div className="text-4xl font-bold text-white mb-2">
+                  {stat.value}
+                </div>
+                <h4
+                  className="text-lg font-semibold text-gray-200 mb-2"
+                  dir="rtl"
+                >
+                  {stat.label}
+                </h4>
+                <p className="text-xs text-gray-400 font-persian" dir="rtl">
+                  {stat.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
+
+      {/* Benefits Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
-              <span className="text-sm">Key Features</span>
+              <span className="text-sm">Benefits</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               ویژگی های کلی یک وب سایت رستورانی
@@ -488,54 +492,76 @@ export default function RestaurantWebsitePage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Why Section */}
       <section className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
-                <span className="text-sm">Benefits</span>
-              </div>
-              <h2 className="text-4xl font-bold text-white mb-6">
-                رستوران شما به یک وب سایت حرفه ای احتیاج دارد
-              </h2>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: "Increase Revenue",
-                    desc: "Accept orders 24/7 and boost sales by up to 40%",
-                  },
-                  {
-                    title: "Save Time",
-                    desc: "Automate reservations and reduce phone calls",
-                  },
-                  {
-                    title: "Build Brand",
-                    desc: "Showcase your unique atmosphere and cuisine",
-                  },
-                  {
-                    title: "Customer Loyalty",
-                    desc: "Build database and engage with customers",
-                  },
-                  {
-                    title: "Competitive Edge",
-                    desc: "Stand out from competitors with modern presence",
-                  },
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="bg-gradient-to-r from-orange-500 to-red-500 p-2 rounded-lg flex-shrink-0">
-                      <Check className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-semibold mb-1">
-                        {benefit.title}
-                      </h4>
-                      <p className="text-gray-400 text-sm">{benefit.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="text-center mb-16">
+            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
+              <span className="text-sm">Why restaurant online website</span>
             </div>
+            <h2
+              className="text-4xl md:text-5xl font-bold text-white mb-6 "
+              dir="rtl"
+            >
+              چرا رستوران شما به یک وب‌سایت حرفه‌ای نیاز دارد؟
+            </h2>
+            <p
+              className="text-xl text-gray-300 max-w-3xl mx-auto font-persian"
+              dir="rtl"
+            >
+              یک وب‌سایت مدرن فقط یک ویترین آنلاین نیست، بلکه یک ابزار قدرتمند
+              برای رشد کسب‌وکار شماست. از افزایش فروش گرفته تا تقویت برند،
+              مزایای داشتن یک پلتفرم اختصاصی بی‌شمار است.
+            </p>
+          </div>
+
+          <div >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {[
+                {
+                  icon: <TrendingUp className="w-6 h-6 text-white" />,
+                  title: "افزایش درآمد و فروش",
+                  desc: "با دریافت سفارشات آنلاین در ۲۴ ساعت شبانه‌روز، فروش خود را تا ۴۰٪ افزایش دهید و محدودیت‌های زمانی و مکانی را از بین ببرید.",
+                },
+                {
+                  icon: <Clock className="w-6 h-6 text-white" />,
+                  title: "صرفه‌جویی در زمان و هزینه‌ها",
+                  desc: "سیستم رزرواسیون خودکار و منوی دیجیتال، تماس‌های تلفنی را کاهش داده و به تیم شما اجازه می‌دهد روی کیفیت خدمات تمرکز کنند.",
+                },
+                {
+                  icon: <Award className="w-6 h-6 text-white" />,
+                  title: "برندسازی و هویت دیجیتال",
+                  desc: "فضای منحصر به فرد، داستان و غذاهای خاص رستوران خود را به نمایش بگذارید و یک تصویر حرفه‌ای و ماندگار در ذهن مشتریان بسازید.",
+                },
+                {
+                  icon: <Shield className="w-6 h-6 text-white" />,
+                  title: "برتری رقابتی",
+                  desc: "با حضوری مدرن و ارائه خدمات آنلاین، از رقبایی که هنوز به روش‌های سنتی کار می‌کنند، متمایز شوید و مشتریان بیشتری جذب کنید.",
+                },
+                
+              ].map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 flex-row-reverse space-y-6"
+                >
+                  <div className="bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-lg flex-shrink-0 mt-1">
+                    {benefit.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4
+                      className="text-lg text-white font-semibold mb-1 font-persian"
+                      dir="rtl"
+                    >
+                      {benefit.title}
+                    </h4>
+                    <p className="text-gray-400 font-persian text-sm" dir="rtl">
+                      {benefit.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
           </div>
         </div>
       </section>
