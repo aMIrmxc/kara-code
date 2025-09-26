@@ -1,5 +1,6 @@
 "use client";
 
+import { Metadata } from 'next';
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,6 +32,12 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: " طراحی سایت رستوران | kara-code.ir ",
+  description: "طراحی سایت رستوران حرفه‌ای با سیستم سفارش آنلاین، رزرو میز هوشمند و منوی دیجیتال. فروش خود را افزایش دهید و برند خود را تقویت کنید. همین حالا شروع کنید.",
+  keywords: ["طراحی سایت رستوران", "وبسایت رستوران", "سفارش آنلاین غذا", "رزرو میز رستوران", "منوی دیجیتال", "سایت برای رستوران"],
+};
 
 export default function RestaurantWebsitePage() {
   const [isVisible, setIsVisible] = useState(false);
