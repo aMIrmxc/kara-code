@@ -91,6 +91,19 @@ export default function RestaurantWebsitePage() {
         "افزایش میانگین سفارش با پیشنهادات هوشمند",
       ],
     },
+    {
+    icon: <Users className="w-8 h-8" />,
+    title: "قسمت درباره ما",
+    description:
+      "صفحه‌ای اختصاصی برای معرفی داستان رستوران شما، سرآشپزها، فلسفه کاری و جوایز و افتخارات. این بخش به شما کمک می‌کند اعتماد مشتریان را جلب کرده و برند خود را به‌عنوان یک رستوران حرفه‌ای و قابل‌اعتماد معرفی کنید. امکان نمایش تصاویر تیم، ویدیوهای پشت‌صحنه، و حتی نظرات مشتریان مشهور در یک قالب زیبا و کاربرپسند فراهم است.",
+    benefits: [
+      "افزایش اعتماد مشتری",
+      "معرفی تیم حرفه‌ای",
+      "نمایش افتخارات و جوایز",
+      "ارتباط عاطفی با مشتری",
+      "بهبود برندینگ رستوران",
+    ],
+  },
   ];
 
   const packages = [
@@ -324,99 +337,111 @@ export default function RestaurantWebsitePage() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-12">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
-              <span className="text-sm font-semibold">Showcase & Stats</span>
+              <span className="text-sm font-semibold">Showcase</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {" "}
               نتایج وبسایت آنلاین رستوران شما در یک نگاه
             </h2>
             <p
               className="text-lg text-gray-300 max-w-3xl mx-auto font-persian"
               dir="rtl"
             >
-              نگاهی عمیق به قابلیت‌های کلیدی و تأثیر آن‌ها بر رشد کسب‌وکار شما
+              نگاهی عمیق به تأثیر وبسایت بر رشد کسب‌وکار شما
             </p>
           </div>
-          <div className="grid lg:grid-cols-5 lg:gap-8 items-stretch">
-            {/* Left Column: Interactive Showcase */}
-            <div className="lg:col-span-3 bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 flex flex-col justify-between mb-8 lg:mb-0">
-              <div>
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  {features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`text-center cursor-pointer transition-all duration-300 p-4 rounded-lg ${
-                        activeFeature === index
-                          ? "bg-orange-500/20"
-                          : "opacity-60 hover:opacity-100 hover:bg-white/5"
-                      }`}
-                      onClick={() => setActiveFeature(index)}
-                    >
-                      <div className="text-orange-400 flex justify-center mb-3">
-                        {feature.icon}
-                      </div>
-                      <div
-                        className="text-sm font-semibold text-white font-persian"
-                        dir="rtl"
-                      >
-                        {feature.title}
-                      </div>
-                    </div>
-                  ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center transform transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 flex flex-col justify-center"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="text-orange-400 flex justify-center mb-4">
+                  {stat.icon}
                 </div>
-                <div className="text-center min-h-[210px]">
-                  <h3
-                    className="text-2xl font-bold text-white mb-3 font-persian"
-                    dir="rtl"
-                  >
-                    {features[activeFeature].title}
-                  </h3>
-                  <p
-                    className="text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed font-persian"
-                    dir="rtl"
-                  >
-                    {features[activeFeature].description}
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {features[activeFeature].benefits.map((benefit, i) => (
-                      <span
-                        key={i}
-                        className="text-xs bg-orange-500/20 text-orange-200 px-3 py-1.5 rounded-full font-persian"
-                        dir="rtl"
-                      >
-                        {benefit}
-                      </span>
-                    ))}
-                  </div>
+                <div className="text-4xl font-bold text-white mb-2">
+                  {stat.value}
                 </div>
+                <h4
+                  className="text-lg font-semibold text-gray-200 mb-2"
+                  dir="rtl"
+                >
+                  {stat.label}
+                </h4>
+                <p className="text-xs text-gray-400 font-persian" dir="rtl">
+                  {stat.description}
+                </p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Right Column: Stats */}
-            <div className="lg:col-span-2 grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
+      {/* Interactive Showcase Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-12">
+            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
+              <span className="text-sm font-semibold">Interactive Showcase</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              قابلیت‌های کلیدی در عمل
+            </h2>
+            <p
+              className="text-lg text-gray-300 max-w-3xl mx-auto font-persian"
+              dir="rtl"
+            >
+              با کلیک بر روی هر قابلیت، جزئیات و مزایای آن را مشاهده کنید
+            </p>
+          </div>
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center transform transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 flex flex-col justify-center"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className={`text-center cursor-pointer transition-all duration-300 p-4 rounded-lg ${
+                    activeFeature === index
+                      ? "bg-orange-500/20"
+                      : "opacity-60 hover:opacity-100 hover:bg-white/5"
+                  }`}
+                  onClick={() => setActiveFeature(index)}
                 >
-                  <div className="text-orange-400 flex justify-center mb-4">
-                    {stat.icon}
+                  <div className="text-orange-400 flex justify-center mb-3">
+                    {feature.icon}
                   </div>
-                  <div className="text-4xl font-bold text-white mb-2">
-                    {stat.value}
-                  </div>
-                  <h4
-                    className="text-lg font-semibold text-gray-200 mb-2"
+                  <div
+                    className="text-sm font-semibold text-white font-persian"
                     dir="rtl"
                   >
-                    {stat.label}
-                  </h4>
-                  <p className="text-xs text-gray-400 font-persian" dir="rtl">
-                    {stat.description}
-                  </p>
+                    {feature.title}
+                  </div>
                 </div>
               ))}
+            </div>
+            <div className="text-center h-[600px]  md:h-[480px]">
+              <h3
+                className="text-2xl font-bold text-white mb-3 font-persian"
+                dir="rtl"
+              >
+                {features[activeFeature].title}
+              </h3>
+              <p
+                className="text-gray-300 mb-12  max-w-2xl mx-auto leading-relaxed font-persian"
+                dir="rtl"
+              >
+                {features[activeFeature].description}
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {features[activeFeature].benefits.map((benefit, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-orange-500/20 text-orange-200 px-3 py-1.5 rounded-full font-persian"
+                    dir="rtl"
+                  >
+                    {benefit}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -509,22 +534,6 @@ export default function RestaurantWebsitePage() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl p-8 backdrop-blur-sm border border-orange-500/30">
-                <div className="text-center">
-                  <Pizza className="w-20 h-20 text-orange-400 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    Ready to Transform Your Restaurant?
-                  </h3>
-                  <p className="text-gray-300 mb-6 font-persian" dir="rtl">
-                    بیش از ۲۵۰ رستوران به ما اعتماد کرده‌اند
-                  </p>
-                  <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300">
-                    Get Started Today
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
