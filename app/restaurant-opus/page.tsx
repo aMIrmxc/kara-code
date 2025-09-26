@@ -261,7 +261,7 @@ export default function RestaurantWebsitePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-orange-950 to-red-950">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
@@ -306,7 +306,7 @@ export default function RestaurantWebsitePage() {
                 }
               >
                 <span className="text-gradient-animated font-persian">
-                  شروع پروژه وبسایت رستوران شما
+                  شروع پروژه وبسایت آنلاین شما
                 </span>
               </Button>
               <Button
@@ -333,7 +333,7 @@ export default function RestaurantWebsitePage() {
       </section>
 
       {/*  Key Features Section */}
-      <section className="py-20 px-4">
+      <section id="key-features" className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
@@ -405,7 +405,7 @@ export default function RestaurantWebsitePage() {
       </section>
 
       {/* Results Section */}
-      <section className="py-20 px-4 bg-black/30">
+      <section id="results" className="py-20 px-4 ">
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-12">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
@@ -452,7 +452,7 @@ export default function RestaurantWebsitePage() {
       
 
       {/* Benefits Section */}
-      <section className="py-20 px-4">
+      <section id="benefits" className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
@@ -493,7 +493,7 @@ export default function RestaurantWebsitePage() {
       </section>
 
       {/* Why Section */}
-      <section className="py-20 px-4 bg-black/30">
+      <section id="why-restaurant" className="py-20 px-4 ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
@@ -566,85 +566,17 @@ export default function RestaurantWebsitePage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
-              <span className="text-sm">Pricing</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Restaurant Website Packages
-            </h2>
-            <p
-              className="text-xl text-gray-300 max-w-3xl mx-auto font-persian"
-              dir="rtl"
-            >
-              پکیج‌های طراحی شده ویژه نیازهای رستوران‌ها و کافه‌ها
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`bg-white/5 backdrop-blur-sm border ${
-                  pkg.recommended ? "border-orange-400" : "border-white/10"
-                } rounded-2xl p-8 relative ${
-                  pkg.recommended ? "scale-105" : ""
-                }`}
-              >
-                {pkg.recommended && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    پرطرفدارترین
-                  </div>
-                )}
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {pkg.name}
-                </h3>
-                <div
-                  className="text-3xl font-bold text-orange-400 mb-6"
-                  dir="rtl"
-                >
-                  {pkg.price}
-                </div>
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span
-                        className="text-gray-300 text-sm font-persian"
-                        dir="rtl"
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  className={`w-full py-3 rounded-full font-semibold transition-all duration-300 ${
-                    pkg.recommended
-                      ? "bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-xl"
-                      : "border border-white/30 text-white hover:bg-white/10"
-                  }`}
-                >
-                  انتخاب پکیج
-                </Button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              
 
       {/* Process Section */}
-      <section className="py-20 px-4 bg-black/30">
+      <section id="process" className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
               <span className="text-sm">Our Process</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Simple Process, Stunning Results
+              فرآیند ساده، نتایج خیره‌کننده
             </h2>
             <p
               className="text-xl text-gray-300 max-w-3xl mx-auto font-persian"
@@ -654,7 +586,7 @@ export default function RestaurantWebsitePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div dir="rtl" className="grid md:grid-cols-4 gap-8">
             {[
               {
                 step: "01",
@@ -700,82 +632,41 @@ export default function RestaurantWebsitePage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
-              <span className="text-sm">Testimonials</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Success Stories
-            </h2>
-            <p
-              className="text-xl text-gray-300 max-w-3xl mx-auto font-persian"
-              dir="rtl"
-            >
-              داستان موفقیت رستوران‌هایی که به ما اعتماد کردند
-            </p>
-          </div>
+     
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+     {/* CTA Section */}
+<section
+  id="cta"
+  className="h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-r from-orange-900/50 to-red-900/50"
+>
+  <div className="max-w-4xl mx-auto text-center">
+    <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
+      <span className="text-sm">Get Started</span>
+    </div>
+    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      آماده‌اید تا  رستوران خود را  به سطح آنلاین ارتقا دهید؟
+    </h2>
+    <p className="text-xl text-gray-300 mb-8 font-persian" dir="rtl">
+      با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button
+                size="lg"
+                className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                onClick={() =>
+                  document
+                    .getElementById("")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 fill-orange-400 text-orange-400"
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4 font-persian" dir="rtl">
-                  "{testimonial.content}"
-                </p>
-                <div>
-                  <div
-                    className="font-semibold text-white font-persian"
-                    dir="rtl"
-                  >
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-gray-400 font-persian" dir="rtl">
-                    {testimonial.role}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-orange-900/50 to-red-900/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
-            <span className="text-sm">Get Started</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Elevate Your Restaurant's Online Presence?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 font-persian" dir="rtl">
-            با وبسایت حرفه‌ای، رستوران شما را به سطح جدیدی از موفقیت برسانید
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-              <Phone className="w-5 h-5" />
-              <span>تماس برای مشاوره رایگان</span>
-            </Button>
-            <Button className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2">
-              <Mail className="w-5 h-5" />
-              <span>درخواست قیمت</span>
-            </Button>
-          </div>
-        </div>
-      </section>
+                <span className="text-gradient-animated font-persian">
+                  شروع پروژه وبسایت آنلاین شما
+                </span>
+              </Button>
+      
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="py-12 px-4 bg-black/50 border-t border-white/10">
