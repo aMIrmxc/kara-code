@@ -33,11 +33,12 @@ import {
   Mail,
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: " طراحی سایت رستوران | kara-code.ir ",
-  description: "طراحی سایت رستوران حرفه‌ای با سیستم سفارش آنلاین، رزرو میز هوشمند و منوی دیجیتال. فروش خود را افزایش دهید و برند خود را تقویت کنید. همین حالا شروع کنید.",
-  keywords: ["طراحی سایت رستوران", "وبسایت رستوران", "سفارش آنلاین غذا", "رزرو میز رستوران", "منوی دیجیتال", "سایت برای رستوران"],
-};
+
+// export const metadata: Metadata = {
+//   title: " طراحی سایت رستوران | kara-code.ir ",
+//   description: "طراحی سایت رستوران حرفه‌ای با سیستم سفارش آنلاین، رزرو میز هوشمند و منوی دیجیتال. فروش خود را افزایش دهید و برند خود را تقویت کنید. همین حالا شروع کنید.",
+//   keywords: ["طراحی سایت رستوران", "وبسایت رستوران", "سفارش آنلاین غذا", "رزرو میز رستوران", "منوی دیجیتال", "سایت برای رستوران"],
+// };
 
 export default function RestaurantWebsitePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,8 +50,8 @@ export default function RestaurantWebsitePage() {
     }, 100);
 
     const interval = setInterval(() => {
-      setActiveFeature((prev) => (prev + 1) % 3);
-    }, 3000);
+      setActiveFeature((prev) => (prev + 1) % 4);
+    }, 8000);
 
     return () => {
       clearTimeout(timer);
@@ -322,7 +323,7 @@ export default function RestaurantWebsitePage() {
                 className="border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-8 py-6 text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
                 onClick={() =>
                   document
-                    .getElementById("")
+                    .getElementById("key-features")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
@@ -341,74 +342,76 @@ export default function RestaurantWebsitePage() {
 
       {/*  Key Features Section */}
       <section id="key-features" className="py-20 px-4 bg-black/30">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-12">
-            <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
-              <span className="text-sm font-semibold">
-                 Key Features
-              </span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              قابلیت‌های کلیدی در عمل
-            </h2>
-            <p
-              className="text-lg text-gray-300 max-w-3xl mx-auto font-persian"
-              dir="rtl"
-            >
-              با کلیک بر روی هر قابلیت، جزئیات و مزایای آن را مشاهده کنید
-            </p>
+       <div className="max-w-6xl mx-auto text-left">
+  <div className="mb-12">
+    <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
+      <span className="text-sm font-semibold">
+        Key Features
+      </span>
+    </div>
+    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      قابلیت‌های کلیدی در عمل
+    </h2>
+    <p
+      className="text-lg text-gray-300 max-w-3xl font-persian"
+      dir="rtl"
+    >
+      با کلیک بر روی هر قابلیت، جزئیات و مزایای آن را مشاهده کنید
+    </p>
+  </div>
+
+  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      {features.map((feature, index) => (
+        <div
+          key={index}
+          className={`text-left cursor-pointer transition-all duration-300 p-4 rounded-lg ${
+            activeFeature === index
+              ? "bg-orange-500/20"
+              : "opacity-60 hover:opacity-100 hover:bg-white/5"
+          }`}
+          onClick={() => setActiveFeature(index)}
+        >
+          <div className="text-orange-400 flex mb-3">
+            {feature.icon}
           </div>
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`text-center cursor-pointer transition-all duration-300 p-4 rounded-lg ${
-                    activeFeature === index
-                      ? "bg-orange-500/20"
-                      : "opacity-60 hover:opacity-100 hover:bg-white/5"
-                  }`}
-                  onClick={() => setActiveFeature(index)}
-                >
-                  <div className="text-orange-400 flex justify-center mb-3">
-                    {feature.icon}
-                  </div>
-                  <div
-                    className="text-sm font-semibold text-white font-persian"
-                    dir="rtl"
-                  >
-                    {feature.title}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="text-center h-[600px]  md:h-[480px]">
-              <h3
-                className="text-2xl font-bold text-white mb-3 font-persian"
-                dir="rtl"
-              >
-                {features[activeFeature].title}
-              </h3>
-              <p
-                className="text-gray-300 mb-12  max-w-2xl mx-auto leading-relaxed font-persian"
-                dir="rtl"
-              >
-                {features[activeFeature].description}
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {features[activeFeature].benefits.map((benefit, i) => (
-                  <span
-                    key={i}
-                    className="text-xs bg-orange-500/20 text-orange-200 px-3 py-1.5 rounded-full font-persian"
-                    dir="rtl"
-                  >
-                    {benefit}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div
+            className="text-sm font-semibold text-white font-persian"
+            dir="rtl"
+          >
+            {feature.title}
           </div>
         </div>
+      ))}
+    </div>
+
+    <div className="text-left h-[600px] md:h-[480px]">
+      <h3
+        className="text-2xl font-bold text-white mb-3 font-persian"
+        dir="rtl"
+      >
+        {features[activeFeature].title}
+      </h3>
+      <p
+        className="text-gray-300 mb-12 max-w-2xl leading-relaxed font-persian"
+        dir="rtl"
+      >
+        {features[activeFeature].description}
+      </p>
+      <div className="flex flex-wrap gap-3">
+        {features[activeFeature].benefits.map((benefit, i) => (
+          <span
+            key={i}
+            className="text-xs bg-orange-500/20 text-orange-200 px-3 py-1.5 rounded-full font-persian"
+            dir="rtl"
+          >
+            {benefit}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
       </section>
 
       {/* Results Section */}
@@ -676,49 +679,26 @@ export default function RestaurantWebsitePage() {
 </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-black/50 border-t border-white/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Kara Code</h3>
-              <p className="text-gray-400 text-sm font-persian" dir="rtl">
-                متخصص طراحی وبسایت رستوران و کافه
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">
-                Restaurant Services
-              </h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>Online Ordering System</li>
-                <li>Table Reservation</li>
-                <li>Digital Menu</li>
-                <li>Customer Reviews</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">Industries</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>Fine Dining</li>
-                <li>Fast Food</li>
-                <li>Cafes & Bistros</li>
-                <li>Food Trucks</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">Contact</h4>
-              <div className="space-y-2 text-gray-400 text-sm">
-                <p>Email: restaurant@kara-code.ir</p>
-                <p>Phone: +98 123 456 7890</p>
-                <p>Available 24/7</p>
-              </div>
-            </div>
-          </div>
-          <div className="text-center pt-8 border-t border-white/10">
-            <p className="text-gray-500 text-sm font-persian">
-              © 2025 Kara Code. All rights reserved | Specialized in Restaurant
-              Websites
+      <footer
+        id="footer"
+        className="py-12 px-4 bg-black/50 border-t border-white/10"
+      >
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-6">
+            <img
+              src="/logos/ck-nobg.png"
+              alt="Kara Code Logo"
+              className="h-18 mx-auto -mb-2 "
+            />
+            <h3 className="text-2xl font-bold text-white mb-4 font-mono">
+              Kara Code
+            </h3>
+            <p className="text-gray-400 font-mono">
+              Crafting Digital Excellence
             </p>
+          </div>
+          <div className="text-gray-500 text-sm font-mono">
+            © 2025 Kara Code. All rights reserved | kara-code.ir
           </div>
         </div>
       </footer>
