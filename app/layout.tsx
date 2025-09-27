@@ -16,6 +16,18 @@ export const metadata: Metadata = {
   keywords: "web development, Iran, custom websites, e-commerce, web applications, kara-code.ir",
   icons: {
     icon: "/logos/ck-w-circle.png",
+    shortcut: "/logos/ck-w-circle.png",
+    apple: "/logos/ck-w-circle.png",
+  },
+  openGraph: {
+    images: [
+      {
+        url: "/logos/ck-w-circle.png",
+        width: 600,
+        height: 600,
+        alt: "Kara Code Logo",
+      },
+    ],
   },
 }
 
