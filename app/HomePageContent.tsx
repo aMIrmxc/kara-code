@@ -79,74 +79,90 @@ export default function HomePageContent() {
   ];
 
   const projectsItems = [
-    {
-      title: "E-commerce Platform",
-      category: "Online Store",
-      image: "/modern-ecommerce-website.png",
-      description:
-        "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت",
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      title: "Corporate Website",
-      category: "Business",
-      image: "/professional-corporate-website.png",
-      description: "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا",
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      title: "SaaS Dashboard",
-      category: "Web App",
-      image: "/modern-saas-dashboard.png",
-      description: "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران",
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      title: "Restaurant Website",
-      category: "Food & Dining",
-      image: "/modern-restaurant-website.png",
-      description: "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو",
-      color: "from-orange-500 to-red-500",
-    },
-    {
-      title: "Real Estate Platform",
-      category: "Property",
-      image: "/real-estate-website.png",
-      description: "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی",
-      color: "from-indigo-500 to-purple-500",
-    },
-    {
-      title: "Healthcare Portal",
-      category: "Medical",
-      image: "/modern-healthcare-website.png",
-      description:
-        "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور",
-      color: "from-teal-500 to-green-500",
-    },
-    {
-      title: "Educational Platform",
-      category: "Education",
-      image: "/modern-e-learning-platform-with-courses.jpg",
-      description:
-        "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت",
-      color: "from-rose-500 to-orange-500",
-    },
-    {
-      title: "News Agency",
-      category: "News",
-      image: "/news-agency-website.png",
-      description:
-        "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای",
-      color: "from-red-500 to-orange-500",
-    },
-    {
-      title: "Travel Booking Site",
-      category: "Travel",
-      image: "/modern-travel-booking-website-with-destinations.jpg",
-      description: "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
-      color: "from-sky-500 to-blue-500",
-    },
-  ];
+  {
+    title: "Restaurant Website",
+    category: "Food & Dining",
+    image: "/modern-restaurant-website.png",
+    description: "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو",
+    color: "from-orange-500 to-red-500",         // Chili Red → Tangerine
+  },
+  {
+    title: "Corporate Website",
+    category: "Business",
+    image: "/professional-corporate-website.png",
+    description: "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا",
+    color: "from-blue-700 to-slate-600",         // IBM Blue → Slate
+  },
+  {
+    title: "E-commerce Platform",
+    category: "Online Store",
+    image: "/modern-ecommerce-website.png",
+    description:
+      "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت",
+    color: "from-purple-600 to-pink-500",      // Twitch Purple → Hot-Pink
+  },
+  {
+    title: "Real Estate Platform",
+    category: "Property",
+    image: "/real-estate-website.png",
+    description: "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی",
+    color: "from-emerald-600 to-teal-500",       // Zillow Emerald → Teal
+  },
+  {
+    title: "Travel Booking Site",
+    category: "Travel",
+    image: "/modern-travel-booking-website-with-destinations.jpg",
+    description: "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
+    color: "from-sky-500 to-indigo-600",       // Skyscanner Sky → Indigo
+  },
+  {
+    title: "Healthcare Portal",
+    category: "Medical",
+    image: "/modern-healthcare-website.png",
+    description:
+      "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور",
+    color: "from-green-600 to-cyan-500",         // Hospital Green → Cyan
+  },
+  {
+    title: "Educational Platform",
+    category: "Education",
+    image: "/modern-e-learning-platform-with-courses.jpg",
+    description:
+      "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت",
+    color: "from-amber-500 to-yellow-400",       // Coursera Amber → Yellow
+  },
+  {
+    title: "News Agency",
+    category: "News",
+    image: "/news-agency-website.png",
+    description:
+      "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای",
+    color: "from-red-400 to-red-700",         // New-York-Times Gray → Red
+  },
+  {
+    title: "SaaS Dashboard",
+    category: "Web Dashboard",
+    image: "/modern-saas-dashboard.png",
+    description: "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران",
+    color: "from-indigo-600 to-purple-600",      // Slack Indigo → Purple
+  },
+  {
+    title: "Personal Blog",
+    category: "Lifestyle",
+    image: "/personal-blog.png",
+    description:
+      "وبلاگ شخصی مینیمال با قابلیت دسته‌بندی مقالات، نظرات و اشتراک‌گذاری در شبکه‌های اجتماعی",
+    color: "from-rose-500 to-pink-400",          // Instagram Rose → Pink
+  },
+  {
+    title: "Custom App",
+    category: "Web App",
+    image: "/custom-web-app.png",
+    description:
+      "اپلیکیشن اختصاصی تحت وب با طراحی یونیک و امکانات سفارشی کاملاً انعطاف‌پذیر",
+    color: "from-fuchsia-600 to-violet-600", // Stripe ‑ Fuchsia → Violet
+  },
+];
 
   const benefits = [
     {
