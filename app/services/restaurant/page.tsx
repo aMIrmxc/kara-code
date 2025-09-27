@@ -32,10 +32,13 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import { motion, Variants } from "@/components/ui/motion";
+
 
 export default function RestaurantWebsitePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -50,6 +53,14 @@ export default function RestaurantWebsitePage() {
       clearTimeout(timer);
       clearInterval(interval);
     };
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowScrollIndicator(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const features = [
@@ -266,11 +277,17 @@ export default function RestaurantWebsitePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
-            <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
-          </div>
+         <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showScrollIndicator ? 1 : 0 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
+          <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
         </div>
+      </motion.div>
+
       </section>
 
       {/*  Key Features Section */}

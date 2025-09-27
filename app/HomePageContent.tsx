@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -27,6 +28,8 @@ import { useScrollDirection } from "@/hooks/use-scroll-direction";
 export default function HomePageContent() {
   const scrollDirection = useScrollDirection();
 
+  
+
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -52,21 +55,21 @@ export default function HomePageContent() {
       icon: <Code className="w-8 h-8" />,
       title: "Custom Web Development",
       description:
-        "راه‌حل‌های وب سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما",
+        "راه‌حل‌های سفارشی تحت وب با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Responsive Design",
       description:
-        "طراحی‌های موبایل-اول که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند",
+        "طراحی‌های Responsive که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: <ShoppingCart className="w-8 h-8" />,
       title: "E-commerce Solutions",
       description:
-        "فروشگاه‌های آنلاین کامل با پردازش پرداخت امن و سیستم‌های مدیریت موجودی",
+        "فروشگاه‌های آنلاین کامل با درگاه پرداخت و سیستم‌های مدیریت موجودی",
       color: "from-purple-500 to-pink-500",
     },
     {
@@ -83,7 +86,7 @@ export default function HomePageContent() {
     title: "Restaurant Website",
     category: "Restaurant",
     image: "/modern-restaurant-website.png",
-    description: "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو",
+    description: "وب‌سایت رستوران شما با سیستم سفارش آنلاین و رزرو",
     color: "from-orange-500 to-red-500",         // Chili Red → Tangerine
   },
   {
@@ -98,21 +101,21 @@ export default function HomePageContent() {
     category: "Online Store",
     image: "/modern-ecommerce-website.png",
     description:
-      "پلتفرم تجارت الکترونیک مدرن با فیلترینگ پیشرفته و یکپارچه‌سازی پرداخت",
+      "پلتفرم تجارت الکترونیک مدرن با درنظر گرفتن نیاز های خاص شما",
     color: "from-purple-600 to-pink-500",      // Twitch Purple → Hot-Pink
   },
   {
     title: "Real Estate Platform",
     category: "Property",
     image: "/real-estate-website.png",
-    description: "پلتفرم جامع املاک با جستجوی پیشرفته ملک و تورهای مجازی",
+    description: "پلتفرم جامع املاک با قابلیت جستجوی ملک و تورهای مجازی",
     color: "from-emerald-600 to-teal-500",       // Zillow Emerald → Teal
   },
   {
     title: "Travel Booking Site",
     category: "Travel",
     image: "/modern-travel-booking-website-with-destinations.jpg",
-    description: "پلتفرم کامل رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
+    description: "پلتفرم رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
     color: "from-sky-500 to-indigo-600",       // Skyscanner Sky → Indigo
   },
   {
@@ -136,7 +139,7 @@ export default function HomePageContent() {
     category: "News",
     image: "/news-agency-website.png",
     description:
-      "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای",
+      " وب سایت آژانس خبری مدرن با اخبار روزانه ، رویداد های فوری و محتوای چندرسانه ای",
     color: "from-red-400 to-red-700",         // New-York-Times Gray → Red
   },
   
@@ -153,7 +156,7 @@ export default function HomePageContent() {
     category: "Custom App",
     image: "/custom-web-app.png",
     description:
-      "اپلیکیشن اختصاصی تحت وب با طراحی یونیک و امکانات سفارشی کاملاً انعطاف‌پذیر",
+      "اپلیکیشن اختصاصی تحت وب با طراحی سفارشی و امکانات کاملاً انعطاف‌پذیر",
     color: "from-fuchsia-600 to-violet-600", // Stripe ‑ Fuchsia → Violet
   },
 ];
@@ -177,14 +180,14 @@ export default function HomePageContent() {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "SEO Optimized",
       description:
-        "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه بالاتری کسب کند",
+        "بهترین شیوه‌های سئو داخلی به وب‌سایت شما کمک می‌کند تا در نتایج جستجو رتبه های بالاتری کسب کند",
       color: "from-blue-500 to-purple-500",
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "User-Centric Design",
       description:
-        "رابط‌های کاربری بصری که با در نظر گرفتن کاربران شما برای حداکثر تعامل طراحی شده‌اند",
+        "رابط‌های کاربری بصری که با در نظر گرفتن نیاز های کاربران شما برای حداکثر تعامل طراحی شده‌اند",
       color: "from-pink-500 to-rose-500",
     },
   ];
@@ -194,7 +197,7 @@ export default function HomePageContent() {
       icon: <Target className="w-8 h-8" />,
       title: "Drive Business Growth",
       description:
-        "ایجاد راه‌حل‌های دیجیتالی که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند",
+        "ایجاد راه‌حل‌های نرم افزاری که مستقیماً به موفقیت کسب‌وکار و رشد درآمد شما کمک می‌کنند",
       color: "from-emerald-500 to-green-500",
     },
     {
@@ -208,20 +211,21 @@ export default function HomePageContent() {
       icon: <Users className="w-8 h-8" />,
       title: "Long-term Partnerships",
       description:
-        "ایجاد روابط پایدار با مشتریان از طریق خدمات منحصربفرد و پشتیبانی مداوم",
+        "ایجاد روابط پایدار با مشتریانمان از طریق خدمات و پشتیبانی مداوم",
       color: "from-indigo-500 to-blue-500",
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Pixel-Perfect Design",
       description:
-        "ارائه وب‌سایت‌های بصری خیره‌کننده که  منعکس کننده برند شماست و مخاطبان شما را مجذوب می‌کند",
+        "ارائه وب‌سایت‌های متناسب که منعکس کننده برند شماست و مخاطبان شما را مجذوب می‌کند",
       color: "from-purple-500 to-pink-500",
     },
   ];
 
   return (
     <>
+
       {/* Services Section */}
       <AnimatedSection
         dir="rtl"
@@ -236,11 +240,11 @@ export default function HomePageContent() {
               Our Services
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
-              راهکارهای جامع وب
+               ارائه دهنده راهکارهای جامع تحت وب
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
               از ایده تا اجرا، ما خدمات کامل توسعه وب را ارائه می‌دهیم که
-              ایده‌های شما را به راه‌حل‌های دیجیتال قدرتمند تبدیل می‌کند
+              ایده‌های شما را به راه‌حل‌های نرم‌افزاری قدرتمند تبدیل می‌کند
             </p>
           </div>
 
@@ -288,7 +292,7 @@ export default function HomePageContent() {
               Why Choose Us
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
-              مزایای قابل توجه
+              ارائه محصولاتی با مزایای قابل توجه
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
               ما فراتر از وب‌سایت‌ها، راه‌حل‌های جامعی ارائه می‌دهیم که نتایج
@@ -353,18 +357,18 @@ export default function HomePageContent() {
                 className="text-lg text-gray-300 mb-6 leading-relaxed font-persian"
                 dir="rtl"
               >
-                در کارا کد، ما به قدرت توسعه وب برای تحول کسب‌وکارها ایمان
-                داریم. تیم ما متشکل از توسعه‌دهندگان و طراحان ماهر، بی‌وقفه تلاش
-                می‌کنند تا تجربیات دیجیتالی خلق کنند که نه‌تنها خیره‌کننده به
-                نظر می‌رسند، بلکه نتایج واقعی به همراه دارند
+                در کارا کد، ما به پتانسیل های توسعه وب برای تحول کسب‌وکارها ایمان
+                داریم. تیم ما متشکل از توسعه‌دهندگان و طراحان ماهرای است که بی‌وقفه تلاش
+                می‌کنند تا محصولاتی خلق کنند که نه‌تنها خیره‌کننده به
+                نظر می‌رسند، بلکه نتایج دلخواه را نیز به همراه دارند
               </p>
               <p
                 className="text-lg text-gray-300 mb-8 leading-relaxed font-persian"
                 dir="rtl"
               >
                 با تخصص در جدیدترین فناوری‌ها و اشتیاق به نوآوری، ما راه‌حل‌های
-                وبی ارائه می‌دهیم که فراتر از انتظارات عمل کرده و به مشتریان ما
-                در دستیابی به اهداف دیجیتالشان کمک می‌کند
+                نرم افزاری ای را ارائه می‌دهیم که فراتر از انتظارات عمل کرده و به مشتریان ما
+                در دستیابی به اهداف مدنظرشان کمک می‌کند
               </p>
 
              
@@ -445,8 +449,8 @@ export default function HomePageContent() {
               اهدافی که ما در پیش گرفته ایم
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
-              هر پروژه‌ای که ما بر عهده می‌گیریم با این اصول هدایت می‌شود
-              که نتایج ویژه را برای مشتریان ما تضمین می‌کند
+               پروژهایی که ما بر عهده می‌گیریم با اصولی هدایت می‌شوند
+              که نتایج مطلوب را برای مشتریان ما تضمین می‌کند
             </p>
           </div>
 

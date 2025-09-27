@@ -115,7 +115,7 @@ export default function HomePage() {
                 >
                   <>
                     <span className="text-gradient-animated font-bold font-persian">
-                      پروژه خود را سفارش دهید
+                      پروژه خود را انتخاب کنید
                     </span>
                   </>
                 </Button>
@@ -132,7 +132,7 @@ export default function HomePage() {
         >
         <Link
           href="https://clients.kara-code.ir"
-            className="text-white/60 hover:text-white transition-colors text-[20px] "
+            className="text-white/60 hover:text-white transition-colors text-[20px]  "
           >
             کاربر فعلی هستید؟ اینجا وارد شوید.
           </Link>
