@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -98,7 +99,7 @@ export default function HomePageContent() {
   },
   {
     title: "E-commerce Platform",
-    category: "Online Store",
+    category: "Online-Store",
     image: "/modern-ecommerce-website.png",
     description:
       "پلتفرم تجارت الکترونیک مدرن با درنظر گرفتن نیاز های خاص شما",
@@ -510,17 +511,22 @@ export default function HomePageContent() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectsItems.map((item, index) => (
-              <motion.div
+              <Link
+                href={`/services/${item.category.toLowerCase()}`}
                 key={index}
-                variants={cardVariants as any}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: index * 0.1 }}
+                className="h-full"
               >
-                <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
-                  <div className="relative overflow-hidden h-48">
-                    <img
+                <motion.div
+                  variants={cardVariants as any}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex flex-col h-full"
+                >
+                  <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
+                    <div className="relative overflow-hidden h-48">
+                      <img
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -541,7 +547,8 @@ export default function HomePageContent() {
                     </p>
                   </CardContent>
                 </Card>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

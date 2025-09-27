@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Professional web development services in Iran. Custom websites, e-commerce solutions, and web applications built with cutting-edge technology.",
   generator: "Kara Code",
   keywords: "web development, Iran, custom websites, e-commerce, web applications, kara-code.ir",
+  icons: {
+    icon: "/logos/ck-w-circle.png",
+  },
 }
 
 export default function RootLayout({
