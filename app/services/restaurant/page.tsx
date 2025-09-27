@@ -223,7 +223,7 @@ export default function RestaurantWebsitePage() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               <span className="text-gradient-animated bg-clip-text text-transparent font-noto-h1">
-                وبسایت رستوران حرفه‌ای
+                وبسایت حرفه‌ای رستوران
               </span>
             </h1>
 
@@ -231,8 +231,9 @@ export default function RestaurantWebsitePage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
               dir="rtl"
             >
-              حضور آنلاین قدرتمند برای رستوران شما با سیستم سفارش‌گیری و پرداخت
-              آنلاین، رزرو میز و منوی دیجیتال تعاملی
+              وبسایت آنلاین رستوران شما با توانایی مجهز شدن به  منوی دیجیتال تعاملی و قابلیت رزرو میز و سیستم سفارش‌گیری و پرداخت
+              آنلاین  
+              
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
@@ -365,7 +366,7 @@ export default function RestaurantWebsitePage() {
               <span className="text-xs sm:text-sm font-semibold">Results at a glance</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight">
-              نتایج وبسایت آنلاین رستوران شما در یک نگاه
+              نتایجی که وبسایت آنلاین برای رستوران شما دارد در یک نگاه
             </h2>
             <p
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -589,7 +590,7 @@ export default function RestaurantWebsitePage() {
             <span className="text-xs sm:text-sm">Get Started</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight">
-            آماده‌اید تا رستوران خود را به سطح آنلاین ارتقا دهید؟
+            آماده‌اید تا رستوران خود را به وبسایت آنلاین مجهز کنید؟
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4" dir="rtl">
             با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید

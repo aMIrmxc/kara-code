@@ -81,7 +81,7 @@ export default function HomePageContent() {
   const projectsItems = [
   {
     title: "Restaurant Website",
-    category: "Food & Dining",
+    category: "Restaurant",
     image: "/modern-restaurant-website.png",
     description: "وب‌سایت رستوران زیبا با سیستم سفارش آنلاین و رزرو",
     color: "from-orange-500 to-red-500",         // Chili Red → Tangerine
@@ -139,24 +139,18 @@ export default function HomePageContent() {
       "یک وب سایت آژانس خبری مدرن با اخبار  روزانه ، رویداد های برجسته و محتوای چندرسانه ای",
     color: "from-red-400 to-red-700",         // New-York-Times Gray → Red
   },
-  {
-    title: "SaaS Dashboard",
-    category: "Web Dashboard",
-    image: "/modern-saas-dashboard.png",
-    description: "داشبورد SaaS پیچیده با تحلیل‌های لحظه‌ای و مدیریت کاربران",
-    color: "from-indigo-600 to-purple-600",      // Slack Indigo → Purple
-  },
+  
   {
     title: "Personal Blog",
-    category: "Lifestyle",
+    category: "blog",
     image: "/personal-blog.png",
     description:
       "وبلاگ شخصی مینیمال با قابلیت دسته‌بندی مقالات، نظرات و اشتراک‌گذاری در شبکه‌های اجتماعی",
     color: "from-rose-500 to-pink-400",          // Instagram Rose → Pink
   },
   {
-    title: "Custom App",
-    category: "Web App",
+    title: "Custom Web App",
+    category: "Custom App",
     image: "/custom-web-app.png",
     description:
       "اپلیکیشن اختصاصی تحت وب با طراحی یونیک و امکانات سفارشی کاملاً انعطاف‌پذیر",
@@ -207,7 +201,7 @@ export default function HomePageContent() {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Innovation First",
       description:
-        "با فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات، همیشه یک قدم جلوتر باشید",
+        "الزام به استفاده از فناوری‌های پیشرفته و رویکردهای خلاقانه برای حل مشکلات ",
       color: "from-yellow-500 to-amber-500",
     },
     {
@@ -221,7 +215,7 @@ export default function HomePageContent() {
       icon: <Palette className="w-8 h-8" />,
       title: "Pixel-Perfect Design",
       description:
-        "ارائه وب‌سایت‌های بصری خیره‌کننده که برند شما را منعکس کرده و مخاطبان شما را مجذوب خود می‌کند",
+        "ارائه وب‌سایت‌های بصری خیره‌کننده که  منعکس کننده برند شماست و مخاطبان شما را مجذوب می‌کند",
       color: "from-purple-500 to-pink-500",
     },
   ];
@@ -232,7 +226,7 @@ export default function HomePageContent() {
       <AnimatedSection
         dir="rtl"
         id="services"
-        className="py-20 px-4 relative"
+        className="py-20 px-4 relative bg-black/30"
         variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
@@ -241,8 +235,8 @@ export default function HomePageContent() {
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
               Our Services
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              Comprehensive Web Solutions
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
+              راهکارهای جامع وب
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
               از ایده تا اجرا، ما خدمات کامل توسعه وب را ارائه می‌دهیم که
@@ -284,7 +278,7 @@ export default function HomePageContent() {
 
       <AnimatedSection
         dir="rtl"
-        className="py-20 px-4 bg-black/30"
+        className="py-20 px-4 "
         variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
@@ -293,8 +287,8 @@ export default function HomePageContent() {
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
               Why Choose Us
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              Unmatched Benefits
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
+              مزایای قابل توجه
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
               ما فراتر از وب‌سایت‌ها، راه‌حل‌های جامعی ارائه می‌دهیم که نتایج
@@ -337,7 +331,7 @@ export default function HomePageContent() {
       {/* About Section */}
       <AnimatedSection
         dir="rtl"
-        className="py-20 px-4 overflow-x-hidden"
+        className="py-20 px-4 overflow-x-hidden bg-black/30"
         variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
@@ -352,8 +346,8 @@ export default function HomePageContent() {
               <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
                 About Kara Code
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-                Crafting Digital Excellence Since Day One
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
+                خلق محصولات برتر تحت وب، مطابق نیازهای شما 
               </h2>
               <p
                 className="text-lg text-gray-300 mb-6 leading-relaxed font-persian"
@@ -373,32 +367,7 @@ export default function HomePageContent() {
                 در دستیابی به اهداف دیجیتالشان کمک می‌کند
               </p>
 
-              <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400 mb-2 font-mono">
-                    150+
-                  </div>
-                  <div className="text-sm text-gray-400 font-mono">
-                    Projects Completed
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2 font-mono">
-                    100%
-                  </div>
-                  <div className="text-sm text-gray-400 font-mono">
-                    Client Satisfaction
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
-                    24/7
-                  </div>
-                  <div className="text-sm text-gray-400 font-mono">
-                    Support Available
-                  </div>
-                </div>
-              </div>
+             
             </motion.div>
 
             <motion.div
@@ -463,7 +432,7 @@ export default function HomePageContent() {
 
       <AnimatedSection
         dir="rtl"
-        className="py-20 px-4 bg-black/30"
+        className="py-20 px-4 "
         variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
@@ -472,11 +441,11 @@ export default function HomePageContent() {
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
               Our Mission
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              Goals That Drive Us
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
+              اهدافی که ما در پیش گرفته ایم
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
-              هر پروژه‌ای که ما بر عهده می‌گیریم با این اصول اصلی هدایت می‌شود
+              هر پروژه‌ای که ما بر عهده می‌گیریم با این اصول هدایت می‌شود
               که نتایج ویژه را برای مشتریان ما تضمین می‌کند
             </p>
           </div>
@@ -517,7 +486,7 @@ export default function HomePageContent() {
       <AnimatedSection
         dir="rtl"
         id="projects"
-        className="py-20 px-4"
+        className="py-20 px-4 bg-black/30"
         variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
@@ -526,11 +495,11 @@ export default function HomePageContent() {
             <Badge className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
               Projects List
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              ?Which is your desired website
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
+              وب‌سایت مد نظر شما کدام است؟
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
-              نمونه‌کارهای متنوع ما را که راه‌حل‌های وب نوآورانه در صنایع و
+              نمونه‌کارهای متنوع ما را که راه‌حل‌های نوآورانه وب در صنایع و
               نیازهای مختلف کسب‌وکار را به نمایش می‌گذارد، بررسی کنید
             </p>
           </div>
@@ -574,26 +543,26 @@ export default function HomePageContent() {
         </div>
       </AnimatedSection>
 
-      {/* Footer */}
-       <footer
+        {/* Footer */}
+      <footer
         id="footer"
-        className="py-12 px-6 bg-black/50 border-t border-white/10"
+        className="py-8 sm:py-12 px-4 sm:px-6 bg-black/50 border-t border-white/10"
       >
-        <div className="max-w-6xl  ">
-          <div className="mb-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-4 sm:mb-6 text-center sm:text-left">
             <img
               src="/logos/ck-nobg.png"
               alt="Kara Code Logo"
-              className="h-18  -mb-2 "
+              className="h-12 sm:h-16 lg:h-18 mx-auto sm:mx-0 -mb-1 sm:-mb-2"
             />
-            <h3 className="text-2xl font-bold text-white mb-4 font-mono">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4 font-mono">
               Kara Code
             </h3>
-            <p className="text-gray-400 font-mono">
+            <p className="text-sm sm:text-base text-gray-400 font-mono">
               Crafting Digital Excellence
             </p>
           </div>
-          <div className="text-gray-500 text-sm font-mono">
+          <div className="text-gray-500 text-xs sm:text-sm font-mono text-center sm:text-left">
             © 2025 Kara Code. All rights reserved | kara-code.ir
           </div>
         </div>
