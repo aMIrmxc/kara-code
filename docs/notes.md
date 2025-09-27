@@ -74,4 +74,5 @@
 ''' 
 
 
+- fonts that you add their files to project , tw cant apply "text-sm font-bold" for them
 

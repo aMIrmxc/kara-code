@@ -95,7 +95,7 @@ export default function RestaurantWebsitePage() {
         "امکان دسته‌بندی محصولات",
         "جذابیت بصری بالا",
         "کاهش هزینه چاپ منو",
-        "افزایش میانگین سفارش با پیشنهادات هوشمند",
+        
       ],
     },
     {
@@ -288,11 +288,11 @@ export default function RestaurantWebsitePage() {
           >
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
               <Utensils className="w-4 h-4" />
-              <span className="text-sm">Restaurant Website Solutions</span>
+              <span className="text-sm ">Restaurant Website Solutions</span>
             </div>
 
             <h1 className=" text-6xl md:text-7xl font-bold text-white mb-6 ">
-              <span className="text-gradient-animated bg-clip-text text-transparent ">
+              <span className="text-gradient-animated bg-clip-text text-transparent font-noto-h1">
                 وبسایت رستوران حرفه‌ای
               </span>
             </h1>
@@ -352,7 +352,8 @@ export default function RestaurantWebsitePage() {
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
               <span className="text-sm font-semibold">Key Features</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            
+            <h2 className="text-4xl md:text-5xl font-bold font-noto-h2 px-8 text-white mb-4">
               قابلیت‌های کلیدی در عمل
             </h2>
 
@@ -367,58 +368,63 @@ export default function RestaurantWebsitePage() {
 
           </div>
 
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 flex flex-col justify-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`text-left cursor-pointer transition-all duration-300 p-4 rounded-lg flex flex-col items-center justify-center ${
-                    activeFeature === index
-                      ? "bg-orange-500/20"
-                      : "opacity-60 hover:opacity-100 hover:bg-white/5"
-                  }`}
-                  onClick={() => setActiveFeature(index)}
-                >
-                  <div className="text-orange-400 flex mb-3">
-                    {feature.icon}
-                  </div>
-                  <div
-                    className="text-center text-sm font-semibold text-white font-persian"
-                    dir="rtl"
-                  >
-                    {feature.title}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 my-auto border border-white/10 flex flex-col justify-center">
+  {/* Feature Grid */}
+  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4">
+    {features.map((feature, index) => (
+      <div
+        key={index}
+        className={`text-left cursor-pointer transition-all duration-300 p-2 sm:p-3 md:p-4 rounded-lg flex flex-col items-center justify-center min-h-[80px] sm:min-h-[90px] md:min-h-[100px] ${
+          activeFeature === index
+            ? "bg-orange-500/20"
+            : "opacity-60 hover:opacity-100 hover:bg-white/5"
+        }`}
+        onClick={() => setActiveFeature(index)}
+      >
+        <div className="text-orange-400 flex mb-2 sm:mb-3 text-lg sm:text-xl md:text-2xl">
+          {feature.icon}
+        </div>
+        <div
+          className="text-center text-xs sm:text-sm font-semibold text-white font-persian leading-tight"
+          dir="rtl"
+        >
+          {feature.title}
+        </div>
+      </div>
+    ))}
+  </div>
 
-            <div className="text-left flex flex-col justify-center h-[600px] md:h-[480px]">
-              <h3
-                className="text-center text-2xl font-bold text-white mb-3 font-persian"
-                dir="rtl"
-              >
-                {features[activeFeature].title}
-              </h3>
-              <div className="flex justify-center">
-              <p
-                className="text-center text-gray-300 mb-12 max-w-2xl leading-relaxed font-persian"
-                dir="rtl"
-              >
-                {features[activeFeature].description}
-              </p></div>
-              <div className="flex flex-wrap gap-3 justify-center ">
-                {features[activeFeature].benefits.map((benefit, i) => (
-                  <span
-                    key={i}
-                    className="text-xs bg-orange-500/20 text-orange-200 px-3 py-1.5 rounded-full font-persian"
-                    dir="rtl"
-                  >
-                    {benefit}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+  {/* Feature Details */}
+  <div className="text-left flex flex-col justify-center min-h-[400px] sm:min-h-[450px] md:min-h-[480px] lg:min-h-[500px]">
+    <h3
+      className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-persian px-2"
+      dir="rtl"
+    >
+      {features[activeFeature].title}
+    </h3>
+    
+    <div className="flex justify-center mb-6 sm:mb-8 md:mb-12">
+      <p
+        className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
+        dir="rtl"
+      >
+        {features[activeFeature].description}
+      </p>
+    </div>
+
+    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center px-2 sm:px-4">
+      {features[activeFeature].benefits.map((benefit, i) => (
+        <span
+          key={i}
+          className="text-xs sm:text-sm bg-orange-500/20 text-orange-200 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-persian whitespace-nowrap"
+          dir="rtl"
+        >
+          {benefit}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
         </div>
       </section>
 
@@ -429,7 +435,7 @@ export default function RestaurantWebsitePage() {
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-4 py-1 rounded-full">
               <span className="text-sm font-semibold">Results at a glance</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 px-8 font-noto-h2">
               نتایج وبسایت آنلاین رستوران شما در یک نگاه
             </h2>
             <p
@@ -439,7 +445,7 @@ export default function RestaurantWebsitePage() {
               نگاهی عمیق به تأثیر وبسایت بر رشد کسب‌وکار شما
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -474,7 +480,7 @@ export default function RestaurantWebsitePage() {
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
               <span className="text-sm">Benefits</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 mx-8 font-noto-h2">
               ویژگی های کلی یک وب سایت رستورانی
             </h2>
             <p
@@ -516,7 +522,7 @@ export default function RestaurantWebsitePage() {
               <span className="text-sm">Why restaurant online website</span>
             </div>
             <h2
-              className="text-4xl md:text-5xl font-bold text-white mb-6 "
+              className="text-4xl md:text-5xl font-bold text-white mb-6 px-8 font-noto-h2"
               dir="rtl"
             >
               چرا رستوران شما به یک وب‌سایت حرفه‌ای نیاز دارد؟
@@ -587,7 +593,7 @@ export default function RestaurantWebsitePage() {
             <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
               <span className="text-sm">Our Process</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 px-8 font-noto-h2">
               فرآیند ساده، نتایج خیره‌کننده
             </h2>
             <p
@@ -647,13 +653,13 @@ export default function RestaurantWebsitePage() {
       {/* CTA Section */}
       <section
         id="cta"
-        className="h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-r from-orange-900/50 to-red-900/50"
+        className="h-screen flex items-center justify-center pb-20 px-4 bg-gradient-to-r from-orange-900/50 to-red-900/50"
       >
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-1 py-1 rounded-full">
             <span className="text-sm">Get Started</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 px-8 font-noto-h2">
             آماده‌اید تا رستوران خود را به سطح آنلاین ارتقا دهید؟
           </h2>
           <p className="text-xl text-gray-300 mb-8 font-persian" dir="rtl">
@@ -662,14 +668,14 @@ export default function RestaurantWebsitePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-gray-100 hover:bg-gray-200 border-0  py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               onClick={() =>
                 document
                   .getElementById("")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              <span className="text-gradient-animated font-persian">
+              <span className="text-gradient-animated font-persian ">
                 شروع پروژه وبسایت آنلاین شما
               </span>
             </Button>

@@ -144,10 +144,21 @@
     font-size: 1.425rem; /* 18px */
     font-weight: 900;
   }
-  .font-noto-persian {
+  .font-noto-h1 {
     font-family: var(--font-noto);
-    font-size: 1.425rem; /* 18px */
+    font-size: 4.725rem; 
+    font-weight: 1000;
+    letter-spacing: -0.05em;
+    transform: scaleX(1.5); 
+    transform-origin: center;
+  }
+  .font-noto-h2 {
+    font-family: var(--font-noto);
+    font-size: 2.725rem; 
     font-weight: 700;
+    letter-spacing: -0.05em;
+    transform: scaleX(1.2); 
+    transform-origin: center;
   }
 }
 
