@@ -24,8 +24,8 @@ export function Preloader({ isLoading }: PreloaderProps) {
       }`}
     >
       <div className="text-center">
-        <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-mono">
-          <span className="text-gradient-animated bg-clip-text text-transparent animate-pulse">
+        <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance  font-mono">
+          <span className="text-gradient-animated bg-clip-text text-transparent ">
             Kara Code
           </span>
         </h1>

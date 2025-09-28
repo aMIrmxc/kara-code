@@ -44,6 +44,7 @@ import {
   Server,
   Activity,
 } from "lucide-react";
+import Footer from "@/components/layout/Footer";
 
 export default function CustomWebAppPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -941,40 +942,7 @@ export default function CustomWebAppPage() {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <motion.footer
-        id="footer"
-        className="py-8 sm:py-12 px-4 sm:px-6 bg-black/50 border-t border-white/10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false, amount: 0.4 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false, amount: 0.4 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="mb-4 sm:mb-6 text-center sm:text-left"
-          >
-            <img
-              src="/logos/ck-nobg.png"
-              alt="Kara Code Logo"
-              className="h-12 sm:h-16 lg:h-18 mx-auto sm:mx-0 -mb-1 sm:-mb-2"
-            />
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4 font-mono">
-              Kara Code
-            </h3>
-            <p className="text-sm sm:text-base text-gray-400 font-mono">
-              Crafting Digital Excellence
-            </p>
-          </motion.div>
-          <div className="text-gray-500 text-xs sm:text-sm font-mono text-center sm:text-left">
-            © 2025 Kara Code. All rights reserved | kara-code.ir
-          </div>
-        </div>
-      </motion.footer>
+     <Footer />
     </div>
   );
 }
