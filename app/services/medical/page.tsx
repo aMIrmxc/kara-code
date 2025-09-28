@@ -301,8 +301,10 @@ export default function HealthcarePortalPage() {
               <span className="text-xs sm:text-sm">Healthcare Portal Solutions</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              <span className="text-gradient-animated-health bg-clip-text text-transparent font-noto-h1">
+            
+
+             <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-noto-h1">
+              <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse">
                 پورتال جامع سلامت و درمان
               </span>
             </h1>
@@ -315,19 +317,24 @@ export default function HealthcarePortalPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+            
+
               <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                onClick={() =>
-                  document
-                    .getElementById("")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <span className="font-persian">
-                  شروع پروژه پورتال سلامت شما
-                </span>
-              </Button>
+                  size="lg"
+                  className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  onClick={() =>
+                    document
+                      .getElementById("projects")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  <>
+                    <span className="text-gradient-animated font-bold font-persian">
+                       شروع پروژه پورتال سلامت شما
+                    </span>
+                  </>
+                </Button>
+
               <Button
                 variant="outline"
                 size="lg"
@@ -987,14 +994,21 @@ export default function HealthcarePortalPage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300"
-              >
-                <span className="font-persian">
-                  شروع پروژه پورتال سلامت شما
-                </span>
-              </Button>
+             <Button
+                  size="lg"
+                  className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  onClick={() =>
+                    document
+                      .getElementById("projects")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  <>
+                    <span className="text-gradient-animated font-bold font-persian">
+                       شروع پروژه پورتال سلامت شما
+                    </span>
+                  </>
+                </Button>
             </motion.div>
           </motion.div>
         </div>
