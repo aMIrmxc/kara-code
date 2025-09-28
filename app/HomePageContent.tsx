@@ -145,7 +145,7 @@ export default function HomePageContent() {
   },
   {
     title: "Custom Web App",
-    category: "Custom App",
+    category: "Custom-App",
     image: "/custom-web-app.png",
     description:
       "اپلیکیشن اختصاصی تحت وب با طراحی سفارشی و امکانات کاملاً انعطاف‌پذیر",

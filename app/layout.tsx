@@ -6,6 +6,7 @@ import { vazir, noto } from "@/lib/fonts"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/toaster"
 import { Suspense } from "react"
+import ClientLayout from "@/components/layout/client-layout"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -41,7 +42,9 @@ export default function RootLayout({
       <body 
         className={`font-mono ${GeistSans.variable} ${GeistMono.variable} ${vazir.variable} ${noto.variable}`}
       >
-        <Suspense fallback={null}>{children}</Suspense>
+        <Suspense fallback={null}>
+          <ClientLayout>{children}</ClientLayout>
+        </Suspense>
         <Toaster />
         <Analytics />
       </body>
