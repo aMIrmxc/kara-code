@@ -38,12 +38,67 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
-import { motion, Variants } from "@/components/ui/motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useInView,
+  useSpring,
+  AnimatePresence,
+} from "framer-motion";
 
 export default function EcommercePlatformPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut" as any,
+      },
+    },
+  };
+
+  const fadeInScale = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut" as any,
+      },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const staggerItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut" as any,
+      },
+    },
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -295,38 +350,60 @@ export default function EcommercePlatformPage() {
       </section>
 
       {/* Key Features Section */}
-      <section
+      <motion.section
         id="key-features"
         className="py-16 sm:py-20 px-4 bg-black/30 text-center flex items-center justify-center min-h-screen"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.4 }}
+        variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto text-left w-full">
-          <div className="mb-8 sm:mb-12 text-center">
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full">
+          <motion.div variants={fadeInUp} className="mb-8 sm:mb-12 text-center">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full"
+            >
               <span className="text-xs sm:text-sm font-semibold">
                 Key Features
               </span>
-            </div>
+            </motion.div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight">
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight"
+            >
               قابلیت‌های کلیدی پلتفرم
-            </h2>
+            </motion.h2>
 
-            <div className="flex justify-center">
+            <motion.div variants={fadeInUp} className="flex justify-center">
               <p
                 className="text-base sm:text-lg text-gray-300 max-w-3xl font-persian px-4"
                 dir="rtl"
               >
                 با کلیک روی هر قابلیت، جزئیات کامل و مزایای آن را مشاهده کنید
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 my-auto border border-white/10 flex flex-col justify-center">
+          <motion.div
+            variants={fadeInScale}
+            className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 my-auto border border-white/10 flex flex-col justify-center"
+          >
             {/* Feature Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4">
+            <motion.div
+              variants={staggerContainer}
+              className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4"
+            >
               {features.map((feature, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={staggerItem}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`text-center cursor-pointer transition-all duration-300 p-2 sm:p-3 md:p-4 rounded-lg flex flex-col items-center justify-center min-h-[70px] sm:min-h-[90px] md:min-h-[100px] ${
                     activeFeature === index
                       ? "bg-rose-500/20"
@@ -343,76 +420,132 @@ export default function EcommercePlatformPage() {
                   >
                     {feature.title}
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Feature Details */}
-            <div className="text-left flex flex-col justify-center min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]">
-              <h3
-                className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-persian px-2 leading-tight"
-                dir="rtl"
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeFeature}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="text-left flex flex-col justify-center min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]"
               >
-                {features[activeFeature].title}
-              </h3>
-
-              <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
-                <p
-                  className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
+                <h3
+                  className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-persian px-2 leading-tight"
                   dir="rtl"
                 >
-                  {features[activeFeature].description}
-                </p>
-              </div>
+                  {features[activeFeature].title}
+                </h3>
 
-              <div className="flex flex-wrap gap-1 sm:gap-2 justify-center px-2 sm:px-4">
-                {features[activeFeature].benefits.map((benefit, i) => (
-                  <span
-                    key={i}
-                    className="text-xs sm:text-sm bg-rose-500/20 text-rose-200 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-persian whitespace-nowrap"
+                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
+                  <p
+                    className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
                     dir="rtl"
                   >
-                    {benefit}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+                    {features[activeFeature].description}
+                  </p>
+                </div>
+
+                <motion.div
+                  variants={staggerContainer}
+                  initial="hidden"
+                  animate="visible"
+                  className="flex flex-wrap gap-1 sm:gap-2 justify-center px-2 sm:px-4"
+                >
+                  {features[activeFeature].benefits.map((benefit, i) => (
+                    <motion.span
+                      key={i}
+                      variants={staggerItem}
+                      className="text-xs sm:text-sm bg-rose-500/20 text-rose-200 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-persian whitespace-nowrap"
+                      dir="rtl"
+                    >
+                      {benefit}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Results Section */}
-      <section id="results" className="py-16 sm:py-20 px-4">
+      <motion.section
+        id="results"
+        className="py-16 sm:py-20 px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.4 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-8 sm:mb-12">
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full">
+          <motion.div variants={fadeInUp} className="mb-8 sm:mb-12">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full"
+            >
               <span className="text-xs sm:text-sm font-semibold">
                 Business Impact
               </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight">
+            </motion.div>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight"
+            >
               تأثیر فروشگاه آنلاین بر کسب‌وکار شما
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
               آمار و نتایج واقعی از مشتریان موفق ما
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            </motion.p>
+          </motion.div>
+          <motion.div
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+          >
             {stats.map((stat, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center transform transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
-                style={{ animationDelay: `${index * 100}ms` }}
+                variants={staggerItem}
+                whileHover={{
+                  scale: 1.05,
+                  y: -10,
+                  transition: { duration: 0.2 },
+                }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
               >
-                <div className="text-rose-400 flex justify-center mb-3 sm:mb-4">
+                <motion.div
+                  initial={{ rotate: 0 }}
+                  whileInView={{ rotate: 360 }}
+                  viewport={{ once: false, amount: 0.4 }}
+                  transition={{ duration: 2, delay: index * 0.1 }}
+                  className="text-rose-400 flex justify-center mb-3 sm:mb-4"
+                >
                   {stat.icon}
-                </div>
-                <div className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2">
+                </motion.div>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: false, amount: 0.4 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    delay: index * 0.1 + 0.2,
+                  }}
+                  className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
+                >
                   {stat.value}
-                </div>
+                </motion.div>
                 <h4
                   className="text-base sm:text-lg font-semibold text-gray-200 mb-2 font-persian"
                   dir="rtl"
@@ -425,41 +558,68 @@ export default function EcommercePlatformPage() {
                 >
                   {stat.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-16 sm:py-20 px-4 bg-black/30">
+      <motion.section
+        id="benefits"
+        className="py-16 sm:py-20 px-4 bg-black/30"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.4 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full">
+          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full"
+            >
               <span className="text-xs sm:text-sm">Platform Features</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight">
+            </motion.div>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
+            >
               امکانات جامع پلتفرم فروشگاهی
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
               تمام ابزارهایی که برای راه‌اندازی و رشد فروشگاه آنلاین نیاز دارید
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <motion.div
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          >
             {keyFeatures.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group"
+                variants={staggerItem}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.2 },
+                }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 group"
               >
-                <div
-                  className={`bg-gradient-to-r ${feature.color} p-2 sm:p-3 rounded-lg inline-flex mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ delay: 0.1, duration: 0.3 }}
+                  className={`bg-gradient-to-r ${feature.color} p-2 sm:p-3 rounded-lg inline-flex mb-3 sm:mb-4`}
                 >
                   <div className="text-white">{feature.icon}</div>
-                </div>
+                </motion.div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
@@ -469,38 +629,56 @@ export default function EcommercePlatformPage() {
                 >
                   {feature.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Section */}
-      <section id="why-ecommerce" className="py-16 sm:py-20 px-4">
+      <motion.section
+        id="why-ecommerce"
+        className="py-16 sm:py-20 px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.4 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full">
+          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full"
+            >
               <span className="text-xs sm:text-sm">
                 Why E-commerce Platform
               </span>
-            </div>
-            <h2
+            </motion.div>
+            <motion.h2
+              variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
               dir="rtl"
             >
               چرا کسب‌وکار شما به فروشگاه آنلاین نیاز دارد؟
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
               در عصر دیجیتال، فروشگاه آنلاین نه یک انتخاب، بلکه یک ضرورت است. از
               دسترسی به بازار بزرگ‌تر گرفته تا کاهش هزینه‌ها، مزایای حضور آنلاین
               بی‌شمار است.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="space-y-6 sm:space-y-8">
+          <motion.div
+            variants={staggerContainer}
+            className="space-y-6 sm:space-y-8"
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {[
                 {
@@ -530,13 +708,19 @@ export default function EcommercePlatformPage() {
                   desc: "از ثبت سفارش تا ارسال کالا، تمام فرآیندها به صورت خودکار مدیریت می‌شوند و زمان شما برای توسعه کسب‌وکار آزاد می‌شود.",
                 },
               ].map((benefit, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={staggerItem}
+                  whileHover={{ x: -10 }}
                   className="flex items-start gap-3 sm:gap-4 flex-row-reverse"
                 >
-                  <div className="bg-gradient-to-r from-rose-500 to-pink-500 p-2 sm:p-3 rounded-lg flex-shrink-0 mt-1">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ delay: 0.1, duration: 0.3 }}
+                    className="bg-gradient-to-r from-rose-500 to-pink-500 p-2 sm:p-3 rounded-lg flex-shrink-0 mt-1"
+                  >
                     {benefit.icon}
-                  </div>
+                  </motion.div>
                   <div className="flex-1 text-right">
                     <h4
                       className="text-base sm:text-lg text-white font-semibold mb-1 sm:mb-2 font-persian"
@@ -551,33 +735,51 @@ export default function EcommercePlatformPage() {
                       {benefit.desc}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Process Section */}
-      <section id="process" className="py-16 sm:py-20 px-4 bg-black/30">
+      <motion.section
+        id="process"
+        className="py-16 sm:py-20 px-4 bg-black/30"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.4 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full">
+          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+              className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full"
+            >
               <span className="text-xs sm:text-sm">Our Process</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight">
+            </motion.div>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
+            >
               مراحل راه‌اندازی فروشگاه آنلاین
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
               در ۴ مرحله ساده، فروشگاه آنلاین حرفه‌ای خود را راه‌اندازی کنید
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div
+          <motion.div
             dir="rtl"
+            variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           >
             {[
@@ -606,13 +808,35 @@ export default function EcommercePlatformPage() {
                 icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />,
               },
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-gradient-to-r from-rose-500 to-pink-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-white">
+              <motion.div
+                key={index}
+                variants={staggerItem}
+                whileHover={{ y: -10 }}
+                className="text-center"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: false, amount: 0.4 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    delay: index * 0.2,
+                  }}
+                  whileHover={{ rotate: 360 }}
+                  className="bg-gradient-to-r from-rose-500 to-pink-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-white"
+                >
                   {item.icon}
-                </div>
-                <div className="text-rose-400 font-bold mb-2 text-sm sm:text-base">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: false, amount: 0.4 }}
+                  transition={{ delay: index * 0.2 + 0.2 }}
+                  className="text-rose-400 font-bold mb-2 text-sm sm:text-base"
+                >
                   {item.step}
-                </div>
+                </motion.div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 font-persian">
                   {item.title}
                 </h3>
@@ -622,51 +846,75 @@ export default function EcommercePlatformPage() {
                 >
                   {item.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section
+      <motion.section
         id="cta"
         className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 bg-gradient-to-r from-rose-900/50 to-pink-900/50"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.7 }}
+        variants={staggerContainer}
       >
         <div className="max-w-4xl mx-auto text-center w-full">
-          <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
+            className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-rose-500/20 backdrop-blur-sm border border-rose-400/30 text-rose-200 px-3 sm:px-4 py-1 rounded-full"
+          >
             <span className="text-xs sm:text-sm">Get Started Today</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight">
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
+          >
             آماده راه‌اندازی فروشگاه آنلاین خود هستید؟
-          </h2>
-          <p
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
             className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4"
             dir="rtl"
           >
             همین امروز فروشگاه آنلاین حرفه‌ای خود را راه‌اندازی کنید و وارد
             دنیای تجارت الکترونیک شوید
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-white"
-              onClick={() => (window.location.href = "/contact")}
-            >
-              <span className="font-persian">درخواست مشاوره رایگان</span>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
-              onClick={() => (window.location.href = "/portfolio")}
-            >
-              مشاهده نمونه کارها
-            </Button>
-          </div>
+          </motion.p>
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row gap-4 justify-center px-4"
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 text-white"
+                onClick={() => (window.location.href = "/contact")}
+              >
+                <span className="font-persian">درخواست مشاوره رایگان</span>
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
+                onClick={() => (window.location.href = "/portfolio")}
+              >
+                مشاهده نمونه کارها
+              </Button>
+            </motion.div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <motion.div
+            variants={fadeInUp}
+            className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
             <a
               href="tel:+98XXXXXXXXX"
               className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
@@ -681,17 +929,27 @@ export default function EcommercePlatformPage() {
               <Mail className="w-5 h-5" />
               <span>info@karacode.ir</span>
             </a>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
-      <footer
+      <motion.footer
         id="footer"
         className="py-8 sm:py-12 px-4 sm:px-6 bg-black/50 border-t border-white/10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 1 }}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="mb-4 sm:mb-6 text-center sm:text-left">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="mb-4 sm:mb-6 text-center sm:text-left"
+          >
             <img
               src="/logos/ck-nobg.png"
               alt="Kara Code Logo"
@@ -703,12 +961,12 @@ export default function EcommercePlatformPage() {
             <p className="text-sm sm:text-base text-gray-400 font-mono">
               Crafting Digital Excellence
             </p>
-          </div>
+          </motion.div>
           <div className="text-gray-500 text-xs sm:text-sm font-mono text-center sm:text-left">
             © 2025 Kara Code. All rights reserved | kara-code.ir
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </div>
   );
 }

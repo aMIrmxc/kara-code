@@ -511,8 +511,8 @@ export default function HomePageContent() {
                   variants={cardVariants as any}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: index * 0.2 }}
                   className="flex flex-col h-full"
                 >
                   <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
@@ -546,12 +546,22 @@ export default function HomePageContent() {
       </AnimatedSection>
 
         {/* Footer */}
-      <footer
+      <motion.footer
         id="footer"
         className="py-8 sm:py-12 px-4 sm:px-6 bg-black/50 border-t border-white/10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 1 }}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="mb-4 sm:mb-6 text-center sm:text-left">
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="mb-4 sm:mb-6 text-center sm:text-left"
+          >
             <img
               src="/logos/ck-nobg.png"
               alt="Kara Code Logo"
@@ -563,12 +573,12 @@ export default function HomePageContent() {
             <p className="text-sm sm:text-base text-gray-400 font-mono">
               Crafting Digital Excellence
             </p>
-          </div>
+          </motion.div>
           <div className="text-gray-500 text-xs sm:text-sm font-mono text-center sm:text-left">
             © 2025 Kara Code. All rights reserved | kara-code.ir
           </div>
         </div>
-      </footer>
+      </motion.footer>
     </>
   );
 }

@@ -369,7 +369,7 @@ export default function RestaurantWebsitePage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -493,7 +493,7 @@ export default function RestaurantWebsitePage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -534,7 +534,7 @@ export default function RestaurantWebsitePage() {
                 <motion.div 
                   initial={{ rotate: 0 }}
                   whileInView={{ rotate: 360 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: false, amount: 0.4 }}
                   transition={{ duration: 2, delay: index * 0.1 }}
                   className="text-orange-400 flex justify-center mb-3 sm:mb-4"
                 >
@@ -544,7 +544,7 @@ export default function RestaurantWebsitePage() {
                 <motion.div 
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: false, amount: 0.4 }}
                   transition={{ 
                     type: "spring",
                     stiffness: 200,
@@ -585,7 +585,7 @@ export default function RestaurantWebsitePage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -657,7 +657,7 @@ export default function RestaurantWebsitePage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -753,7 +753,7 @@ export default function RestaurantWebsitePage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -816,7 +816,7 @@ export default function RestaurantWebsitePage() {
                 <motion.div 
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: false, amount: 0.4 }}
                   transition={{ 
                     type: "spring",
                     stiffness: 200,
@@ -831,7 +831,7 @@ export default function RestaurantWebsitePage() {
                 <motion.div 
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  viewport={{ once: false }}
+                  viewport={{ once: false, amount: 0.4 }}
                   transition={{ delay: index * 0.2 + 0.2 }}
                   className="text-orange-400 font-bold mb-2 text-sm sm:text-base"
                 >
@@ -864,7 +864,7 @@ export default function RestaurantWebsitePage() {
           <motion.div 
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: false, amount: 0.4 }}
             transition={{ delay: 0.1, duration: 0.3 }}
             className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
           >
@@ -913,14 +913,14 @@ export default function RestaurantWebsitePage() {
         className="py-8 sm:py-12 px-4 sm:px-6 bg-black/50 border-t border-white/10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
+        viewport={{ once: false, amount: 0.4 }}
         transition={{ duration: 1 }}
       >
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: false, amount: 0.4 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             className="mb-4 sm:mb-6 text-center sm:text-left"
           >
