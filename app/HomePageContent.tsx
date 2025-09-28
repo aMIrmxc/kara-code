@@ -27,6 +27,7 @@ import {
   Linkedin,
   Instagram,
   ArrowUp,
+  Phone,
 } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { motion, Variants } from "@/components/ui/motion";
@@ -579,11 +580,7 @@ export default function HomePageContent() {
               <p className="text-base text-gray-400 font-mono">
                 Crafting Digital Excellence
               </p>
-              <div className="flex justify-center lg:justify-start space-x-4 mt-6">
-                <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Github /></a>
-                <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Linkedin /></a>
-                <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Instagram /></a>
-              </div>
+              
             </motion.div>
 
             {/* Quick Links */}
@@ -594,7 +591,7 @@ export default function HomePageContent() {
             >
               <h4 className="font-semibold text-white mb-4 text-lg font-mono">Quick Links</h4>
               <ul className="space-y-3">
-                <li><Link href="#services" className="text-gray-400 hover:text-white transition-colors font-persian">خدمات</Link></li>
+                <li><Link href="/" className="text-gray-400 hover:text-white transition-colors font-persian">خانه</Link></li>
                 <li><Link href="#projects" className="text-gray-400 hover:text-white transition-colors font-persian">نمونه‌کارها</Link></li>
                 <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors font-persian">تماس با ما</Link></li>
               </ul>
@@ -613,8 +610,12 @@ export default function HomePageContent() {
                   <a href="mailto:info@kara-code.ir" className="text-gray-400 hover:text-white transition-colors">info@kara-code.ir</a>
                 </li>
                 <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-gray-400"/>
+                  <a href="https://wa.me/00989130350774" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">WhatsApp</a>
+                </li>
+                <li className="flex items-center gap-3">
                   <Send className="w-5 h-5 text-gray-400"/>
-                  <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Telegram</a>
+                  <a href="https://t.me/KaraCodeir" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Telegram</a>
                 </li>
               </ul>
             </motion.div>
