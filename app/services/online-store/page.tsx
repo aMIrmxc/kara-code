@@ -308,19 +308,24 @@ export default function EcommercePlatformPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-              <Button
+              
+
+
+                <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-white"
+                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 onClick={() =>
                   document
-                    .getElementById("cta")
+                    .getElementById("")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                <span className="font-persian">
+                <span className="text-gradient-animated font-persian">
                   شروع ساخت فروشگاه آنلاین شما
                 </span>
               </Button>
+
+
               <Button
                 variant="outline"
                 size="lg"
@@ -890,46 +895,30 @@ export default function EcommercePlatformPage() {
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              
+
+
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 text-white"
-                onClick={() => (window.location.href = "/contact")}
+                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                onClick={() =>
+                  document
+                    .getElementById("")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
-                <span className="font-persian">درخواست مشاوره رایگان</span>
+                <span className="text-gradient-animated font-persian">
+                  شروع پروژه فروشگاه آنلاین شما
+                </span>
               </Button>
+
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
-                onClick={() => (window.location.href = "/portfolio")}
-              >
-                مشاهده نمونه کارها
-              </Button>
+              
             </motion.div>
           </motion.div>
 
-          {/* Contact Info */}
-          <motion.div
-            variants={fadeInUp}
-            className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center"
-          >
-            <a
-              href="tel:+98XXXXXXXXX"
-              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              <span className="font-persian">۰۹۱۲ ۱۲۳ ۴۵۶۷</span>
-            </a>
-            <a
-              href="mailto:info@karacode.ir"
-              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              <span>info@karacode.ir</span>
-            </a>
-          </motion.div>
+          
         </div>
       </motion.section>
 

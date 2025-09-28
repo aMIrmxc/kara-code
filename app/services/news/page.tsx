@@ -69,26 +69,26 @@ export default function NewsAgencyWebsitePage() {
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   const fadeInScale = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   const staggerContainer = {
@@ -97,9 +97,9 @@ export default function NewsAgencyWebsitePage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const staggerItem = {
@@ -109,9 +109,9 @@ export default function NewsAgencyWebsitePage() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   useEffect(() => {
@@ -302,7 +302,9 @@ export default function NewsAgencyWebsitePage() {
           >
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-red-600/20 backdrop-blur-sm border border-red-400/30 text-red-200 px-2 sm:px-4 py-1 rounded-full">
               <Newspaper className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">News Agency Website Solutions</span>
+              <span className="text-xs sm:text-sm">
+                News Agency Website Solutions
+              </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
@@ -315,7 +317,8 @@ export default function NewsAgencyWebsitePage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
               dir="rtl"
             >
-             راه‌اندازی خبرگزاری آنلاین حرفه‌ای با قابلیت انتشار اخبار فوری، محتوای چندرسانه‌ای، پخش زنده و سیستم مدیریت محتوای پیشرفته
+              راه‌اندازی خبرگزاری آنلاین حرفه‌ای با قابلیت انتشار اخبار فوری،
+              محتوای چندرسانه‌ای، پخش زنده و سیستم مدیریت محتوای پیشرفته
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
@@ -342,23 +345,22 @@ export default function NewsAgencyWebsitePage() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                توضیحات بیشتر
+                مشاهده قابلیت‌ها
               </Button>
             </div>
           </div>
         </div>
 
-         <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showScrollIndicator ? 1 : 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-        <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
-        </div>
-      </motion.div>
-
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showScrollIndicator ? 1 : 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        >
+          <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
+            <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Key Features Section */}
@@ -370,23 +372,23 @@ export default function NewsAgencyWebsitePage() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.4 }}
         variants={staggerContainer}
-
       >
         <div className="max-w-6xl mx-auto text-left w-full">
-          <motion.div variants={fadeInUp}  className="mb-8 sm:mb-12 text-center">
-            <motion.div 
+          <motion.div variants={fadeInUp} className="mb-8 sm:mb-12 text-center">
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-red-600/20 backdrop-blur-sm border border-red-400/30 text-red-200 px-3 sm:px-4 py-1 rounded-full"
             >
-              <span className="text-xs sm:text-sm font-semibold">Key Features</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Key Features
+              </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
-              
               className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight"
             >
               قابلیت‌های کلیدی پلتفرم خبری
@@ -402,12 +404,12 @@ export default function NewsAgencyWebsitePage() {
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={fadeInScale}
             className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 my-auto border border-white/10 flex flex-col justify-center"
           >
             {/* Feature Grid */}
-            <motion.div 
+            <motion.div
               variants={staggerContainer}
               className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4"
             >
@@ -439,7 +441,7 @@ export default function NewsAgencyWebsitePage() {
 
             {/* Feature Details */}
             <AnimatePresence mode="wait">
-              <motion.div 
+              <motion.div
                 key={activeFeature}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -453,7 +455,7 @@ export default function NewsAgencyWebsitePage() {
                 >
                   {features[activeFeature].title}
                 </h3>
-                
+
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                   <p
                     className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
@@ -463,7 +465,7 @@ export default function NewsAgencyWebsitePage() {
                   </p>
                 </div>
 
-                <motion.div 
+                <motion.div
                   variants={staggerContainer}
                   initial="hidden"
                   animate="visible"
@@ -487,9 +489,9 @@ export default function NewsAgencyWebsitePage() {
       </motion.section>
 
       {/* Results Section */}
-      <motion.section 
+      <motion.section
         ref={statsRef}
-        id="results" 
+        id="results"
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
@@ -498,23 +500,25 @@ export default function NewsAgencyWebsitePage() {
       >
         <div className="max-w-7xl mx-auto text-center">
           <motion.div variants={fadeInUp} className="mb-8 sm:mb-12">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-red-600/20 backdrop-blur-sm border border-red-400/30 text-red-200 px-3 sm:px-4 py-1 rounded-full"
             >
-              <span className="text-xs sm:text-sm font-semibold">Results & Impact</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Results & Impact
+              </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               تأثیر پلتفرم خبری مدرن بر مخاطبان
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -523,8 +527,8 @@ export default function NewsAgencyWebsitePage() {
               آمار و ارقامی که قدرت یک خبرگزاری آنلاین حرفه‌ای را نشان می‌دهد
             </motion.p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           >
@@ -532,14 +536,14 @@ export default function NewsAgencyWebsitePage() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   y: -10,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
               >
-                <motion.div 
+                <motion.div
                   initial={{ rotate: 0 }}
                   whileInView={{ rotate: 360 }}
                   viewport={{ once: false, amount: 0.4 }}
@@ -548,29 +552,32 @@ export default function NewsAgencyWebsitePage() {
                 >
                   {stat.icon}
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: false, amount: 0.4 }}
-                  transition={{ 
+                  transition={{
                     type: "spring",
                     stiffness: 200,
-                    delay: index * 0.1 + 0.2
+                    delay: index * 0.1 + 0.2,
                   }}
                   className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
                 >
                   {stat.value}
                 </motion.div>
-                
+
                 <h4
                   className="text-base sm:text-lg font-semibold text-gray-200 mb-2 font-persian"
                   dir="rtl"
                 >
                   {stat.label}
                 </h4>
-                
-                <p className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1" dir="rtl">
+
+                <p
+                  className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1"
+                  dir="rtl"
+                >
                   {stat.description}
                 </p>
               </motion.div>
@@ -580,8 +587,8 @@ export default function NewsAgencyWebsitePage() {
       </motion.section>
 
       {/* Benefits Section */}
-      <motion.section 
-        id="benefits" 
+      <motion.section
+        id="benefits"
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
@@ -589,8 +596,11 @@ export default function NewsAgencyWebsitePage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
-            <motion.div 
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
@@ -599,24 +609,25 @@ export default function NewsAgencyWebsitePage() {
             >
               <span className="text-xs sm:text-sm">Platform Features</span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               امکانات جامع پلتفرم خبرگزاری
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
-              تمام ابزارهایی که برای راه‌اندازی و مدیریت یک خبرگزاری حرفه‌ای نیاز دارید
+              تمام ابزارهایی که برای راه‌اندازی و مدیریت یک خبرگزاری حرفه‌ای
+              نیاز دارید
             </motion.p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
@@ -624,9 +635,9 @@ export default function NewsAgencyWebsitePage() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ 
+                whileHover={{
                   y: -10,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 group"
               >
@@ -637,12 +648,15 @@ export default function NewsAgencyWebsitePage() {
                 >
                   <div className="text-white">{feature.icon}</div>
                 </motion.div>
-                
+
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
-                
-                <p className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed" dir="rtl">
+
+                <p
+                  className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed"
+                  dir="rtl"
+                >
                   {feature.desc}
                 </p>
               </motion.div>
@@ -652,8 +666,8 @@ export default function NewsAgencyWebsitePage() {
       </motion.section>
 
       {/* Why Section */}
-      <motion.section 
-        id="why-news-agency" 
+      <motion.section
+        id="why-news-agency"
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
@@ -661,17 +675,22 @@ export default function NewsAgencyWebsitePage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
-            <motion.div 
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-red-600/20 backdrop-blur-sm border border-red-400/30 text-red-200 px-3 sm:px-4 py-1 rounded-full"
             >
-              <span className="text-xs sm:text-sm">Why Modern News Platform</span>
+              <span className="text-xs sm:text-sm">
+                Why Modern News Platform
+              </span>
             </motion.div>
-            
+
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
@@ -679,22 +698,27 @@ export default function NewsAgencyWebsitePage() {
             >
               چرا خبرگزاری شما به پلتفرم دیجیتال مدرن نیاز دارد؟
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
-              در عصر دیجیتال، سرعت و کیفیت انتشار اخبار تعیین‌کننده موفقیت است. 
+              در عصر دیجیتال، سرعت و کیفیت انتشار اخبار تعیین‌کننده موفقیت است.
               پلتفرم مدرن به شما قدرت رقابت در بازار رسانه را می‌دهد.
             </motion.p>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="space-y-6 sm:space-y-8">
+          <motion.div
+            variants={staggerContainer}
+            className="space-y-6 sm:space-y-8"
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {[
                 {
-                  icon: <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
+                  icon: (
+                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  ),
                   title: "رشد مخاطب و تعامل",
                   desc: "با پلتفرم تعاملی و محتوای چندرسانه‌ای، مخاطبان بیشتری جذب کنید و زمان حضور آن‌ها در سایت را تا ۳ برابر افزایش دهید.",
                 },
@@ -720,14 +744,14 @@ export default function NewsAgencyWebsitePage() {
                   whileHover={{ x: -10 }}
                   className="flex items-start gap-3 sm:gap-4 flex-row-reverse"
                 >
-                  <motion.div 
+                  <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ delay: 0.1, duration: 0.3 }}
                     className="bg-gradient-to-r from-red-700 to-red-500 p-2 sm:p-3 rounded-lg flex-shrink-0 mt-1"
                   >
                     {benefit.icon}
                   </motion.div>
-                  
+
                   <div className="flex-1 text-right">
                     <h4
                       className="text-base sm:text-lg text-white font-semibold mb-1 sm:mb-2 font-persian"
@@ -735,7 +759,10 @@ export default function NewsAgencyWebsitePage() {
                     >
                       {benefit.title}
                     </h4>
-                    <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed" dir="rtl">
+                    <p
+                      className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed"
+                      dir="rtl"
+                    >
                       {benefit.desc}
                     </p>
                   </div>
@@ -747,8 +774,8 @@ export default function NewsAgencyWebsitePage() {
       </motion.section>
 
       {/* Process Section */}
-      <motion.section 
-        id="process" 
+      <motion.section
+        id="process"
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
@@ -756,8 +783,11 @@ export default function NewsAgencyWebsitePage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
-            <motion.div 
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
@@ -766,14 +796,14 @@ export default function NewsAgencyWebsitePage() {
             >
               <span className="text-xs sm:text-sm">Our Process</span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               مراحل راه‌اندازی خبرگزاری آنلاین
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -783,8 +813,8 @@ export default function NewsAgencyWebsitePage() {
             </motion.p>
           </motion.div>
 
-          <motion.div 
-            dir="rtl" 
+          <motion.div
+            dir="rtl"
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           >
@@ -814,28 +844,28 @@ export default function NewsAgencyWebsitePage() {
                 icon: <Wifi className="w-5 h-5 sm:w-6 sm:h-6" />,
               },
             ].map((item, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={staggerItem}
                 whileHover={{ y: -10 }}
                 className="text-center"
               >
-                <motion.div 
+                <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: false, amount: 0.4 }}
-                  transition={{ 
+                  transition={{
                     type: "spring",
                     stiffness: 200,
-                    delay: index * 0.2
+                    delay: index * 0.2,
                   }}
                   whileHover={{ rotate: 360 }}
                   className="bg-gradient-to-r from-red-700 to-red-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                 >
                   {item.icon}
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: false, amount: 0.4 }}
@@ -844,12 +874,15 @@ export default function NewsAgencyWebsitePage() {
                 >
                   {item.step}
                 </motion.div>
-                
+
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                
-                <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2" dir="rtl">
+
+                <p
+                  className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2"
+                  dir="rtl"
+                >
                   {item.desc}
                 </p>
               </motion.div>
@@ -868,7 +901,7 @@ export default function NewsAgencyWebsitePage() {
         variants={staggerContainer}
       >
         <div className="max-w-4xl mx-auto text-center w-full">
-          <motion.div 
+          <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: false, amount: 0.4 }}
@@ -877,30 +910,27 @@ export default function NewsAgencyWebsitePage() {
           >
             <span className="text-xs sm:text-sm">Get Started Today</span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             variants={fadeInUp}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
           >
             آماده راه‌اندازی خبرگزاری دیجیتال خود هستید؟
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             variants={fadeInUp}
-            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4" 
+            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4"
             dir="rtl"
           >
             با پلتفرم خبری مدرن، صدای خود را به میلیون‌ها مخاطب برسانید
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300"
@@ -924,7 +954,7 @@ export default function NewsAgencyWebsitePage() {
         transition={{ duration: 1 }}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false, amount: 0.4 }}

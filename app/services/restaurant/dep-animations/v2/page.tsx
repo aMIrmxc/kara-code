@@ -44,9 +44,9 @@ import {
 function useSectionScrollProgress(ref: React.RefObject<HTMLElement>) {
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
-  
+
   return scrollYProgress;
 }
 
@@ -69,7 +69,7 @@ export default function RestaurantWebsitePage() {
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   // Hero section animations
@@ -81,31 +81,63 @@ export default function RestaurantWebsitePage() {
   // Features section animations
   const featuresProgress = useSectionScrollProgress(featuresRef);
   const featuresY = useTransform(featuresProgress, [0, 0.5, 1], [100, 0, -50]);
-  const featuresOpacity = useTransform(featuresProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-  const featuresScale = useTransform(featuresProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.95]);
-  const featuresRotate = useTransform(featuresProgress, [0, 0.5, 1], [-5, 0, 5]);
+  const featuresOpacity = useTransform(
+    featuresProgress,
+    [0, 0.3, 0.7, 1],
+    [0, 1, 1, 0]
+  );
+  const featuresScale = useTransform(
+    featuresProgress,
+    [0, 0.3, 0.7, 1],
+    [0.8, 1, 1, 0.95]
+  );
+  const featuresRotate = useTransform(
+    featuresProgress,
+    [0, 0.5, 1],
+    [-5, 0, 5]
+  );
 
   // Stats section animations
   const statsProgress = useSectionScrollProgress(statsRef);
   const statsY = useTransform(statsProgress, [0, 0.5, 1], [100, 0, -50]);
-  const statsOpacity = useTransform(statsProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-  const statsScale = useTransform(statsProgress, [0, 0.3, 0.7, 1], [0.9, 1, 1, 0.95]);
+  const statsOpacity = useTransform(
+    statsProgress,
+    [0, 0.3, 0.7, 1],
+    [0, 1, 1, 0]
+  );
+  const statsScale = useTransform(
+    statsProgress,
+    [0, 0.3, 0.7, 1],
+    [0.9, 1, 1, 0.95]
+  );
 
   // Benefits section animations
   const benefitsProgress = useSectionScrollProgress(benefitsRef);
   const benefitsY = useTransform(benefitsProgress, [0, 0.5, 1], [80, 0, -40]);
-  const benefitsOpacity = useTransform(benefitsProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const benefitsOpacity = useTransform(
+    benefitsProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0]
+  );
 
   // Why section animations
   const whyProgress = useSectionScrollProgress(whyRef);
   const whyY = useTransform(whyProgress, [0, 0.5, 1], [60, 0, -30]);
-  const whyOpacity = useTransform(whyProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
+  const whyOpacity = useTransform(
+    whyProgress,
+    [0, 0.25, 0.75, 1],
+    [0, 1, 1, 0]
+  );
   const whyScale = useTransform(whyProgress, [0, 0.5, 1], [0.95, 1, 0.98]);
 
   // Process section animations
   const processProgress = useSectionScrollProgress(processRef);
   const processY = useTransform(processProgress, [0, 0.5, 1], [50, 0, -30]);
-  const processOpacity = useTransform(processProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const processOpacity = useTransform(
+    processProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0]
+  );
 
   // CTA section animations
   const ctaProgress = useSectionScrollProgress(ctaRef);
@@ -287,9 +319,9 @@ export default function RestaurantWebsitePage() {
     index: number,
     totalItems: number
   ) => {
-    const start = index / totalItems * 0.3;
+    const start = (index / totalItems) * 0.3;
     const end = start + 0.7;
-    
+
     return {
       y: useTransform(progress, [start, end], [50, 0]),
       opacity: useTransform(progress, [start, end], [0, 1]),
@@ -300,7 +332,7 @@ export default function RestaurantWebsitePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-orange-950 to-red-950 overflow-x-hidden">
       {/* Parallax Background */}
-      <motion.div 
+      <motion.div
         style={{ y: bgY }}
         className="fixed inset-0 pointer-events-none"
       >
@@ -320,14 +352,14 @@ export default function RestaurantWebsitePage() {
       >
         {/* Animated Background Blobs */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div 
+          <motion.div
             style={{
               rotate: useTransform(heroProgress, [0, 1], [0, 180]),
               scale: useTransform(heroProgress, [0, 1], [1, 1.5]),
             }}
             className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-30"
           />
-          <motion.div 
+          <motion.div
             style={{
               rotate: useTransform(heroProgress, [0, 1], [0, -180]),
               scale: useTransform(heroProgress, [0, 1], [1, 1.3]),
@@ -342,17 +374,19 @@ export default function RestaurantWebsitePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.div 
+            <motion.div
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-2 sm:px-4 py-1 rounded-full"
               style={{
                 scale: useTransform(heroProgress, [0, 0.5], [1, 0.9]),
               }}
             >
               <Utensils className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">Restaurant Website Solutions</span>
+              <span className="text-xs sm:text-sm">
+                Restaurant Website Solutions
+              </span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -370,11 +404,12 @@ export default function RestaurantWebsitePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              سفارش وبسایت آنلاین رستوران شما با توانایی مجهز شدن به  منوی دیجیتال تعاملی و قابلیت رزرو میز و سیستم سفارش‌گیری و پرداخت
-              آنلاین  
+              سفارش وبسایت آنلاین رستوران شما با توانایی مجهز شدن به منوی
+              دیجیتال تعاملی و قابلیت رزرو میز و سیستم سفارش‌گیری و پرداخت
+              آنلاین
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -393,7 +428,7 @@ export default function RestaurantWebsitePage() {
                   </span>
                 </Button>
               </motion.div>
-              
+
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -408,7 +443,7 @@ export default function RestaurantWebsitePage() {
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  توضیحات بیشتر
+                  مشاهده قابلیت‌ها
                 </Button>
               </motion.div>
             </motion.div>
@@ -417,7 +452,10 @@ export default function RestaurantWebsitePage() {
 
         <motion.div
           initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: showScrollIndicator ? 1 : 0, y: showScrollIndicator ? 0 : 100 }}
+          animate={{
+            opacity: showScrollIndicator ? 1 : 0,
+            y: showScrollIndicator ? 0 : 100,
+          }}
           transition={{ duration: 1, ease: "easeInOut" }}
           className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
         >
@@ -445,16 +483,18 @@ export default function RestaurantWebsitePage() {
       >
         <div className="max-w-6xl mx-auto text-left w-full">
           <motion.div className="mb-8 sm:mb-12 text-center">
-            <motion.div 
+            <motion.div
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
               style={{
                 scale: useTransform(featuresProgress, [0.2, 0.4], [0, 1]),
               }}
             >
-              <span className="text-xs sm:text-sm font-semibold">Key Features</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Key Features
+              </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight"
               style={{
                 y: useTransform(featuresProgress, [0.2, 0.5], [30, 0]),
@@ -464,7 +504,7 @@ export default function RestaurantWebsitePage() {
               قابلیت‌های کلیدی در عمل
             </motion.h2>
 
-            <motion.div 
+            <motion.div
               className="flex justify-center"
               style={{
                 y: useTransform(featuresProgress, [0.3, 0.6], [30, 0]),
@@ -480,7 +520,7 @@ export default function RestaurantWebsitePage() {
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 my-auto border border-white/10 flex flex-col justify-center"
             style={{
               scale: useTransform(featuresProgress, [0.3, 0.6], [0.9, 1]),
@@ -490,7 +530,11 @@ export default function RestaurantWebsitePage() {
             {/* Feature Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4">
               {features.map((feature, index) => {
-                const transforms = getStaggeredTransform(featuresProgress, index, features.length);
+                const transforms = getStaggeredTransform(
+                  featuresProgress,
+                  index,
+                  features.length
+                );
                 return (
                   <motion.div
                     key={index}
@@ -526,7 +570,7 @@ export default function RestaurantWebsitePage() {
               >
                 {features[activeFeature].title}
               </h3>
-              
+
               <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                 <p
                   className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
@@ -556,9 +600,9 @@ export default function RestaurantWebsitePage() {
       </motion.section>
 
       {/* Results Section */}
-      <motion.section 
+      <motion.section
         ref={statsRef}
-        id="results" 
+        id="results"
         className="py-16 sm:py-20 px-4"
         style={{
           opacity: statsOpacity,
@@ -568,16 +612,18 @@ export default function RestaurantWebsitePage() {
       >
         <div className="max-w-7xl mx-auto text-center">
           <motion.div className="mb-8 sm:mb-12">
-            <motion.div 
+            <motion.div
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
               style={{
                 scale: useTransform(statsProgress, [0.1, 0.3], [0, 1]),
               }}
             >
-              <span className="text-xs sm:text-sm font-semibold">Results at a glance</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Results at a glance
+              </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight"
               style={{
                 y: useTransform(statsProgress, [0.1, 0.4], [50, 0]),
@@ -586,7 +632,7 @@ export default function RestaurantWebsitePage() {
             >
               نتایجی که وبسایت آنلاین برای رستوران شما دارد در یک نگاه
             </motion.h2>
-            
+
             <motion.p
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
@@ -598,47 +644,62 @@ export default function RestaurantWebsitePage() {
               نگاهی عمیق به تأثیر وبسایت بر رشد کسب‌وکار شما
             </motion.p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((stat, index) => {
-              const transforms = getStaggeredTransform(statsProgress, index, stats.length);
+              const transforms = getStaggeredTransform(
+                statsProgress,
+                index,
+                stats.length
+              );
               return (
                 <motion.div
                   key={index}
                   style={transforms}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     y: -10,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2 },
                   }}
                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
                 >
-                  <motion.div 
+                  <motion.div
                     className="text-orange-400 flex justify-center mb-3 sm:mb-4"
                     style={{
-                      rotate: useTransform(statsProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 360]),
+                      rotate: useTransform(
+                        statsProgress,
+                        [0.3 + index * 0.1, 0.5 + index * 0.1],
+                        [0, 360]
+                      ),
                     }}
                   >
                     {stat.icon}
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
                     style={{
-                      scale: useTransform(statsProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 1]),
+                      scale: useTransform(
+                        statsProgress,
+                        [0.3 + index * 0.1, 0.5 + index * 0.1],
+                        [0, 1]
+                      ),
                     }}
                   >
                     {stat.value}
                   </motion.div>
-                  
+
                   <h4
                     className="text-base sm:text-lg font-semibold text-gray-200 mb-2 font-persian"
                     dir="rtl"
                   >
                     {stat.label}
                   </h4>
-                  
-                  <p className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1" dir="rtl">
+
+                  <p
+                    className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1"
+                    dir="rtl"
+                  >
                     {stat.description}
                   </p>
                 </motion.div>
@@ -649,9 +710,9 @@ export default function RestaurantWebsitePage() {
       </motion.section>
 
       {/* Benefits Section */}
-      <motion.section 
+      <motion.section
         ref={benefitsRef}
-        id="benefits" 
+        id="benefits"
         className="py-16 sm:py-20 px-4 bg-black/30"
         style={{
           opacity: benefitsOpacity,
@@ -660,7 +721,7 @@ export default function RestaurantWebsitePage() {
       >
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-12 sm:mb-16">
-            <motion.div 
+            <motion.div
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
               style={{
                 scale: useTransform(benefitsProgress, [0.1, 0.3], [0, 1]),
@@ -668,8 +729,8 @@ export default function RestaurantWebsitePage() {
             >
               <span className="text-xs sm:text-sm">Benefits</span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
               style={{
                 y: useTransform(benefitsProgress, [0.1, 0.4], [50, 0]),
@@ -678,7 +739,7 @@ export default function RestaurantWebsitePage() {
             >
               ویژگی های کلی یک وب سایت رستورانی خوب
             </motion.h2>
-            
+
             <motion.p
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
@@ -693,14 +754,18 @@ export default function RestaurantWebsitePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {keyFeatures.map((feature, index) => {
-              const transforms = getStaggeredTransform(benefitsProgress, index, keyFeatures.length);
+              const transforms = getStaggeredTransform(
+                benefitsProgress,
+                index,
+                keyFeatures.length
+              );
               return (
                 <motion.div
                   key={index}
                   style={transforms}
-                  whileHover={{ 
+                  whileHover={{
                     y: -10,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2 },
                   }}
                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 group"
                 >
@@ -711,12 +776,15 @@ export default function RestaurantWebsitePage() {
                   >
                     <div className="text-white">{feature.icon}</div>
                   </motion.div>
-                  
+
                   <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  
-                  <p className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed" dir="rtl">
+
+                  <p
+                    className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed"
+                    dir="rtl"
+                  >
                     {feature.desc}
                   </p>
                 </motion.div>
@@ -727,9 +795,9 @@ export default function RestaurantWebsitePage() {
       </motion.section>
 
       {/* Why Section */}
-      <motion.section 
+      <motion.section
         ref={whyRef}
-        id="why-restaurant" 
+        id="why-restaurant"
         className="py-16 sm:py-20 px-4"
         style={{
           opacity: whyOpacity,
@@ -739,15 +807,17 @@ export default function RestaurantWebsitePage() {
       >
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-12 sm:mb-16">
-            <motion.div 
+            <motion.div
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
               style={{
                 scale: useTransform(whyProgress, [0.1, 0.3], [0, 1]),
               }}
             >
-              <span className="text-xs sm:text-sm">Why restaurant online website</span>
+              <span className="text-xs sm:text-sm">
+                Why restaurant online website
+              </span>
             </motion.div>
-            
+
             <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
               dir="rtl"
@@ -758,7 +828,7 @@ export default function RestaurantWebsitePage() {
             >
               چرا رستوران شما به یک وب‌سایت حرفه‌ای نیاز دارد؟
             </motion.h2>
-            
+
             <motion.p
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
@@ -777,7 +847,9 @@ export default function RestaurantWebsitePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {[
                 {
-                  icon: <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
+                  icon: (
+                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  ),
                   title: "افزایش درآمد و فروش",
                   desc: "با دریافت سفارشات آنلاین در ۲۴ ساعت شبانه‌روز، فروش خود را تا ۴۰٪ افزایش دهید و محدودیت‌های زمانی و مکانی را از بین ببرید.",
                 },
@@ -805,14 +877,14 @@ export default function RestaurantWebsitePage() {
                     whileHover={{ x: -10 }}
                     className="flex items-start gap-3 sm:gap-4 flex-row-reverse"
                   >
-                    <motion.div 
+                    <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                       className="bg-gradient-to-r from-orange-500 to-red-500 p-2 sm:p-3 rounded-lg flex-shrink-0 mt-1"
                     >
                       {benefit.icon}
                     </motion.div>
-                    
+
                     <div className="flex-1 text-right">
                       <h4
                         className="text-base sm:text-lg text-white font-semibold mb-1 sm:mb-2 font-persian"
@@ -820,7 +892,10 @@ export default function RestaurantWebsitePage() {
                       >
                         {benefit.title}
                       </h4>
-                      <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed" dir="rtl">
+                      <p
+                        className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed"
+                        dir="rtl"
+                      >
                         {benefit.desc}
                       </p>
                     </div>
@@ -833,9 +908,9 @@ export default function RestaurantWebsitePage() {
       </motion.section>
 
       {/* Process Section */}
-      <motion.section 
+      <motion.section
         ref={processRef}
-        id="process" 
+        id="process"
         className="py-16 sm:py-20 px-4 bg-black/30"
         style={{
           opacity: processOpacity,
@@ -844,7 +919,7 @@ export default function RestaurantWebsitePage() {
       >
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-12 sm:mb-16">
-            <motion.div 
+            <motion.div
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
               style={{
                 scale: useTransform(processProgress, [0.1, 0.3], [0, 1]),
@@ -852,8 +927,8 @@ export default function RestaurantWebsitePage() {
             >
               <span className="text-xs sm:text-sm">Our Process</span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
               style={{
                 y: useTransform(processProgress, [0.1, 0.4], [50, 0]),
@@ -862,7 +937,7 @@ export default function RestaurantWebsitePage() {
             >
               فرآیند ساده، نتایج خیره‌کننده
             </motion.h2>
-            
+
             <motion.p
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
@@ -875,7 +950,10 @@ export default function RestaurantWebsitePage() {
             </motion.p>
           </motion.div>
 
-          <div dir="rtl" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div
+            dir="rtl"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          >
             {[
               {
                 step: "01",
@@ -902,39 +980,54 @@ export default function RestaurantWebsitePage() {
                 icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />,
               },
             ].map((item, index) => {
-              const transforms = getStaggeredTransform(processProgress, index, 4);
+              const transforms = getStaggeredTransform(
+                processProgress,
+                index,
+                4
+              );
               return (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   style={transforms}
                   whileHover={{ y: -10 }}
                   className="text-center"
                 >
-                  <motion.div 
+                  <motion.div
                     className="bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                     style={{
-                      rotate: useTransform(processProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 360]),
+                      rotate: useTransform(
+                        processProgress,
+                        [0.3 + index * 0.1, 0.5 + index * 0.1],
+                        [0, 360]
+                      ),
                     }}
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
                     {item.icon}
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="text-orange-400 font-bold mb-2 text-sm sm:text-base"
                     style={{
-                      opacity: useTransform(processProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 1]),
+                      opacity: useTransform(
+                        processProgress,
+                        [0.3 + index * 0.1, 0.5 + index * 0.1],
+                        [0, 1]
+                      ),
                     }}
                   >
                     {item.step}
                   </motion.div>
-                  
+
                   <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                     {item.title}
                   </h3>
-                  
-                  <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2" dir="rtl">
+
+                  <p
+                    className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2"
+                    dir="rtl"
+                  >
                     {item.desc}
                   </p>
                 </motion.div>
@@ -956,7 +1049,7 @@ export default function RestaurantWebsitePage() {
         }}
       >
         <div className="max-w-4xl mx-auto text-center w-full">
-          <motion.div 
+          <motion.div
             className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
             style={{
               scale: useTransform(ctaProgress, [0.2, 0.4], [0, 1]),
@@ -964,8 +1057,8 @@ export default function RestaurantWebsitePage() {
           >
             <span className="text-xs sm:text-sm">Get Started</span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
             style={{
               y: useTransform(ctaProgress, [0.2, 0.5], [50, 0]),
@@ -974,9 +1067,9 @@ export default function RestaurantWebsitePage() {
           >
             آماده‌اید تا رستوران خود را به وبسایت آنلاین مجهز کنید؟
           </motion.h2>
-          
-          <motion.p 
-            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4" 
+
+          <motion.p
+            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4"
             dir="rtl"
             style={{
               y: useTransform(ctaProgress, [0.3, 0.6], [30, 0]),
@@ -985,18 +1078,15 @@ export default function RestaurantWebsitePage() {
           >
             با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
             style={{
               y: useTransform(ctaProgress, [0.4, 0.7], [30, 0]),
               opacity: useTransform(ctaProgress, [0.4, 0.7], [0, 1]),
             }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300"

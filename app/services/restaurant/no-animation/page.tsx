@@ -34,7 +34,6 @@ import {
 } from "lucide-react";
 import { motion, Variants } from "@/components/ui/motion";
 
-
 export default function RestaurantWebsitePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
@@ -100,7 +99,6 @@ export default function RestaurantWebsitePage() {
         "امکان دسته‌بندی محصولات",
         "جذابیت بصری بالا",
         "کاهش هزینه چاپ منو",
-        
       ],
     },
     {
@@ -229,7 +227,9 @@ export default function RestaurantWebsitePage() {
           >
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-2 sm:px-4 py-1 rounded-full">
               <Utensils className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">Restaurant Website Solutions</span>
+              <span className="text-xs sm:text-sm">
+                Restaurant Website Solutions
+              </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
@@ -242,9 +242,9 @@ export default function RestaurantWebsitePage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
               dir="rtl"
             >
-             سفارش وبسایت آنلاین رستوران شما با توانایی مجهز شدن به  منوی دیجیتال تعاملی و قابلیت رزرو میز و سیستم سفارش‌گیری و پرداخت
-              آنلاین  
-              
+              سفارش وبسایت آنلاین رستوران شما با توانایی مجهز شدن به منوی
+              دیجیتال تعاملی و قابلیت رزرو میز و سیستم سفارش‌گیری و پرداخت
+              آنلاین
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
@@ -271,23 +271,22 @@ export default function RestaurantWebsitePage() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                توضیحات بیشتر
+                مشاهده قابلیت‌ها
               </Button>
             </div>
           </div>
         </div>
 
-         <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showScrollIndicator ? 1 : 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-        <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
-        </div>
-      </motion.div>
-
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showScrollIndicator ? 1 : 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        >
+          <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
+            <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
+          </div>
+        </motion.div>
       </section>
 
       {/*  Key Features Section */}
@@ -298,9 +297,11 @@ export default function RestaurantWebsitePage() {
         <div className="max-w-6xl mx-auto text-left w-full">
           <div className="mb-8 sm:mb-12 text-center">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full">
-              <span className="text-xs sm:text-sm font-semibold">Key Features</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Key Features
+              </span>
             </div>
-            
+
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight">
               قابلیت‌های کلیدی در عمل
             </h2>
@@ -310,7 +311,7 @@ export default function RestaurantWebsitePage() {
                 className="text-base sm:text-lg text-gray-300 max-w-3xl font-persian px-4"
                 dir="rtl"
               >
-                  با کلیک بر روی هر قابلیت، جزئیات و مزایای آن را مشاهده کنید
+                با کلیک بر روی هر قابلیت، جزئیات و مزایای آن را مشاهده کنید
               </p>
             </div>
           </div>
@@ -349,7 +350,7 @@ export default function RestaurantWebsitePage() {
               >
                 {features[activeFeature].title}
               </h3>
-              
+
               <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                 <p
                   className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
@@ -380,7 +381,9 @@ export default function RestaurantWebsitePage() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="mb-8 sm:mb-12">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full">
-              <span className="text-xs sm:text-sm font-semibold">Results at a glance</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Results at a glance
+              </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight">
               نتایجی که وبسایت آنلاین برای رستوران شما دارد در یک نگاه
@@ -411,7 +414,10 @@ export default function RestaurantWebsitePage() {
                 >
                   {stat.label}
                 </h4>
-                <p className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1" dir="rtl">
+                <p
+                  className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1"
+                  dir="rtl"
+                >
                   {stat.description}
                 </p>
               </div>
@@ -452,7 +458,10 @@ export default function RestaurantWebsitePage() {
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed" dir="rtl">
+                <p
+                  className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed"
+                  dir="rtl"
+                >
                   {feature.desc}
                 </p>
               </div>
@@ -466,7 +475,9 @@ export default function RestaurantWebsitePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full">
-              <span className="text-xs sm:text-sm">Why restaurant online website</span>
+              <span className="text-xs sm:text-sm">
+                Why restaurant online website
+              </span>
             </div>
             <h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
@@ -488,7 +499,9 @@ export default function RestaurantWebsitePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {[
                 {
-                  icon: <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
+                  icon: (
+                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  ),
                   title: "افزایش درآمد و فروش",
                   desc: "با دریافت سفارشات آنلاین در ۲۴ ساعت شبانه‌روز، فروش خود را تا ۴۰٪ افزایش دهید و محدودیت‌های زمانی و مکانی را از بین ببرید.",
                 },
@@ -522,7 +535,10 @@ export default function RestaurantWebsitePage() {
                     >
                       {benefit.title}
                     </h4>
-                    <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed" dir="rtl">
+                    <p
+                      className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed"
+                      dir="rtl"
+                    >
                       {benefit.desc}
                     </p>
                   </div>
@@ -551,7 +567,10 @@ export default function RestaurantWebsitePage() {
             </p>
           </div>
 
-          <div dir="rtl" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div
+            dir="rtl"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          >
             {[
               {
                 step: "01",
@@ -588,7 +607,10 @@ export default function RestaurantWebsitePage() {
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2" dir="rtl">
+                <p
+                  className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2"
+                  dir="rtl"
+                >
                   {item.desc}
                 </p>
               </div>
@@ -609,7 +631,10 @@ export default function RestaurantWebsitePage() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight">
             آماده‌اید تا رستوران خود را به وبسایت آنلاین مجهز کنید؟
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4" dir="rtl">
+          <p
+            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4"
+            dir="rtl"
+          >
             با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">

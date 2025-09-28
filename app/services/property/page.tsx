@@ -317,19 +317,24 @@ export default function RealEstatePlatformPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                onClick={() =>
-                  document
-                    .getElementById("cta")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <span className="font-persian">
-                  شروع پروژه پلتفرم املاک شما
-                </span>
-              </Button>
+              
+
+              
+
+                <Button
+                                size="lg"
+                                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                                onClick={() =>
+                                  document
+                                    .getElementById("")
+                                    ?.scrollIntoView({ behavior: "smooth" })
+                                }
+                              >
+                                <span className="text-gradient-animated font-persian">
+                                  شروع پروژه پلتفرم املاک شما
+                                </span>
+                              </Button>
+
               <Button
                 variant="outline"
                 size="lg"
@@ -342,6 +347,9 @@ export default function RealEstatePlatformPage() {
               >
                 مشاهده قابلیت‌ها
               </Button>
+
+              
+
             </div>
           </div>
         </div>
@@ -895,48 +903,28 @@ export default function RealEstatePlatformPage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
+             
+
+            <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300"
+                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                onClick={() =>
+                  document
+                    .getElementById("")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
-                <span className="font-persian">
+                <span className="text-gradient-animated font-persian">
                   شروع ساخت پلتفرم املاک
                 </span>
               </Button>
+              
             </motion.div>
             
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
-              >
-                <Phone className="w-5 h-5 ml-2" />
-                <span>مشاوره رایگان</span>
-              </Button>
-            </motion.div>
+           
           </motion.div>
           
-          <motion.div 
-            variants={fadeInUp}
-            className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center text-gray-400 text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-teal-400" />
-              <span className="font-persian">ضمانت کیفیت</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-teal-400" />
-              <span className="font-persian">پشتیبانی 24/7</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-teal-400" />
-              <span className="font-persian">آموزش رایگان</span>
-            </div>
-          </motion.div>
+          
         </div>
       </motion.section>
 

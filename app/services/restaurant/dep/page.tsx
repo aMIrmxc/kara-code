@@ -328,7 +328,7 @@ export default function RestaurantWebsitePage() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                توضیحات بیشتر
+                مشاهده قابلیت‌ها
               </Button>
             </div>
           </div>

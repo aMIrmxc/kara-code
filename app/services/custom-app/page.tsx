@@ -63,26 +63,26 @@ export default function CustomWebAppPage() {
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   const fadeInScale = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   const staggerContainer = {
@@ -91,9 +91,9 @@ export default function CustomWebAppPage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const staggerItem = {
@@ -103,9 +103,9 @@ export default function CustomWebAppPage() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   useEffect(() => {
@@ -296,7 +296,9 @@ export default function CustomWebAppPage() {
           >
             <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-fuchsia-500/20 backdrop-blur-sm border border-fuchsia-400/30 text-fuchsia-200 px-2 sm:px-4 py-1 rounded-full">
               <Code2 className="w-4 h-4" />
-              <span className="text-xs sm:text-sm">Custom Web Application Development</span>
+              <span className="text-xs sm:text-sm">
+                Custom Web Application Development
+              </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
@@ -309,13 +311,14 @@ export default function CustomWebAppPage() {
               className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
               dir="rtl"
             >
-              یک اپلیکیشن وب اختصاصی با طراحی دلخواه شما و قابلیت‌های کاملاً منعطف برای رشد کسب‌وکارتان
+              یک اپلیکیشن وب اختصاصی با طراحی دلخواه شما و قابلیت‌های کاملاً
+              منعطف برای رشد کسب‌وکارتان
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
               <Button
                 size="lg"
-                  className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 onClick={() =>
                   document
                     .getElementById("")
@@ -336,23 +339,22 @@ export default function CustomWebAppPage() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                توضیحات بیشتر
+                مشاهده قابلیت‌ها
               </Button>
             </div>
           </div>
         </div>
 
-         <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showScrollIndicator ? 1 : 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-        <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
-        </div>
-      </motion.div>
-
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showScrollIndicator ? 1 : 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        >
+          <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
+            <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Key Features Section */}
@@ -364,23 +366,23 @@ export default function CustomWebAppPage() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.4 }}
         variants={staggerContainer}
-
       >
         <div className="max-w-6xl mx-auto text-left w-full">
-          <motion.div variants={fadeInUp}  className="mb-8 sm:mb-12 text-center">
-            <motion.div 
+          <motion.div variants={fadeInUp} className="mb-8 sm:mb-12 text-center">
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-fuchsia-500/20 backdrop-blur-sm border border-fuchsia-400/30 text-fuchsia-200 px-3 sm:px-4 py-1 rounded-full"
             >
-              <span className="text-xs sm:text-sm font-semibold">Core Features</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Core Features
+              </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
-              
               className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight"
             >
               ویژگی‌های اصلی اپلیکیشن سفارشی
@@ -391,17 +393,18 @@ export default function CustomWebAppPage() {
                 className="text-base sm:text-lg text-gray-300 max-w-3xl font-persian px-4"
                 dir="rtl"
               >
-                هر ویژگی با دقت طراحی شده تا نیازهای خاص کسب‌وکار شما را برآورده کند
+                هر ویژگی با دقت طراحی شده تا نیازهای خاص کسب‌وکار شما را برآورده
+                کند
               </p>
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={fadeInScale}
             className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 my-auto border border-white/10 flex flex-col justify-center"
           >
             {/* Feature Grid */}
-            <motion.div 
+            <motion.div
               variants={staggerContainer}
               className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4"
             >
@@ -433,7 +436,7 @@ export default function CustomWebAppPage() {
 
             {/* Feature Details */}
             <AnimatePresence mode="wait">
-              <motion.div 
+              <motion.div
                 key={activeFeature}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -447,7 +450,7 @@ export default function CustomWebAppPage() {
                 >
                   {features[activeFeature].title}
                 </h3>
-                
+
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                   <p
                     className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
@@ -457,7 +460,7 @@ export default function CustomWebAppPage() {
                   </p>
                 </div>
 
-                <motion.div 
+                <motion.div
                   variants={staggerContainer}
                   initial="hidden"
                   animate="visible"
@@ -481,9 +484,9 @@ export default function CustomWebAppPage() {
       </motion.section>
 
       {/* Results Section */}
-      <motion.section 
+      <motion.section
         ref={statsRef}
-        id="results" 
+        id="results"
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
@@ -492,23 +495,25 @@ export default function CustomWebAppPage() {
       >
         <div className="max-w-7xl mx-auto text-center">
           <motion.div variants={fadeInUp} className="mb-8 sm:mb-12">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-fuchsia-500/20 backdrop-blur-sm border border-fuchsia-400/30 text-fuchsia-200 px-3 sm:px-4 py-1 rounded-full"
             >
-              <span className="text-xs sm:text-sm font-semibold">Performance Metrics</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Performance Metrics
+              </span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               نتایج قابل اندازه‌گیری و تضمین شده
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -517,8 +522,8 @@ export default function CustomWebAppPage() {
               آمار و ارقامی که نشان‌دهنده قدرت اپلیکیشن‌های سفارشی است
             </motion.p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           >
@@ -526,14 +531,14 @@ export default function CustomWebAppPage() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   y: -10,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
               >
-                <motion.div 
+                <motion.div
                   initial={{ rotate: 0 }}
                   whileInView={{ rotate: 360 }}
                   viewport={{ once: false, amount: 0.4 }}
@@ -542,29 +547,32 @@ export default function CustomWebAppPage() {
                 >
                   {stat.icon}
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: false, amount: 0.4 }}
-                  transition={{ 
+                  transition={{
                     type: "spring",
                     stiffness: 200,
-                    delay: index * 0.1 + 0.2
+                    delay: index * 0.1 + 0.2,
                   }}
                   className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
                 >
                   {stat.value}
                 </motion.div>
-                
+
                 <h4
                   className="text-base sm:text-lg font-semibold text-gray-200 mb-2 font-persian"
                   dir="rtl"
                 >
                   {stat.label}
                 </h4>
-                
-                <p className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1" dir="rtl">
+
+                <p
+                  className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1"
+                  dir="rtl"
+                >
                   {stat.description}
                 </p>
               </motion.div>
@@ -574,8 +582,8 @@ export default function CustomWebAppPage() {
       </motion.section>
 
       {/* Benefits Section */}
-      <motion.section 
-        id="benefits" 
+      <motion.section
+        id="benefits"
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
@@ -583,8 +591,11 @@ export default function CustomWebAppPage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
-            <motion.div 
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
@@ -593,14 +604,14 @@ export default function CustomWebAppPage() {
             >
               <span className="text-xs sm:text-sm">Technical Features</span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               قابلیت‌های فنی پیشرفته
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -610,7 +621,7 @@ export default function CustomWebAppPage() {
             </motion.p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
@@ -618,9 +629,9 @@ export default function CustomWebAppPage() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ 
+                whileHover={{
                   y: -10,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 group"
               >
@@ -631,12 +642,15 @@ export default function CustomWebAppPage() {
                 >
                   <div className="text-white">{feature.icon}</div>
                 </motion.div>
-                
+
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
-                
-                <p className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed" dir="rtl">
+
+                <p
+                  className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed"
+                  dir="rtl"
+                >
                   {feature.desc}
                 </p>
               </motion.div>
@@ -646,8 +660,8 @@ export default function CustomWebAppPage() {
       </motion.section>
 
       {/* Why Section */}
-      <motion.section 
-        id="why-custom-app" 
+      <motion.section
+        id="why-custom-app"
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
@@ -655,8 +669,11 @@ export default function CustomWebAppPage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
-            <motion.div 
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
@@ -665,7 +682,7 @@ export default function CustomWebAppPage() {
             >
               <span className="text-xs sm:text-sm">Why Custom Development</span>
             </motion.div>
-            
+
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
@@ -673,17 +690,21 @@ export default function CustomWebAppPage() {
             >
               چرا توسعه سفارشی بهترین انتخاب است؟
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
-              برخلاف قالب‌های آماده، اپلیکیشن سفارشی دقیقاً مطابق نیازهای شما طراحی می‌شود و با رشد کسب‌وکارتان توسعه می‌یابد
+              برخلاف قالب‌های آماده، اپلیکیشن سفارشی دقیقاً مطابق نیازهای شما
+              طراحی می‌شود و با رشد کسب‌وکارتان توسعه می‌یابد
             </motion.p>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="space-y-6 sm:space-y-8">
+          <motion.div
+            variants={staggerContainer}
+            className="space-y-6 sm:space-y-8"
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {[
                 {
@@ -713,14 +734,14 @@ export default function CustomWebAppPage() {
                   whileHover={{ x: -10 }}
                   className="flex items-start gap-3 sm:gap-4 flex-row-reverse"
                 >
-                  <motion.div 
+                  <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ delay: 0.1, duration: 0.3 }}
                     className="bg-gradient-to-r from-fuchsia-500 to-violet-500 p-2 sm:p-3 rounded-lg flex-shrink-0 mt-1"
                   >
                     {benefit.icon}
                   </motion.div>
-                  
+
                   <div className="flex-1 text-right">
                     <h4
                       className="text-base sm:text-lg text-white font-semibold mb-1 sm:mb-2 font-persian"
@@ -728,7 +749,10 @@ export default function CustomWebAppPage() {
                     >
                       {benefit.title}
                     </h4>
-                    <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed" dir="rtl">
+                    <p
+                      className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed"
+                      dir="rtl"
+                    >
                       {benefit.desc}
                     </p>
                   </div>
@@ -740,8 +764,8 @@ export default function CustomWebAppPage() {
       </motion.section>
 
       {/* Process Section */}
-      <motion.section 
-        id="process" 
+      <motion.section
+        id="process"
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
@@ -749,8 +773,11 @@ export default function CustomWebAppPage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
-            <motion.div 
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: false, amount: 0.4 }}
@@ -759,25 +786,26 @@ export default function CustomWebAppPage() {
             >
               <span className="text-xs sm:text-sm">Development Process</span>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               فرآیند توسعه Agile
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
             >
-              با متدولوژی Agile، پروژه شما در Sprint های کوتاه و با بازخورد مستمر پیش می‌رود
+              با متدولوژی Agile، پروژه شما در Sprint های کوتاه و با بازخورد
+              مستمر پیش می‌رود
             </motion.p>
           </motion.div>
 
-          <motion.div 
-            dir="rtl" 
+          <motion.div
+            dir="rtl"
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           >
@@ -807,28 +835,28 @@ export default function CustomWebAppPage() {
                 icon: <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />,
               },
             ].map((item, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={staggerItem}
                 whileHover={{ y: -10 }}
                 className="text-center"
               >
-                <motion.div 
+                <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: false, amount: 0.4 }}
-                  transition={{ 
+                  transition={{
                     type: "spring",
                     stiffness: 200,
-                    delay: index * 0.2
+                    delay: index * 0.2,
                   }}
                   whileHover={{ rotate: 360 }}
                   className="bg-gradient-to-r from-fuchsia-500 to-violet-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                 >
                   {item.icon}
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: false, amount: 0.4 }}
@@ -837,12 +865,15 @@ export default function CustomWebAppPage() {
                 >
                   {item.step}
                 </motion.div>
-                
+
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                
-                <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2" dir="rtl">
+
+                <p
+                  className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2"
+                  dir="rtl"
+                >
                   {item.desc}
                 </p>
               </motion.div>
@@ -861,7 +892,7 @@ export default function CustomWebAppPage() {
         variants={staggerContainer}
       >
         <div className="max-w-4xl mx-auto text-center w-full">
-          <motion.div 
+          <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: false, amount: 0.4 }}
@@ -870,33 +901,31 @@ export default function CustomWebAppPage() {
           >
             <span className="text-xs sm:text-sm">Start Your Project</span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             variants={fadeInUp}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
           >
             آماده ساخت اپلیکیشن رویایی خود هستید؟
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             variants={fadeInUp}
-            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4" 
+            className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4"
             dir="rtl"
           >
-            از ایده تا اجرا، ما در کنار شما هستیم تا بهترین راه‌حل را برای کسب‌وکارتان بسازیم
+            از ایده تا اجرا، ما در کنار شما هستیم تا بهترین راه‌حل را برای
+            کسب‌وکارتان بسازیم
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                  className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 onClick={() =>
                   document
                     .getElementById("")
@@ -922,7 +951,7 @@ export default function CustomWebAppPage() {
         transition={{ duration: 1 }}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false, amount: 0.4 }}
