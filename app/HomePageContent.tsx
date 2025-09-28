@@ -95,7 +95,7 @@ export default function HomePageContent() {
     category: "Business",
     image: "/professional-corporate-website.png",
     description: "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا",
-    color: "from-blue-700 to-slate-600",         // IBM Blue → Slate
+    color: "from-blue-800 to-indigo-400",         // IBM Blue → Slate
   },
   {
     title: "E-commerce Platform",
@@ -103,21 +103,21 @@ export default function HomePageContent() {
     image: "/modern-ecommerce-website.png",
     description:
       "پلتفرم تجارت الکترونیک مدرن با درنظر گرفتن نیاز های خاص شما",
-    color: "from-purple-600 to-pink-500",      // Twitch Purple → Hot-Pink
+    color: "from-rose-600 to-pink-500",      // Twitch Purple → Hot-Pink
   },
   {
     title: "Real Estate Platform",
     category: "Property",
     image: "/real-estate-website.png",
     description: "پلتفرم جامع املاک با قابلیت جستجوی ملک و تورهای مجازی",
-    color: "from-emerald-600 to-teal-500",       // Zillow Emerald → Teal
+    color: "from-teal-700 to-teal-500",       // Zillow Emerald → Teal
   },
   {
     title: "Travel Booking Site",
     category: "Travel",
     image: "/modern-travel-booking-website-with-destinations.jpg",
     description: "پلتفرم رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
-    color: "from-sky-500 to-indigo-600",       // Skyscanner Sky → Indigo
+    color: "from-sky-600 to-sky-500",       // Skyscanner Sky → Indigo
   },
   {
     title: "Healthcare Portal",
@@ -125,15 +125,15 @@ export default function HomePageContent() {
     image: "/modern-healthcare-website.png",
     description:
       "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور",
-    color: "from-green-600 to-cyan-500",         // Hospital Green → Cyan
+    color: "from-cyan-700 to-cyan-500",         // Hospital Green → Cyan
   },
   {
     title: "Educational Platform",
-    category: "Education",
+    category: "Educational",
     image: "/modern-e-learning-platform-with-courses.jpg",
     description:
       "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت",
-    color: "from-amber-500 to-yellow-400",       // Coursera Amber → Yellow
+    color: "from-amber-700 to-yellow-500",       // Coursera Amber → Yellow
   },
   {
     title: "News Agency",
@@ -141,16 +141,7 @@ export default function HomePageContent() {
     image: "/news-agency-website.png",
     description:
       " وب سایت آژانس خبری مدرن با اخبار روزانه ، رویداد های فوری و محتوای چندرسانه ای",
-    color: "from-red-400 to-red-700",         // New-York-Times Gray → Red
-  },
-  
-  {
-    title: "Personal Blog",
-    category: "blog",
-    image: "/personal-blog.png",
-    description:
-      "وبلاگ شخصی مینیمال با قابلیت دسته‌بندی مقالات، نظرات و اشتراک‌گذاری در شبکه‌های اجتماعی",
-    color: "from-rose-500 to-pink-400",          // Instagram Rose → Pink
+    color: "from-red-700 to-red-500",         // New-York-Times Gray → Red
   },
   {
     title: "Custom Web App",
@@ -158,7 +149,7 @@ export default function HomePageContent() {
     image: "/custom-web-app.png",
     description:
       "اپلیکیشن اختصاصی تحت وب با طراحی سفارشی و امکانات کاملاً انعطاف‌پذیر",
-    color: "from-fuchsia-600 to-violet-600", // Stripe ‑ Fuchsia → Violet
+    color: "from-fuchsia-700 to-violet-600", // Stripe ‑ Fuchsia → Violet
   },
 ];
 

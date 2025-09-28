@@ -67,7 +67,7 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <div
-            className={`transition-all duration-1000 ${
+            className={`transition-all duration-1000 text-center ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -84,7 +84,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed font-persian">
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed font-persian ">
               ما تجربیات دیجیتالی استثنایی خلق می‌کنیم که باعث رشد کسب‌وکار شما
               شده و با راه‌حل‌های پیشرفته توسعه وب، مخاطبان شما را مجذوب خود
               می‌کند
@@ -124,7 +124,7 @@ export default function HomePage() {
         </div>
 
         <div
-          className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-500 text-sm font-persian ${
+          className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-500 text-sm font-persian text-center ${
             isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-10"
@@ -132,7 +132,7 @@ export default function HomePage() {
         >
         <Link
           href="https://clients.kara-code.ir"
-            className="text-white/60 hover:text-white transition-colors text-[20px]  "
+            className="text-white/60 hover:text-white transition-colors text-[20px] text-center "
           >
             کاربر فعلی هستید؟ اینجا وارد شوید.
           </Link>

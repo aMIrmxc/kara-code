@@ -7,9 +7,8 @@ import {
   motion,
   useScroll,
   useTransform,
-  useInView,
   useSpring,
-  AnimatePresence,
+  MotionValue,
 } from "framer-motion";
 import {
   Utensils,
@@ -41,68 +40,81 @@ import {
   Mail,
 } from "lucide-react";
 
+// Custom hook for section scroll progress
+function useSectionScrollProgress(ref: React.RefObject<HTMLElement>) {
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  return scrollYProgress;
+}
+
 export default function RestaurantWebsitePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
-  // Scroll progress
+  // Section refs
+  const heroRef = useRef<HTMLElement>(null);
+  const featuresRef = useRef<HTMLElement>(null);
+  const statsRef = useRef<HTMLElement>(null);
+  const benefitsRef = useRef<HTMLElement>(null);
+  const whyRef = useRef<HTMLElement>(null);
+  const processRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
+
+  // Page scroll progress
   const { scrollYProgress } = useScroll();
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
-  // Section refs for animations
-  const heroRef = useRef(null);
-  const featuresRef = useRef(null);
-  const statsRef = useRef(null);
+  // Hero section animations
+  const heroProgress = useSectionScrollProgress(heroRef);
+  const heroY = useTransform(heroProgress, [0, 1], [0, -100]);
+  const heroOpacity = useTransform(heroProgress, [0, 0.5, 1], [1, 1, 0]);
+  const heroScale = useTransform(heroProgress, [0, 0.5, 1], [1, 1, 0.9]);
 
-  // Animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
+  // Features section animations
+  const featuresProgress = useSectionScrollProgress(featuresRef);
+  const featuresY = useTransform(featuresProgress, [0, 0.5, 1], [100, 0, -50]);
+  const featuresOpacity = useTransform(featuresProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const featuresScale = useTransform(featuresProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.95]);
+  const featuresRotate = useTransform(featuresProgress, [0, 0.5, 1], [-5, 0, 5]);
 
-  const fadeInScale = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
+  // Stats section animations
+  const statsProgress = useSectionScrollProgress(statsRef);
+  const statsY = useTransform(statsProgress, [0, 0.5, 1], [100, 0, -50]);
+  const statsOpacity = useTransform(statsProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const statsScale = useTransform(statsProgress, [0, 0.3, 0.7, 1], [0.9, 1, 1, 0.95]);
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
+  // Benefits section animations
+  const benefitsProgress = useSectionScrollProgress(benefitsRef);
+  const benefitsY = useTransform(benefitsProgress, [0, 0.5, 1], [80, 0, -40]);
+  const benefitsOpacity = useTransform(benefitsProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
-  const staggerItem = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
+  // Why section animations
+  const whyProgress = useSectionScrollProgress(whyRef);
+  const whyY = useTransform(whyProgress, [0, 0.5, 1], [60, 0, -30]);
+  const whyOpacity = useTransform(whyProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
+  const whyScale = useTransform(whyProgress, [0, 0.5, 1], [0.95, 1, 0.98]);
+
+  // Process section animations
+  const processProgress = useSectionScrollProgress(processRef);
+  const processY = useTransform(processProgress, [0, 0.5, 1], [50, 0, -30]);
+  const processOpacity = useTransform(processProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
+  // CTA section animations
+  const ctaProgress = useSectionScrollProgress(ctaRef);
+  const ctaY = useTransform(ctaProgress, [0, 0.5, 1], [50, 0, 0]);
+  const ctaOpacity = useTransform(ctaProgress, [0, 0.3, 1], [0, 1, 1]);
+  const ctaScale = useTransform(ctaProgress, [0, 0.5, 1], [0.9, 1, 1]);
+
+  // Background parallax
+  const bgY = useTransform(smoothProgress, [0, 1], [0, -300]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -269,122 +281,196 @@ export default function RestaurantWebsitePage() {
     },
   ];
 
+  // Helper function to create staggered animations based on scroll
+  const getStaggeredTransform = (
+    progress: MotionValue<number>,
+    index: number,
+    totalItems: number
+  ) => {
+    const start = index / totalItems * 0.3;
+    const end = start + 0.7;
+    
+    return {
+      y: useTransform(progress, [start, end], [50, 0]),
+      opacity: useTransform(progress, [start, end], [0, 1]),
+      scale: useTransform(progress, [start, end], [0.8, 1]),
+    };
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-orange-950 to-red-950 overflow-x-hidden">
+      {/* Parallax Background */}
+      <motion.div 
+        style={{ y: bgY }}
+        className="fixed inset-0 pointer-events-none"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 via-orange-950/50 to-red-950/50" />
+      </motion.div>
+
       {/* Hero Section */}
-      <section
+      <motion.section
+        ref={heroRef}
         id="hero"
         className="relative min-h-screen flex items-center justify-center overflow-hidden px-4"
+        style={{
+          opacity: heroOpacity,
+          scale: heroScale,
+          y: heroY,
+        }}
       >
+        {/* Animated Background Blobs */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-          <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-red-600 to-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-500"></div>
+          <motion.div 
+            style={{
+              rotate: useTransform(heroProgress, [0, 1], [0, 180]),
+              scale: useTransform(heroProgress, [0, 1], [1, 1.5]),
+            }}
+            className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+          />
+          <motion.div 
+            style={{
+              rotate: useTransform(heroProgress, [0, 1], [0, -180]),
+              scale: useTransform(heroProgress, [0, 1], [1, 1.3]),
+            }}
+            className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+          />
         </div>
 
         <div className="relative z-10 text-center max-w-6xl mx-auto w-full">
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-2 sm:px-4 py-1 rounded-full">
+            <motion.div 
+              className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-2 sm:px-4 py-1 rounded-full"
+              style={{
+                scale: useTransform(heroProgress, [0, 0.5], [1, 0.9]),
+              }}
+            >
               <Utensils className="w-4 h-4" />
               <span className="text-xs sm:text-sm">Restaurant Website Solutions</span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               <span className="text-gradient-animated bg-clip-text text-transparent font-noto-h1">
                 وبسایت حرفه‌ای رستوران
               </span>
-            </h1>
+            </motion.h1>
 
-            <p
+            <motion.p
               className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
               dir="rtl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
-             سفارش وبسایت آنلاین رستوران شما با توانایی مجهز شدن به  منوی دیجیتال تعاملی و قابلیت رزرو میز و سیستم سفارش‌گیری و پرداخت
+              سفارش وبسایت آنلاین رستوران شما با توانایی مجهز شدن به  منوی دیجیتال تعاملی و قابلیت رزرو میز و سیستم سفارش‌گیری و پرداخت
               آنلاین  
+            </motion.p>
+
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300"
+                >
+                  <span className="text-gradient-animated font-persian">
+                    شروع پروژه وبسایت آنلاین شما
+                  </span>
+                </Button>
+              </motion.div>
               
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                onClick={() =>
-                  document
-                    .getElementById("")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <span className="text-gradient-animated font-persian">
-                  شروع پروژه وبسایت آنلاین شما
-                </span>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
-                onClick={() =>
-                  document
-                    .getElementById("key-features")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                توضیحات بیشتر
-              </Button>
-            </div>
-          </div>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
+                  onClick={() =>
+                    document
+                      .getElementById("key-features")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  توضیحات بیشتر
+                </Button>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
 
-         <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showScrollIndicator ? 1 : 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-        <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
-        </div>
-      </motion.div>
-
-      </section>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: showScrollIndicator ? 1 : 0, y: showScrollIndicator ? 0 : 100 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center"
+          >
+            <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2"></div>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* Key Features Section */}
       <motion.section
         ref={featuresRef}
         id="key-features"
         className="py-16 sm:py-20 px-4 bg-black/30 text-center flex items-center justify-center min-h-screen"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
-        variants={staggerContainer}
-
+        style={{
+          opacity: featuresOpacity,
+          scale: featuresScale,
+          y: featuresY,
+          rotateX: featuresRotate,
+        }}
       >
         <div className="max-w-6xl mx-auto text-left w-full">
-          <motion.div variants={fadeInUp}  className="mb-8 sm:mb-12 text-center">
+          <motion.div className="mb-8 sm:mb-12 text-center">
             <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
+              style={{
+                scale: useTransform(featuresProgress, [0.2, 0.4], [0, 1]),
+              }}
             >
               <span className="text-xs sm:text-sm font-semibold">Key Features</span>
             </motion.div>
             
             <motion.h2 
-              variants={fadeInUp}
-              
               className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight"
+              style={{
+                y: useTransform(featuresProgress, [0.2, 0.5], [30, 0]),
+                opacity: useTransform(featuresProgress, [0.2, 0.5], [0, 1]),
+              }}
             >
               قابلیت‌های کلیدی در عمل
             </motion.h2>
 
-            <motion.div variants={fadeInUp} className="flex justify-center">
+            <motion.div 
+              className="flex justify-center"
+              style={{
+                y: useTransform(featuresProgress, [0.3, 0.6], [30, 0]),
+                opacity: useTransform(featuresProgress, [0.3, 0.6], [0, 1]),
+              }}
+            >
               <p
                 className="text-base sm:text-lg text-gray-300 max-w-3xl font-persian px-4"
                 dir="rtl"
@@ -395,85 +481,76 @@ export default function RestaurantWebsitePage() {
           </motion.div>
 
           <motion.div 
-            variants={fadeInScale}
             className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 my-auto border border-white/10 flex flex-col justify-center"
+            style={{
+              scale: useTransform(featuresProgress, [0.3, 0.6], [0.9, 1]),
+              opacity: useTransform(featuresProgress, [0.3, 0.6], [0.5, 1]),
+            }}
           >
             {/* Feature Grid */}
-            <motion.div 
-              variants={staggerContainer}
-              className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4"
-            >
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={staggerItem}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`text-center cursor-pointer transition-all duration-300 p-2 sm:p-3 md:p-4 rounded-lg flex flex-col items-center justify-center min-h-[70px] sm:min-h-[90px] md:min-h-[100px] ${
-                    activeFeature === index
-                      ? "bg-orange-500/20"
-                      : "opacity-60 hover:opacity-100 hover:bg-white/5"
-                  }`}
-                  onClick={() => setActiveFeature(index)}
-                >
-                  <div className="text-orange-400 flex mb-1 sm:mb-2">
-                    {feature.icon}
-                  </div>
-                  <div
-                    className="text-center text-xs sm:text-sm font-semibold text-white font-persian leading-tight"
-                    dir="rtl"
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 pb-3 sm:pb-4">
+              {features.map((feature, index) => {
+                const transforms = getStaggeredTransform(featuresProgress, index, features.length);
+                return (
+                  <motion.div
+                    key={index}
+                    style={transforms}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`text-center cursor-pointer transition-all duration-300 p-2 sm:p-3 md:p-4 rounded-lg flex flex-col items-center justify-center min-h-[70px] sm:min-h-[90px] md:min-h-[100px] ${
+                      activeFeature === index
+                        ? "bg-orange-500/20"
+                        : "opacity-60 hover:opacity-100 hover:bg-white/5"
+                    }`}
+                    onClick={() => setActiveFeature(index)}
                   >
-                    {feature.title}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Feature Details */}
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={activeFeature}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="text-left flex flex-col justify-center min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]"
-              >
-                <h3
-                  className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-persian px-2 leading-tight"
-                  dir="rtl"
-                >
-                  {features[activeFeature].title}
-                </h3>
-                
-                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
-                  <p
-                    className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
-                    dir="rtl"
-                  >
-                    {features[activeFeature].description}
-                  </p>
-                </div>
-
-                <motion.div 
-                  variants={staggerContainer}
-                  initial="hidden"
-                  animate="visible"
-                  className="flex flex-wrap gap-1 sm:gap-2 justify-center px-2 sm:px-4"
-                >
-                  {features[activeFeature].benefits.map((benefit, i) => (
-                    <motion.span
-                      key={i}
-                      variants={staggerItem}
-                      className="text-xs sm:text-sm bg-orange-500/20 text-orange-200 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-persian whitespace-nowrap"
+                    <div className="text-orange-400 flex mb-1 sm:mb-2">
+                      {feature.icon}
+                    </div>
+                    <div
+                      className="text-center text-xs sm:text-sm font-semibold text-white font-persian leading-tight"
                       dir="rtl"
                     >
-                      {benefit}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </motion.div>
-            </AnimatePresence>
+                      {feature.title}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Feature Details */}
+            <div className="text-left flex flex-col justify-center min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]">
+              <h3
+                className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-persian px-2 leading-tight"
+                dir="rtl"
+              >
+                {features[activeFeature].title}
+              </h3>
+              
+              <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
+                <p
+                  className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
+                  dir="rtl"
+                >
+                  {features[activeFeature].description}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-1 sm:gap-2 justify-center px-2 sm:px-4">
+                {features[activeFeature].benefits.map((benefit, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="text-xs sm:text-sm bg-orange-500/20 text-orange-200 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-persian whitespace-nowrap"
+                    dir="rtl"
+                  >
+                    {benefit}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
@@ -483,199 +560,212 @@ export default function RestaurantWebsitePage() {
         ref={statsRef}
         id="results" 
         className="py-16 sm:py-20 px-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
-        variants={staggerContainer}
+        style={{
+          opacity: statsOpacity,
+          scale: statsScale,
+          y: statsY,
+        }}
       >
         <div className="max-w-7xl mx-auto text-center">
-          <motion.div variants={fadeInUp} className="mb-8 sm:mb-12">
+          <motion.div className="mb-8 sm:mb-12">
             <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
+              style={{
+                scale: useTransform(statsProgress, [0.1, 0.3], [0, 1]),
+              }}
             >
               <span className="text-xs sm:text-sm font-semibold">Results at a glance</span>
             </motion.div>
             
             <motion.h2 
-              variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight"
+              style={{
+                y: useTransform(statsProgress, [0.1, 0.4], [50, 0]),
+                opacity: useTransform(statsProgress, [0.1, 0.4], [0, 1]),
+              }}
             >
               نتایجی که وبسایت آنلاین برای رستوران شما دارد در یک نگاه
             </motion.h2>
             
             <motion.p
-              variants={fadeInUp}
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
+              style={{
+                y: useTransform(statsProgress, [0.2, 0.5], [30, 0]),
+                opacity: useTransform(statsProgress, [0.2, 0.5], [0, 1]),
+              }}
             >
               نگاهی عمیق به تأثیر وبسایت بر رشد کسب‌وکار شما
             </motion.p>
           </motion.div>
           
-          <motion.div 
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                whileHover={{ 
-                  scale: 1.05,
-                  y: -10,
-                  transition: { duration: 0.2 }
-                }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
-              >
-                <motion.div 
-                  initial={{ rotate: 0 }}
-                  whileInView={{ rotate: 360 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 2, delay: index * 0.1 }}
-                  className="text-orange-400 flex justify-center mb-3 sm:mb-4"
-                >
-                  {stat.icon}
-                </motion.div>
-                
-                <motion.div 
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: false }}
-                  transition={{ 
-                    type: "spring",
-                    stiffness: 200,
-                    delay: index * 0.1 + 0.2
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {stats.map((stat, index) => {
+              const transforms = getStaggeredTransform(statsProgress, index, stats.length);
+              return (
+                <motion.div
+                  key={index}
+                  style={transforms}
+                  whileHover={{ 
+                    scale: 1.05,
+                    y: -10,
+                    transition: { duration: 0.2 }
                   }}
-                  className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
                 >
-                  {stat.value}
+                  <motion.div 
+                    className="text-orange-400 flex justify-center mb-3 sm:mb-4"
+                    style={{
+                      rotate: useTransform(statsProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 360]),
+                    }}
+                  >
+                    {stat.icon}
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
+                    style={{
+                      scale: useTransform(statsProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 1]),
+                    }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  
+                  <h4
+                    className="text-base sm:text-lg font-semibold text-gray-200 mb-2 font-persian"
+                    dir="rtl"
+                  >
+                    {stat.label}
+                  </h4>
+                  
+                  <p className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1" dir="rtl">
+                    {stat.description}
+                  </p>
                 </motion.div>
-                
-                <h4
-                  className="text-base sm:text-lg font-semibold text-gray-200 mb-2 font-persian"
-                  dir="rtl"
-                >
-                  {stat.label}
-                </h4>
-                
-                <p className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1" dir="rtl">
-                  {stat.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
+              );
+            })}
+          </div>
         </div>
       </motion.section>
 
       {/* Benefits Section */}
       <motion.section 
+        ref={benefitsRef}
         id="benefits" 
         className="py-16 sm:py-20 px-4 bg-black/30"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
-        variants={staggerContainer}
+        style={{
+          opacity: benefitsOpacity,
+          y: benefitsY,
+        }}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div className="text-center mb-12 sm:mb-16">
             <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
+              style={{
+                scale: useTransform(benefitsProgress, [0.1, 0.3], [0, 1]),
+              }}
             >
               <span className="text-xs sm:text-sm">Benefits</span>
             </motion.div>
             
             <motion.h2 
-              variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
+              style={{
+                y: useTransform(benefitsProgress, [0.1, 0.4], [50, 0]),
+                opacity: useTransform(benefitsProgress, [0.1, 0.4], [0, 1]),
+              }}
             >
               ویژگی های کلی یک وب سایت رستورانی خوب
             </motion.h2>
             
             <motion.p
-              variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
+              style={{
+                y: useTransform(benefitsProgress, [0.2, 0.5], [30, 0]),
+                opacity: useTransform(benefitsProgress, [0.2, 0.5], [0, 1]),
+              }}
             >
               تمام ابزارهایی که برای موفقیت آنلاین رستوران تان نیاز دارید
             </motion.p>
           </motion.div>
 
-          <motion.div 
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-          >
-            {keyFeatures.map((feature, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                whileHover={{ 
-                  y: -10,
-                  transition: { duration: 0.2 }
-                }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 group"
-              >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {keyFeatures.map((feature, index) => {
+              const transforms = getStaggeredTransform(benefitsProgress, index, keyFeatures.length);
+              return (
                 <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ delay: 0.1, duration: 0.3 }}
-                  className={`bg-gradient-to-r ${feature.color} p-2 sm:p-3 rounded-lg inline-flex mb-3 sm:mb-4`}
+                  key={index}
+                  style={transforms}
+                  whileHover={{ 
+                    y: -10,
+                    transition: { duration: 0.2 }
+                  }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 group"
                 >
-                  <div className="text-white">{feature.icon}</div>
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                    className={`bg-gradient-to-r ${feature.color} p-2 sm:p-3 rounded-lg inline-flex mb-3 sm:mb-4`}
+                  >
+                    <div className="text-white">{feature.icon}</div>
+                  </motion.div>
+                  
+                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed" dir="rtl">
+                    {feature.desc}
+                  </p>
                 </motion.div>
-                
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed" dir="rtl">
-                  {feature.desc}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
+              );
+            })}
+          </div>
         </div>
       </motion.section>
 
       {/* Why Section */}
       <motion.section 
+        ref={whyRef}
         id="why-restaurant" 
         className="py-16 sm:py-20 px-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
-        variants={staggerContainer}
+        style={{
+          opacity: whyOpacity,
+          scale: whyScale,
+          y: whyY,
+        }}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div className="text-center mb-12 sm:mb-16">
             <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
+              style={{
+                scale: useTransform(whyProgress, [0.1, 0.3], [0, 1]),
+              }}
             >
               <span className="text-xs sm:text-sm">Why restaurant online website</span>
             </motion.div>
             
             <motion.h2
-              variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
               dir="rtl"
+              style={{
+                y: useTransform(whyProgress, [0.1, 0.4], [50, 0]),
+                opacity: useTransform(whyProgress, [0.1, 0.4], [0, 1]),
+              }}
             >
               چرا رستوران شما به یک وب‌سایت حرفه‌ای نیاز دارد؟
             </motion.h2>
             
             <motion.p
-              variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
+              style={{
+                y: useTransform(whyProgress, [0.2, 0.5], [30, 0]),
+                opacity: useTransform(whyProgress, [0.2, 0.5], [0, 1]),
+              }}
             >
               یک وب‌سایت مدرن فقط یک ویترین آنلاین نیست، بلکه یک ابزار قدرتمند
               برای رشد کسب‌وکار شماست. از افزایش فروش گرفته تا تقویت برند،
@@ -683,7 +773,7 @@ export default function RestaurantWebsitePage() {
             </motion.p>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="space-y-6 sm:space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {[
                 {
@@ -706,81 +796,86 @@ export default function RestaurantWebsitePage() {
                   title: "برتری رقابتی",
                   desc: "با حضوری مدرن و ارائه خدمات آنلاین، از رقبایی که هنوز به روش‌های سنتی کار می‌کنند، متمایز شوید و مشتریان بیشتری جذب کنید.",
                 },
-              ].map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  variants={staggerItem}
-                  whileHover={{ x: -10 }}
-                  className="flex items-start gap-3 sm:gap-4 flex-row-reverse"
-                >
-                  <motion.div 
-                    whileHover={{ rotate: 360 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                    className="bg-gradient-to-r from-orange-500 to-red-500 p-2 sm:p-3 rounded-lg flex-shrink-0 mt-1"
+              ].map((benefit, index) => {
+                const transforms = getStaggeredTransform(whyProgress, index, 4);
+                return (
+                  <motion.div
+                    key={index}
+                    style={transforms}
+                    whileHover={{ x: -10 }}
+                    className="flex items-start gap-3 sm:gap-4 flex-row-reverse"
                   >
-                    {benefit.icon}
-                  </motion.div>
-                  
-                  <div className="flex-1 text-right">
-                    <h4
-                      className="text-base sm:text-lg text-white font-semibold mb-1 sm:mb-2 font-persian"
-                      dir="rtl"
+                    <motion.div 
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                      className="bg-gradient-to-r from-orange-500 to-red-500 p-2 sm:p-3 rounded-lg flex-shrink-0 mt-1"
                     >
-                      {benefit.title}
-                    </h4>
-                    <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed" dir="rtl">
-                      {benefit.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                      {benefit.icon}
+                    </motion.div>
+                    
+                    <div className="flex-1 text-right">
+                      <h4
+                        className="text-base sm:text-lg text-white font-semibold mb-1 sm:mb-2 font-persian"
+                        dir="rtl"
+                      >
+                        {benefit.title}
+                      </h4>
+                      <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed" dir="rtl">
+                        {benefit.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
-          </motion.div>
+          </div>
         </div>
       </motion.section>
 
       {/* Process Section */}
       <motion.section 
+        ref={processRef}
         id="process" 
         className="py-16 sm:py-20 px-4 bg-black/30"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
-        variants={staggerContainer}
+        style={{
+          opacity: processOpacity,
+          y: processY,
+        }}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div className="text-center mb-12 sm:mb-16">
             <motion.div 
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
+              style={{
+                scale: useTransform(processProgress, [0.1, 0.3], [0, 1]),
+              }}
             >
               <span className="text-xs sm:text-sm">Our Process</span>
             </motion.div>
             
             <motion.h2 
-              variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
+              style={{
+                y: useTransform(processProgress, [0.1, 0.4], [50, 0]),
+                opacity: useTransform(processProgress, [0.1, 0.4], [0, 1]),
+              }}
             >
               فرآیند ساده، نتایج خیره‌کننده
             </motion.h2>
             
             <motion.p
-              variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
               dir="rtl"
+              style={{
+                y: useTransform(processProgress, [0.2, 0.5], [30, 0]),
+                opacity: useTransform(processProgress, [0.2, 0.5], [0, 1]),
+              }}
             >
               در ۴ مرحله ساده وبسایت رستوران خود را راه‌اندازی کنید
             </motion.p>
           </motion.div>
 
-          <motion.div 
-            dir="rtl" 
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
-          >
+          <div dir="rtl" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               {
                 step: "01",
@@ -806,89 +901,97 @@ export default function RestaurantWebsitePage() {
                 desc: "راه‌اندازی و آموزش تیم شما",
                 icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />,
               },
-            ].map((item, index) => (
-              <motion.div 
-                key={index} 
-                variants={staggerItem}
-                whileHover={{ y: -10 }}
-                className="text-center"
-              >
+            ].map((item, index) => {
+              const transforms = getStaggeredTransform(processProgress, index, 4);
+              return (
                 <motion.div 
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: false }}
-                  transition={{ 
-                    type: "spring",
-                    stiffness: 200,
-                    delay: index * 0.2
-                  }}
-                  whileHover={{ rotate: 360 }}
-                  className="bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
+                  key={index} 
+                  style={transforms}
+                  whileHover={{ y: -10 }}
+                  className="text-center"
                 >
-                  {item.icon}
+                  <motion.div 
+                    className="bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
+                    style={{
+                      rotate: useTransform(processProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 360]),
+                    }}
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {item.icon}
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="text-orange-400 font-bold mb-2 text-sm sm:text-base"
+                    style={{
+                      opacity: useTransform(processProgress, [0.3 + index * 0.1, 0.5 + index * 0.1], [0, 1]),
+                    }}
+                  >
+                    {item.step}
+                  </motion.div>
+                  
+                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2" dir="rtl">
+                    {item.desc}
+                  </p>
                 </motion.div>
-                
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: false }}
-                  transition={{ delay: index * 0.2 + 0.2 }}
-                  className="text-orange-400 font-bold mb-2 text-sm sm:text-base"
-                >
-                  {item.step}
-                </motion.div>
-                
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                  {item.title}
-                </h3>
-                
-                <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2" dir="rtl">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
+              );
+            })}
+          </div>
         </div>
       </motion.section>
 
       {/* CTA Section */}
       <motion.section
+        ref={ctaRef}
         id="cta"
         className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 bg-gradient-to-r from-orange-900/50 to-red-900/50"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.7 }}
-        variants={staggerContainer}
+        style={{
+          opacity: ctaOpacity,
+          scale: ctaScale,
+          y: ctaY,
+        }}
       >
         <div className="max-w-4xl mx-auto text-center w-full">
           <motion.div 
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: false }}
-            transition={{ delay: 0.1, duration: 0.3 }}
             className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-orange-500/20 backdrop-blur-sm border border-orange-400/30 text-orange-200 px-3 sm:px-4 py-1 rounded-full"
+            style={{
+              scale: useTransform(ctaProgress, [0.2, 0.4], [0, 1]),
+            }}
           >
             <span className="text-xs sm:text-sm">Get Started</span>
           </motion.div>
           
           <motion.h2 
-            variants={fadeInUp}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
+            style={{
+              y: useTransform(ctaProgress, [0.2, 0.5], [50, 0]),
+              opacity: useTransform(ctaProgress, [0.2, 0.5], [0, 1]),
+            }}
           >
             آماده‌اید تا رستوران خود را به وبسایت آنلاین مجهز کنید؟
           </motion.h2>
           
           <motion.p 
-            variants={fadeInUp}
             className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4" 
             dir="rtl"
+            style={{
+              y: useTransform(ctaProgress, [0.3, 0.6], [30, 0]),
+              opacity: useTransform(ctaProgress, [0.3, 0.6], [0, 1]),
+            }}
           >
             با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید
           </motion.p>
           
           <motion.div 
-            variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
+            style={{
+              y: useTransform(ctaProgress, [0.4, 0.7], [30, 0]),
+              opacity: useTransform(ctaProgress, [0.4, 0.7], [0, 1]),
+            }}
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -908,22 +1011,12 @@ export default function RestaurantWebsitePage() {
       </motion.section>
 
       {/* Footer */}
-      <motion.footer
+      <footer
         id="footer"
         className="py-8 sm:py-12 px-4 sm:px-6 bg-black/50 border-t border-white/10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 1 }}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="mb-4 sm:mb-6 text-center sm:text-left"
-          >
+          <div className="mb-4 sm:mb-6 text-center sm:text-left">
             <img
               src="/logos/ck-nobg.png"
               alt="Kara Code Logo"
@@ -935,12 +1028,12 @@ export default function RestaurantWebsitePage() {
             <p className="text-sm sm:text-base text-gray-400 font-mono">
               Crafting Digital Excellence
             </p>
-          </motion.div>
+          </div>
           <div className="text-gray-500 text-xs sm:text-sm font-mono text-center sm:text-left">
             © 2025 Kara Code. All rights reserved | kara-code.ir
           </div>
         </div>
-      </motion.footer>
+      </footer>
     </div>
   );
 }
