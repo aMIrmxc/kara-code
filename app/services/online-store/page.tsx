@@ -308,10 +308,7 @@ export default function EcommercePlatformPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-              
-
-
-                <Button
+              <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 onClick={() =>
@@ -324,7 +321,6 @@ export default function EcommercePlatformPage() {
                   شروع ساخت فروشگاه آنلاین شما
                 </span>
               </Button>
-
 
               <Button
                 variant="outline"
@@ -575,11 +571,14 @@ export default function EcommercePlatformPage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -650,7 +649,10 @@ export default function EcommercePlatformPage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -757,7 +759,10 @@ export default function EcommercePlatformPage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -895,9 +900,6 @@ export default function EcommercePlatformPage() {
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              
-
-
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
@@ -911,14 +913,12 @@ export default function EcommercePlatformPage() {
                   شروع پروژه فروشگاه آنلاین شما
                 </span>
               </Button>
-
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              
-            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            ></motion.div>
           </motion.div>
-
-          
         </div>
       </motion.section>
 

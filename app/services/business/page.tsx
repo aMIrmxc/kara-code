@@ -71,9 +71,9 @@ export default function CorporateWebsitePage() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   const fadeInScale = {
@@ -83,9 +83,9 @@ export default function CorporateWebsitePage() {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   const staggerContainer = {
@@ -94,9 +94,9 @@ export default function CorporateWebsitePage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const staggerItem = {
@@ -106,9 +106,9 @@ export default function CorporateWebsitePage() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut" as any
-      }
-    }
+        ease: "easeOut" as any,
+      },
+    },
   };
 
   useEffect(() => {
@@ -369,10 +369,9 @@ export default function CorporateWebsitePage() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.4 }}
         variants={staggerContainer}
-
       >
         <div className="max-w-6xl mx-auto text-left w-full">
-          <motion.div variants={fadeInUp}  className="mb-8 sm:mb-12 text-center">
+          <motion.div variants={fadeInUp} className="mb-8 sm:mb-12 text-center">
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -380,12 +379,13 @@ export default function CorporateWebsitePage() {
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 text-blue-200 px-3 sm:px-4 py-1 rounded-full"
             >
-              <span className="text-xs sm:text-sm font-semibold">Key Features</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Key Features
+              </span>
             </motion.div>
-            
+
             <motion.h2
               variants={fadeInUp}
-              
               className="text-3xl sm:text-4xl md:text-5xl font-bold font-noto-h2 px-4 sm:px-8 text-white mb-3 sm:mb-4 leading-tight"
             >
               قابلیت‌های کلیدی وبسایت شرکتی
@@ -452,7 +452,7 @@ export default function CorporateWebsitePage() {
                 >
                   {features[activeFeature].title}
                 </h3>
-                
+
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                   <p
                     className="text-center text-gray-300 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl leading-relaxed font-persian text-sm sm:text-base px-2 sm:px-4"
@@ -504,16 +504,18 @@ export default function CorporateWebsitePage() {
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 text-blue-200 px-3 sm:px-4 py-1 rounded-full"
             >
-              <span className="text-xs sm:text-sm font-semibold">Business Impact</span>
+              <span className="text-xs sm:text-sm font-semibold">
+                Business Impact
+              </span>
             </motion.div>
-            
+
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               تأثیر وبسایت شرکتی بر کسب‌وکار شما
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -522,7 +524,7 @@ export default function CorporateWebsitePage() {
               آمار و ارقامی که نشان‌دهنده قدرت حضور آنلاین حرفه‌ای است
             </motion.p>
           </motion.div>
-          
+
           <motion.div
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
@@ -534,7 +536,7 @@ export default function CorporateWebsitePage() {
                 whileHover={{
                   scale: 1.05,
                   y: -10,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 text-center flex flex-col justify-center min-h-[200px] sm:min-h-[250px]"
               >
@@ -547,7 +549,7 @@ export default function CorporateWebsitePage() {
                 >
                   {stat.icon}
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
@@ -555,21 +557,24 @@ export default function CorporateWebsitePage() {
                   transition={{
                     type: "spring",
                     stiffness: 200,
-                    delay: index * 0.1 + 0.2
+                    delay: index * 0.1 + 0.2,
                   }}
                   className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
                 >
                   {stat.value}
                 </motion.div>
-                
+
                 <h4
                   className="text-base sm:text-lg font-semibold text-gray-200 mb-2 font-persian"
                   dir="rtl"
                 >
                   {stat.label}
                 </h4>
-                
-                <p className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1" dir="rtl">
+
+                <p
+                  className="text-xs sm:text-sm text-gray-400 font-persian leading-relaxed px-1"
+                  dir="rtl"
+                >
                   {stat.description}
                 </p>
               </motion.div>
@@ -584,11 +589,14 @@ export default function CorporateWebsitePage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -598,14 +606,14 @@ export default function CorporateWebsitePage() {
             >
               <span className="text-xs sm:text-sm">Comprehensive Features</span>
             </motion.div>
-            
+
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               امکانات جامع وبسایت شرکتی مدرن
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -625,7 +633,7 @@ export default function CorporateWebsitePage() {
                 variants={staggerItem}
                 whileHover={{
                   y: -10,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 group"
               >
@@ -636,12 +644,15 @@ export default function CorporateWebsitePage() {
                 >
                   <div className="text-white">{feature.icon}</div>
                 </motion.div>
-                
+
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
-                
-                <p className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed" dir="rtl">
+
+                <p
+                  className="text-sm sm:text-base text-gray-300 font-persian leading-relaxed"
+                  dir="rtl"
+                >
                   {feature.desc}
                 </p>
               </motion.div>
@@ -660,7 +671,10 @@ export default function CorporateWebsitePage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -670,7 +684,7 @@ export default function CorporateWebsitePage() {
             >
               <span className="text-xs sm:text-sm">Why Corporate Website</span>
             </motion.div>
-            
+
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
@@ -678,7 +692,7 @@ export default function CorporateWebsitePage() {
             >
               چرا شرکت شما به وبسایت حرفه‌ای نیاز دارد؟
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -690,7 +704,10 @@ export default function CorporateWebsitePage() {
             </motion.p>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="space-y-6 sm:space-y-8">
+          <motion.div
+            variants={staggerContainer}
+            className="space-y-6 sm:space-y-8"
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
               {[
                 {
@@ -727,7 +744,7 @@ export default function CorporateWebsitePage() {
                   >
                     {benefit.icon}
                   </motion.div>
-                  
+
                   <div className="flex-1 text-right">
                     <h4
                       className="text-base sm:text-lg text-white font-semibold mb-1 sm:mb-2 font-persian"
@@ -735,7 +752,10 @@ export default function CorporateWebsitePage() {
                     >
                       {benefit.title}
                     </h4>
-                    <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed" dir="rtl">
+                    <p
+                      className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed"
+                      dir="rtl"
+                    >
                       {benefit.desc}
                     </p>
                   </div>
@@ -756,7 +776,10 @@ export default function CorporateWebsitePage() {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div variants={fadeInUp} className="text-center mb-12 sm:mb-16">
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mb-12 sm:mb-16"
+          >
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
@@ -766,14 +789,14 @@ export default function CorporateWebsitePage() {
             >
               <span className="text-xs sm:text-sm">Our Process</span>
             </motion.div>
-            
+
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
             >
               فرآیند توسعه وبسایت شرکتی
             </motion.h2>
-            
+
             <motion.p
               variants={fadeInUp}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-persian px-4"
@@ -827,14 +850,14 @@ export default function CorporateWebsitePage() {
                   transition={{
                     type: "spring",
                     stiffness: 200,
-                    delay: index * 0.2
+                    delay: index * 0.2,
                   }}
                   whileHover={{ rotate: 360 }}
                   className="bg-gradient-to-r from-blue-500 to-indigo-500 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
                 >
                   {item.icon}
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -844,12 +867,15 @@ export default function CorporateWebsitePage() {
                 >
                   {item.step}
                 </motion.div>
-                
+
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 font-persian">
                   {item.title}
                 </h3>
-                
-                <p className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2" dir="rtl">
+
+                <p
+                  className="text-sm sm:text-base text-gray-400 font-persian leading-relaxed px-2"
+                  dir="rtl"
+                >
                   {item.desc}
                 </p>
               </motion.div>
@@ -877,14 +903,14 @@ export default function CorporateWebsitePage() {
           >
             <span className="text-xs sm:text-sm">Get Started Today</span>
           </motion.div>
-          
+
           <motion.h2
             variants={fadeInUp}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
           >
             آماده‌اید تا شرکت خود را به سطح بعدی ببرید؟
           </motion.h2>
-          
+
           <motion.p
             variants={fadeInUp}
             className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-persian px-4"
@@ -892,15 +918,12 @@ export default function CorporateWebsitePage() {
           >
             با وبسایت شرکتی حرفه‌ای، در دنیای دیجیتال حضوری قدرتمند داشته باشید
           </motion.p>
-          
+
           <motion.div
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center px-4"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300"
@@ -915,10 +938,7 @@ export default function CorporateWebsitePage() {
                 </span>
               </Button>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
                 size="lg"

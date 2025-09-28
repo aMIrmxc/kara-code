@@ -587,7 +587,7 @@ export default function CustomWebAppPage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
