@@ -21,6 +21,12 @@ import {
   Heart,
   Lightbulb,
   Palette,
+  Mail,
+  Send,
+  Github,
+  Linkedin,
+  Instagram,
+  ArrowUp,
 } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { motion, Variants } from "@/components/ui/motion";
@@ -548,36 +554,90 @@ export default function HomePageContent() {
         {/* Footer */}
       <motion.footer
         id="footer"
-        className="py-8 sm:py-12 px-4 sm:px-6 bg-black/50 border-t border-white/10"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        className="relative py-12 sm:py-16 px-4 sm:px-6 bg-black/50 border-t border-white/10"
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: false, amount: 0.4 }}
-        transition={{ duration: 1 }}
+        variants={sectionVariants}
       >
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false, amount: 0.4 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="mb-4 sm:mb-6 text-center sm:text-left"
-          >
-            <img
-              src="/logos/ck-nobg.png"
-              alt="Kara Code Logo"
-              className="h-12 sm:h-16 lg:h-18 mx-auto sm:mx-0 -mb-1 sm:-mb-2"
-            />
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-4 font-mono">
-              Kara Code
-            </h3>
-            <p className="text-sm sm:text-base text-gray-400 font-mono">
-              Crafting Digital Excellence
-            </p>
-          </motion.div>
-          <div className="text-gray-500 text-xs sm:text-sm font-mono text-center sm:text-left">
-            © 2025 Kara Code. All rights reserved | kara-code.ir
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Logo and Branding */}
+            <motion.div
+              className="lg:col-span-4 text-center lg:text-left"
+              variants={cardVariants}
+              transition={{ delay: 0.2 }}
+            >
+              <img
+                src="/logos/ck-nobg.png"
+                alt="Kara Code Logo"
+                className="h-16 sm:h-20 mx-auto lg:mx-0 -mb-2"
+              />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-mono">
+                Kara Code
+              </h3>
+              <p className="text-base text-gray-400 font-mono">
+                Crafting Digital Excellence
+              </p>
+              <div className="flex justify-center lg:justify-start space-x-4 mt-6">
+                <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Github /></a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Linkedin /></a>
+                <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Instagram /></a>
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              className="lg:col-span-2"
+              variants={cardVariants}
+              transition={{ delay: 0.3 }}
+            >
+              <h4 className="font-semibold text-white mb-4 text-lg font-mono">Quick Links</h4>
+              <ul className="space-y-3">
+                <li><Link href="#services" className="text-gray-400 hover:text-white transition-colors font-persian">خدمات</Link></li>
+                <li><Link href="#projects" className="text-gray-400 hover:text-white transition-colors font-persian">نمونه‌کارها</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors font-persian">تماس با ما</Link></li>
+              </ul>
+            </motion.div>
+
+            {/* Contact */}
+            <motion.div
+              className="lg:col-span-3"
+              variants={cardVariants}
+              transition={{ delay: 0.4 }}
+            >
+              <h4 className="font-semibold text-white mb-4 text-lg font-mono">Get in Touch</h4>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-gray-400"/>
+                  <a href="mailto:info@kara-code.ir" className="text-gray-400 hover:text-white transition-colors">info@kara-code.ir</a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Send className="w-5 h-5 text-gray-400"/>
+                  <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Telegram</a>
+                </li>
+              </ul>
+            </motion.div>
           </div>
+
+          <motion.div
+            className="mt-12 pt-8 border-t border-white/10 text-center text-gray-500 text-sm font-mono"
+            variants={cardVariants}
+            transition={{ delay: 0.5 }}
+          >
+            © {new Date().getFullYear()} Kara Code. All rights reserved | kara-code.ir
+          </motion.div>
         </div>
+        <motion.button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="absolute -top-5 left-1/2 -translate-x-1/2 lg:left-auto lg:right-8 lg:translate-x-0 z-20 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full p-4 text-white hover:bg-white/20 transition-all"
+          aria-label="Back to top"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          <ArrowUp className="w-6 h-6" />
+        </motion.button>
       </motion.footer>
     </>
   );
