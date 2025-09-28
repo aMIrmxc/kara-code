@@ -29,3 +29,14 @@ Topic:
     Color: "from-orange-500 to-red-500"
 
 I want you to use this file as a base example for building the page. Take inspiration from its styles and design patterns, but use relevant, topic-appropriate, and SEO-optimized content to create the new page in the best possible way.
+
+
+
+- simple Animate this page written with Nextjs. Animation should turn back with Reverce Scrolling
+'''
+
+'''
+
+
+
+-

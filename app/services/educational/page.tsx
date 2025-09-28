@@ -45,7 +45,6 @@ import {
   UserCheck,
   PlayCircle,
   Download,
-  Certificate,
 } from "lucide-react";
 
 export default function EducationalPlatformPage() {
