@@ -10,7 +10,7 @@ interface BaseServiceLayoutProps {
   children: React.ReactNode;
   title: string;
   subtitle: string;
-  description: string;
+  description?: string;
   primaryButtonText: string;
   secondaryButtonText: string;
   onPrimaryButtonClick?: () => void;
