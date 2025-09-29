@@ -39,4 +39,15 @@ I want you to use this file as a base example for building the page. Take inspir
 
 
 
+- create a responsive login page  for following code.
+use exact styles of components and do not create new styles.
+
+base code:
+'''
+
+'''
+
+
+
+
 -
