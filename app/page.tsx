@@ -90,55 +90,49 @@ export default function HomePage() {
               می‌کند
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-8 py-6 text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
+                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
                 onClick={() =>
                   document
                     .getElementById("services")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-              >
-                درباره ما
-              </Button>
+              >درباره ما</Button>
 
-                <Button
-                  size="lg"
-                  className="bg-gray-100 hover:bg-gray-200 border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                  onClick={() =>
-                    document
-                      .getElementById("projects")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  <>
-                    <span className="text-gradient-animated font-bold font-persian">
-                      پروژه خود را انتخاب کنید
-                    </span>
-                  </>
-                </Button>
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                onClick={() =>
+                  document
+                    .getElementById("projects")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                <>
+                  <span className="text-gradient-animated font-bold font-persian">
+                    پروژه خود را انتخاب کنید
+                  </span>
+                </>
+              </Button>
             </div>
           </div>
         </div>
 
         <div
           className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-500 text-sm font-persian text-center ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-        <Link
-          href="https://clients.kara-code.ir"
-            className="text-white/60 hover:text-white transition-colors text-[20px] text-center "
+          <Link
+            href="https://clients.kara-code.ir"
+            className="text-white/60 hover:text-white transition-colors text-persian text-center "
           >
             کاربر فعلی هستید؟ اینجا وارد شوید.
           </Link>
         </div>
-        
-        
       </section>
 
       {!isLoading && <HomePageContent />}

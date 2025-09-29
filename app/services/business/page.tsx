@@ -117,20 +117,17 @@ export default function CorporateWebsitePage() {
       setIsVisible(true);
     }, 100);
 
-    const interval = setInterval(() => {
-      setActiveFeature((prev) => (prev + 1) % 4);
-    }, 8000);
+
 
     return () => {
       clearTimeout(timer);
-      clearInterval(interval);
     };
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowScrollIndicator(true);
-    }, 1500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -319,7 +316,8 @@ export default function CorporateWebsitePage() {
               سطح سازمانی و قابلیت‌های یکپارچه‌سازی با سیستم‌های کسب‌وکار شما
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+            <div
+             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
@@ -368,7 +366,7 @@ export default function CorporateWebsitePage() {
         className="py-16 sm:py-20 px-4 bg-black/30 text-center flex items-center justify-center min-h-screen"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto text-left w-full">
@@ -493,7 +491,7 @@ export default function CorporateWebsitePage() {
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2}}
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto text-center">
@@ -590,7 +588,7 @@ export default function CorporateWebsitePage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -668,7 +666,7 @@ export default function CorporateWebsitePage() {
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -773,7 +771,7 @@ export default function CorporateWebsitePage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">

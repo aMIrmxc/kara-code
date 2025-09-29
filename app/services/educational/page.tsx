@@ -364,7 +364,7 @@ export default function EducationalPlatformPage() {
         className="py-16 sm:py-20 px-4 bg-black/30 text-center flex items-center justify-center min-h-screen"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
 
       >
@@ -373,7 +373,7 @@ export default function EducationalPlatformPage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 text-amber-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -489,7 +489,7 @@ export default function EducationalPlatformPage() {
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto text-center">
@@ -497,7 +497,7 @@ export default function EducationalPlatformPage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 text-amber-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -581,7 +581,7 @@ export default function EducationalPlatformPage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -589,7 +589,7 @@ export default function EducationalPlatformPage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 text-amber-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -653,7 +653,7 @@ export default function EducationalPlatformPage() {
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -661,7 +661,7 @@ export default function EducationalPlatformPage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 text-amber-200 px-3 sm:px-4 py-1 rounded-full"
             >
@@ -748,7 +748,7 @@ export default function EducationalPlatformPage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -756,7 +756,7 @@ export default function EducationalPlatformPage() {
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: 0.1, duration: 0.3 }}
               className="mb-4 sm:mb-6 inline-flex items-center gap-2 bg-amber-500/20 backdrop-blur-sm border border-amber-400/30 text-amber-200 px-3 sm:px-4 py-1 rounded-full"
             >

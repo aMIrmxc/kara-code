@@ -47,7 +47,7 @@ export default function Footer() {
       className="relative py-12 sm:py-16 px-4 sm:px-6 bg-black/50 border-t border-white/10"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.4 }}
+      viewport={{ once: false, amount: 0.2 }}
       variants={sectionVariants}
     >
       <div className="max-w-7xl mx-auto">

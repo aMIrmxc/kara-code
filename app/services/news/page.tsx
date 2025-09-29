@@ -371,7 +371,7 @@ export default function NewsAgencyWebsitePage() {
         className="py-16 sm:py-20 px-4 bg-black/30 text-center flex items-center justify-center min-h-screen"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto text-left w-full">
@@ -496,7 +496,7 @@ export default function NewsAgencyWebsitePage() {
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-7xl mx-auto text-center">
@@ -593,7 +593,7 @@ export default function NewsAgencyWebsitePage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -672,7 +672,7 @@ export default function NewsAgencyWebsitePage() {
         className="py-16 sm:py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -780,7 +780,7 @@ export default function NewsAgencyWebsitePage() {
         className="py-16 sm:py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
