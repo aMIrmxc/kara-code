@@ -38,7 +38,7 @@ export default function LoginPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <p className="text-lg text-gray-200 font-noto-h2">
-              به پنل مدیریت خوش آمدید
+              ورود به پنل مدیریت 
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function LoginPage() {
               {/* Forgot Password Link */}
               <div className="text-right">
                 <Link
-                  href="/forgot-password"
+                  href="/login/forgot-password"
                   className="text-sm text-gray-300 hover:text-white transition-colors font-persian"
                 >
                   رمز عبور خود را فراموش کرده‌اید؟

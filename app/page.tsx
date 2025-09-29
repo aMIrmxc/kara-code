@@ -127,7 +127,7 @@ export default function HomePage() {
           }`}
         >
           <Link
-            href="https://clients.kara-code.ir"
+            href="/login"
             className="text-white/60 hover:text-white transition-colors text-persian text-center "
           >
             کاربر فعلی هستید؟ اینجا وارد شوید.

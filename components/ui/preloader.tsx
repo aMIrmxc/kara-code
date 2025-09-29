@@ -13,13 +13,26 @@ export function Preloader({ isLoading }: PreloaderProps) {
     setIsMounted(true)
   }, [])
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.classList.add("preloader-active")
+    } else {
+      document.body.classList.remove("preloader-active")
+    }
+
+    // Cleanup function to remove the class when the component unmounts
+    return () => {
+      document.body.classList.remove("preloader-active")
+    }
+  }, [isLoading])
+
   if (!isMounted) {
     return null
   }
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[100] flex h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 transition-opacity duration-500 ${
         isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
