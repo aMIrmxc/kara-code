@@ -33,9 +33,9 @@ I want you to use this file as a base example for building the page. Take inspir
 
 
 - simple Animate this page written with Nextjs. Animation should turn back with Reverce Scrolling
-'''
+```
 
-'''
+```
 
 
 
@@ -43,11 +43,15 @@ I want you to use this file as a base example for building the page. Take inspir
 use exact styles of components and do not create new styles.
 
 base code:
-'''
+```
 
-'''
-
-
+```
 
 
--
+
+
+- The main focus of our website is Web Development Services, where customers can order the website they want from us. base on features that showed in @/app/services/restaurant/page.tsx page ,  when client clicked on "شروع پروژه وبسایت آنلاین شما" button , what informations should "kara-code.ir" get as a multi-step form or questionnairefor the client from client to make  his site ? 
+
+
+after user filled the blanks of multi-step form  ,  then user should register with email and phone number, and finally showing that every things was successful.
+

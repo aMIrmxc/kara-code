@@ -60,7 +60,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
       className={`min-h-screen flex items-center justify-center py-16 sm:py-20 px-4 bg-gradient-to-r from-${accentColorLight}/50 to-${accentColorDark}/50`}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.7 }}
+      viewport={{ once: false, amount: 0.5 }}
       variants={staggerContainer}
     >
       <div className="max-w-4xl mx-auto text-center w-full">
