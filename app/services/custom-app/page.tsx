@@ -1,5 +1,19 @@
 "use client";
 
+
+/*
+  Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
+  These classes are used across the shared components for the 'business' service page.
+
+  - Accent colors for light/dark themes:
+    bg-fuchsia-500/20 border-fuchsia-400/30 text-fuchsia-200 text-fuchsia-400
+    hover:bg-fuchsia-500/10
+    dark:bg-fuchsia-400/20 dark:border-fuchsia-500/30 dark:text-fuchsia-300
+
+  - Gradient for CTA section:
+    from-fuchsia-500/50 to-fuchsia-400/50
+*/
+
 import {
   Code2,
   Rocket,
@@ -109,7 +123,7 @@ export default function CustomWebAppPage() {
       value: "۹۹.۹٪",
       label: "Uptime تضمین شده",
       description:
-        "با استفاده از زیرساخت ابری مدرن و معماری Redundant، دسترسی دائمی به اپلیکیشن شما تضمین می‌شود.",
+        "با استفاده از زیرساخت ابری مدرن و معماری Redundant، دسترسی دائمی به وبسایت شما تضمین می‌شود.",
     },
     {
       icon: <Users className="w-6 h-6 sm:w-8 sm:h-8" />,

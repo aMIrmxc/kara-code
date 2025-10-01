@@ -8,6 +8,11 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
+  safelist: [
+    {
+      pattern: /(bg|border|text)-(red|green|blue|yellow|purple|pink|indigo|gray|orange|teal|cyan)-(100|200|300|400|500|600|700|800|900)/,
+    },
+  ],
   prefix: "",
   theme: {
     container: {

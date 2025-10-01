@@ -1,5 +1,18 @@
 "use client";
 
+/*
+  Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
+  These classes are used across the shared components for the 'business' service page.
+
+  - Accent colors for light/dark themes:
+    bg-sky-500/20 border-sky-400/30 text-sky-200 text-sky-400
+    hover:bg-sky-500/10
+    dark:bg-sky-400/20 dark:border-sky-500/30 dark:text-sky-300
+
+  - Gradient for CTA section:
+    from-sky-500/50 to-sky-400/50
+*/
+
 import {
   Plane,
   Hotel,
@@ -23,6 +36,7 @@ import {
   Compass,
   Wallet,
   HeartHandshake,
+  Activity,
 } from "lucide-react";
 import BaseServiceLayout from "@/components/services/shared/BaseServiceLayout";
 import FeaturesSection from "@/components/services/shared/FeaturesSection";
@@ -96,11 +110,11 @@ export default function TravelBookingWebsitePage() {
         "پلتفرم‌های رزرو آنلاین با رابط کاربری بهینه، نرخ تبدیل بازدیدکننده به مشتری را تا ۶۵٪ افزایش می‌دهند.",
     },
     {
-      icon: <Globe className="w-6 h-6 sm:w-8 sm:h-8" />,
-      value: "۱۵۰+",
-      label: "کشور تحت پوشش",
+      icon: <Activity className="w-6 h-6 sm:w-8 sm:h-8" />,
+      value: "۹۹.۹٪",
+      label: "Uptime تضمین شده",
       description:
-        "دسترسی به خدمات رزرو در بیش از ۱۵۰ کشور جهان، بازار هدف شما را به کل دنیا گسترش می‌دهد.",
+        "با استفاده از زیرساخت ابری مدرن و معماری Redundant، دسترسی دائمی به وبسایت شما تضمین می‌شود.",
     },
     {
       icon: <Clock className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -121,55 +135,55 @@ export default function TravelBookingWebsitePage() {
   const keyFeatures = [
     {
       icon: <Search className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "جستجوی پیشرفته",
+      title: "Advanced Search",
       desc: "موتور جستجوی هوشمند با فیلترهای چندگانه",
       color: "from-sky-500 to-blue-500",
     },
     {
       icon: <Wallet className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "کیف پول دیجیتال",
+      title: "Digital Wallet",
       desc: "سیستم کیف پول برای پرداخت سریع و کش‌بک",
       color: "from-blue-500 to-indigo-500",
     },
     {
       icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "پرداخت امن",
+      title: "Secure Payment",
       desc: "درگاه‌های پرداخت معتبر با رمزنگاری SSL",
       color: "from-cyan-500 to-sky-500",
     },
     {
       icon: <Star className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "سیستم امتیازدهی",
+      title: "Rating & Reviews",
       desc: "نظرات و امتیازات واقعی از مسافران قبلی",
       color: "from-indigo-500 to-purple-500",
     },
     {
       icon: <Smartphone className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "اپلیکیشن موبایل",
+      title: "Mobile App",
       desc: "دسترسی آسان از طریق اپ iOS و Android",
       color: "from-teal-500 to-cyan-500",
     },
     {
       icon: <HeartHandshake className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "پشتیبانی ۲۴/۷",
+      title: "24/7 Support",
       desc: "تیم پشتیبانی آماده کمک در هر زمان",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "گزارش‌های تحلیلی",
+      title: "Analytics Dashboard",
       desc: "داشبورد مدیریتی با آمار دقیق فروش",
       color: "from-sky-500 to-cyan-500",
     },
     {
       icon: <Map className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "نقشه تعاملی",
+      title: "Interactive map",
       desc: "نمایش هتل‌ها و جاذبه‌ها روی نقشه",
       color: "from-blue-500 to-sky-500",
     },
     {
       icon: <Award className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "برنامه وفاداری",
+      title: "Loyalty program",
       desc: "جوایز و تخفیف‌های ویژه برای کاربران وفادار",
       color: "from-indigo-500 to-blue-500",
     },
@@ -178,8 +192,8 @@ export default function TravelBookingWebsitePage() {
   const whyBenefits = [
     {
       icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
-      title: "دسترسی جهانی به بازار",
-      desc: "پلتفرم آنلاین شما را به میلیون‌ها مسافر در سراسر جهان متصل می‌کند و محدودیت‌های جغرافیایی را از بین می‌برد.",
+      title: " دسترسی از سراسر ایران",
+      desc: "پلتفرم آنلاین شما را به میلیون‌ها مسافر در سراسر ایران متصل می‌کند و محدودیت‌های جغرافیایی را از بین می‌برد.",
     },
     {
       icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
@@ -201,25 +215,25 @@ export default function TravelBookingWebsitePage() {
   const processSteps = [
     {
       step: "01",
-      title: "تحلیل و برنامه‌ریزی",
+      title: "Analysis and planning",
       desc: "بررسی نیازها و تعیین ویژگی‌های پلتفرم",
       icon: <Compass className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "02",
-      title: "طراحی UI/UX",
+      title: "UI/UX design",
       desc: "طراحی رابط کاربری جذاب و کاربرپسند",
       icon: <Map className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "03",
-      title: "توسعه و یکپارچه‌سازی",
+      title: "Development and integration",
       desc: "کدنویسی و اتصال به سرویس‌های رزرو",
       icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "04",
-      title: "راه‌اندازی و پشتیبانی",
+      title: "Launch and support",
       desc: "آموزش، راه‌اندازی و پشتیبانی مداوم",
       icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />,
     },

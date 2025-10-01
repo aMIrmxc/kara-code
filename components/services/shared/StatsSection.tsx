@@ -143,6 +143,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({
                   delay: index * 0.1 + 0.2,
                 }}
                 className="text-3xl sm:text-4xl font-bold text-white mb-2 font-noto-h2"
+                dir="rtl"
               >
                 {stat.value}
               </motion.div>

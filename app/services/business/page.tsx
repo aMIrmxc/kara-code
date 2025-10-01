@@ -1,5 +1,18 @@
 "use client";
 
+/*
+  Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
+  These classes are used across the shared components for the 'business' service page.
+
+  - Accent colors for light/dark themes:
+    bg-blue-500/20 border-blue-400/30 text-blue-200 text-blue-400
+    hover:bg-blue-500/10
+    dark:bg-blue-400/20 dark:border-blue-500/30 dark:text-blue-300
+
+  - Gradient for CTA section:
+    from-blue-500/50 to-blue-400/50
+*/
+
 import {
   Building2,
   Globe,
@@ -199,25 +212,25 @@ export default function CorporateWebsitePage() {
   const processSteps = [
     {
       step: "01",
-      title: "تحلیل و برنامه‌ریزی",
+      title: "Analysis and planning",
       desc: "بررسی نیازها، اهداف کسب‌وکار و تحلیل رقبا",
       icon: <Target className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "02",
-      title: "طراحی UX/UI",
+      title: "Designing UX/UI",
       desc: "طراحی رابط کاربری منحصر به فرد و کاربرپسند",
       icon: <Palette className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "03",
-      title: "توسعه و برنامه‌نویسی",
+      title: "Development and programming",
       desc: "کدنویسی با آخرین تکنولوژی‌ها و استانداردها",
       icon: <Code2 className="w-5 h-5 sm:w-6 sm:h-6" />,
     },
     {
       step: "04",
-      title: "راه‌اندازی و پشتیبانی",
+      title: "Launch and support",
       desc: "استقرار، آموزش و پشتیبانی مستمر",
       icon: <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />,
     },

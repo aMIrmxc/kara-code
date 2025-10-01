@@ -1,5 +1,19 @@
 "use client";
 
+
+/*
+  Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
+  These classes are used across the shared components for the 'business' service page.
+
+  - Accent colors for light/dark themes:
+    bg-red-500/20 border-red-400/30 text-red-200 text-red-400
+    hover:bg-red-500/10
+    dark:bg-red-400/20 dark:border-red-500/30 dark:text-red-300
+
+  - Gradient for CTA section:
+    from-red-500/50 to-red-400/50
+*/
+
 import {
   Newspaper,
   Clock,
