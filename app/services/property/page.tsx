@@ -13,6 +13,7 @@
     from-teal-500/50 to-teal-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   Home,
   Search,
@@ -48,6 +49,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function RealEstatePlatformPage() {
+  const router = useRouter();
   const features = [
     {
       icon: <Search className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -253,6 +255,11 @@ export default function RealEstatePlatformPage() {
       accentColorDark="teal-400"
       logoIcon={<Home className="w-4 h-4" />}
       logoText="Real Estate Platform Solutions"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent("شروع پروژه پلتفرم املاک شما")}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -314,6 +321,11 @@ export default function RealEstatePlatformPage() {
         sectionId="cta"
         primaryButtonText="شروع ساخت پلتفرم املاک"
         start="Start Your Project"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent("شروع ساخت پلتفرم املاک")}`,
+          );
+        }}
       />
     </BaseServiceLayout>
   );

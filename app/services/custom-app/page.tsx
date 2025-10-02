@@ -14,6 +14,7 @@
     from-fuchsia-500/50 to-fuchsia-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   Code2,
   Rocket,
@@ -56,6 +57,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function CustomWebAppPage() {
+  const router = useRouter();
   const features = [
     {
       icon: <Workflow className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -252,7 +254,7 @@ export default function CustomWebAppPage() {
     <BaseServiceLayout
       title="وب اپلیکیشن سفارشی"
       subtitle="یک اپلیکیشن وب اختصاصی با طراحی دلخواه شما و قابلیت‌های کاملاً منعطف برای رشد کسب‌وکارتان"
-      primaryButtonText="شروع ساخت اپلیکیشن شما"
+      primaryButtonText="شروع ساخت وب اپلیکشیشن سفارشی شما"
       secondaryButtonText="مشاهده قابلیت‌ها"
       gradientColors="from-gray-900 via-fuchsia-950 to-violet-950"
       accentColor="from-fuchsia-600 to-violet-600"
@@ -260,6 +262,11 @@ export default function CustomWebAppPage() {
       accentColorDark="fuchsia-400"
       logoIcon={<Code2 className="w-4 h-4" />}
       logoText="Custom Web Application Development"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent("شروع ساخت وب اپلیکشیشن سفارشی شما")}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -319,8 +326,13 @@ export default function CustomWebAppPage() {
         sectionTitle="آماده ساخت اپلیکیشن رویایی خود هستید؟"
         sectionSubtitle="از ایده تا اجرا، ما در کنار شما هستیم تا بهترین راه‌حل را برای کسب‌وکارتان بسازیم"
         sectionId="cta"
-        primaryButtonText="شروع ساخت اپلیکیشن شما"
+        primaryButtonText="شروع ساخت وب اپلیکشیشن سفارشی شما"
         start="Start Your Project"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent("شروع ساخت وب اپلیکشیشن سفارشی شما")}`,
+          );
+        }}
       />
     </BaseServiceLayout>
   );

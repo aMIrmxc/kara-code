@@ -13,6 +13,7 @@
     from-blue-500/50 to-blue-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   Building2,
   Globe,
@@ -44,6 +45,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function CorporateWebsitePage() {
+  const router = useRouter();
   const features = [
     {
       icon: <FileText className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -249,6 +251,11 @@ export default function CorporateWebsitePage() {
       accentColorDark="blue-400"
       logoIcon={<Building2 className="w-4 h-4" />}
       logoText="Corporate Website Solutions"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent("شروع پروژه وبسایت شرکتی شما")}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -308,8 +315,15 @@ export default function CorporateWebsitePage() {
         sectionTitle="آماده‌اید تا شرکت خود را به سطح بعدی ببرید؟"
         sectionSubtitle="با وبسایت شرکتی حرفه‌ای، در دنیای دیجیتال حضوری قدرتمند داشته باشید"
         sectionId="cta"
-        primaryButtonText="درخواست مشاوره رایگان"
+        primaryButtonText="شروع پروژه وبسایت شرکتی شما"
         start="Get Started Today"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent(
+              "شروع پروژه وبسایت شرکتی شما",
+            )}`,
+          );
+        }}
         onSecondaryButtonClick={() => {
           document
             .getElementById("footer")

@@ -14,6 +14,7 @@
     from-red-500/50 to-red-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   Newspaper,
   Clock,
@@ -62,6 +63,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function NewsAgencyWebsitePage() {
+  const router = useRouter();
   const features = [
     {
       icon: <AlertCircle className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -267,6 +269,13 @@ export default function NewsAgencyWebsitePage() {
       accentColorDark="red-400"
       logoIcon={<Newspaper className="w-4 h-4" />}
       logoText="News Agency Website Solutions"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent(
+            "شروع پروژه خبرگزاری آنلاین شما",
+          )}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -328,6 +337,13 @@ export default function NewsAgencyWebsitePage() {
         sectionId="cta"
         primaryButtonText="شروع پروژه خبرگزاری آنلاین شما"
         start="Get Started Today"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent(
+              "شروع پروژه خبرگزاری آنلاین شما",
+            )}`,
+          );
+        }}
       />
     </BaseServiceLayout>
   );

@@ -73,7 +73,7 @@ export default function HomePage() {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <Badge className="mb-6 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono hover:bg-white/20 transition-all duration-300">
+            <Badge className="text-xs sm:text-sm mb-6 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono hover:bg-white/20 transition-all duration-300">
               Premium Web Development Services
               <Zap className="w-4 h-4 " />
             </Badge>

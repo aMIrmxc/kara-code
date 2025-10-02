@@ -14,6 +14,7 @@
     from-cyan-500/50 to-cyan-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   Stethoscope,
   Clock,
@@ -50,6 +51,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function MedicalWebsitePage() {
+  const router = useRouter();
   const features = [
     {
       icon: <Calendar className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -254,6 +256,11 @@ export default function MedicalWebsitePage() {
       accentColorDark="cyan-400"
       logoIcon={<Stethoscope className="w-4 h-4" />}
       logoText="Healthcare Portal Solutions"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent("شروع پروژه پورتال سلامت شما")}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -315,6 +322,13 @@ export default function MedicalWebsitePage() {
         sectionId="cta"
         primaryButtonText="شروع پروژه پورتال سلامت شما"
         start="Get Started Today"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent(
+              "شروع پروژه پورتال سلامت شما",
+            )}`,
+          );
+        }}
       />
     </BaseServiceLayout>
   );

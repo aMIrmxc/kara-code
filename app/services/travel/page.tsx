@@ -13,6 +13,7 @@
     from-sky-500/50 to-sky-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   Plane,
   Hotel,
@@ -47,6 +48,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function TravelBookingWebsitePage() {
+  const router = useRouter();
   const features = [
     {
       icon: <Plane className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -252,6 +254,13 @@ export default function TravelBookingWebsitePage() {
       accentColorDark="sky-400"
       logoIcon={<Plane className="w-4 h-4" />}
       logoText="Travel Booking Platform"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent(
+            "شروع ساخت پلتفرم رزرو سفر شما",
+          )}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -313,6 +322,13 @@ export default function TravelBookingWebsitePage() {
         sectionId="cta"
         primaryButtonText="شروع ساخت پلتفرم رزرو سفر شما"
         start="Start Your Journey"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent(
+              "شروع ساخت پلتفرم رزرو سفر شما",
+            )}`,
+          );
+        }}
       />
     </BaseServiceLayout>
   );

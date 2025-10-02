@@ -14,6 +14,7 @@
     from-amber-500/50 to-amber-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   GraduationCap,
   BookOpen,
@@ -58,6 +59,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function EducationalPlatformPage() {
+  const router = useRouter();
   const features = [
     {
       icon: <BookOpen className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -262,6 +264,13 @@ export default function EducationalPlatformPage() {
       accentColorDark="amber-400"
       logoIcon={<GraduationCap className="w-4 h-4" />}
       logoText="Educational Platform Solutions"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent(
+            "شروع ساخت پلتفرم آموزشی شما",
+          )}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -323,6 +332,13 @@ export default function EducationalPlatformPage() {
         sectionId="cta"
         primaryButtonText="شروع ساخت پلتفرم آموزشی شما"
         start="Start Your Journey"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent(
+              "شروع ساخت پلتفرم آموزشی شما",
+            )}`,
+          );
+        }}
       />
     </BaseServiceLayout>
   );

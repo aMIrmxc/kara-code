@@ -13,6 +13,7 @@
     from-rose-500/50 to-rose-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   ShoppingBag,
   CreditCard,
@@ -48,6 +49,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function EcommercePlatformPage() {
+  const router = useRouter();
   const features = [
     {
       icon: <ShoppingCart className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -253,6 +255,11 @@ export default function EcommercePlatformPage() {
       accentColorDark="rose-400"
       logoIcon={<ShoppingBag className="w-4 h-4" />}
       logoText="E-commerce Platform Solutions"
+      onPrimaryButtonClick={() =>
+        router.push(
+          `/register?title=${encodeURIComponent("شروع ساخت فروشگاه آنلاین شما")}`,
+        )
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -314,6 +321,13 @@ export default function EcommercePlatformPage() {
         sectionId="cta"
         primaryButtonText="شروع پروژه فروشگاه آنلاین شما"
         start="Get Started Today"
+        onPrimaryButtonClick={() => {
+          router.push(
+            `/register?title=${encodeURIComponent(
+              "شروع پروژه فروشگاه آنلاین شما",
+            )}`,
+          );
+        }}
       />
     </BaseServiceLayout>
   );
