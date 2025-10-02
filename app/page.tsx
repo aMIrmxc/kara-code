@@ -126,12 +126,21 @@ export default function HomePage() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <Link
-            href="/login"
-            className="text-white/60 hover:text-white transition-colors text-persian text-center "
-          >
-            کاربر فعلی هستید؟ اینجا وارد شوید.
-          </Link>
+          <div dir="rtl" className="flex gap-4 items-center justify-center">
+            <Link
+              href="/register"
+              className="text-white/60 hover:text-white transition-colors text-persian text-center "
+            >
+              ایجاد حساب کاربری
+            </Link>
+            <span className="text-white/60">|</span>
+            <Link
+              href="/login"
+              className="text-white/60 hover:text-white transition-colors text-persian text-center "
+            >
+              کاربر فعلی هستید؟ اینجا وارد شوید
+            </Link>
+          </div>
         </div>
       </section>
 

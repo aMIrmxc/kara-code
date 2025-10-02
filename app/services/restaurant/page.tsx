@@ -14,6 +14,7 @@
     from-orange-500/50 to-orange-400/50
 */
 
+import { useRouter } from "next/navigation";
 import {
   Utensils,
   Clock,
@@ -43,6 +44,7 @@ import ProcessSection from "@/components/services/shared/ProcessSection";
 import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function RestaurantWebsitePage() {
+  const router = useRouter();
   const features = [
     {
       icon: <ShoppingCart className="w-6 h-6 sm:w-8 sm:h-8" />,
@@ -248,6 +250,9 @@ export default function RestaurantWebsitePage() {
       accentColorDark="orange-400"
       logoIcon={<Utensils className="w-4 h-4" />}
       logoText="Restaurant Website Solutions"
+      onPrimaryButtonClick={() =>
+        router.push(`/register?title=${encodeURIComponent("شروع ساخت وبسایت رستوران شما")}`)
+      }
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -309,6 +314,11 @@ export default function RestaurantWebsitePage() {
         sectionId="cta"
         primaryButtonText="شروع پروژه وبسایت آنلاین شما"
         start="Get Started"
+        onPrimaryButtonClick={() =>
+          router.push(
+            `/register?title=${encodeURIComponent("شروع ساخت وبسایت شما")}`,
+          )
+        }
       />
     </BaseServiceLayout>
   );
