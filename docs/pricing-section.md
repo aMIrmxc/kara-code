@@ -1,7 +1,4 @@
-- do not move components in homepagecontent.tsx , to seperate files. no need + ai cant easily read + styles may changes in new routes.
 
-
-- clients.kara-code.ir/login
 
 
 - pricing section that opus4.1 generates for pricing section in restaurant section :
@@ -31,6 +28,8 @@
                   pkg.recommended ? "border-orange-400" : "border-white/10"
                 } rounded-2xl p-8 relative ${
                   pkg.recommended ? "scale-105" : ""
+                  pkg.recommended ? "scale-105" : ""
+
                 }`}
               >
                 {pkg.recommended && (
@@ -75,10 +74,4 @@
         </div>
       </section>
 ''' 
-
-
-- fonts that you add their files to project , tw cant apply "text-sm font-bold" for them
-
-
-- kilo : I've confirmed that the transform: scaleX() property on the .font-noto-h1 and .font-noto-h2 classes is causing the horizontal overflow.
  
