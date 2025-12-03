@@ -1,5 +1,11 @@
-"use client";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "طراحی سایت خبری | پورتال‌های خبری و وب‌سایت‌های اطلاع‌رسانی",
+  description:
+    "با خدمات طراحی سایت خبری، اخبار و محتوای خود را به سرعت منتشر کنید. ما پلتفرم‌های خبری مدرن، سریع و با قابلیت مدیریت آسان برای خبرگزاری‌ها و رسانه‌ها طراحی می‌کنیم.",
+};
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -272,8 +278,8 @@ export default function NewsAgencyWebsitePage() {
       onPrimaryButtonClick={() =>
         router.push(
           `/register?title=${encodeURIComponent(
-            "شروع پروژه خبرگزاری آنلاین شما",
-          )}`,
+            "شروع پروژه خبرگزاری آنلاین شما"
+          )}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -340,8 +346,8 @@ export default function NewsAgencyWebsitePage() {
         onPrimaryButtonClick={() => {
           router.push(
             `/register?title=${encodeURIComponent(
-              "شروع پروژه خبرگزاری آنلاین شما",
-            )}`,
+              "شروع پروژه خبرگزاری آنلاین شما"
+            )}`
           );
         }}
       />

@@ -1,4 +1,11 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "طراحی سایت گردشگری | وب‌سایت برای آژانس‌های مسافرتی و رزرو آنلاین",
+  description:
+    "با طراحی سایت گردشگری، خدمات سفر و تورهای خود را آنلاین عرضه کنید. ما وب‌سایت‌های حرفه‌ای برای آژانس‌های مسافرتی با قابلیت رزرو تور، هتل و بلیط طراحی می‌کنیم.",
+};
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -257,8 +264,8 @@ export default function TravelBookingWebsitePage() {
       onPrimaryButtonClick={() =>
         router.push(
           `/register?title=${encodeURIComponent(
-            "شروع ساخت پلتفرم رزرو سفر شما",
-          )}`,
+            "شروع ساخت پلتفرم رزرو سفر شما"
+          )}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -325,8 +332,8 @@ export default function TravelBookingWebsitePage() {
         onPrimaryButtonClick={() => {
           router.push(
             `/register?title=${encodeURIComponent(
-              "شروع ساخت پلتفرم رزرو سفر شما",
-            )}`,
+              "شروع ساخت پلتفرم رزرو سفر شما"
+            )}`
           );
         }}
       />

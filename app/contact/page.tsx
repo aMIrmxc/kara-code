@@ -104,7 +104,7 @@ export default function ContactPage() {
                         setFormData({ ...formData, phone: e.target.value })
                       }
                       className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 font-mono"
-                      placeholder="+98 912 345 6789"
+                      placeholder="0939008603"
                       required
                     />
                   </div>
@@ -229,7 +229,7 @@ export default function ContactPage() {
                         Phone
                       </h3>
                       <p className="text-gray-300 font-mono" dir="ltr">
-                        +98 912 345 6789
+                        09395008603
                       </p>
                     </div>
                   </div>

@@ -1,5 +1,11 @@
-"use client";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "طراحی سایت رستوران | وب‌سایت برای رستوران‌ها، کافه‌ها و فست‌فود",
+  description:
+    "با طراحی سایت رستوران، منوی خود را آنلاین کرده و سفارش آنلاین دریافت کنید. ما وب‌سایت‌های جذاب با گالری تصاویر، منوی دیجیتال و سیستم رزرو آنلاین برای رستوران‌ها طراحی می‌کنیم.",
+};
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -251,7 +257,11 @@ export default function RestaurantWebsitePage() {
       logoIcon={<Utensils className="w-4 h-4" />}
       logoText="Restaurant Website Solutions"
       onPrimaryButtonClick={() =>
-        router.push(`/register?title=${encodeURIComponent("شروع ساخت وبسایت رستوران شما")}`)
+        router.push(
+          `/register?title=${encodeURIComponent(
+            "شروع ساخت وبسایت رستوران شما"
+          )}`
+        )
       }
       onSecondaryButtonClick={() =>
         document
@@ -316,7 +326,7 @@ export default function RestaurantWebsitePage() {
         start="Get Started"
         onPrimaryButtonClick={() =>
           router.push(
-            `/register?title=${encodeURIComponent("شروع ساخت وبسایت شما")}`,
+            `/register?title=${encodeURIComponent("شروع ساخت وبسایت شما")}`
           )
         }
       />

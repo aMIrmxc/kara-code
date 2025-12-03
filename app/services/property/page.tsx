@@ -1,4 +1,11 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "طراحی سایت املاک | وب‌سایت‌های حرفه‌ای برای آژانس‌های املاک",
+  description:
+    "با طراحی سایت املاک، فایل‌های خود را به بهترین شکل به نمایش بگذارید. ما وب‌سایت‌های مدرن با قابلیت جستجوی پیشرفته و نمایش ملک برای آژانس‌های املاک طراحی می‌کنیم.",
+};
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -257,7 +264,7 @@ export default function RealEstatePlatformPage() {
       logoText="Real Estate Platform Solutions"
       onPrimaryButtonClick={() =>
         router.push(
-          `/register?title=${encodeURIComponent("شروع پروژه پلتفرم املاک شما")}`,
+          `/register?title=${encodeURIComponent("شروع پروژه پلتفرم املاک شما")}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -323,7 +330,7 @@ export default function RealEstatePlatformPage() {
         start="Start Your Project"
         onPrimaryButtonClick={() => {
           router.push(
-            `/register?title=${encodeURIComponent("شروع ساخت پلتفرم املاک")}`,
+            `/register?title=${encodeURIComponent("شروع ساخت پلتفرم املاک")}`
           );
         }}
       />

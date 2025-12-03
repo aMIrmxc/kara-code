@@ -1,5 +1,11 @@
-"use client";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "طراحی سایت آموزشی | پلتفرم‌های یادگیری آنلاین و وب‌سایت‌های آموزشی",
+  description:
+    "با خدمات طراحی سایت آموزشی ما، دانش و تخصص خود را به صورت آنلاین به اشتراک بگذارید. ما پلتفرم‌های یادگیری الکترونیکی (LMS) و وب‌سایت‌های آموزشی جذاب و کاربرپسند ایجاد می‌کنیم.",
+};
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -266,9 +272,7 @@ export default function EducationalPlatformPage() {
       logoText="Educational Platform Solutions"
       onPrimaryButtonClick={() =>
         router.push(
-          `/register?title=${encodeURIComponent(
-            "شروع ساخت پلتفرم آموزشی شما",
-          )}`,
+          `/register?title=${encodeURIComponent("شروع ساخت پلتفرم آموزشی شما")}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -335,8 +339,8 @@ export default function EducationalPlatformPage() {
         onPrimaryButtonClick={() => {
           router.push(
             `/register?title=${encodeURIComponent(
-              "شروع ساخت پلتفرم آموزشی شما",
-            )}`,
+              "شروع ساخت پلتفرم آموزشی شما"
+            )}`
           );
         }}
       />

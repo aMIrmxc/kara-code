@@ -1,5 +1,12 @@
-"use client";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "توسعه اپلیکیشن سفارشی | ساخت برنامه‌های اختصاصی برای نیازهای شما",
+  description:
+    "با خدمات توسعه اپلیکیشن سفارشی، ایده‌های خود را به واقعیت تبدیل کنید. ما برنامه‌های موبایل و دسکتاپ متناسب با نیازهای منحصر به فرد کسب و کار شما طراحی و پیاده‌سازی می‌کنیم.",
+};
+
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -264,7 +271,9 @@ export default function CustomWebAppPage() {
       logoText="Custom Web Application Development"
       onPrimaryButtonClick={() =>
         router.push(
-          `/register?title=${encodeURIComponent("شروع ساخت وب اپلیکشیشن سفارشی شما")}`,
+          `/register?title=${encodeURIComponent(
+            "شروع ساخت وب اپلیکشیشن سفارشی شما"
+          )}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -330,7 +339,9 @@ export default function CustomWebAppPage() {
         start="Start Your Project"
         onPrimaryButtonClick={() => {
           router.push(
-            `/register?title=${encodeURIComponent("شروع ساخت وب اپلیکشیشن سفارشی شما")}`,
+            `/register?title=${encodeURIComponent(
+              "شروع ساخت وب اپلیکشیشن سفارشی شما"
+            )}`
           );
         }}
       />

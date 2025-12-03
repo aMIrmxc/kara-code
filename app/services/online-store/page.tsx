@@ -1,4 +1,11 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "طراحی سایت فروشگاهی | ساخت فروشگاه اینترنتی حرفه‌ای و مدرن",
+  description:
+    "با خدمات طراحی سایت فروشگاهی، محصولات خود را به صورت آنلاین بفروشید. ما فروشگاه‌های اینترنتی با طراحی جذاب، مدیریت آسان و درگاه پرداخت امن ایجاد می‌کنیم.",
+};
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -257,7 +264,9 @@ export default function EcommercePlatformPage() {
       logoText="E-commerce Platform Solutions"
       onPrimaryButtonClick={() =>
         router.push(
-          `/register?title=${encodeURIComponent("شروع ساخت فروشگاه آنلاین شما")}`,
+          `/register?title=${encodeURIComponent(
+            "شروع ساخت فروشگاه آنلاین شما"
+          )}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -324,8 +333,8 @@ export default function EcommercePlatformPage() {
         onPrimaryButtonClick={() => {
           router.push(
             `/register?title=${encodeURIComponent(
-              "شروع پروژه فروشگاه آنلاین شما",
-            )}`,
+              "شروع پروژه فروشگاه آنلاین شما"
+            )}`
           );
         }}
       />

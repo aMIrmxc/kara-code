@@ -22,7 +22,7 @@ const jsonLd = {
   logo: "https://kara-code.ir/logos/ck-w-circle.png",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+98-912-345-6789",
+    telephone: "+98-939-500-8603",
     contactType: "خدمات مشتریان",
     areaServed: "IR",
     availableLanguage: ["fa", "en"],

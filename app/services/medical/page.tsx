@@ -1,5 +1,11 @@
-"use client";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "طراحی سایت پزشکی | وب‌سایت برای پزشکان، کلینیک‌ها و بیمارستان‌ها",
+  description:
+    "با خدمات طراحی سایت پزشکی، حضور آنلاین خود را در حوزه سلامت تقویت کنید. ما وب‌سایت‌های حرفه‌ای برای پزشکان، کلینیک‌ها و مراکز درمانی با رعایت استانداردهای امنیتی طراحی می‌کنیم.",
+};
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -258,7 +264,7 @@ export default function MedicalWebsitePage() {
       logoText="Healthcare Portal Solutions"
       onPrimaryButtonClick={() =>
         router.push(
-          `/register?title=${encodeURIComponent("شروع پروژه پورتال سلامت شما")}`,
+          `/register?title=${encodeURIComponent("شروع پروژه پورتال سلامت شما")}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -325,8 +331,8 @@ export default function MedicalWebsitePage() {
         onPrimaryButtonClick={() => {
           router.push(
             `/register?title=${encodeURIComponent(
-              "شروع پروژه پورتال سلامت شما",
-            )}`,
+              "شروع پروژه پورتال سلامت شما"
+            )}`
           );
         }}
       />

@@ -1,4 +1,12 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "طراحی سایت شرکتی | خدمات تخصصی طراحی وب برای کسب و کارها",
+  description:
+    "با خدمات طراحی سایت شرکتی ما، کسب و کار خود را در دنیای دیجیتال به نمایش بگذارید. ما وب‌سایت‌های حرفه‌ای، مدرن و بهینه برای موتورهای جستجو طراحی می‌کنیم.",
+};
+
+("use client");
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -253,7 +261,7 @@ export default function CorporateWebsitePage() {
       logoText="Corporate Website Solutions"
       onPrimaryButtonClick={() =>
         router.push(
-          `/register?title=${encodeURIComponent("شروع پروژه وبسایت شرکتی شما")}`,
+          `/register?title=${encodeURIComponent("شروع پروژه وبسایت شرکتی شما")}`
         )
       }
       onSecondaryButtonClick={() =>
@@ -320,8 +328,8 @@ export default function CorporateWebsitePage() {
         onPrimaryButtonClick={() => {
           router.push(
             `/register?title=${encodeURIComponent(
-              "شروع پروژه وبسایت شرکتی شما",
-            )}`,
+              "شروع پروژه وبسایت شرکتی شما"
+            )}`
           );
         }}
         onSecondaryButtonClick={() => {
