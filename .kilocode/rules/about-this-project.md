@@ -3,7 +3,9 @@
 ## Project Description
 
 Kara Code is a web development services website built with modern technologies. The site showcases web development services.
-The main focus of our website is Web Development Services, where customers can order the website they want from us.
+The main focus of our website is Web Development Services, where customers can order the website they want from us. 
+A team of expert programmers is waiting to receive programming orders from customers, including website design, backend development, and mobile and desktop application development.
+this web service platform is base on iran market and clients are iranian that speak farsi.
 
 ## Technologies Used
 
@@ -16,7 +18,8 @@ The main focus of our website is Web Development Services, where customers can o
 - **Form Handling**: React Hook Form with Zod validation
 - **State Management**: React Context API
 - **Animations**: Tailwind CSS animations
-- **Deployment**: Optimized for Vercel with Analytics integration
+- **Deployment**: this ssg nextjs project has hosted by cloudflare pages. 
+
 
 ## Key Dependencies
 

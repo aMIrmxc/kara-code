@@ -47,26 +47,8 @@ export default function Footer() {
       className="relative py-12 sm:py-16 px-4 sm:px-6 bg-black/50 border-t border-white/10"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Logo and Branding */}
-          <motion.div
-            className="lg:col-span-4 text-center lg:text-left"
-            variants={cardVariants}
-            transition={{ delay: 0.2 }}
-          >
-            <img
-              src="/logos/ck-nobg.png"
-              alt="Kara Code Logo"
-              className="h-16 sm:h-20 mx-auto lg:mx-0 -mb-2"
-            />
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-mono">
-              Kara Code
-            </h3>
-            <p className="text-base text-gray-400 font-mono">
-              Crafting Digital Excellence
-            </p>
-            
-          </motion.div>
+        <div className="grid grid-cols-1  gap-8">
+         
 
           {/* Quick Links */}
           <motion.div
@@ -148,6 +130,27 @@ export default function Footer() {
               </li>
             </ul>
           </motion.div>
+
+           {/* Logo and Branding */}
+          <motion.div
+            className="lg:col-span-4 text-center "
+            variants={cardVariants}
+            transition={{ delay: 0.2 }}
+          >
+            <img
+              src="/logos/ck-nobg.png"
+              alt="Kara Code Logo"
+              className="h-16 sm:h-20 mx-auto  -mb-2"
+            />
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-mono">
+              Kara Code
+            </h3>
+            <p className="text-base text-gray-400 font-mono">
+              Crafting Digital Excellence
+            </p>
+            
+          </motion.div>
+          
         </div>
 
         <motion.div
