@@ -1,20 +1,21 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import { vazir, noto } from "@/lib/fonts"
-import { Analytics } from "@vercel/analytics/next"
-import { Toaster } from "@/components/ui/toaster"
-import { Suspense } from "react"
-import ClientLayout from "@/components/layout/client-layout"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { vazir, noto } from "@/lib/fonts";
+import { Analytics } from "@vercel/analytics/next";
+import { Toaster } from "@/components/ui/toaster";
+import { Suspense } from "react";
+import ClientLayout from "@/components/layout/client-layout";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Kara Code - Premium Web Development Services",
   description:
     "Professional web development services in Iran. Custom websites, e-commerce solutions, and web applications built with cutting-edge technology.",
   generator: "Kara Code",
-  keywords: "web development, Iran, custom websites, e-commerce, web applications, kara-code.ir",
+  keywords:
+    "web development, Iran, custom websites, e-commerce, web applications, kara-code.ir",
   icons: {
     icon: "/logos/ck-w-circle.png",
     shortcut: "/logos/ck-w-circle.png",
@@ -30,16 +31,16 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body 
+    <html lang="fa" dir="rtl">
+      <body
         className={`font-mono ${GeistSans.variable} ${GeistMono.variable} ${vazir.variable} ${noto.variable}`}
       >
         <Suspense fallback={null}>
@@ -49,5 +50,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
