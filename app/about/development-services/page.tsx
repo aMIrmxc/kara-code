@@ -217,10 +217,9 @@ export default function DevelopmentServicesPage() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h1>
-              <span className="text-gradient-animated bg-clip-text text-transparent font-noto-h1">
-                {" "}
-                توسعه نرم‌افزار وب، موبایل و دسکتاپ
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-mono">
+              <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse">
+               توسعه نرم‌افزار وب، موبایل و دسکتاپ
               </span>
             </h1>
 
@@ -231,7 +230,24 @@ export default function DevelopmentServicesPage() {
               همراه شما هستیم.
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center"></div>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
+              >
+                توضیحات بیشتر
+              </Button>
+
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
+                <span className="text-gradient-animated font-bold font-persian">
+                   مشاوره رایگان
+                </span>
+              </Button>
+            </div>
           </div>
 
           {/* Stats */}
@@ -511,8 +527,6 @@ export default function DevelopmentServicesPage() {
                 بهبود مستمر بخشی از خدمات ماست. رضایت مشتریان و موفقیت پروژه‌ها
                 برای ما در اولویت است.
               </p>
-
-             
             </div>
           </div>
         </div>
@@ -535,20 +549,14 @@ export default function DevelopmentServicesPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button
+                size="lg"
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               >
-                  <span className="text-gradient-animated font-bold font-persian">
-
-                مشاوره رایگان
+                <span className="text-gradient-animated font-bold font-persian">
+                 مشاوره رایگان
                 </span>
               </Button>
-              <Button
-              variant="outline"
-                size="lg"
-               className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
-              >
-                مشاهده نمونه‌کارها
-              </Button>
+              
             </div>
           </div>
         </div>
