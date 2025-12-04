@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   Code,
   Smartphone,
@@ -28,22 +29,28 @@ import {
   Heart,
 } from "lucide-react";
 
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 
 import Footer from "@/components/layout/Footer";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export default function DevelopmentServicesPage() {
   const [activeTab, setActiveTab] = useState("web");
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
   useEffect(() => {
-      const timer = setTimeout(() => {
-        setShowScrollIndicator(true);
-      }, 1000);
-  
-      return () => clearTimeout(timer);
-    }, []);
+    const timer = setTimeout(() => {
+      setShowScrollIndicator(true);
+    }, 1000);
 
+    return () => clearTimeout(timer);
+  }, []);
 
   const services = [
     {
@@ -210,23 +217,21 @@ export default function DevelopmentServicesPage() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            
-
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
-              توسعه نرم‌افزار وب، موبایل و دسکتاپ
+            <h1>
+              <span className="text-gradient-animated bg-clip-text text-transparent font-noto-h1">
+                {" "}
+                توسعه نرم‌افزار وب، موبایل و دسکتاپ
+              </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4">
               ما در <span className="font-bold text-white">کارا کد</span> با
-              استفاده از جدیدترین تکنولوژی‌ها، راه‌حل‌های
-              نرم‌افزاری قدرتمند، مقیاس‌پذیر و امن برای کسب‌وکار شما می‌سازیم.
-              از ایده تا اجرا، ما همراه شما هستیم.
+              استفاده از جدیدترین تکنولوژی‌ها، راه‌حل‌های نرم‌افزاری قدرتمند،
+              مقیاس‌پذیر و امن برای کسب‌وکار شما می‌سازیم. از ایده تا اجرا، ما
+              همراه شما هستیم.
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              
-              
-            </div>
+            <div className="flex flex-wrap gap-4 justify-center"></div>
           </div>
 
           {/* Stats */}
@@ -255,17 +260,16 @@ export default function DevelopmentServicesPage() {
             <div className="w-1 h-2 sm:h-3 bg-white/60 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
           </div>
         </motion.div>
-
       </section>
 
       {/* Services Section */}
       <section className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               خدمات توسعه نرم‌افزار
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4">
               ما طیف کاملی از خدمات توسعه نرم‌افزار را با کیفیت بالا و قیمت
               رقابتی ارائه می‌دهیم
             </p>
@@ -304,49 +308,61 @@ export default function DevelopmentServicesPage() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               تکنولوژی‌های پیشرفته
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4 ">
               استفاده از جدیدترین و محبوب‌ترین تکنولوژی‌ها برای ساخت بهترین
               محصولات
             </p>
           </div>
 
           <div className="flex justify-center gap-4 mb-8">
-            <button
+            <Button
               onClick={() => setActiveTab("web")}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                activeTab === "web"
-                  ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10"
-              }`}
+              className={cn(
+                "px-6 py-3 rounded-xl font-semibold transition-all duration-300",
+                {
+                  "bg-gradient-to-r from-blue-500 to-cyan-500 text-white":
+                    activeTab === "web",
+                  "bg-white/5 text-gray-300 hover:bg-white/10":
+                    activeTab !== "web",
+                }
+              )}
             >
               <Globe className="w-5 h-5 inline ml-2" />
               وب
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setActiveTab("mobile")}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                activeTab === "mobile"
-                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10"
-              }`}
+              className={cn(
+                "px-6 py-3 rounded-xl font-semibold transition-all duration-300",
+                {
+                  "bg-gradient-to-r from-purple-500 to-pink-500 text-white":
+                    activeTab === "mobile",
+                  "bg-white/5 text-gray-300 hover:bg-white/10":
+                    activeTab !== "mobile",
+                }
+              )}
             >
               <Smartphone className="w-5 h-5 inline ml-2" />
               موبایل
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => setActiveTab("desktop")}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                activeTab === "desktop"
-                  ? "bg-gradient-to-r from-orange-500 to-red-500 text-white"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10"
-              }`}
+              className={cn(
+                "px-6 py-3 rounded-xl font-semibold transition-all duration-300",
+                {
+                  "bg-gradient-to-r from-orange-500 to-red-500 text-white":
+                    activeTab === "desktop",
+                  "bg-white/5 text-gray-300 hover:bg-white/10":
+                    activeTab !== "desktop",
+                }
+              )}
             >
               <Monitor className="w-5 h-5 inline ml-2" />
               دسکتاپ
-            </button>
+            </Button>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -376,10 +392,10 @@ export default function DevelopmentServicesPage() {
       <section className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               چرا کارا کد؟
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4">
               مزایای همکاری با ما برای پروژه‌های توسعه نرم‌افزار شما
             </p>
           </div>
@@ -407,10 +423,10 @@ export default function DevelopmentServicesPage() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               فرآیند کار ما
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4">
               از ایده تا اجرا، ما با یک فرآیند شفاف و حرفه‌ای پیش می‌رویم
             </p>
           </div>
@@ -437,7 +453,7 @@ export default function DevelopmentServicesPage() {
       <section className="py-20 px-4 bg-black/30">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2 text-center">
               توسعه نرم‌افزار حرفه‌ای در ایران
             </h2>
 
@@ -451,7 +467,7 @@ export default function DevelopmentServicesPage() {
                 نرم‌افزاری با کیفیت بالا، امن و مقیاس‌پذیر می‌سازیم.
               </p>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
                 خدمات توسعه وب‌سایت
               </h3>
               <p>
@@ -463,7 +479,7 @@ export default function DevelopmentServicesPage() {
                 بالا ساخته می‌شوند.
               </p>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
                 توسعه اپلیکیشن موبایل
               </h3>
               <p>
@@ -475,7 +491,7 @@ export default function DevelopmentServicesPage() {
                 می‌کنند.
               </p>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
                 نرم‌افزار دسکتاپ سفارشی
               </h3>
               <p>
@@ -486,7 +502,7 @@ export default function DevelopmentServicesPage() {
                 برآورده کند.
               </p>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
                 تضمین کیفیت و پشتیبانی
               </h3>
               <p>
@@ -496,19 +512,7 @@ export default function DevelopmentServicesPage() {
                 برای ما در اولویت است.
               </p>
 
-              <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-6 mt-8 border border-blue-500/30">
-                <p className="text-white font-semibold text-lg mb-2">
-                  آماده شروع پروژه خود هستید؟
-                </p>
-                <p className="mb-4">
-                  همین حالا با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید.
-                  ما آماده‌ایم تا ایده‌های شما را به واقعیت تبدیل کنیم.
-                </p>
-                <button className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 inline-flex items-center gap-2">
-                  تماس با ما
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -518,22 +522,33 @@ export default function DevelopmentServicesPage() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 border border-white/10 rounded-2xl p-12 backdrop-blur-sm">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               آماده برای شروع پروژه خود هستید؟
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200   max-w-3xl mx-auto leading-relaxed font-persian px-4">
               با تیم حرفه‌ای کارا کد، ایده‌های خود را به محصولات نرم‌افزاری
               قدرتمند تبدیل کنید
             </p>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200   max-w-3xl mx-auto leading-relaxed font-persian px-4 mb-12">
+              همین حالا با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید. ما
+              آماده‌ایم تا ایده‌های شما را به واقعیت تبدیل کنیم.
+            </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-blue-500/50">
-                <MessageSquare className="w-5 h-5" />
+              <Button
+                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
+                  <span className="text-gradient-animated font-bold font-persian">
+
                 مشاوره رایگان
-              </button>
-              <button className="bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 flex items-center gap-2">
-                <Star className="w-5 h-5" />
+                </span>
+              </Button>
+              <Button
+              variant="outline"
+                size="lg"
+               className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
+              >
                 مشاهده نمونه‌کارها
-              </button>
+              </Button>
             </div>
           </div>
         </div>
