@@ -174,12 +174,12 @@ export default function DevelopmentServicesPage() {
     },
   ];
 
-  const stats = [
-    { number: "200+", label: "پروژه موفق" },
-    { number: "150+", label: "مشتری راضی" },
-    { number: "98%", label: "رضایت مشتریان" },
-    { number: "24/7", label: "پشتیبانی" },
-  ];
+  // const stats = [
+  //   { number: "200+", label: "پروژه موفق" },
+  //   { number: "150+", label: "مشتری راضی" },
+  //   { number: "98%", label: "رضایت مشتریان" },
+  //   { number: "24/7", label: "پشتیبانی" },
+  // ];
 
   return (
     <div
@@ -205,22 +205,19 @@ export default function DevelopmentServicesPage() {
 
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
               ما در <span className="font-bold text-white">کارا کد</span> با
-              استفاده از جدیدترین تکنولوژی‌ها و بهترین practices، راه‌حل‌های
+              استفاده از جدیدترین تکنولوژی‌ها، راه‌حل‌های
               نرم‌افزاری قدرتمند، مقیاس‌پذیر و امن برای کسب‌وکار شما می‌سازیم.
               از ایده تا اجرا، ما همراه شما هستیم.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-blue-500/50">
-                مشاوره رایگان
-                <ArrowRight className="w-5 h-5" />
-              </button>
+              
               
             </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -232,7 +229,7 @@ export default function DevelopmentServicesPage() {
                 <div className="text-gray-400">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
