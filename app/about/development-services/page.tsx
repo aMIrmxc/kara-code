@@ -41,7 +41,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export default function DevelopmentServicesPage() {
-  const [activeTab, setActiveTab] = useState("web");
+  const [activeTab, setActiveTab] = useState("frontend");
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function DevelopmentServicesPage() {
       description:
         "نرم‌افزارهای دسکتاپ قدرتمند برای Windows، macOS و Linux. راه‌حل‌های سفارشی برای مدیریت کسب‌وکار، اتوماسیون فرآیندها و افزایش بهره‌وری.",
       features: [
-        "Electron, .NET",
+        "Electron Desktop App Framework",
         "کراس‌پلتفرم",
         "رابط کاربری پیشرفته",
         "عملکرد بالا",
@@ -95,29 +95,110 @@ export default function DevelopmentServicesPage() {
   ];
 
   const technologies = {
-    web: [
-      { name: "React & Next.js", desc: "فریمورک‌های پیشرفته JavaScript" },
-      { name: "Vue & Nuxt", desc: "توسعه سریع و انعطاف‌پذیر" },
-      { name: "Node.js", desc: "بک‌اند مقیاس‌پذیر" },
-      { name: "TypeScript", desc: "کد امن و قابل نگهداری" },
-      { name: "Tailwind CSS", desc: "طراحی مدرن و responsive" },
-      { name: "GraphQL & REST", desc: "API های کارآمد" },
+    frontend: [
+      {
+        name: "Next.js",
+        desc: "فول استک React با SSR/SSG، App Router و سرعت فوق‌العاده",
+      },
+      {
+        name: "React",
+        desc: "کامپوننت‌های قدرتمند با Suspense، Concurrent و بهینه‌سازی خودکار",
+      },
+      {
+        name: "Vue + Composition API",
+        desc: "ری‌اکتیویته سریع، TypeScript native و ماژول‌های سبک",
+      },
+      {
+        name: "Nuxt ",
+        desc: "فریم‌ورک full-stack Vue با SSR، Nitro و سرعت لود زیر ۱ ثانیه",
+      },
+      {
+        name: "Astro",
+        desc: "خروجی استاتیک فوق‌سریع، جزایل هیدراته و Core Web Vitals عالی",
+      },
+      {
+        name: "Tailwind CSS ",
+        desc: "یوتیلیتی‌کلاس‌های JIT، حجم CSS نهایی زیر ۱۰KB و تم کاملاً سفارشی",
+      },
     ],
+    backend: [
+      {
+        name: "Express.js",
+        desc: "فریم‌ورک سبک و سریع Node.js با Middlewareهای قدرتمند و روتینگ انعطاف‌پذیر برای APIهای پرترافیک",
+      },
+      {
+        name: "Nest.js",
+        desc: "فریم‌ورک مدرن TypeScript-first با معماری ماژولار، Dependency Injection و ساختار enterprise-grade",
+      },
+      {
+        name: "GraphQL",
+        desc: "API Query Language برای دریافت دقیق داده‌ها، کاهش Over-fetching و افزایش سرعت اپلیکیشن تا ۵۰٪",
+      },
+      {
+        name: "REST API",
+        desc: "طراحی RESTful با استاندارد OpenAPI 3، Swagger documentation و caching هوشمند برای scalability بالا",
+      },
+      {
+        name: "PostgreSQL & Redis",
+        desc: "پایگاه داده رابطه‌ای قدرتمند با Redis برای caching سریع‌تر از ۱ms و پشتیبانی از میلیون‌ها رکورد",
+      },
+      {
+        name: "containerization ",
+        desc: "containerization با Docker و  deployment خودکار و zero-downtime scaling",
+      },
+    ],
+
     mobile: [
-      { name: "React Native", desc: "توسعه کراس‌پلتفرم" },
-      { name: "Flutter", desc: "رابط کاربری زیبا و سریع" },
-      { name: "Native iOS", desc: "Swift و Objective-C" },
-      { name: "Native Android", desc: "Kotlin و Java" },
-      { name: "Firebase", desc: "بک‌اند و سرویس‌های ابری" },
-      { name: "Push Notifications", desc: "اعلان‌های هوشمند" },
+      {
+        name: "React Native + Expo",
+        desc: "تک‌کد برای iOS و اندروید، توسعه سریع و آپدیت بدون استور",
+      },
+      {
+        name: "Expo SDK 50+",
+        desc: "دسترسی کامل به دوربین، GPS، نوتیفیکیشن، اثر انگشت و سنسورها",
+      },
+      {
+        name: "Expo Router",
+        desc: "ناوبری native با بهترین عملکرد و deep-linking خودکار",
+      },
+      {
+        name: "Expo Dev Client",
+        desc: "بیلد اختصاصی با امکانات نیتیو بدون نیاز به eject",
+      },
+      {
+        name: "Expo Modules",
+        desc: "ماژول‌های آماده برای پرداخت، آنالیتیکس، push و اد‌موب",
+      },
+      {
+        name: "OTA Updates",
+        desc: "بروزرسانی آنی بدون نیاز به انتشار در اپ‌استور و گوگل‌پلی",
+      },
     ],
     desktop: [
-      { name: "Electron", desc: "اپلیکیشن‌های کراس‌پلتفرم" },
-      { name: ".NET Framework", desc: "برنامه‌نویسی Windows" },
-      { name: "Qt", desc: "رابط کاربری نیتیو" },
-      { name: "Python", desc: "اتوماسیون و تحلیل داده" },
-      { name: "C++ & C#", desc: "عملکرد بالا" },
-      { name: "SQLite & PostgreSQL", desc: "پایگاه داده محلی" },
+      {
+        name: "Electron Framework",
+        desc: "توسعه اپلیکیشن‌های کراس‌پلتفرم با JavaScript، HTML و CSS برای Windows، macOS و Linux",
+      },
+      {
+        name: "Native API Integration",
+        desc: "دسترسی کامل به APIهای سیستم عامل شامل فایل سیستم، نوتیفیکیشن و سخت‌افزار",
+      },
+      {
+        name: "Auto Updater",
+        desc: "سیستم به‌روزرسانی خودکار برای انتشار نسخه‌های جدید بدون نیاز به دانلود دستی",
+      },
+      {
+        name: "SQLite & Local Storage",
+        desc: "پایگاه داده محلی قدرتمند برای ذخیره‌سازی اطلاعات آفلاین و همگام‌سازی",
+      },
+      {
+        name: "Multi-Window Architecture",
+        desc: "مدیریت چند پنجره همزمان با امکانات پیشرفته Drag & Drop و Window Management",
+      },
+      {
+        name: "Performance Optimization",
+        desc: "بهینه‌سازی مصرف حافظه و پردازنده برای عملکرد سریع و روان در تمامی پلتفرم‌ها",
+      },
     ],
   };
 
@@ -219,7 +300,7 @@ export default function DevelopmentServicesPage() {
           <div className="text-center mb-12">
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-mono">
               <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse">
-               توسعه نرم‌افزار وب، موبایل و دسکتاپ
+                توسعه نرم‌افزار وب، موبایل و دسکتاپ
               </span>
             </h1>
 
@@ -234,7 +315,13 @@ export default function DevelopmentServicesPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
+                onClick={() => {
+                  const element = document.getElementById("services-section");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian cursor-pointer"
               >
                 توضیحات بیشتر
               </Button>
@@ -244,7 +331,7 @@ export default function DevelopmentServicesPage() {
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 <span className="text-gradient-animated font-bold font-persian">
-                   مشاوره رایگان
+                  مشاوره رایگان
                 </span>
               </Button>
             </div>
@@ -279,7 +366,7 @@ export default function DevelopmentServicesPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-black/30">
+      <section id="services-section" className="py-20 px-4 bg-black/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
@@ -335,20 +422,36 @@ export default function DevelopmentServicesPage() {
 
           <div className="flex justify-center gap-4 mb-8">
             <Button
-              onClick={() => setActiveTab("web")}
+              onClick={() => setActiveTab("frontend")}
               className={cn(
                 "px-6 py-3 rounded-xl font-semibold transition-all duration-300",
                 {
                   "bg-gradient-to-r from-blue-500 to-cyan-500 text-white":
-                    activeTab === "web",
+                    activeTab === "frontend",
                   "bg-white/5 text-gray-300 hover:bg-white/10":
-                    activeTab !== "web",
+                    activeTab !== "frontend",
                 }
               )}
             >
-              <Globe className="w-5 h-5 inline ml-2" />
-              وب
+              <Code className="w-5 h-5 inline ml-2" />
+              فرانت‌اند
             </Button>
+            <Button
+              onClick={() => setActiveTab("backend")}
+              className={cn(
+                "px-6 py-3 rounded-xl font-semibold transition-all duration-300",
+                {
+                  "bg-gradient-to-r from-purple-500 to-pink-500 text-white":
+                    activeTab === "backend",
+                  "bg-white/5 text-gray-300 hover:bg-white/10":
+                    activeTab !== "backend",
+                }
+              )}
+            >
+              <Database className="w-5 h-5 inline ml-2" />
+              بک‌اند
+            </Button>
+
             <Button
               onClick={() => setActiveTab("mobile")}
               className={cn(
@@ -380,6 +483,7 @@ export default function DevelopmentServicesPage() {
               دسکتاپ
             </Button>
           </div>
+
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {technologies[activeTab as keyof typeof technologies].map(
@@ -479,8 +583,8 @@ export default function DevelopmentServicesPage() {
                 زمینه توسعه نرم‌افزار در ایران است که با تیمی مجرب و متخصص،
                 خدمات جامع توسعه وب‌سایت، اپلیکیشن موبایل و نرم‌افزار دسکتاپ را
                 ارائه می‌دهد. ما با استفاده از جدیدترین تکنولوژی‌های روز دنیا
-                مانند React، Next.js، React Native، Flutter و .NET، محصولات
-                نرم‌افزاری با کیفیت بالا، امن و مقیاس‌پذیر می‌سازیم.
+                مانند React، Next.js، React Native، Flutter و محصولات نرم‌افزاری
+                با کیفیت بالا، امن و مقیاس‌پذیر می‌سازیم.
               </p>
 
               <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
@@ -553,10 +657,9 @@ export default function DevelopmentServicesPage() {
                 className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 <span className="text-gradient-animated font-bold font-persian">
-                 مشاوره رایگان
+                  مشاوره رایگان
                 </span>
               </Button>
-              
             </div>
           </div>
         </div>
