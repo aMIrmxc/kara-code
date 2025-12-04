@@ -1074,7 +1074,7 @@ export default function RestaurantWebsitePage() {
               Kara Code
             </h3>
             <p className="text-sm sm:text-base text-gray-400 font-mono">
-              Crafting Digital Excellence
+              From Idea to Implementation.
             </p>
           </motion.div>
           <motion.div

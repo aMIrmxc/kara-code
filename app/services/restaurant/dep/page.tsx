@@ -700,7 +700,7 @@ export default function RestaurantWebsitePage() {
               Kara Code
             </h3>
             <p className="text-gray-400 font-mono">
-              Crafting Digital Excellence
+              From Idea to Implementation.
             </p>
           </div>
           <div className="text-gray-500 text-sm font-mono">

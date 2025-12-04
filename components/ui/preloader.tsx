@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
 interface PreloaderProps {
-  isLoading: boolean
+  isLoading: boolean;
 }
 
 export function Preloader({ isLoading }: PreloaderProps) {
-  const [isMounted, setIsMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true)
-  }, [])
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (isLoading) {
-      document.body.classList.add("preloader-active")
+      document.body.classList.add("preloader-active");
     } else {
-      document.body.classList.remove("preloader-active")
+      document.body.classList.remove("preloader-active");
     }
 
     // Cleanup function to remove the class when the component unmounts
     return () => {
-      document.body.classList.remove("preloader-active")
-    }
-  }, [isLoading])
+      document.body.classList.remove("preloader-active");
+    };
+  }, [isLoading]);
 
   if (!isMounted) {
-    return null
+    return null;
   }
 
   return (
@@ -43,9 +43,9 @@ export function Preloader({ isLoading }: PreloaderProps) {
           </span>
         </h1>
         <p className="text-xl text-gray-300 animate-pulse font-mono">
-          Crafting Digital Excellence 
+          From Idea to Implementation.
         </p>
       </div>
     </div>
-  )
+  );
 }

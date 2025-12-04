@@ -116,7 +116,7 @@ export default function Footer() {
           {/* Services */}
           <motion.div variants={cardVariants} transition={{ delay: 0.4 }}>
             <h4 className="font-semibold text-white mb-4  font-mono text-lg">
-             Our Services
+              Our Services
             </h4>
             <ul className="space-y-3">
               <li>
@@ -124,7 +124,7 @@ export default function Footer() {
                   href="/services/web-development"
                   className="text-gray-400 hover:text-white transition-colors font-persian"
                 >
-                   توسعه وب و اپلیکیشن موبایل
+                  توسعه وب و اپلیکیشن موبایل
                 </Link>
               </li>
               <li>
@@ -182,7 +182,7 @@ export default function Footer() {
             Kara Code
           </h3>
           <p className="text-base text-gray-400 font-mono">
-            Crafting Digital Excellence
+            From Idea to Implementation.
           </p>
         </motion.div>
 
