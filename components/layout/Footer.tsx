@@ -182,7 +182,7 @@ export default function Footer() {
             Kara Code
           </h3>
           <p className="text-base text-gray-400 font-mono">
-            From Idea to Implementation.
+            From Idea to Implementation
           </p>
         </motion.div>
 
