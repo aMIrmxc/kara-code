@@ -7,15 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "@/components/ui/motion";
-import {
-  Mail,
-  Send,
-  Github,
-  Linkedin,
-  Instagram,
-  ArrowUp,
-  Phone,
-} from "lucide-react";
+import { Mail, Send, ArrowUp, Phone } from "lucide-react";
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -47,15 +39,9 @@ export default function Footer() {
       className="relative py-12 sm:py-16 px-4 sm:px-6 bg-black/50 border-t border-white/10"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1  gap-8">
-         
-
+        <div className="grid grid-cols-1 text-center sm:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Quick Links */}
-          <motion.div
-            className="lg:col-span-2"
-            variants={cardVariants}
-            transition={{ delay: 0.3 }}
-          >
+          <motion.div variants={cardVariants} transition={{ delay: 0.4 }}>
             <h4 className="font-semibold text-white mb-4 text-lg font-mono">
               Quick Links
             </h4>
@@ -88,25 +74,21 @@ export default function Footer() {
           </motion.div>
 
           {/* Contact */}
-          <motion.div
-            className="lg:col-span-3"
-            variants={cardVariants}
-            transition={{ delay: 0.4 }}
-          >
+          <motion.div variants={cardVariants} transition={{ delay: 0.4 }}>
             <h4 className="font-semibold text-white mb-4 text-lg font-mono">
               Get in Touch
             </h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3">
+              <li className="flex items-center justify-center gap-3">
                 <Mail className="w-5 h-5 text-gray-400" />
                 <a
-                  href="mailto:info@kara-code.ir"
+                  href="mailto:contact@kara-code.ir"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  info@kara-code.ir
+                  contact@kara-code.ir
                 </a>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-center justify-center gap-3">
                 <Phone className="w-5 h-5 text-gray-400" />
                 <a
                   href="https://wa.me/00989130350774"
@@ -117,7 +99,7 @@ export default function Footer() {
                   WhatsApp
                 </a>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex items-center justify-center gap-3">
                 <Send className="w-5 h-5 text-gray-400" />
                 <a
                   href="https://t.me/KaraCodeir"
@@ -131,30 +113,81 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-           {/* Logo and Branding */}
-          <motion.div
-            className="lg:col-span-4 text-center "
-            variants={cardVariants}
-            transition={{ delay: 0.2 }}
-          >
-            <img
-              src="/logos/ck-nobg.png"
-              alt="Kara Code Logo"
-              className="h-16 sm:h-20 mx-auto  -mb-2"
-            />
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-mono">
-              Kara Code
-            </h3>
-            <p className="text-base text-gray-400 font-mono">
-              Crafting Digital Excellence
-            </p>
-            
+          {/* Services */}
+          <motion.div variants={cardVariants} transition={{ delay: 0.4 }}>
+            <h4 className="font-semibold text-white mb-4  font-mono text-lg">
+             Our Services
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/services/web-development"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                   توسعه وب و اپلیکیشن موبایل
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/ui-design"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  طراحی رابط کاربری
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/consulting"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  مشاوره فناوری
+                </Link>
+              </li>
+            </ul>
           </motion.div>
-          
+
+          {/* Trust Seal */}
+          <motion.div
+            variants={cardVariants}
+            transition={{ delay: 0.4 }}
+            className="flex justify-center"
+          >
+            <a
+              referrerPolicy="origin"
+              target="_blank"
+              href="https://trustseal.enamad.ir/?id=681053&Code=oKYilCgoCuicDcIls3R6viVMUIg6MnU8"
+            >
+              <img
+                referrerPolicy="origin"
+                src="https://trustseal.enamad.ir/logo.aspx?id=681053&Code=oKYilCgoCuicDcIls3R6viVMUIg6MnU8"
+                alt="Trust Seal"
+                style={{ cursor: "pointer" }}
+              />
+            </a>
+          </motion.div>
         </div>
 
+        {/* Logo and Branding */}
         <motion.div
-          className="mt-12 pt-8 border-t border-white/10 text-center text-gray-500 text-sm font-mono"
+          className=" text-center mt-6 "
+          variants={cardVariants}
+          transition={{ delay: 0.2 }}
+        >
+          <img
+            src="/logos/ck-nobg.png"
+            alt="Kara Code Logo"
+            className="h-16 sm:h-20 mx-auto  -mb-2"
+          />
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 font-mono">
+            Kara Code
+          </h3>
+          <p className="text-base text-gray-400 font-mono">
+            Crafting Digital Excellence
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="mt-8 pt-8 border-t border-white/10 text-center text-gray-500 text-sm font-mono"
           variants={cardVariants}
           transition={{ delay: 0.5 }}
         >
