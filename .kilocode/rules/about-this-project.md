@@ -2,12 +2,14 @@
 
 ## Project Description
 
-Kara Code is a web development services website built with modern technologies. The site showcases web development services.
-The main focus of our website is Web Development Services, where customers can order the website they want from us. 
+Kara Code is a web(next.js , vue.js , angular.js, astro.js) and backend (express.js , nest.js) and mobile (Expo React Native) and desktop(Electron js) development services.
+The main focus of our website is to provide Web Development Services for our customers.
+We have a service section where customers can order Application Development Services and we will develop them  what they ordered.
+We have a contact section where customers can contact us and ask for what we provide and what they need.
 A team of expert programmers is waiting to receive programming orders from customers, including website design, backend development, and mobile and desktop application development.
 this web service platform is base on iran market and clients are iranian that speak farsi.
 
-## Technologies Used
+## kara-code.ir website Technologies Used
 
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
