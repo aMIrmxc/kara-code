@@ -15,7 +15,7 @@ interface CtaSectionProps {
   secondaryButtonText?: string;
   onPrimaryButtonClick?: () => void;
   onSecondaryButtonClick?: () => void;
-  start: string
+  start?: string;
 }
 
 const CtaSection: React.FC<CtaSectionProps> = ({
@@ -29,7 +29,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
   secondaryButtonText,
   onPrimaryButtonClick,
   onSecondaryButtonClick,
-  start
+  start = "شروع پروژه",
 }) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -74,7 +74,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
             "200"
           )} px-3 sm:px-4 py-1 rounded-full`}
         >
-          <span className="text-xs sm:text-sm">{start}</span>
+          {start && <span className="text-xs sm:text-sm border-white">{start}</span>}
         </motion.div>
 
         <motion.h2
@@ -108,10 +108,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
             </Button>
           </motion.div>
           {secondaryButtonText && (
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
                 size="lg"

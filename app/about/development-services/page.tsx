@@ -39,6 +39,7 @@ import {
 import Footer from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import CtaSection from "@/components/services/shared/CtaSection";
 
 export default function DevelopmentServicesPage() {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -484,7 +485,6 @@ export default function DevelopmentServicesPage() {
             </Button>
           </div>
 
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {technologies[activeTab as keyof typeof technologies].map(
               (tech, index) => (
@@ -637,33 +637,15 @@ export default function DevelopmentServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
-              آماده برای شروع پروژه خود هستید؟
-            </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200   max-w-3xl mx-auto leading-relaxed font-persian px-4">
-              با تیم حرفه‌ای کارا کد، ایده‌های خود را به محصولات نرم‌افزاری
-              قدرتمند تبدیل کنید
-            </p>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200   max-w-3xl mx-auto leading-relaxed font-persian px-4 mb-12">
-              همین حالا با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید. ما
-              آماده‌ایم تا ایده‌های شما را به واقعیت تبدیل کنیم.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <span className="text-gradient-animated font-bold font-persian">
-                  مشاوره رایگان
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        accentColor="purple"
+        accentColorLight="purple-500"
+        accentColorDark="purple-800"
+        sectionTitle="آماده برای شروع پروژه خود هستید؟"
+        sectionSubtitle="با تیم حرفه‌ای کارا کد، ایده‌های خود را به محصولات نرم‌افزاری قدرتمند تبدیل کنید. همین حالا با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید. ما آماده‌ایم تا ایده‌های شما را به واقعیت تبدیل کنیم."
+        sectionId="cta"
+        primaryButtonText="مشاوره رایگان"
+      />
 
       {/* Footer */}
       <Footer />
