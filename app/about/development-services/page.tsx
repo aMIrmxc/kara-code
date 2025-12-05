@@ -441,7 +441,7 @@ export default function DevelopmentServicesPage() {
               className={cn(
                 "px-6 py-3 rounded-xl font-semibold transition-all duration-300",
                 {
-                  "bg-gradient-to-r from-purple-500 to-pink-500 text-white":
+                  "bg-gradient-to-r from-teal-700 to-teal-500 text-white":
                     activeTab === "backend",
                   "bg-white/5 text-gray-300 hover:bg-white/10":
                     activeTab !== "backend",
@@ -639,7 +639,7 @@ export default function DevelopmentServicesPage() {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 border border-white/10 rounded-2xl p-12 backdrop-blur-sm">
+          <div >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               آماده برای شروع پروژه خود هستید؟
             </h2>
