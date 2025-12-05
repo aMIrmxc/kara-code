@@ -22,6 +22,7 @@ import {
   Heart,
   Lightbulb,
   Palette,
+  Monitor,
 } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { motion, Variants } from "@/components/ui/motion";
@@ -54,24 +55,24 @@ export default function HomePageContent() {
   const services = [
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Custom Web Development",
+      title: "Custom Development",
       description:
-        "راه‌حل‌های سفارشی تحت وب با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما",
+        "راه‌حل‌های سفارشی با استفاده از فناوری‌های روز برای پاسخگویی به نیازهای منحصربه‌فرد کسب‌وکار شما",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Responsive Design",
+      title: "Mobile App Development with Expo",
       description:
-        "طراحی‌های Responsive که در تمام دستگاه‌ها و اندازه‌های صفحه نمایش، خیره‌کننده و بی‌نقص عمل می‌کنند",
+        "ساخت اپلیکیشن‌های موبایل برای iOS و Android با استفاده از Expo، توسعه سریع و کارآمد را تضمین می‌کند",
       color: "from-green-500 to-emerald-500",
     },
     {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "E-commerce Solutions",
+      icon: <Monitor className="w-8 h-8" />,
+      title: "Desktop App Development with Electron",
       description:
-        "فروشگاه‌های آنلاین کامل با درگاه پرداخت و سیستم‌های مدیریت موجودی",
-      color: "from-purple-500 to-pink-500",
+        "ساخت اپلیکیشن‌های دسکتاپ چند پلتفرمی (Windows, macOS, Linux) با استفاده از Electron برای دسترسی وسیع‌تر",
+      color: "from-slate-500 to-slate-700",
     },
     {
       icon: <Globe className="w-8 h-8" />,
@@ -163,7 +164,7 @@ export default function HomePageContent() {
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Bank-Level Security",
+      title: "high-Level Security",
       description:
         "اقدامات امنیتی پیشرفته با SSL، رمزگذاری و میزبانی امن از داده‌ها و کاربران شما محافظت می‌کند",
       color: "from-green-500 to-teal-500",

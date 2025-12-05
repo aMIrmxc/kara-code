@@ -20,7 +20,7 @@ this web service platform is base on iran market and clients are iranian that sp
 - **Form Handling**: React Hook Form with Zod validation
 - **State Management**: React Context API
 - **Animations**: Tailwind CSS animations
-- **Deployment**: this ssg nextjs project has hosted by cloudflare pages. 
+- **Deployment**: ssg nextjs project that has hosted by cloudflare pages. 
 
 
 ## Key Dependencies
