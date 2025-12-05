@@ -120,9 +120,8 @@ export default function PageContent() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
               <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian"
+                variant="my-outline"
+                
                 onClick={() =>
                   document
                     .getElementById("services")
@@ -132,21 +131,10 @@ export default function PageContent() {
                 درباره ما
               </Button>
 
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                onClick={() =>
-                  document
-                    .getElementById("projects")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <>
-                  <span className="text-gradient-animated font-bold font-persian">
+              
+              <Button  variant="my-primary" ><span className="text-gradient-animated font-bold font-persian">
                     پروژه خود را انتخاب کنید
-                  </span>
-                </>
-              </Button>
+                  </span></Button>
             </div>
           </div>
         </div>
