@@ -53,6 +53,33 @@ export default function DevelopmentServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
+  const serviceItems = [
+    {
+      icon: <Globe className="w-8 h-8 text-gray-800" />,
+      title: "خدمات توسعه وب‌سایت",
+      description:
+        "طراحی وب‌سایت‌های مدرن، از وب‌سایت‌های شرکتی و فروشگاه‌های آنلاین تا پلتفرم‌های پیچیده با استانداردهای جهانی، ریسپانسیو، سریع و بهینه برای سئو.",
+    },
+    {
+      icon: <Smartphone className="w-8 h-8 text-gray-800" />,
+      title: "توسعه اپلیکیشن موبایل",
+      description:
+        "توسعه اپلیکیشن‌های نیتیو (iOS و Android) و کراس-پلتفرم (React Native و Flutter) با رابط کاربری زیبا، عملکرد روان و امکانات پیشرفته.",
+    },
+    {
+      icon: <Monitor className="w-8 h-8 text-gray-800" />,
+      title: "نرم‌افزار دسکتاپ سفارشی",
+      description:
+        "ساخت نرم‌افزارهای دسکتاپ قدرتمند و کاربردی برای مدیریت، اتوماسیون اداری و سیستم‌های enterprise متناسب با نیازهای اختصاصی کسب‌وکار شما.",
+    },
+    {
+      icon: <Award className="w-8 h-8 text-gray-800" />,
+      title: "تضمین کیفیت و پشتیبانی",
+      description:
+        "ارائه پشتیبانی ۲۴/۷، به‌روزرسانی‌های امنیتی، نگهداری و بهبود مستمر برای تضمین رضایت مشتریان و موفقیت بلندمدت پروژه‌ها.",
+    },
+  ];
+
   const services = [
     {
       icon: <Globe className="w-12 h-12" />,
@@ -569,68 +596,42 @@ export default function DevelopmentServicesPage() {
         </div>
       </section>
 
-      {/* SEO Content Section */}
+      {/* Content Section */}
       <section className="py-20 px-4 bg-black/30">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2 text-center">
-              توسعه نرم‌افزار حرفه‌ای در ایران
-            </h2>
-
-            <div className="space-y-6 text-gray-300 leading-relaxed">
-              <p>
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
+                توسعه نرم‌افزار حرفه‌ای در ایران
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
                 <strong className="text-white">کارا کد</strong> یک شرکت پیشرو در
                 زمینه توسعه نرم‌افزار در ایران است که با تیمی مجرب و متخصص،
                 خدمات جامع توسعه وب‌سایت، اپلیکیشن موبایل و نرم‌افزار دسکتاپ را
                 ارائه می‌دهد. ما با استفاده از جدیدترین تکنولوژی‌های روز دنیا
-                مانند React، Next.js، React Native، Flutter و محصولات نرم‌افزاری
-                با کیفیت بالا، امن و مقیاس‌پذیر می‌سازیم.
+                محصولات نرم‌افزاری با کیفیت بالا، امن و مقیاس‌پذیر می‌سازیم.
               </p>
+            </div>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
-                خدمات توسعه وب‌سایت
-              </h3>
-              <p>
-                طراحی و توسعه وب‌سایت‌های مدرن و حرفه‌ای یکی از تخصص‌های اصلی
-                ماست. از وب‌سایت‌های شرکتی و فروشگاه‌های آنلاین گرفته تا
-                پلتفرم‌های پیچیده و اپلیکیشن‌های وب تحت SPA، ما می‌توانیم هر نوع
-                پروژه وب را با استانداردهای جهانی پیاده‌سازی کنیم. تمام
-                وب‌سایت‌های ما responsive، سریع، بهینه شده برای سئو و با امنیت
-                بالا ساخته می‌شوند.
-              </p>
-
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
-                توسعه اپلیکیشن موبایل
-              </h3>
-              <p>
-                در عصر موبایل، داشتن یک اپلیکیشن قدرتمند و کاربرپسند برای موفقیت
-                کسب‌وکار ضروری است. ما اپلیکیشن‌های موبایل نیتیو برای iOS و
-                Android و همچنین اپلیکیشن‌های کراس‌پلتفرم با React Native و
-                Flutter توسعه می‌دهیم. اپلیکیشن‌های ما با رابط کاربری زیبا،
-                عملکرد روان و امکانات پیشرفته، تجربه‌ای عالی برای کاربران فراهم
-                می‌کنند.
-              </p>
-
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
-                نرم‌افزار دسکتاپ سفارشی
-              </h3>
-              <p>
-                برای کسب‌وکارهایی که به راه‌حل‌های نرم‌افزاری اختصاصی نیاز
-                دارند، ما نرم‌افزارهای دسکتاپ قدرتمند و کاربردی می‌سازیم. از
-                نرم‌افزارهای مدیریت و اتوماسیون اداری گرفته تا سیستم‌های پیچیده
-                enterprise، تیم ما می‌تواند هر نوع نیاز نرم‌افزاری شما را
-                برآورده کند.
-              </p>
-
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4 text-center">
-                تضمین کیفیت و پشتیبانی
-              </h3>
-              <p>
-                ما نه تنها در مرحله توسعه، بلکه پس از تحویل پروژه نیز در کنار
-                شما هستیم. پشتیبانی 24/7، به‌روزرسانی‌های امنیتی، نگهداری و
-                بهبود مستمر بخشی از خدمات ماست. رضایت مشتریان و موفقیت پروژه‌ها
-                برای ما در اولویت است.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {serviceItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white/5 p-6 rounded-xl flex gap-6 items-start border border-transparent hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="flex-shrink-0 w-16 h-16 bg-white rounded-lg flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
