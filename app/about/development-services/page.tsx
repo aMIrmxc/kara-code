@@ -53,6 +53,18 @@ export default function DevelopmentServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
   const serviceItems = [
     {
       icon: <Globe className="w-8 h-8 text-gray-800" />,
@@ -303,13 +315,6 @@ export default function DevelopmentServicesPage() {
     },
   ];
 
-  // const stats = [
-  //   { number: "200+", label: "پروژه موفق" },
-  //   { number: "150+", label: "مشتری راضی" },
-  //   { number: "98%", label: "رضایت مشتریان" },
-  //   { number: "24/7", label: "پشتیبانی" },
-  // ];
-
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-white"
@@ -324,22 +329,53 @@ export default function DevelopmentServicesPage() {
           <div className="absolute top-20 left-20 w-60 h-60 bg-gradient-to-r from-pink-600 to-purple-700 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse delay-2000"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          className="max-w-6xl mx-auto relative z-10"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
           <div className="text-center mb-12">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-mono">
+            <motion.h1
+              className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-mono"
+              variants={{
+                hidden: { y: -50, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+              }}
+            >
               <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse">
                 توسعه نرم‌افزار وب، موبایل و دسکتاپ
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4">
+            <motion.p
+              className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
+              variants={{
+                hidden: { y: -30, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+              }}
+            >
               ما در <span className="font-bold text-white">کارا کد</span> با
               استفاده از جدیدترین تکنولوژی‌ها، راه‌حل‌های نرم‌افزاری قدرتمند،
               مقیاس‌پذیر و امن برای کسب‌وکار شما می‌سازیم. از ایده تا اجرا، ما
               همراه شما هستیم.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap gap-4 justify-center">
+            <motion.div
+              className="flex flex-wrap gap-4 justify-center"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+              }}
+            >
               <Button
                 variant="outline"
                 size="lg"
@@ -362,24 +398,11 @@ export default function DevelopmentServicesPage() {
                   مشاوره رایگان
                 </span>
               </Button>
-            </div>
+            </motion.div>
           </div>
 
           {/* Stats */}
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div> */}
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -394,9 +417,23 @@ export default function DevelopmentServicesPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services-section" className="py-20 px-4 bg-black/30">
+      <motion.section
+        id="services-section"
+        className="py-20 px-4 bg-black/30"
+        transition={{ duration: 0.5 }}
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }}
+      variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ y: -50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               خدمات توسعه نرم‌افزار
             </h2>
@@ -404,13 +441,17 @@ export default function DevelopmentServicesPage() {
               ما طیف کاملی از خدمات توسعه نرم‌افزار را با کیفیت بالا و قیمت
               رقابتی ارائه می‌دهیم
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
               >
                 <div
                   className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
@@ -429,16 +470,28 @@ export default function DevelopmentServicesPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Technologies Section */}
-      <section className="py-20 px-4">
+      <motion.section
+        className="py-20 px-4"
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }}
+      variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ y: -50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               تکنولوژی‌های پیشرفته
             </h2>
@@ -446,7 +499,7 @@ export default function DevelopmentServicesPage() {
               استفاده از جدیدترین و محبوب‌ترین تکنولوژی‌ها برای ساخت بهترین
               محصولات
             </p>
-          </div>
+          </motion.div>
 
           <div className="flex justify-center gap-4 mb-8">
             <Button
@@ -511,47 +564,75 @@ export default function DevelopmentServicesPage() {
               دسکتاپ
             </Button>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {technologies[activeTab as keyof typeof technologies].map(
-              (tech, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Code className="w-6 h-6" />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {technologies[activeTab as keyof typeof technologies].map(
+                (tech, index) => (
+                  <motion.div
+                    key={tech.name}
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Code className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-lg mb-1">{tech.name}</h4>
+                        <p className="text-sm text-gray-400">{tech.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">{tech.name}</h4>
-                      <p className="text-sm text-gray-400">{tech.desc}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            )}
-          </div>
+                  </motion.div>
+                )
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
-      </section>
+      </motion.section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-4 bg-black/30">
+      <motion.section
+        className="py-20 px-4 bg-black/30"
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }}
+      variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            variants={{
+              hidden: { y: -50, opacity: 0 },
+              visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+            }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               چرا کارا کد؟
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4">
               مزایای همکاری با ما برای پروژه‌های توسعه نرم‌افزار شما
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group"
+                variants={{
+                  hidden: { y: 50, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
@@ -560,28 +641,48 @@ export default function DevelopmentServicesPage() {
                 <p className="text-gray-300 text-sm leading-relaxed">
                   {benefit.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Process Section */}
-      <section className="py-20 px-4">
+      <motion.section
+        className="py-20 px-4"
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }}
+      variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            variants={{
+              hidden: { y: -50, opacity: 0 },
+              visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+            }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
               فرآیند کار ما
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4">
               از ایده تا اجرا، ما با یک فرآیند شفاف و حرفه‌ای پیش می‌رویم
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+              <motion.div
+                key={index}
+                className="relative"
+                variants={{
+                  hidden: { y: 50, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 h-full">
                   <div className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 opacity-20">
                     {step.number}
                   </div>
@@ -590,17 +691,35 @@ export default function DevelopmentServicesPage() {
                     {step.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Content Section */}
-      <section className="py-20 px-4 bg-black/30">
+      <motion.section
+        className="py-20 px-4 bg-black/30"
+        initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }}
+      variants={staggerContainer}
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-            <div className="max-w-3xl mx-auto text-center mb-16">
+          <motion.div
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.5 } },
+            }}
+          >
+            <motion.div
+              className="max-w-3xl mx-auto text-center mb-16"
+              variants={{
+                hidden: { y: -50, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+              }}
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
                 توسعه نرم‌افزار حرفه‌ای در ایران
               </h2>
@@ -611,13 +730,18 @@ export default function DevelopmentServicesPage() {
                 ارائه می‌دهد. ما با استفاده از جدیدترین تکنولوژی‌های روز دنیا
                 محصولات نرم‌افزاری با کیفیت بالا، امن و مقیاس‌پذیر می‌سازیم.
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {serviceItems.map((item, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="bg-white/5 p-6 rounded-xl flex gap-6 items-start border border-transparent hover:border-cyan-400/50 hover:bg-white/10 transition-all duration-300"
+                  variants={{
+                    hidden: { x: -50, opacity: 0 },
+                    visible: { x: 0, opacity: 1 },
+                  }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
                   <div className="flex-shrink-0 w-16 h-16 bg-white rounded-lg flex items-center justify-center">
                     {item.icon}
@@ -630,23 +754,30 @@ export default function DevelopmentServicesPage() {
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <CtaSection
-        accentColor="purple"
-        accentColorLight="purple-500"
-        accentColorDark="purple-800"
-        sectionTitle="آماده برای شروع پروژه خود هستید؟"
-        sectionSubtitle="با تیم حرفه‌ای کارا کد، ایده‌های خود را به محصولات نرم‌افزاری قدرتمند تبدیل کنید. همین حالا با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید. ما آماده‌ایم تا ایده‌های شما را به واقعیت تبدیل کنیم."
-        sectionId="cta"
-        primaryButtonText="مشاوره رایگان"
-      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
+        <CtaSection
+          accentColor="purple"
+          accentColorLight="purple-500"
+          accentColorDark="purple-800"
+          sectionTitle="آماده برای شروع پروژه خود هستید؟"
+          sectionSubtitle="با تیم حرفه‌ای کارا کد، ایده‌های خود را به محصولات نرم‌افزاری قدرتمند تبدیل کنید. همین حالا با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید. ما آماده‌ایم تا ایده‌های شما را به واقعیت تبدیل کنیم."
+          sectionId="cta"
+          primaryButtonText="مشاوره رایگان"
+        />
+      </motion.div>
 
       {/* Footer */}
       <Footer />
