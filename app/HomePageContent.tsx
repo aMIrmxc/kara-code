@@ -28,6 +28,7 @@ import { AnimatedSection } from "@/components/ui/animated-section";
 import { motion, Variants } from "@/components/ui/motion";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
 import Footer from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
 
 export default function HomePageContent() {
   const scrollDirection = useScrollDirection();
@@ -78,7 +79,7 @@ export default function HomePageContent() {
       icon: <Globe className="w-8 h-8" />,
       title: "Web Applications",
       description:
-        "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه",
+        "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه و ساخته شده با جدید ترین تکنولوژی ها",
       color: "from-orange-500 to-red-500",
     },
   ];
@@ -238,6 +239,12 @@ export default function HomePageContent() {
               از ایده تا اجرا، ما خدمات کامل توسعه وب را ارائه می‌دهیم که
               ایده‌های شما را به راه‌حل‌های نرم‌افزاری قدرتمند تبدیل می‌کند
             </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+            <Button 
+             
+             variant="my-outline"><Link href="/about/development-services" >بیشتر بدانید </Link> </Button>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -121,23 +121,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/services/web-development"
+                  href="/about/development-services"
                   className="text-gray-400 hover:text-white transition-colors font-persian"
                 >
-                  توسعه وب و اپلیکیشن موبایل
+                خدمات برنامه نویسی
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/services/ui-design"
-                  className="text-gray-400 hover:text-white transition-colors font-persian"
-                >
-                  طراحی رابط کاربری
-                </Link>
+                
               </li>
               <li>
                 <Link
-                  href="/services/consulting"
+                  href="/services/more/consulting"
                   className="text-gray-400 hover:text-white transition-colors font-persian"
                 >
                   مشاوره فناوری
