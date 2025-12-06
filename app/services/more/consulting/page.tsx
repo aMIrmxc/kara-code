@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import "./consulting.css";
 import { motion, Variants } from "framer-motion";
 import {
   Users,
@@ -377,12 +378,13 @@ const ConsultingPage: React.FC = () => {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse font-persian">درخواست مشاوره رایگان</span>
+                <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse font-persian">
+                  درخواست مشاوره رایگان
+                </span>
               </Button>
 
               <Button
                 variant="my-outline"
-                
                 onClick={() =>
                   document
                     .getElementById("services")
@@ -678,12 +680,11 @@ const ConsultingPage: React.FC = () => {
 
       {/* Consultation Form Section */}
       <AnimatedSection
-        dir="rtl"
         id="consultation-form"
         className="py-20 px-4 bg-black/30"
         variants={sectionVariants}
       >
-        <div className="max-w-4xl mx-auto">
+        <div dir="rtl" className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <Badge className="text-xs sm:text-sm mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
               Get Started
@@ -705,7 +706,7 @@ const ConsultingPage: React.FC = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      className="block text-white font-medium mb-2 text-sm"
+                      className="block text-white font-medium mb-2 text-sm font-persian"
                       style={{ fontFamily: "Tahoma, Arial" }}
                     >
                       <span className="flex items-center gap-2">
@@ -722,12 +723,13 @@ const ConsultingPage: React.FC = () => {
                       style={{ fontFamily: "Tahoma, Arial" }}
                       required
                       dir="rtl"
+                      className="input-placeholder"
                     />
                   </div>
 
                   <div>
                     <label
-                      className="block text-white font-medium mb-2 text-sm"
+                      className="block text-white font-medium mb-2 text-sm font-persian"
                       style={{ fontFamily: "Tahoma, Arial" }}
                     >
                       <span className="flex items-center gap-2">
@@ -743,6 +745,7 @@ const ConsultingPage: React.FC = () => {
                       placeholder="09123456789"
                       required
                       dir="ltr"
+                      className="input-placeholder"
                     />
                   </div>
                 </div>
@@ -763,6 +766,7 @@ const ConsultingPage: React.FC = () => {
                       placeholder="example@email.com"
                       required
                       dir="ltr"
+                      className="input-placeholder"
                     />
                   </div>
 
@@ -781,6 +785,7 @@ const ConsultingPage: React.FC = () => {
                       placeholder="نام شرکت یا کسب‌وکار (اختیاری)"
                       style={{ fontFamily: "Tahoma, Arial" }}
                       dir="rtl"
+                      className="input-placeholder"
                     />
                   </div>
                 </div>
@@ -804,7 +809,10 @@ const ConsultingPage: React.FC = () => {
                         className="w-full"
                         style={{ fontFamily: "Tahoma, Arial" }}
                       >
-                        <SelectValue placeholder="انتخاب کنید..." />
+                        <SelectValue
+                          placeholder="انتخاب کنید..."
+                          className="input-placeholder"
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="web" className="font-persian">
@@ -840,8 +848,11 @@ const ConsultingPage: React.FC = () => {
                       value={formData.industry}
                       required
                     >
-                      <SelectTrigger className="w-full font-persian">
-                        <SelectValue placeholder="انتخاب کنید..." />
+                      <SelectTrigger className="w-full  ">
+                        <SelectValue
+                          placeholder="انتخاب کنید..."
+                          className="input-placeholder"
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="ecommerce" className="font-persian">
@@ -890,8 +901,11 @@ const ConsultingPage: React.FC = () => {
                       }
                       value={formData.userCount}
                     >
-                      <SelectTrigger className="w-full font-persian">
-                        <SelectValue placeholder="انتخاب کنید..." />
+                      <SelectTrigger className="w-full ">
+                        <SelectValue
+                          placeholder="انتخاب کنید..."
+                          className="input-placeholder"
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="0-100" className="font-persian">
@@ -913,7 +927,7 @@ const ConsultingPage: React.FC = () => {
                     </Select>
                   </div>
 
-                  <div>
+                  {/* <div>
                     <label className="block text-white font-medium mb-2 text-sm font-persian">
                       <span className="flex items-center gap-2">
                         <TrendingUp className="w-4 h-4" />
@@ -926,8 +940,11 @@ const ConsultingPage: React.FC = () => {
                       }
                       value={formData.budget}
                     >
-                      <SelectTrigger className="w-full font-persian">
-                        <SelectValue placeholder="انتخاب کنید..." />
+                      <SelectTrigger className="w-full ">
+                        <SelectValue
+                          placeholder="انتخاب کنید..."
+                          className="select-trigger-text"
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="under-50m" className="font-persian">
@@ -947,7 +964,7 @@ const ConsultingPage: React.FC = () => {
                         </SelectItem>
                       </SelectContent>
                     </Select>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div>
@@ -963,8 +980,11 @@ const ConsultingPage: React.FC = () => {
                     }
                     value={formData.timeline}
                   >
-                    <SelectTrigger className="w-full font-persian">
-                      <SelectValue placeholder="انتخاب کنید..." />
+                    <SelectTrigger className="w-full ">
+                      <SelectValue
+                        placeholder="انتخاب کنید..."
+                        className="input-placeholder"
+                      />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="urgent" className="font-persian">
@@ -1002,6 +1022,7 @@ const ConsultingPage: React.FC = () => {
                     rows={6}
                     required
                     dir="rtl"
+                    className="input-placeholder"
                   />
                 </div>
 
@@ -1042,8 +1063,8 @@ const ConsultingPage: React.FC = () => {
                 <p className="text-center text-gray-400 text-sm font-persian">
                   با ارسال این فرم، شما با{" "}
                   <a
-                    href="/privacy"
-                    className="text-purple-400 hover:text-purple-300 underline"
+                    href="/privacy-policy"
+                    className="text-white hover:text-purple-300 underline"
                   >
                     سیاست حفظ حریم خصوصی
                   </a>{" "}

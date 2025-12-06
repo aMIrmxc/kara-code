@@ -124,6 +124,10 @@
     font-family: var(--font-vazir);
     font-size: 1.25rem;
   }
+
+  ::placeholder {
+    color: white;
+  }
 }
 
 @layer utilities {
