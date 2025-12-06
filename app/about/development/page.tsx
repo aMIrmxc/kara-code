@@ -40,10 +40,13 @@ import Footer from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import CtaSection from "@/components/services/shared/CtaSection";
+import { useRouter } from "next/navigation";
 
 export default function DevelopmentServicesPage() {
   const [activeTab, setActiveTab] = useState("frontend");
   const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -375,14 +378,16 @@ export default function DevelopmentServicesPage() {
                 visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
               }}
             >
-
-              <Button
-                variant="my-primary"
+              <Link
+                href="/consulting"
+                className="text-gray-400 hover:text-white transition-colors font-persian"
               >
-                <span className="text-gradient-animated font-bold font-persian">
-                  مشاوره رایگان
-                </span>
-              </Button>
+                <Button variant="my-primary">
+                  <span className="text-gradient-animated font-bold font-persian">
+                    مشاوره رایگان
+                  </span>
+                </Button>
+              </Link>
 
               <Button
                 variant="my-outline"
@@ -395,8 +400,6 @@ export default function DevelopmentServicesPage() {
               >
                 توضیحات بیشتر
               </Button>
-
-              
             </motion.div>
           </div>
 
@@ -781,6 +784,7 @@ export default function DevelopmentServicesPage() {
           sectionSubtitle="با تیم حرفه‌ای کارا کد، ایده‌های خود را به محصولات نرم‌افزاری قدرتمند تبدیل کنید. همین حالا با ما تماس بگیرید و از مشاوره رایگان بهره‌مند شوید. ما آماده‌ایم تا ایده‌های شما را به واقعیت تبدیل کنیم."
           sectionId="cta"
           primaryButtonText="مشاوره رایگان"
+          onPrimaryButtonClick={() => router.push("/consulting")}
         />
       </motion.div>
 

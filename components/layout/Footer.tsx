@@ -119,7 +119,7 @@ export default function Footer() {
               <li></li>
               <li>
                 <Link
-                  href="/services/more/consulting"
+                  href="/consulting"
                   className="text-gray-400 hover:text-white transition-colors font-persian"
                 >
                   مشاوره فناوری با ما
