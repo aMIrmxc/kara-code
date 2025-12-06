@@ -69,38 +69,13 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
 };
 
 type ServiceType = "web" | "mobile" | "desktop" | "all" | "other" | "";
-type Industry =
-  | "ecommerce"
-  | "restaurant"
-  | "healthcare"
-  | "education"
-  | "realestate"
-  | "finance"
-  | "travel"
-  | "corporate"
-  | "other"
-  | "";
-type UserCount =
-  | "0-100"
-  | "100-1000"
-  | "1000-10000"
-  | "10000+"
-  | "unknown"
-  | "";
-type Budget =
-  | "under-50m"
-  | "50m-100m"
-  | "100m-200m"
-  | "200m+"
-  | "flexible"
-  | "";
-type Timeline =
-  | "urgent"
-  | "1-3months"
-  | "3-6months"
-  | "6months+"
-  | "flexible"
-  | "";
+type Industry = string
+type UserCount = string
+  
+type Budget = string
+  
+type Timeline = string
+ 
 
 interface FormData {
   name: string;
