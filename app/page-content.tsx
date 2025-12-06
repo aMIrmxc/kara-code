@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { AnimatedHeroBackground } from "@/components/ui/animated-background";
 import { Preloader } from "@/components/ui/preloader";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -86,12 +87,7 @@ export default function PageContent() {
         id="hero"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-cyan-600 to-blue-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-green-600 to-emerald-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-yellow-600 to-orange-700 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse delay-500"></div>
-          <div className="absolute top-20 left-20 w-60 h-60 bg-gradient-to-r from-pink-600 to-purple-700 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse delay-2000"></div>
-        </div>
+        <AnimatedHeroBackground />
 
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <div
@@ -119,11 +115,8 @@ export default function PageContent() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-
-              
               <Button
                 variant="my-outline"
-                
                 onClick={() =>
                   document
                     .getElementById("services")
@@ -133,23 +126,16 @@ export default function PageContent() {
                 درباره ما
               </Button>
 
-              
-              <Link
-                href="/consulting"
-                className="inline-block"
-              >
-                <Button variant="my-outline">
-                    مشاوره رایگان
-                </Button>
+              <Link href="/consulting" className="inline-block">
+                <Button variant="my-outline">مشاوره رایگان</Button>
               </Link>
               <Link href="/services">
-              <Button  variant="my-primary" ><span className="text-gradient-animated font-bold font-persian">
+                <Button variant="my-primary">
+                  <span className="text-gradient-animated font-bold font-persian">
                     پروژه خود را انتخاب کنید
-                  </span></Button>
+                  </span>
+                </Button>
               </Link>
-
-
-              
             </div>
           </div>
         </div>
