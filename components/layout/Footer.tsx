@@ -55,14 +55,7 @@ export default function Footer() {
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-400 hover:text-white transition-colors font-persian"
-                >
-                  تماس با ما
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   href="/about"
