@@ -76,7 +76,7 @@ export default function DevelopmentServicesPage() {
       icon: <Smartphone className="w-8 h-8 text-gray-800" />,
       title: "توسعه اپلیکیشن موبایل",
       description:
-        "توسعه اپلیکیشن‌های نیتیو (iOS و Android) و کراس-پلتفرم (React Native و Flutter) با رابط کاربری زیبا، عملکرد روان و امکانات پیشرفته.",
+        "توسعه اپلیکیشن‌های نیتیو (iOS و Android) و کراس-پلتفرم (React Native ) با رابط کاربری زیبا، عملکرد روان و امکانات پیشرفته.",
     },
     {
       icon: <Monitor className="w-8 h-8 text-gray-800" />,
@@ -112,7 +112,7 @@ export default function DevelopmentServicesPage() {
       description:
         "اپلیکیشن‌های موبایل نیتیو و کراس‌پلتفرم برای iOS و Android. تجربه کاربری روان، طراحی زیبا و عملکرد بهینه در دستگاه‌های مختلف.",
       features: [
-        "React Native, Flutter",
+        "Expo & React Native",
         "iOS & Android",
         "UI/UX مدرن",
         "عملکرد نیتیو",
@@ -251,7 +251,7 @@ export default function DevelopmentServicesPage() {
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "امنیت در سطح بانکی",
+      title: "امنیت سطح بالا",
       description:
         "رمزنگاری SSL/TLS، احراز هویت دو مرحله‌ای و حفاظت از داده‌ها",
     },
@@ -723,7 +723,7 @@ export default function DevelopmentServicesPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
                 توسعه نرم‌افزار حرفه‌ای در ایران
               </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed font-bold">
                 <strong className="text-white">کارا کد</strong> یک شرکت پیشرو در
                 زمینه توسعه نرم‌افزار در ایران است که با تیمی مجرب و متخصص،
                 خدمات جامع توسعه وب‌سایت، اپلیکیشن موبایل و نرم‌افزار دسکتاپ را
