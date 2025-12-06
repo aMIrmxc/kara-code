@@ -7,7 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "@/components/ui/motion";
-import { Mail, Send, ArrowUp, Phone } from "lucide-react";
+import { Mail, Send, ArrowUp, Phone, Linkedin, MapPin } from "lucide-react";
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -54,20 +54,75 @@ export default function Footer() {
                   خانه
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/#projects"
-                  className="text-gray-400 hover:text-white transition-colors font-persian"
-                >
-                  پروژه ها
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/contact"
                   className="text-gray-400 hover:text-white transition-colors font-persian"
                 >
                   تماس با ما
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  درباره ما
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/terms-of-service"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  قوانین و مقررات
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  سیاست حریم خصوصی
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          
+
+          {/* Services */}
+          <motion.div variants={cardVariants} transition={{ delay: 0.4 }}>
+            <h4 className="font-semibold text-white mb-4  font-mono text-lg">
+              Our Services
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/services"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  انواع سرویس‌ها
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/about/development"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  آشنایی با خدمات ما
+                </Link>
+              </li>
+              <li></li>
+              <li>
+                <Link
+                  href="/services/more/consulting"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  مشاوره فناوری با ما
                 </Link>
               </li>
             </ul>
@@ -88,10 +143,40 @@ export default function Footer() {
                   contact@kara-code.ir
                 </a>
               </li>
+              
+
               <li className="flex items-center justify-center gap-3">
                 <Phone className="w-5 h-5 text-gray-400" />
                 <a
-                  href="https://wa.me/00989130350774"
+                  href="tel:00989395008603"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  0939-500-8603
+                </a>
+              </li>
+
+              {/* <li className="flex items-center justify-center gap-3">
+                <MapPin className="w-5 h-5 text-gray-400" />
+                <span className="text-gray-400 font-persian">
+                  تهران، خیابان انقلاب، خیابان کارگر شمالی
+                </span>
+              </li> */}
+
+              {/* <li className="flex items-center justify-center gap-3">
+                <Linkedin className="w-5 h-5 text-gray-400" />
+                <a
+                  href="https://linkedin.com/company/KaraCodeir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </li> */}
+              <li className="flex items-center justify-center gap-3">
+                <Phone className="w-5 h-5 text-gray-400" />
+                <a
+                  href="https://wa.me/00989395008603"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -109,34 +194,6 @@ export default function Footer() {
                 >
                   Telegram
                 </a>
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div variants={cardVariants} transition={{ delay: 0.4 }}>
-            <h4 className="font-semibold text-white mb-4  font-mono text-lg">
-              Our Services
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/about/development-services"
-                  className="text-gray-400 hover:text-white transition-colors font-persian"
-                >
-                خدمات برنامه نویسی
-                </Link>
-              </li>
-              <li>
-                
-              </li>
-              <li>
-                <Link
-                  href="/services/more/consulting"
-                  className="text-gray-400 hover:text-white transition-colors font-persian"
-                >
-                  مشاوره فناوری
-                </Link>
               </li>
             </ul>
           </motion.div>
