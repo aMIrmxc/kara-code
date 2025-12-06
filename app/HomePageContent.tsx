@@ -216,7 +216,7 @@ export default function HomePageContent() {
       color: "from-purple-500 to-pink-500",
     },
   ];
-
+ 
   return (
     <>
       {/* Services Section */}
@@ -228,7 +228,7 @@ export default function HomePageContent() {
         scrollDirection={scrollDirection}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <Badge className="text-xs sm:text-sm mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
               Our Services
             </Badge>
@@ -242,9 +242,9 @@ export default function HomePageContent() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-            <Button 
-             
-             variant="my-outline"><Link href="/about/development-services" >بیشتر بدانید </Link> </Button>
+              <Link href="/about/development">
+            <Button variant="my-outline">بیشتر بدانید 
+            </Button></Link>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
