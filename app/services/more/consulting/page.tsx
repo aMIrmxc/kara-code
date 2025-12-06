@@ -328,8 +328,6 @@ const ConsultingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
-      
-
       {/* Hero Section */}
       <section
         dir="rtl"
@@ -357,15 +355,13 @@ const ConsultingPage: React.FC = () => {
             </Badge>
 
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 text-balance font-mono">
-              
-
-              <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse"> مشاوره تخصصی توسعه نرم‌افزار </span>
+              <span className="bg-gradient-to-r text-gradient-animated bg-clip-text text-transparent animate-pulse">
+                {" "}
+                مشاوره تخصصی توسعه نرم‌افزار{" "}
+              </span>
             </h1>
 
-            <p
-              className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed"
-              style={{ fontFamily: "Tahoma, Arial" }}
-            >
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed font-persian">
               با تیم متخصص کارا کد، مسیر موفقیت پروژه نرم‌افزاری خود را از ابتدا
               تا انتها با اطمینان طی کنید. ما با ارائه مشاوره جامع در زمینه
               توسعه وب، موبایل و دسکتاپ، به شما کمک می‌کنیم تا بهترین تصمیمات
@@ -374,49 +370,27 @@ const ConsultingPage: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
+                variant="my-primary"
                 onClick={() =>
                   document
                     .getElementById("consultation-form")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                <span style={{ fontFamily: "Tahoma, Arial" }}>
-                  درخواست مشاوره رایگان
-                </span>
-                <ArrowRight className="w-5 h-5" />
+                <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse font-persian">درخواست مشاوره رایگان</span>
               </Button>
 
               <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-8 py-6 text-lg rounded-full transition-all duration-300"
+                variant="my-outline"
+                
                 onClick={() =>
                   document
                     .getElementById("services")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                <span style={{ fontFamily: "Tahoma, Arial" }}>
-                  خدمات مشاوره
-                </span>
+                <span className="font-persian"> بیشتر بدانید </span>
               </Button>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-8 text-center">
-              <div className="flex items-center gap-2 text-gray-300">
-                <Clock className="w-5 h-5 text-cyan-400" />
-                <span className="font-mono text-sm">مشاوره ۲۴/۷</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <Users className="w-5 h-5 text-purple-400" />
-                <span className="font-mono text-sm">تیم متخصص</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <Award className="w-5 h-5 text-pink-400" />
-                <span className="font-mono text-sm">کیفیت تضمین‌شده</span>
-              </div>
             </div>
           </div>
         </div>
@@ -435,14 +409,11 @@ const ConsultingPage: React.FC = () => {
               Our Consulting Services
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              <span style={{ fontFamily: "Tahoma, Arial" }}>
+              <span className="font-persian font-noto-h2">
                 خدمات مشاوره تخصصی
               </span>
             </h2>
-            <p
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
-              style={{ fontFamily: "Tahoma, Arial" }}
-            >
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-persian">
               ما در کارا کد، مشاوره جامعی در تمام جنبه‌های توسعه نرم‌افزار ارائه
               می‌دهیم. از انتخاب فناوری مناسب تا طراحی معماری و استراتژی توسعه،
               در کنار شما هستیم
@@ -470,10 +441,7 @@ const ConsultingPage: React.FC = () => {
                     <h3 className="text-xl font-semibold text-white mb-3 font-mono">
                       {service.title}
                     </h3>
-                    <p
-                      className="text-gray-300 text-sm leading-relaxed flex-grow"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <p className="text-gray-300 text-sm leading-relaxed flex-grow font-persian">
                       {service.description}
                     </p>
                   </CardContent>
@@ -496,14 +464,11 @@ const ConsultingPage: React.FC = () => {
               Why Choose Us
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              <span style={{ fontFamily: "Tahoma, Arial" }}>
+              <span className="font-persian font-noto-h2">
                 مزایای مشاوره با کارا کد
               </span>
             </h2>
-            <p
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
-              style={{ fontFamily: "Tahoma, Arial" }}
-            >
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-persian">
               تجربه، تخصص و تعهد ما به موفقیت شما، تضمینی برای انتخاب درست است
             </p>
           </div>
@@ -529,10 +494,7 @@ const ConsultingPage: React.FC = () => {
                     <h3 className="text-xl font-semibold text-white mb-3 font-mono">
                       {benefit.title}
                     </h3>
-                    <p
-                      className="text-gray-300 text-sm leading-relaxed flex-grow"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <p className="text-gray-300 text-sm leading-relaxed flex-grow font-persian">
                       {benefit.description}
                     </p>
                   </CardContent>
@@ -555,14 +517,11 @@ const ConsultingPage: React.FC = () => {
               Our Process
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              <span style={{ fontFamily: "Tahoma, Arial" }}>
+              <span className="font-persian font-noto-h2">
                 فرآیند مشاوره ما
               </span>
             </h2>
-            <p
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
-              style={{ fontFamily: "Tahoma, Arial" }}
-            >
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-persian">
               یک فرآیند شفاف و ساختاریافته برای اطمینان از دریافت بهترین نتیجه
             </p>
           </div>
@@ -590,10 +549,7 @@ const ConsultingPage: React.FC = () => {
                         <h3 className="text-lg font-semibold text-white mb-2 font-mono">
                           {step.title}
                         </h3>
-                        <p
-                          className="text-gray-300 text-sm leading-relaxed"
-                          style={{ fontFamily: "Tahoma, Arial" }}
-                        >
+                        <p className="text-gray-300 text-sm leading-relaxed font-persian">
                           {step.description}
                         </p>
                       </div>
@@ -612,19 +568,16 @@ const ConsultingPage: React.FC = () => {
         className="py-20 px-4"
         variants={sectionVariants}
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <Card className="bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden">
             <CardContent className="p-8 md:p-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center font-mono">
-                <span style={{ fontFamily: "Tahoma, Arial" }}>
+                <span className="font-persian font-noto-h2">
                   چرا به مشاوره نیاز دارید؟
                 </span>
               </h2>
 
-              <div
-                className="space-y-6 text-gray-300 leading-relaxed"
-                style={{ fontFamily: "Tahoma, Arial" }}
-              >
+              <div className="space-y-6 text-gray-300 leading-relaxed font-persian">
                 <p className="text-lg">
                   در دنیای پیچیده توسعه نرم‌افزار، تصمیم‌گیری‌های درست در مراحل
                   اولیه می‌تواند تفاوت بین موفقیت و شکست پروژه شما باشد. کارا کد
@@ -736,14 +689,11 @@ const ConsultingPage: React.FC = () => {
               Get Started
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
-              <span style={{ fontFamily: "Tahoma, Arial" }}>
+              <span className="font-persian font-noto-h2">
                 درخواست مشاوره رایگان
               </span>
             </h2>
-            <p
-              className="text-xl text-gray-300 max-w-2xl mx-auto"
-              style={{ fontFamily: "Tahoma, Arial" }}
-            >
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto font-persian">
               فرم زیر را تکمیل کنید تا کارشناسان ما در اسرع وقت با شما تماس
               بگیرند
             </p>
@@ -769,6 +719,7 @@ const ConsultingPage: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="نام کامل خود را وارد کنید"
+                      style={{ fontFamily: "Tahoma, Arial" }}
                       required
                       dir="rtl"
                     />
@@ -798,10 +749,7 @@ const ConsultingPage: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label
-                      className="block text-white font-medium mb-2 text-sm"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <label className="block text-white font-medium mb-2 text-sm font-persian">
                       <span className="flex items-center gap-2">
                         <Mail className="w-4 h-4" />
                         ایمیل *
@@ -819,10 +767,7 @@ const ConsultingPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label
-                      className="block text-white font-medium mb-2 text-sm"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <label className="block text-white font-medium mb-2 text-sm font-persian">
                       <span className="flex items-center gap-2">
                         <Building2 className="w-4 h-4" />
                         نام شرکت / کسب‌وکار
@@ -834,6 +779,7 @@ const ConsultingPage: React.FC = () => {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="نام شرکت یا کسب‌وکار (اختیاری)"
+                      style={{ fontFamily: "Tahoma, Arial" }}
                       dir="rtl"
                     />
                   </div>
@@ -841,10 +787,7 @@ const ConsultingPage: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label
-                      className="block text-white font-medium mb-2 text-sm"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <label className="block text-white font-medium mb-2 text-sm font-persian">
                       <span className="flex items-center gap-2">
                         <Code className="w-4 h-4" />
                         نوع خدمات مورد نیاز *
@@ -864,22 +807,27 @@ const ConsultingPage: React.FC = () => {
                         <SelectValue placeholder="انتخاب کنید..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="web">توسعه وب</SelectItem>
-                        <SelectItem value="mobile">اپلیکیشن موبایل</SelectItem>
-                        <SelectItem value="desktop">
+                        <SelectItem value="web" className="font-persian">
+                          توسعه وب
+                        </SelectItem>
+                        <SelectItem value="mobile" className="font-persian">
+                          اپلیکیشن موبایل
+                        </SelectItem>
+                        <SelectItem value="desktop" className="font-persian">
                           نرم‌افزار دسکتاپ
                         </SelectItem>
-                        <SelectItem value="all">همه موارد</SelectItem>
-                        <SelectItem value="other">سایر</SelectItem>
+                        <SelectItem value="all" className="font-persian">
+                          همه موارد
+                        </SelectItem>
+                        <SelectItem value="other" className="font-persian">
+                          سایر
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
-                    <label
-                      className="block text-white font-medium mb-2 text-sm"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <label className="block text-white font-medium mb-2 text-sm font-persian">
                       <span className="flex items-center gap-2">
                         <Building2 className="w-4 h-4" />
                         حوزه فعالیت / صنعت *
@@ -892,28 +840,37 @@ const ConsultingPage: React.FC = () => {
                       value={formData.industry}
                       required
                     >
-                      <SelectTrigger
-                        className="w-full"
-                        style={{ fontFamily: "Tahoma, Arial" }}
-                      >
+                      <SelectTrigger className="w-full font-persian">
                         <SelectValue placeholder="انتخاب کنید..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="ecommerce">
+                        <SelectItem value="ecommerce" className="font-persian">
                           فروشگاه آنلاین
                         </SelectItem>
-                        <SelectItem value="restaurant">
+                        <SelectItem value="restaurant" className="font-persian">
                           رستوران و کافه
                         </SelectItem>
-                        <SelectItem value="healthcare">
+                        <SelectItem value="healthcare" className="font-persian">
                           پزشکی و سلامت
                         </SelectItem>
-                        <SelectItem value="education">آموزشی</SelectItem>
-                        <SelectItem value="realestate">املاک</SelectItem>
-                        <SelectItem value="finance">مالی و بانکی</SelectItem>
-                        <SelectItem value="travel">گردشگری و سفر</SelectItem>
-                        <SelectItem value="corporate">شرکتی</SelectItem>
-                        <SelectItem value="other">سایر</SelectItem>
+                        <SelectItem value="education" className="font-persian">
+                          آموزشی
+                        </SelectItem>
+                        <SelectItem value="realestate" className="font-persian">
+                          املاک
+                        </SelectItem>
+                        <SelectItem value="finance" className="font-persian">
+                          مالی و بانکی
+                        </SelectItem>
+                        <SelectItem value="travel" className="font-persian">
+                          گردشگری و سفر
+                        </SelectItem>
+                        <SelectItem value="corporate" className="font-persian">
+                          شرکتی
+                        </SelectItem>
+                        <SelectItem value="other" className="font-persian">
+                          سایر
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -921,10 +878,7 @@ const ConsultingPage: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label
-                      className="block text-white font-medium mb-2 text-sm"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <label className="block text-white font-medium mb-2 text-sm font-persian">
                       <span className="flex items-center gap-2">
                         <Users className="w-4 h-4" />
                         تعداد کاربران تخمینی
@@ -936,33 +890,31 @@ const ConsultingPage: React.FC = () => {
                       }
                       value={formData.userCount}
                     >
-                      <SelectTrigger
-                        className="w-full"
-                        style={{ fontFamily: "Tahoma, Arial" }}
-                      >
+                      <SelectTrigger className="w-full font-persian">
                         <SelectValue placeholder="انتخاب کنید..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="0-100">کمتر از ۱۰۰ کاربر</SelectItem>
-                        <SelectItem value="100-1000">
+                        <SelectItem value="0-100" className="font-persian">
+                          کمتر از ۱۰۰ کاربر
+                        </SelectItem>
+                        <SelectItem value="100-1000" className="font-persian">
                           ۱۰۰ تا ۱۰۰۰ کاربر
                         </SelectItem>
-                        <SelectItem value="1000-10000">
+                        <SelectItem value="1000-10000" className="font-persian">
                           ۱۰۰۰ تا ۱۰۰۰۰ کاربر
                         </SelectItem>
-                        <SelectItem value="10000+">
+                        <SelectItem value="10000+" className="font-persian">
                           بیش از ۱۰۰۰۰ کاربر
                         </SelectItem>
-                        <SelectItem value="unknown">مشخص نیست</SelectItem>
+                        <SelectItem value="unknown" className="font-persian">
+                          مشخص نیست
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div>
-                    <label
-                      className="block text-white font-medium mb-2 text-sm"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <label className="block text-white font-medium mb-2 text-sm font-persian">
                       <span className="flex items-center gap-2">
                         <TrendingUp className="w-4 h-4" />
                         بودجه تخمینی
@@ -974,36 +926,32 @@ const ConsultingPage: React.FC = () => {
                       }
                       value={formData.budget}
                     >
-                      <SelectTrigger
-                        className="w-full"
-                        style={{ fontFamily: "Tahoma, Arial" }}
-                      >
+                      <SelectTrigger className="w-full font-persian">
                         <SelectValue placeholder="انتخاب کنید..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="under-50m">
+                        <SelectItem value="under-50m" className="font-persian">
                           زیر ۵۰ میلیون تومان
                         </SelectItem>
-                        <SelectItem value="50m-100m">
+                        <SelectItem value="50m-100m" className="font-persian">
                           ۵۰ تا ۱۰۰ میلیون تومان
                         </SelectItem>
-                        <SelectItem value="100m-200m">
+                        <SelectItem value="100m-200m" className="font-persian">
                           ۱۰۰ تا ۲۰۰ میلیون تومان
                         </SelectItem>
-                        <SelectItem value="200m+">
+                        <SelectItem value="200m+" className="font-persian">
                           بیش از ۲۰۰ میلیون تومان
                         </SelectItem>
-                        <SelectItem value="flexible">انعطاف‌پذیر</SelectItem>
+                        <SelectItem value="flexible" className="font-persian">
+                          انعطاف‌پذیر
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                 </div>
 
                 <div>
-                  <label
-                    className="block text-white font-medium mb-2 text-sm"
-                    style={{ fontFamily: "Tahoma, Arial" }}
-                  >
+                  <label className="block text-white font-medium mb-2 text-sm font-persian">
                     <span className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
                       زمان‌بندی پروژه
@@ -1015,29 +963,31 @@ const ConsultingPage: React.FC = () => {
                     }
                     value={formData.timeline}
                   >
-                    <SelectTrigger
-                      className="w-full"
-                      style={{ fontFamily: "Tahoma, Arial" }}
-                    >
+                    <SelectTrigger className="w-full font-persian">
                       <SelectValue placeholder="انتخاب کنید..." />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="urgent">
+                      <SelectItem value="urgent" className="font-persian">
                         فوری (کمتر از ۱ ماه)
                       </SelectItem>
-                      <SelectItem value="1-3months">۱ تا ۳ ماه</SelectItem>
-                      <SelectItem value="3-6months">۳ تا ۶ ماه</SelectItem>
-                      <SelectItem value="6months+">بیش از ۶ ماه</SelectItem>
-                      <SelectItem value="flexible">انعطاف‌پذیر</SelectItem>
+                      <SelectItem value="1-3months" className="font-persian">
+                        ۱ تا ۳ ماه
+                      </SelectItem>
+                      <SelectItem value="3-6months" className="font-persian">
+                        ۳ تا ۶ ماه
+                      </SelectItem>
+                      <SelectItem value="6months+" className="font-persian">
+                        بیش از ۶ ماه
+                      </SelectItem>
+                      <SelectItem value="flexible" className="font-persian">
+                        انعطاف‌پذیر
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div>
-                  <label
-                    className="block text-white font-medium mb-2 text-sm"
-                    style={{ fontFamily: "Tahoma, Arial" }}
-                  >
+                  <label className="block text-white font-medium mb-2 text-sm font-persian">
                     <span className="flex items-center gap-2">
                       <MessageSquare className="w-4 h-4" />
                       توضیحات پروژه *
@@ -1048,6 +998,7 @@ const ConsultingPage: React.FC = () => {
                     value={formData.description}
                     onChange={handleInputChange}
                     placeholder="لطفاً جزئیات بیشتری در مورد پروژه خود، نیازها، اهداف و هر چیز دیگری که فکر می‌کنید برای ما مفید است را بنویسید..."
+                    style={{ fontFamily: "Tahoma, Arial" }}
                     rows={6}
                     required
                     dir="rtl"
@@ -1058,16 +1009,10 @@ const ConsultingPage: React.FC = () => {
                   <div className="bg-green-500/20 border border-green-500/50 rounded-lg p-4 flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p
-                        className="text-white font-semibold mb-1"
-                        style={{ fontFamily: "Tahoma, Arial" }}
-                      >
+                      <p className="text-white font-semibold mb-1 font-persian">
                         درخواست شما با موفقیت ثبت شد!
                       </p>
-                      <p
-                        className="text-gray-300 text-sm"
-                        style={{ fontFamily: "Tahoma, Arial" }}
-                      >
+                      <p className="text-gray-300 text-sm font-persian">
                         کارشناسان ما در اسرع وقت با شما تماس خواهند گرفت. از
                         اعتماد شما سپاسگزاریم.
                       </p>
@@ -1084,24 +1029,17 @@ const ConsultingPage: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      <span style={{ fontFamily: "Tahoma, Arial" }}>
-                        در حال ارسال...
-                      </span>
+                      <span className="font-persian">در حال ارسال...</span>
                     </>
                   ) : (
                     <>
-                      <span style={{ fontFamily: "Tahoma, Arial" }}>
-                        ارسال درخواست مشاوره
-                      </span>
+                      <span className="font-persian">ارسال درخواست مشاوره</span>
                       <ArrowRight className="w-5 h-5" />
                     </>
                   )}
                 </Button>
 
-                <p
-                  className="text-center text-gray-400 text-sm"
-                  style={{ fontFamily: "Tahoma, Arial" }}
-                >
+                <p className="text-center text-gray-400 text-sm font-persian">
                   با ارسال این فرم، شما با{" "}
                   <a
                     href="/privacy"
@@ -1124,10 +1062,7 @@ const ConsultingPage: React.FC = () => {
                 <h3 className="text-white font-semibold mb-2 font-mono">
                   تماس تلفنی
                 </h3>
-                <p
-                  className="text-gray-300 text-sm mb-2"
-                  style={{ fontFamily: "Tahoma, Arial" }}
-                >
+                <p className="text-gray-300 text-sm mb-2 font-persian">
                   همین الان با ما تماس بگیرید
                 </p>
                 <a
@@ -1147,10 +1082,7 @@ const ConsultingPage: React.FC = () => {
                 <h3 className="text-white font-semibold mb-2 font-mono">
                   ایمیل
                 </h3>
-                <p
-                  className="text-gray-300 text-sm mb-2"
-                  style={{ fontFamily: "Tahoma, Arial" }}
-                >
+                <p className="text-gray-300 text-sm mb-2 font-persian">
                   برای ما ایمیل بفرستید
                 </p>
                 <a
@@ -1170,10 +1102,7 @@ const ConsultingPage: React.FC = () => {
                 <h3 className="text-white font-semibold mb-2 font-mono">
                   ساعات کاری
                 </h3>
-                <p
-                  className="text-gray-300 text-sm"
-                  style={{ fontFamily: "Tahoma, Arial" }}
-                >
+                <p className="text-gray-300 text-sm font-persian">
                   شنبه تا پنجشنبه
                 </p>
                 <p className="text-green-400 font-mono">9:00 - 18:00</p>
@@ -1183,7 +1112,6 @@ const ConsultingPage: React.FC = () => {
         </div>
       </AnimatedSection>
 
-     
       <Footer />
     </div>
   );

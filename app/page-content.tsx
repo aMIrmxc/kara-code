@@ -119,6 +119,11 @@ export default function PageContent() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+
+              <Button  variant="my-primary" ><span className="text-gradient-animated font-bold font-persian">
+                    پروژه خود را انتخاب کنید
+                  </span></Button>
+
               <Button
                 variant="my-outline"
                 
@@ -132,9 +137,6 @@ export default function PageContent() {
               </Button>
 
               
-              <Button  variant="my-primary" ><span className="text-gradient-animated font-bold font-persian">
-                    پروژه خود را انتخاب کنید
-                  </span></Button>
             </div>
           </div>
         </div>

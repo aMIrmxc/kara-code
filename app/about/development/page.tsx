@@ -53,7 +53,6 @@ export default function DevelopmentServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
-
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -376,28 +375,28 @@ export default function DevelopmentServicesPage() {
                 visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
               }}
             >
+
               <Button
-                variant="outline"
-                size="lg"
+                variant="my-primary"
+              >
+                <span className="text-gradient-animated font-bold font-persian">
+                  مشاوره رایگان
+                </span>
+              </Button>
+
+              <Button
+                variant="my-outline"
                 onClick={() => {
                   const element = document.getElementById("services-section");
                   if (element) {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/20 backdrop-blur-sm px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full transition-all duration-300 hover:border-white/60 bg-transparent font-persian cursor-pointer"
               >
                 توضیحات بیشتر
               </Button>
 
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 border-0 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <span className="text-gradient-animated font-bold font-persian">
-                  مشاوره رایگان
-                </span>
-              </Button>
+              
             </motion.div>
           </div>
 
@@ -422,9 +421,9 @@ export default function DevelopmentServicesPage() {
         className="py-20 px-4 bg-black/30"
         transition={{ duration: 0.5 }}
         initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.5 }}
-      variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -458,8 +457,10 @@ export default function DevelopmentServicesPage() {
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <h3 className="text-2xl font-bold mb-4 font-persian">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 mb-6 leading-relaxed font-persian">
                   {service.description}
                 </p>
                 <div className="space-y-2">
@@ -480,9 +481,9 @@ export default function DevelopmentServicesPage() {
       <motion.section
         className="py-20 px-4"
         initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.5 }}
-      variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -603,9 +604,9 @@ export default function DevelopmentServicesPage() {
       <motion.section
         className="py-20 px-4 bg-black/30"
         initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.5 }}
-      variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -637,8 +638,10 @@ export default function DevelopmentServicesPage() {
                 <div className="text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <h3 className="text-xl font-bold mb-3 font-persian">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed font-persian">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -651,9 +654,9 @@ export default function DevelopmentServicesPage() {
       <motion.section
         className="py-20 px-4"
         initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.5 }}
-      variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -686,8 +689,10 @@ export default function DevelopmentServicesPage() {
                   <div className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 opacity-20">
                     {step.number}
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <h3 className="text-xl font-bold mb-3 font-persian">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed font-persian">
                     {step.description}
                   </p>
                 </div>
@@ -701,9 +706,9 @@ export default function DevelopmentServicesPage() {
       <motion.section
         className="py-20 px-4 bg-black/30"
         initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.5 }}
-      variants={staggerContainer}
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -747,10 +752,10 @@ export default function DevelopmentServicesPage() {
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2 font-persian">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-gray-400 leading-relaxed font-persian">
                       {item.description}
                     </p>
                   </div>
