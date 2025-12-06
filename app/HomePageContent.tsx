@@ -241,11 +241,7 @@ export default function HomePageContent() {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-              <Link href="/about/development">
-            <Button variant="my-outline">بیشتر بدانید 
-            </Button></Link>
-          </div>
+         
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
@@ -332,9 +328,63 @@ export default function HomePageContent() {
       </AnimatedSection>
 
       {/* About Section */}
+
+       <AnimatedSection
+        dir="rtl"
+        className="py-20 px-4 bg-black/30"
+        variants={sectionVariants}
+        scrollDirection={scrollDirection}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="text-xs sm:text-sm mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
+              Our Mission
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
+              اهدافی که ما در پیش گرفته ایم
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
+              پروژهایی که ما بر عهده می‌گیریم با اصولی هدایت می‌شوند که نتایج
+              مطلوب را برای مشتریان ما تضمین می‌کند
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {goals.map((goal, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants as any}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${goal.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
+                  ></div>
+                  <CardContent className="p-6 text-center relative z-10 flex flex-col h-full">
+                    <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                      {goal.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3 font-mono">
+                      {goal.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">
+                      {goal.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+
       <AnimatedSection
         dir="rtl"
-        className="py-20 px-4 overflow-x-hidden bg-black/30"
+        className="py-20 px-4 overflow-x-hidden "
         variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
@@ -352,6 +402,9 @@ export default function HomePageContent() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
                 خلق محصولات برتر تحت وب، مطابق نیازهای شما
               </h2>
+
+
+
               <p
                 className="text-lg text-gray-300 mb-6 leading-relaxed font-persian"
                 dir="rtl"
@@ -370,6 +423,15 @@ export default function HomePageContent() {
                 نرم افزاری ای را ارائه می‌دهیم که فراتر از انتظارات عمل کرده و
                 به مشتریان ما در دستیابی به اهداف مدنظرشان کمک می‌کند
               </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+                  <Link href="/about/development">
+                    <Button variant="my-outline">بیشتر بدانید 
+                  </Button>
+                  </Link>
+              </div>
+
+
             </motion.div>
 
             <motion.div
@@ -432,57 +494,7 @@ export default function HomePageContent() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection
-        dir="rtl"
-        className="py-20 px-4 "
-        variants={sectionVariants}
-        scrollDirection={scrollDirection}
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="text-xs sm:text-sm mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
-              Our Mission
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
-              اهدافی که ما در پیش گرفته ایم
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
-              پروژهایی که ما بر عهده می‌گیریم با اصولی هدایت می‌شوند که نتایج
-              مطلوب را برای مشتریان ما تضمین می‌کند
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {goals.map((goal, index) => (
-              <motion.div
-                key={index}
-                variants={cardVariants as any}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${goal.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
-                  ></div>
-                  <CardContent className="p-6 text-center relative z-10 flex flex-col h-full">
-                    <div className="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                      {goal.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-3 font-mono">
-                      {goal.title}
-                    </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">
-                      {goal.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
+     
 
       {/* Project Section */}
       <AnimatedSection
