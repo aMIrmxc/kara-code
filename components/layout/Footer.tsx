@@ -55,7 +55,6 @@ export default function Footer() {
                 </Link>
               </li>
 
-              
               <li>
                 <Link
                   href="/about"
@@ -84,8 +83,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          
-
           {/* Services */}
           <motion.div variants={cardVariants} transition={{ delay: 0.4 }}>
             <h4 className="font-semibold text-white mb-4  font-mono text-lg">
@@ -101,21 +98,22 @@ export default function Footer() {
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  href="/about/development"
-                  className="text-gray-400 hover:text-white transition-colors font-persian"
-                >
-                  آشنایی با خدمات ما
-                </Link>
-              </li>
+              
               <li></li>
               <li>
                 <Link
                   href="/consulting"
                   className="text-gray-400 hover:text-white transition-colors font-persian"
                 >
-                  مشاوره فناوری با ما
+                مشاوره فناوری  
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/FAQ"
+                  className="text-gray-400 hover:text-white transition-colors font-persian"
+                >
+                  سوالات متداول 
                 </Link>
               </li>
             </ul>
@@ -136,7 +134,6 @@ export default function Footer() {
                   contact@kara-code.ir
                 </a>
               </li>
-              
 
               <li className="flex items-center justify-center gap-3">
                 <Phone className="w-5 h-5 text-gray-400" />

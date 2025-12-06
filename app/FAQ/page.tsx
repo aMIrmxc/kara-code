@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import CtaSection from "@/components/services/shared/CtaSection";
 import Footer from "@/components/layout/Footer";
 import { CheckCircle } from "lucide-react";
+import ContactCards from "@/components/consulting/ContactCards";
 
 const faqData = {
   "خدمات عمومی": [
@@ -185,8 +186,6 @@ const faqData = {
 };
 
 export default function FAQPage() {
- 
-
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-white"
@@ -220,11 +219,11 @@ export default function FAQPage() {
                 visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
               }}
             >
-                سوالات متداول (FAQ)
+              سوالات متداول (FAQ)
             </motion.h1>
 
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 mt-4 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
+              className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 mt-10 sm:mb-8 max-w-3xl mx-auto leading-relaxed font-persian px-4"
               variants={{
                 hidden: { y: -30, opacity: 0.7 },
                 visible: { y: 0, opacity: 1, transition: { duration: 0.3 } },
@@ -311,7 +310,7 @@ export default function FAQPage() {
           sectionTitle="سوال دیگری دارید؟"
           sectionSubtitle="اگر پاسخ سوال خود را پیدا نکردید، با ما تماس بگیرید. تیم ما آماده پاسخگویی به شماست."
           sectionId="cta-faq"
-          primaryButtonText="تماس با ما"
+          children={<ContactCards />}
         />
       </motion.div>
 

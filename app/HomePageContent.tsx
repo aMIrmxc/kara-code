@@ -216,7 +216,7 @@ export default function HomePageContent() {
       color: "from-purple-500 to-pink-500",
     },
   ];
- 
+
   return (
     <>
       {/* Services Section */}
@@ -240,8 +240,6 @@ export default function HomePageContent() {
               ایده‌های شما را به راه‌حل‌های نرم‌افزاری قدرتمند تبدیل می‌کند
             </p>
           </div>
-
-         
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
@@ -329,7 +327,7 @@ export default function HomePageContent() {
 
       {/* About Section */}
 
-       <AnimatedSection
+      <AnimatedSection
         dir="rtl"
         className="py-20 px-4 bg-black/30"
         variants={sectionVariants}
@@ -381,7 +379,6 @@ export default function HomePageContent() {
         </div>
       </AnimatedSection>
 
-
       <AnimatedSection
         dir="rtl"
         className="py-20 px-4 overflow-x-hidden "
@@ -403,8 +400,6 @@ export default function HomePageContent() {
                 خلق محصولات برتر تحت وب، مطابق نیازهای شما
               </h2>
 
-
-
               <p
                 className="text-lg text-gray-300 mb-6 leading-relaxed font-persian"
                 dir="rtl"
@@ -424,14 +419,11 @@ export default function HomePageContent() {
                 به مشتریان ما در دستیابی به اهداف مدنظرشان کمک می‌کند
               </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-                  <Link href="/about/development">
-                    <Button variant="my-outline">بیشتر بدانید 
-                  </Button>
-                  </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+                <Link href="/about">
+                  <Button variant="my-outline">بیشتر بدانید</Button>
+                </Link>
               </div>
-
-
             </motion.div>
 
             <motion.div
@@ -493,8 +485,6 @@ export default function HomePageContent() {
           </div>
         </div>
       </AnimatedSection>
-
-     
 
       {/* Project Section */}
       <AnimatedSection
