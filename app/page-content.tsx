@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { AnimatedHeroBackground } from "@/components/ui/animated-background";
-import { GradientBackgroundProps } from "@/components/ui/animated-gradient-background";
+import { GradientBackgroundProps } from "@/components/ui/gradient-background";
 import { Preloader } from "@/components/ui/preloader";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
