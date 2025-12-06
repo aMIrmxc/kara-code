@@ -421,11 +421,11 @@ export default function DevelopmentServicesPage() {
       {/* Services Section */}
       <motion.section
         id="services-section"
-        className="py-20 px-4 bg-black/30"
+        className="py-20 px-1 bg-black/30"
         transition={{ duration: 0.5 }}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -433,7 +433,7 @@ export default function DevelopmentServicesPage() {
             className="text-center mb-16"
             initial={{ y: -50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
@@ -605,10 +605,10 @@ export default function DevelopmentServicesPage() {
 
       {/* Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-black/30"
+        className="py-20 px-1 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -658,7 +658,7 @@ export default function DevelopmentServicesPage() {
         className="py-20 px-4"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -710,7 +710,7 @@ export default function DevelopmentServicesPage() {
         className="py-20 px-4 bg-black/30"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto">
@@ -773,7 +773,7 @@ export default function DevelopmentServicesPage() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
       >
         <CtaSection

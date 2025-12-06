@@ -60,7 +60,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       variants={variants}
     >
       {children}
@@ -429,7 +429,7 @@ const ConsultingPage: React.FC = () => {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group overflow-hidden relative">
@@ -467,7 +467,7 @@ const ConsultingPage: React.FC = () => {
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-mono">
               <span className="font-persian font-noto-h2">
-                مزایای مشاوره با کارا کد
+                مزایای مشاوره با ما
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-persian">
@@ -482,7 +482,7 @@ const ConsultingPage: React.FC = () => {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group overflow-hidden relative">
@@ -535,7 +535,7 @@ const ConsultingPage: React.FC = () => {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 group overflow-hidden relative">
@@ -681,7 +681,7 @@ const ConsultingPage: React.FC = () => {
       {/* Consultation Form Section */}
       <AnimatedSection
         id="consultation-form"
-        className="py-20 px-4 bg-black/30"
+        className="py-20 px-1 bg-black/30"
         variants={sectionVariants}
       >
         <div dir="rtl" className="max-w-4xl mx-auto">
@@ -700,7 +700,7 @@ const ConsultingPage: React.FC = () => {
             </p>
           </div>
 
-          <Card className="bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden">
+          <Card className="bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden mx-4 sm:mx-1">
             <CardContent className="p-8 md:p-12">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -1075,7 +1075,7 @@ const ConsultingPage: React.FC = () => {
           </Card>
 
           <div className="mt-12 grid md:grid-cols-3 gap-6">
-            <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300">
+            <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 mx-4 sm:mx-1">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-6 h-6 text-white" />
@@ -1084,7 +1084,7 @@ const ConsultingPage: React.FC = () => {
                   تماس تلفنی
                 </h3>
                 <p className="text-gray-300 text-sm mb-2 font-persian">
-                  همین الان با ما تماس بگیرید
+                   ما تماس بگیرید
                 </p>
                 <a
                   href="tel:+989123456789"
@@ -1095,7 +1095,7 @@ const ConsultingPage: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300">
+            <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 mx-4 sm:mx-1">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-6 h-6 text-white" />
@@ -1115,7 +1115,7 @@ const ConsultingPage: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300">
+            <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 mx-4 sm:mx-1">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-6 h-6 text-white" />
