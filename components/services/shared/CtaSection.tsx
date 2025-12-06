@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 
 interface CtaSectionProps {
-  accentColor: string;
-  accentColorLight: string;
-  accentColorDark: string;
+  accentColor?: string;
+  accentColorLight?: string;
+  accentColorDark?: string;
   sectionTitle: string;
   sectionSubtitle: string;
   sectionId: string;
@@ -29,7 +29,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
   secondaryButtonText,
   onPrimaryButtonClick,
   onSecondaryButtonClick,
-  start = "شروع پروژه",
+  start,
 }) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -54,6 +54,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
     },
   };
 
+
   return (
     <motion.section
       id={sectionId}
@@ -64,19 +65,20 @@ const CtaSection: React.FC<CtaSectionProps> = ({
       variants={staggerContainer}
     >
       <div className="max-w-4xl mx-auto text-center w-full">
+        {start  &&
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ amount: 0.4 }}
           transition={{ delay: 0.1, duration: 0.3 }}
-          className={`mb-4 sm:mb-6 inline-flex items-center gap-2 bg-${accentColorLight}/20 backdrop-blur-sm border border-${accentColorDark}/30 text-${accentColorLight.replace(
+          className={`mb-4 sm:mb-6 inline-flex items-center gap-2 bg-${accentColorLight}/20 backdrop-blur-sm border border-${accentColorDark}/30 text-${accentColorLight?.replace(
             "500",
             "200"
           )} px-3 sm:px-4 py-1 rounded-full`}
         >
-          {start && <span className="text-xs sm:text-sm border-white">{start}</span>}
+           <span className="text-xs sm:text-sm border-white">{start}</span>
         </motion.div>
-
+}
         <motion.h2
           variants={fadeInUp}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
