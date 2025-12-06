@@ -11,11 +11,12 @@ interface CtaSectionProps {
   sectionTitle: string;
   sectionSubtitle: string;
   sectionId: string;
-  primaryButtonText: string;
+  primaryButtonText?: string;
   secondaryButtonText?: string;
   onPrimaryButtonClick?: () => void;
   onSecondaryButtonClick?: () => void;
   start?: string;
+  children?: React.JSX.Element;
 }
 
 const CtaSection: React.FC<CtaSectionProps> = ({
@@ -30,6 +31,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
   onPrimaryButtonClick,
   onSecondaryButtonClick,
   start,
+  children,
 }) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -54,7 +56,6 @@ const CtaSection: React.FC<CtaSectionProps> = ({
     },
   };
 
-
   return (
     <motion.section
       id={sectionId}
@@ -65,20 +66,20 @@ const CtaSection: React.FC<CtaSectionProps> = ({
       variants={staggerContainer}
     >
       <div className="max-w-4xl mx-auto text-center w-full">
-        {start  &&
-        <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ amount: 0.4 }}
-          transition={{ delay: 0.1, duration: 0.3 }}
-          className={`mb-4 sm:mb-6 inline-flex items-center gap-2 bg-${accentColorLight}/20 backdrop-blur-sm border border-${accentColorDark}/30 text-${accentColorLight?.replace(
-            "500",
-            "200"
-          )} px-3 sm:px-4 py-1 rounded-full`}
-        >
-           <span className="text-xs sm:text-sm border-white">{start}</span>
-        </motion.div>
-}
+        {start && (
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ amount: 0.4 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
+            className={`mb-4 sm:mb-6 inline-flex items-center gap-2 bg-${accentColorLight}/20 backdrop-blur-sm border border-${accentColorDark}/30 text-${accentColorLight?.replace(
+              "500",
+              "200"
+            )} px-3 sm:px-4 py-1 rounded-full`}
+          >
+            <span className="text-xs sm:text-sm border-white">{start}</span>
+          </motion.div>
+        )}
         <motion.h2
           variants={fadeInUp}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4 sm:px-8 font-noto-h2 leading-tight"
@@ -98,6 +99,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({
           variants={fadeInUp}
           className="flex flex-col sm:flex-row gap-4 justify-center px-4"
         >
+          {primaryButtonText && (
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               size="lg"
@@ -108,7 +110,8 @@ const CtaSection: React.FC<CtaSectionProps> = ({
                 {primaryButtonText}
               </span>
             </Button>
-          </motion.div>
+
+          </motion.div>)}
           {secondaryButtonText && (
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
@@ -120,6 +123,14 @@ const CtaSection: React.FC<CtaSectionProps> = ({
                 <Phone className="w-5 h-5 ml-2" />
                 {secondaryButtonText}
               </Button>
+            </motion.div>
+          )}
+          {children && (
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row gap-4 justify-center px-4"
+            >
+              {children}
             </motion.div>
           )}
         </motion.div>
