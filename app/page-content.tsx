@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { AnimatedHeroBackground } from "@/components/ui/animated-background";
+import { GradientBackgroundProps } from "@/components/ui/animated-gradient-background";
 import { Preloader } from "@/components/ui/preloader";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -73,7 +74,7 @@ export default function PageContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900">
+    <GradientBackgroundProps>
       <Head>
         <script
           type="application/ld+json"
@@ -164,6 +165,6 @@ export default function PageContent() {
       </section>
 
       {!isLoading && <HomePageContent />}
-    </div>
+    </GradientBackgroundProps>
   );
 }
