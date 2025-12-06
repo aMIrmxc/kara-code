@@ -85,7 +85,7 @@ export default function CustomAppPageContent() {
     },
     {
       icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "امنیت سطح بانکی",
+      title: "امنیت سطح بالا",
       description:
         "امنیت اطلاعات در اولویت اول ماست. با پیاده‌سازی استانداردهای OWASP، رمزنگاری End-to-End، و احراز هویت چندعاملی، داده‌های حساس شما و کاربرانتان در امان خواهد بود. تست‌های نفوذ منظم، مانیتورینگ 24/7، و backup خودکار، آرامش خاطر کامل را برای شما فراهم می‌کنند.",
       benefits: [
@@ -93,7 +93,7 @@ export default function CustomAppPageContent() {
         "احراز هویت OAuth 2.0",
         "GDPR Compliant",
         "Penetration Testing منظم",
-        "Backup خودکار روزانه",
+        "Backup خودکار",
       ],
     },
     {
