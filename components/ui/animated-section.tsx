@@ -9,7 +9,7 @@ interface AnimatedSectionProps {
   className?: string
   id?: string
   dir?: "rtl" | "ltr"
-  variants: Variants
+  variants?: Variants
   scrollDirection: "down" | "up" | null
 }
 
