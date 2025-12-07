@@ -141,7 +141,7 @@ const PrivacyPolicyPage = () => {
             <h2 className="text-3xl font-bold text-white">تماس با ما</h2>
             <p className="mt-4 text-lg text-gray-400">
               اگر در مورد این سیاست حفظ حریم خصوصی سؤال یا نظری دارید، لطفاً با
-              ما تماس بگیرید:
+              با ما تماس بگیرید:
             </p>
             <div className="mt-6 space-y-2">
               <p className="text-purple-400 hover:text-purple-300 transition-colors">

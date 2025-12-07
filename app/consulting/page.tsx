@@ -341,6 +341,19 @@ const ConsultingPage: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              
+
+              <Button
+                variant="my-outline"
+                onClick={() =>
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                <span className="font-persian"> بیشتر بدانید </span>
+              </Button>
+
               <Button
                 variant="my-primary"
                 onClick={() =>
@@ -352,17 +365,6 @@ const ConsultingPage: React.FC = () => {
                 <span className="bg-gradient-to-r text-gradient-animated  bg-clip-text text-transparent animate-pulse font-persian">
                   درخواست مشاوره رایگان
                 </span>
-              </Button>
-
-              <Button
-                variant="my-outline"
-                onClick={() =>
-                  document
-                    .getElementById("services")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <span className="font-persian"> بیشتر بدانید </span>
               </Button>
             </div>
           </div>

@@ -247,7 +247,7 @@ export default function ContactPage() {
                         Email
                       </h3>
                       <p className="text-gray-300 font-mono" dir="ltr">
-                        info@kara-code.ir
+                        contact@kara-code.ir
                       </p>
                     </div>
                   </div>

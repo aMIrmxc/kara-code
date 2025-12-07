@@ -18,13 +18,13 @@ const ContactCards = () => {
             تماس تلفنی
           </h3>
           <p className="text-gray-300 text-sm mb-2 font-persian">
-            ما تماس بگیرید
+            با ما تماس بگیرید
           </p>
           <a
-            href="tel:+989123456789"
+            href="tel:+989395008603"
             className="text-purple-400 hover:text-purple-300 font-mono"
           >
-            +98 912 345 6789
+            0939-500-8603
           </a>
         </CardContent>
       </Card>
@@ -45,7 +45,7 @@ const ContactCards = () => {
             href="mailto:contact@kara-code.ir"
             className="text-blue-400 hover:text-blue-300 font-mono"
           >
-            info@kara-code.ir
+            contact@kara-code.ir
           </a>
         </CardContent>
       </Card>
