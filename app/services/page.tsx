@@ -83,14 +83,7 @@ const projectsItems = [
 
 export default function ServicesPage() {
   const scrollDirection = useScrollDirection();
-  const sectionVariants: Variants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeInOut" },
-    },
-    exit: { opacity: 0, y: 50 },
-  };
+  
 
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 10 },
@@ -114,7 +107,6 @@ export default function ServicesPage() {
         dir="rtl"
         id="projects"
         className="py-20 px-4 bg-black/30"
-        variants={sectionVariants}
         scrollDirection={scrollDirection}
       >
         <div className="max-w-6xl mx-auto">
