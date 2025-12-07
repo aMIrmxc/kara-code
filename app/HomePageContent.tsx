@@ -419,11 +419,7 @@ export default function HomePageContent() {
                 به مشتریان ما در دستیابی به اهداف مدنظرشان کمک می‌کند
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-                <Link href="/about">
-                  <Button variant="my-outline">بیشتر بدانید</Button>
-                </Link>
-              </div>
+             
             </motion.div>
 
             <motion.div
@@ -483,6 +479,13 @@ export default function HomePageContent() {
               </div>
             </motion.div>
           </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+                <Link href="/about">
+                  <Button variant="my-outline">بیشتر بدانید</Button>
+                </Link>
+              </div>
+
         </div>
       </AnimatedSection>
 
