@@ -147,7 +147,7 @@ export default function PageContent() {
           }`}
         >
           <div dir="rtl" className="flex gap-4 items-center justify-center">
-            <Link
+            {/* <Link
               href="/register"
               className="text-white/60 hover:text-white transition-colors text-persian text-center "
             >
@@ -159,7 +159,7 @@ export default function PageContent() {
               className="text-white/60 hover:text-white transition-colors text-persian text-center "
             >
               کاربر فعلی هستید؟ اینجا وارد شوید
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
