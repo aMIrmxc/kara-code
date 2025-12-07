@@ -256,9 +256,7 @@ export default function MedicalPageContent() {
       logoIcon={<Stethoscope className="w-4 h-4" />}
       logoText="Healthcare Portal Solutions"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent("شروع پروژه پورتال سلامت شما")}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -322,11 +320,7 @@ export default function MedicalPageContent() {
         primaryButtonText="شروع پروژه پورتال سلامت شما"
         start="Get Started Today"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent(
-              "شروع پروژه پورتال سلامت شما"
-            )}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
       />
     </BaseServiceLayout>

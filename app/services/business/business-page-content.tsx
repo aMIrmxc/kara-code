@@ -252,9 +252,7 @@ export default function BusinessPageContent() {
       logoIcon={<Building2 className="w-4 h-4" />}
       logoText="Corporate Website Solutions"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent("شروع پروژه وبسایت شرکتی شما")}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -318,11 +316,7 @@ export default function BusinessPageContent() {
         primaryButtonText="شروع پروژه وبسایت شرکتی شما"
         start="Get Started Today"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent(
-              "شروع پروژه وبسایت شرکتی شما"
-            )}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
         onSecondaryButtonClick={() => {
           document

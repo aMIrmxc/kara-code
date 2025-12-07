@@ -262,11 +262,7 @@ export default function CustomAppPageContent() {
       logoIcon={<Code2 className="w-4 h-4" />}
       logoText="Custom Web Application Development"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent(
-            "شروع ساخت وب اپلیکشیشن سفارشی شما"
-          )}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -330,11 +326,7 @@ export default function CustomAppPageContent() {
         primaryButtonText="شروع ساخت وب اپلیکشیشن سفارشی شما"
         start="Start Your Project"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent(
-              "شروع ساخت وب اپلیکشیشن سفارشی شما"
-            )}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
       />
     </BaseServiceLayout>

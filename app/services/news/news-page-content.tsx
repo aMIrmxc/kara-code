@@ -269,11 +269,7 @@ export default function NewsAgencyWebsitePage() {
       logoIcon={<Newspaper className="w-4 h-4" />}
       logoText="News Agency Website Solutions"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent(
-            "شروع پروژه خبرگزاری آنلاین شما"
-          )}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -337,11 +333,7 @@ export default function NewsAgencyWebsitePage() {
         primaryButtonText="شروع پروژه خبرگزاری آنلاین شما"
         start="Get Started Today"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent(
-              "شروع پروژه خبرگزاری آنلاین شما"
-            )}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
       />
     </BaseServiceLayout>

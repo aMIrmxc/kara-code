@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 /*
   Safelist for Tailwind JIT compiler to prevent purging of dynamically generated classes.
@@ -249,13 +249,7 @@ export default function RestaurantWebsitePageContent() {
       accentColorDark="orange-400"
       logoIcon={<Utensils className="w-4 h-4" />}
       logoText="Restaurant Website Solutions"
-      onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent(
-            "شروع ساخت وبسایت رستوران شما"
-          )}`
-        )
-      }
+      onPrimaryButtonClick={() => router.push(`/consulting#consultation-form`)}
       onSecondaryButtonClick={() =>
         document
           .getElementById("key-features")
@@ -315,12 +309,10 @@ export default function RestaurantWebsitePageContent() {
         sectionTitle="آماده‌اید تا رستوران خود را به وبسایت آنلاین مجهز کنید؟"
         sectionSubtitle="با وبسایت حرفه‌ای، رستوران خود را به سطح جدیدی از موفقیت برسانید"
         sectionId="cta"
-        primaryButtonText="شروع پروژه وبسایت آنلاین شما"
+        primaryButtonText="درخواست مشاوره رایگان"
         start="Get Started"
         onPrimaryButtonClick={() =>
-          router.push(
-            `/register?title=${encodeURIComponent("شروع ساخت وبسایت شما")}`
-          )
+          router.push(`/consulting#consultation-form`)
         }
       />
     </BaseServiceLayout>

@@ -255,11 +255,7 @@ export default function TravelBookingWebsitePageContent() {
       logoIcon={<Plane className="w-4 h-4" />}
       logoText="Travel Booking Platform"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent(
-            "شروع ساخت پلتفرم رزرو سفر شما"
-          )}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -323,11 +319,7 @@ export default function TravelBookingWebsitePageContent() {
         primaryButtonText="شروع ساخت پلتفرم رزرو سفر شما"
         start="Start Your Journey"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent(
-              "شروع ساخت پلتفرم رزرو سفر شما"
-            )}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
       />
     </BaseServiceLayout>

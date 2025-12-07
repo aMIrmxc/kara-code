@@ -256,11 +256,7 @@ export default function EcommercePlatformPageContent() {
       logoIcon={<ShoppingBag className="w-4 h-4" />}
       logoText="E-commerce Platform Solutions"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent(
-            "شروع ساخت فروشگاه آنلاین شما"
-          )}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -324,11 +320,7 @@ export default function EcommercePlatformPageContent() {
         primaryButtonText="شروع پروژه فروشگاه آنلاین شما"
         start="Get Started Today"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent(
-              "شروع پروژه فروشگاه آنلاین شما"
-            )}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
       />
     </BaseServiceLayout>

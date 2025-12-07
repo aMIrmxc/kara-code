@@ -256,9 +256,7 @@ export default function RealEstatePlatformPageContent() {
       logoIcon={<Home className="w-4 h-4" />}
       logoText="Real Estate Platform Solutions"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent("شروع پروژه پلتفرم املاک شما")}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -322,9 +320,7 @@ export default function RealEstatePlatformPageContent() {
         primaryButtonText="شروع ساخت پلتفرم املاک"
         start="Start Your Project"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent("شروع ساخت پلتفرم املاک")}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
       />
     </BaseServiceLayout>

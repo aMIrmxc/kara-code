@@ -264,9 +264,7 @@ export default function EducationalPageContent() {
       logoIcon={<GraduationCap className="w-4 h-4" />}
       logoText="Educational Platform Solutions"
       onPrimaryButtonClick={() =>
-        router.push(
-          `/register?title=${encodeURIComponent("شروع ساخت پلتفرم آموزشی شما")}`
-        )
+        router.push(`/consulting#consultation-form`)
       }
       onSecondaryButtonClick={() =>
         document
@@ -330,11 +328,7 @@ export default function EducationalPageContent() {
         primaryButtonText="شروع ساخت پلتفرم آموزشی شما"
         start="Start Your Journey"
         onPrimaryButtonClick={() => {
-          router.push(
-            `/register?title=${encodeURIComponent(
-              "شروع ساخت پلتفرم آموزشی شما"
-            )}`
-          );
+          router.push(`/consulting#consultation-form`)
         }}
       />
     </BaseServiceLayout>
