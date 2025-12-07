@@ -1,15 +1,13 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-interface GradientBackgroundPropsProps {
+interface GradientBackgroundProps {
   children: React.ReactNode;
   className?: string;
   gradientColors?: string;
 }
 
-export const GradientBackgroundProps: React.FC<
-  GradientBackgroundPropsProps
-> = ({
+export const GradientBackground: React.FC<GradientBackgroundProps> = ({
   children,
   className,
   gradientColors = "from-gray-900 via-purple-900 to-indigo-900",

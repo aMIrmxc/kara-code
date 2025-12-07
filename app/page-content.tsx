@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { AnimatedHeroBackground } from "@/components/ui/animated-background";
-import { GradientBackgroundProps } from "@/components/ui/gradient-background";
+import { GradientBackground } from "@/components/ui/gradient-background";
 import { Preloader } from "@/components/ui/preloader";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -74,7 +74,7 @@ export default function PageContent() {
   };
 
   return (
-    <GradientBackgroundProps>
+    <GradientBackground>
       <Head>
         <script
           type="application/ld+json"
@@ -165,6 +165,6 @@ export default function PageContent() {
       </section>
 
       {!isLoading && <HomePageContent />}
-    </GradientBackgroundProps>
+    </GradientBackground>
   );
 }

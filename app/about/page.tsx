@@ -42,7 +42,7 @@ import { Button } from "@/components/ui/button";
 import CtaSection from "@/components/services/shared/CtaSection";
 import { useRouter } from "next/navigation";
 import { AnimatedHeroBackground } from "@/components/ui/animated-background";
-import { GradientBackgroundProps as GradientBackground } from "@/components/ui/gradient-background";
+import { GradientBackground as GradientBackground } from "@/components/ui/gradient-background";
 
 export default function DevelopmentServicesPage() {
   const [activeTab, setActiveTab] = useState("frontend");

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -81,77 +80,6 @@ export default function HomePageContent() {
       description:
         "اپلیکیشن‌های وب پیچیده با قابلیت‌های پیشرفته و تجربه‌های کاربری یکپارچه و ساخته شده با جدید ترین تکنولوژی ها",
       color: "from-orange-500 to-red-500",
-    },
-  ];
-
-  const projectsItems = [
-    {
-      title: "Restaurant Website",
-      category: "Restaurant",
-      image: "/modern-restaurant-website.png",
-      description: "وب‌سایت رستوران شما با سیستم سفارش آنلاین و رزرو",
-      color: "from-orange-500 to-red-500", // Chili Red → Tangerine
-    },
-    {
-      title: "Corporate Website",
-      category: "Business",
-      image: "/professional-corporate-website.png",
-      description: "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا",
-      color: "from-blue-800 to-indigo-400", // IBM Blue → Slate
-    },
-    {
-      title: "E-commerce Platform",
-      category: "Online-Store",
-      image: "/modern-ecommerce-website.png",
-      description:
-        "پلتفرم تجارت الکترونیک مدرن با درنظر گرفتن نیاز های خاص شما",
-      color: "from-rose-600 to-pink-500", // Twitch Purple → Hot-Pink
-    },
-    {
-      title: "Real Estate Platform",
-      category: "Property",
-      image: "/real-estate-website.png",
-      description: "پلتفرم جامع املاک با قابلیت جستجوی ملک و تورهای مجازی",
-      color: "from-teal-700 to-teal-500", // Zillow Emerald → Teal
-    },
-    {
-      title: "Travel Booking Site",
-      category: "Travel",
-      image: "/modern-travel-booking-website-with-destinations.jpg",
-      description: "پلتفرم رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
-      color: "from-sky-600 to-sky-500", // Skyscanner Sky → Indigo
-    },
-    {
-      title: "Healthcare Portal",
-      category: "Medical",
-      image: "/modern-healthcare-website.png",
-      description:
-        "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور",
-      color: "from-cyan-700 to-cyan-500", // Hospital Green → Cyan
-    },
-    {
-      title: "Educational Platform",
-      category: "Educational",
-      image: "/modern-e-learning-platform-with-courses.jpg",
-      description:
-        "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت",
-      color: "from-amber-700 to-yellow-500", // Coursera Amber → Yellow
-    },
-    {
-      title: "News Agency",
-      category: "News",
-      image: "/news-agency-website.png",
-      description:
-        " وب سایت آژانس خبری مدرن با اخبار روزانه ، رویداد های فوری و محتوای چندرسانه ای",
-      color: "from-red-700 to-red-500", // New-York-Times Gray → Red
-    },
-    {
-      title: "Custom Web App",
-      category: "Custom-App",
-      image: "/custom-web-app.png",
-      description:
-        "اپلیکیشن اختصاصی تحت وب با طراحی سفارشی و امکانات کاملاً انعطاف‌پذیر",
-      color: "from-fuchsia-700 to-violet-600", // Stripe ‑ Fuchsia → Violet
     },
   ];
 
@@ -418,8 +346,6 @@ export default function HomePageContent() {
                 نرم افزاری ای را ارائه می‌دهیم که فراتر از انتظارات عمل کرده و
                 به مشتریان ما در دستیابی به اهداف مدنظرشان کمک می‌کند
               </p>
-
-             
             </motion.div>
 
             <motion.div
@@ -480,80 +406,10 @@ export default function HomePageContent() {
             </motion.div>
           </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
-                <Link href="/about">
-                  <Button variant="my-outline">بیشتر بدانید</Button>
-                </Link>
-              </div>
-
-        </div>
-      </AnimatedSection>
-
-      {/* Project Section */}
-      <AnimatedSection
-        dir="rtl"
-        id="projects"
-        className="py-20 px-4 bg-black/30"
-        variants={sectionVariants}
-        scrollDirection={scrollDirection}
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="text-xs sm:text-sm mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white font-mono">
-              Projects List
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance font-noto-h2">
-              وب‌سایت مد نظر شما کدام است؟
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty font-persian">
-              نمونه‌کارهای متنوع ما را که راه‌حل‌های نوآورانه وب در صنایع و
-              نیازهای مختلف کسب‌وکار را به نمایش می‌گذارد، بررسی کنید
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projectsItems.map((item, index) => (
-              <Link
-                href={`/services/${item.category.toLowerCase()}`}
-                key={index}
-                className="h-full"
-              >
-                <motion.div
-                  variants={cardVariants as any}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="flex flex-col h-full"
-                >
-                  <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
-                    <div className="relative overflow-hidden h-48">
-                      <Image
-                        src={item.image || "/placeholder.svg"}
-                        alt={`${item.title} - یک پروژه از کارا کد`}
-                        width={400}
-                        height={200}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <CardContent className="p-6 flex flex-col">
-                      <Badge
-                        className={`text-xs sm:text-sm mb-3 bg-gradient-to-r ${item.color} text-white border-0 font-mono`}
-                      >
-                        {item.category}
-                      </Badge>
-                      <h3 className="text-xl font-semibold text-white mb-2 font-mono">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed font-persian flex-grow">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Link>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12">
+            <Link href="/about">
+              <Button variant="my-outline">بیشتر بدانید</Button>
+            </Link>
           </div>
         </div>
       </AnimatedSection>

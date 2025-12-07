@@ -38,7 +38,7 @@ import {
 } from "@/components/ui/select";
 import Footer from "@/components/layout/Footer";
 import { AnimatedHeroBackground } from "@/components/ui/animated-background";
-import { GradientBackgroundProps as GradientBackground } from "@/components/ui/gradient-background";
+import { GradientBackground as GradientBackground } from "@/components/ui/gradient-background";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
