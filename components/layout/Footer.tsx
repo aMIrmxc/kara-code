@@ -210,7 +210,9 @@ export default function Footer() {
         </div>
 
         {/* Logo and Branding */}
+        <div dir="ltr">
         <motion.div
+          
           className=" text-center mt-6 "
           variants={cardVariants}
           transition={{ delay: 0.2 }}
@@ -236,6 +238,8 @@ export default function Footer() {
           © {new Date().getFullYear()} Kara Code. All rights reserved |
           kara-code.ir
         </motion.div>
+        </div>
+
       </div>
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
