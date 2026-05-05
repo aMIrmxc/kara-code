@@ -55,3 +55,14 @@ base code:
 
 after user filled the blanks of multi-step form  ,  then user should register with email and phone number, and finally showing that every things was successful.
 
+
+- Based on the general style of the page I sent you,
+ create a suitable advertising page for Persian language SEO for me and write a complete and attractive description 
+explaining about the UI design by our team, provided by our company (kara-code.ir) based on the given overall style. Our company operates in the field of producing web, mobile and desktop software.
+
+debug:
+- fonts that you add their files to project , tw cant apply "text-sm font-bold" for them
+kilo : I've confirmed that the transform: scaleX() property on the .font-noto-h1 and .font-noto-h2 classes is causing the horizontal overflow.
+ 
+
+
