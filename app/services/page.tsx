@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { motion, Variants } from "@/components/ui/motion";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
 import { GradientBackground } from "@/components/ui/gradient-background";
@@ -17,35 +16,35 @@ const projectsItems = [
     category: "Restaurant",
     image: "/modern-restaurant-website.png",
     description: "وب‌سایت رستوران شما با سیستم سفارش آنلاین و رزرو",
-    color: "from-orange-500 to-red-500", // Chili Red → Tangerine
+    color: "from-orange-500 to-red-500",
   },
   {
     title: "Corporate Website",
     category: "Business",
     image: "/professional-corporate-website.png",
     description: "وب‌سایت شرکتی حرفه‌ای با سیستم مدیریت محتوا",
-    color: "from-blue-800 to-indigo-400", // IBM Blue → Slate
+    color: "from-blue-800 to-indigo-400",
   },
   {
     title: "E-commerce Platform",
     category: "Online-Store",
     image: "/modern-ecommerce-website.png",
     description: "پلتفرم تجارت الکترونیک مدرن با درنظر گرفتن نیاز های خاص شما",
-    color: "from-rose-600 to-pink-500", // Twitch Purple → Hot-Pink
+    color: "from-rose-600 to-pink-500",
   },
   {
     title: "Real Estate Platform",
     category: "Property",
     image: "/real-estate-website.png",
     description: "پلتفرم جامع املاک با قابلیت جستجوی ملک و تورهای مجازی",
-    color: "from-teal-700 to-teal-500", // Zillow Emerald → Teal
+    color: "from-teal-700 to-teal-500",
   },
   {
     title: "Travel Booking Site",
     category: "Travel",
     image: "/modern-travel-booking-website-with-destinations.jpg",
     description: "پلتفرم رزرو سفر با امکان رزرو پرواز، هتل و فعالیت‌ها",
-    color: "from-sky-600 to-sky-500", // Skyscanner Sky → Indigo
+    color: "from-sky-600 to-sky-500",
   },
   {
     title: "Healthcare Portal",
@@ -53,7 +52,7 @@ const projectsItems = [
     image: "/modern-healthcare-website.png",
     description:
       "پورتال بیماران با امکان رزرو نوبت، سوابق پزشکی و ویژگی‌های پزشکی از راه دور",
-    color: "from-cyan-700 to-cyan-500", // Hospital Green → Cyan
+    color: "from-cyan-700 to-cyan-500",
   },
   {
     title: "Educational Platform",
@@ -61,7 +60,7 @@ const projectsItems = [
     image: "/modern-e-learning-platform-with-courses.jpg",
     description:
       "پلتفرم آموزش الکترونیکی تعاملی با مدیریت دوره‌ها و پیگیری پیشرفت",
-    color: "from-amber-700 to-yellow-500", // Coursera Amber → Yellow
+    color: "from-amber-700 to-yellow-500",
   },
   {
     title: "News Agency",
@@ -69,7 +68,7 @@ const projectsItems = [
     image: "/news-agency-website.png",
     description:
       " وب سایت آژانس خبری مدرن با اخبار روزانه ، رویداد های فوری و محتوای چندرسانه ای",
-    color: "from-red-700 to-red-500", // New-York-Times Gray → Red
+    color: "from-red-700 to-red-500",
   },
   {
     title: "Custom Web App",
@@ -77,22 +76,12 @@ const projectsItems = [
     image: "/custom-web-app.png",
     description:
       "اپلیکیشن اختصاصی تحت وب با طراحی سفارشی و امکانات کاملاً انعطاف‌پذیر",
-    color: "from-fuchsia-700 to-violet-600", // Stripe ‑ Fuchsia → Violet
+    color: "from-fuchsia-700 to-violet-600",
   },
 ];
 
 export default function ServicesPage() {
   const scrollDirection = useScrollDirection();
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeInOut" },
-    },
-    exit: { opacity: 0, y: 20 },
-  };
 
   return (
     <GradientBackground>
@@ -116,13 +105,26 @@ export default function ServicesPage() {
                 key={index}
                 className="h-full"
               >
-                <motion.div
-                  variants={cardVariants as any}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="flex flex-col h-full"
+                {/*
+                  CSS animation instead of Framer Motion initial/animate.
+
+                  WHY: Framer Motion's `initial="hidden"` makes content invisible
+                  by default and depends on JS animation to make it visible.
+                  On client-side navigation, Next.js Router Cache can preserve
+                  stale component state, preventing the animation from re-triggering.
+                  This leaves content permanently at opacity: 0 (white screen).
+
+                  CSS animations are 100% reliable because they:
+                  - Always play on DOM insertion (every navigation)
+                  - Don't depend on JavaScript state or lifecycle
+                  - Work regardless of Next.js router caching
+                */}
+                <div
+                  className="flex flex-col h-full animate-[fadeInUp_0.5s_ease-in-out_forwards]"
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    opacity: 0,
+                  }}
                 >
                   <Card className="h-full bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
                     <div className="relative overflow-hidden h-48">
@@ -150,7 +152,7 @@ export default function ServicesPage() {
                       </p>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               </Link>
             ))}
           </div>
